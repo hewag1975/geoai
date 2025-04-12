@@ -1398,9 +1398,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#download-sample-datasets" class="md-nav__link">
+  <a href="#download-sample-datasets-from-hugging-face" class="md-nav__link">
     <span class="md-ellipsis">
-      Download sample datasets
+      Download sample datasets from Hugging Face
     </span>
   </a>
   
@@ -2047,9 +2047,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#download-sample-datasets" class="md-nav__link">
+  <a href="#download-sample-datasets-from-hugging-face" class="md-nav__link">
     <span class="md-ellipsis">
-      Download sample datasets
+      Download sample datasets from Hugging Face
     </span>
   </a>
   
@@ -2723,7 +2723,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li>💻 <strong>GitHub</strong>: <a href="https://github.com/opengeos/geoai">https://github.com/opengeos/geoai</a></li>
 </ul>
 <hr/>
-<h2 id="introduction">🧭 Introduction<a class="anchor-link" href="#introduction">¶</a></h2><p>This notebook provides hands-on materials for the workshop <strong>Object Detection from Remote Sensing Imagery with GeoAI</strong>, presented at the <strong>第八届地球空间大数据与云计算研讨会</strong> (8th Symposium on Geospatial Big Data and Cloud Computing).</p>
+<h2 id="introduction">🧭 Introduction<a class="anchor-link" href="#introduction">¶</a></h2><p>This notebook provides hands-on materials for the workshop <strong>Object Detection from Remote Sensing Imagery with GeoAI</strong>, presented at the 8th Symposium on Geospatial Big Data and Cloud Computing (<strong>第八届地球空间大数据与云计算研讨会</strong>).</p>
 <h2 id="agenda">🗂️ Agenda<a class="anchor-link" href="#agenda">¶</a></h2><p>The workshop will guide you through the full pipeline of GeoAI for object detection in remote sensing imagery, including:</p>
 <ul>
 <li>📦 Package installation</li>
@@ -2820,7 +2820,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="retrieve-collections">Retrieve collections<a class="anchor-link" href="#retrieve-collections">¶</a></h3>
+<h3 id="retrieve-collections">Retrieve collections<a class="anchor-link" href="#retrieve-collections">¶</a></h3><p>Get all STAC collections from <a href="https://planetarycomputer.microsoft.com/catalog">Microsoft Planetary Computer</a>.</p>
 </div>
 </div>
 </div>
@@ -2914,11 +2914,11 @@ m</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">bbox</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">user_roi_bounds</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">bbox</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">117.6021</span><span class="p">,</span> <span class="mf">47.6502</span><span class="p">,</span> <span class="o">-</span><span class="mf">117.5824</span><span class="p">,</span> <span class="mf">47.6559</span><span class="p">]</span>  <span class="c1"># Baltimore area</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">117.6021</span><span class="p">,</span> <span class="mf">47.6502</span><span class="p">,</span> <span class="o">-</span><span class="mf">117.5824</span><span class="p">,</span> <span class="mf">47.6559</span><span class="p">]</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-5">bbox = m.user_roi_bounds()
 if bbox is None:
-    bbox = [-117.6021, 47.6502, -117.5824, 47.6559]  # Baltimore area</div>
+    bbox = [-117.6021, 47.6502, -117.5824, 47.6559]</div>
 </div>
 </div>
 </div>
@@ -3608,7 +3608,7 @@ print(stats)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="data-visualization">🖼️ Data Visualization<a class="anchor-link" href="#data-visualization">¶</a></h2><h3 id="download-sample-datasets">Download sample datasets<a class="anchor-link" href="#download-sample-datasets">¶</a></h3>
+<h2 id="data-visualization">🖼️ Data Visualization<a class="anchor-link" href="#data-visualization">¶</a></h2><h3 id="download-sample-datasets-from-hugging-face">Download sample datasets from <a href="https://huggingface.co/datasets/giswqs/geospatial/tree/main">Hugging Face</a><a class="anchor-link" href="#download-sample-datasets-from-hugging-face">¶</a></h3>
 </div>
 </div>
 </div>
@@ -4452,7 +4452,8 @@ props_gdf.head()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="real-world-applications">🌐 Real-world applications<a class="anchor-link" href="#real-world-applications">¶</a></h2><h3 id="building-footprint-extraction">Building footprint extraction<a class="anchor-link" href="#building-footprint-extraction">¶</a></h3>
+<h2 id="real-world-applications">🌐 Real-world applications<a class="anchor-link" href="#real-world-applications">¶</a></h2><p>The section demonstrates how to apply <a href="https://huggingface.co/giswqs/geoai/tree/main">pre-trained models</a> to real-world scenarios.</p>
+<h3 id="building-footprint-extraction">Building footprint extraction<a class="anchor-link" href="#building-footprint-extraction">¶</a></h3>
 </div>
 </div>
 </div>
@@ -5677,7 +5678,7 @@ gdf = geoai.add_geometric_properties(gdf)</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 12, 2025 04:50:32"><span class="timeago" datetime="2025-04-12T04:50:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 12, 2025 04:50:32">2025-04-12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 12, 2025 12:43:01"><span class="timeago" datetime="2025-04-12T12:43:01+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 12, 2025 12:43:01">2025-04-12</span>
   </span>
 
     
