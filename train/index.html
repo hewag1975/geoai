@@ -4004,10 +4004,7 @@ auto-detected from the first image.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 856</span>
-<span class="normal"> 857</span>
-<span class="normal"> 858</span>
-<span class="normal"> 859</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 859</span>
 <span class="normal"> 860</span>
 <span class="normal"> 861</span>
 <span class="normal"> 862</span>
@@ -4227,7 +4224,10 @@ auto-detected from the first image.</p>
 <span class="normal">1076</span>
 <span class="normal">1077</span>
 <span class="normal">1078</span>
-<span class="normal">1079</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">inference_on_geotiff</span><span class="p">(</span>
+<span class="normal">1079</span>
+<span class="normal">1080</span>
+<span class="normal">1081</span>
+<span class="normal">1082</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">inference_on_geotiff</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span>
     <span class="n">geotiff_path</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">,</span>
@@ -4461,7 +4461,7 @@ auto-detected from the first image.</p>
 
 
 <h2 id="geoai.train.object_detection" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">object_detection</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">object_detection</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#geoai.train.object_detection" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -4612,6 +4612,22 @@ auto-detected from the first image.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>model</code>
+            </td>
+            <td>
+                  <code><span title="torch.nn.Module">Module</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Predefined model. If None, a new model is created.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>pretrained</code>
             </td>
             <td>
@@ -4685,10 +4701,7 @@ auto-detected from the first image.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1082</span>
-<span class="normal">1083</span>
-<span class="normal">1084</span>
-<span class="normal">1085</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1085</span>
 <span class="normal">1086</span>
 <span class="normal">1087</span>
 <span class="normal">1088</span>
@@ -4747,7 +4760,13 @@ auto-detected from the first image.</p>
 <span class="normal">1141</span>
 <span class="normal">1142</span>
 <span class="normal">1143</span>
-<span class="normal">1144</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">object_detection</span><span class="p">(</span>
+<span class="normal">1144</span>
+<span class="normal">1145</span>
+<span class="normal">1146</span>
+<span class="normal">1147</span>
+<span class="normal">1148</span>
+<span class="normal">1149</span>
+<span class="normal">1150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">object_detection</span><span class="p">(</span>
     <span class="n">input_path</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">,</span>
@@ -4756,6 +4775,7 @@ auto-detected from the first image.</p>
     <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
     <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
@@ -4772,6 +4792,7 @@ auto-detected from the first image.</p>
 <span class="sd">        confidence_threshold (float): Confidence threshold for predictions (0-1).</span>
 <span class="sd">        batch_size (int): Batch size for inference.</span>
 <span class="sd">        num_channels (int): Number of channels in the input image and model.</span>
+<span class="sd">        model (torch.nn.Module, optional): Predefined model. If None, a new model is created.</span>
 <span class="sd">        pretrained (bool): Whether to use pretrained backbone for model loading.</span>
 <span class="sd">        device (torch.device, optional): Device to run inference on. If None, uses CUDA if available.</span>
 <span class="sd">        **kwargs: Additional arguments passed to inference_on_geotiff.</span>
@@ -4784,9 +4805,10 @@ auto-detected from the first image.</p>
         <span class="n">device</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
         <span class="p">)</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">get_instance_segmentation_model</span><span class="p">(</span>
-        <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="n">num_channels</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span>
-    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">get_instance_segmentation_model</span><span class="p">(</span>
+            <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="n">num_channels</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span>
+        <span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
@@ -4820,7 +4842,7 @@ auto-detected from the first image.</p>
 
 
 <h2 id="geoai.train.object_detection_batch" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">object_detection_batch</span><span class="p">(</span><span class="n">input_paths</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">object_detection_batch</span><span class="p">(</span><span class="n">input_paths</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#geoai.train.object_detection_batch" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -4990,6 +5012,22 @@ If provided, must match the number of input files.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>model</code>
+            </td>
+            <td>
+                  <code><span title="torch.nn.Module">Module</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Predefined model. If None, a new model is created.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>pretrained</code>
             </td>
             <td>
@@ -5063,13 +5101,7 @@ If provided, must match the number of input files.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1147</span>
-<span class="normal">1148</span>
-<span class="normal">1149</span>
-<span class="normal">1150</span>
-<span class="normal">1151</span>
-<span class="normal">1152</span>
-<span class="normal">1153</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1153</span>
 <span class="normal">1154</span>
 <span class="normal">1155</span>
 <span class="normal">1156</span>
@@ -5150,7 +5182,16 @@ If provided, must match the number of input files.</p>
 <span class="normal">1231</span>
 <span class="normal">1232</span>
 <span class="normal">1233</span>
-<span class="normal">1234</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">object_detection_batch</span><span class="p">(</span>
+<span class="normal">1234</span>
+<span class="normal">1235</span>
+<span class="normal">1236</span>
+<span class="normal">1237</span>
+<span class="normal">1238</span>
+<span class="normal">1239</span>
+<span class="normal">1240</span>
+<span class="normal">1241</span>
+<span class="normal">1242</span>
+<span class="normal">1243</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">object_detection_batch</span><span class="p">(</span>
     <span class="n">input_paths</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">,</span>
@@ -5159,6 +5200,7 @@ If provided, must match the number of input files.</p>
     <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
     <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -5180,6 +5222,7 @@ If provided, must match the number of input files.</p>
 <span class="sd">        confidence_threshold (float): Confidence threshold for predictions (0-1).</span>
 <span class="sd">        batch_size (int): Batch size for inference.</span>
 <span class="sd">        num_channels (int): Number of channels in the input image and model.</span>
+<span class="sd">        model (torch.nn.Module, optional): Predefined model. If None, a new model is created.</span>
 <span class="sd">        pretrained (bool): Whether to use pretrained backbone for model loading.</span>
 <span class="sd">        device (torch.device, optional): Device to run inference on. If None, uses CUDA if available.</span>
 <span class="sd">        **kwargs: Additional arguments passed to inference_on_geotiff.</span>
@@ -5192,9 +5235,10 @@ If provided, must match the number of input files.</p>
         <span class="n">device</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
         <span class="p">)</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">get_instance_segmentation_model</span><span class="p">(</span>
-        <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="n">num_channels</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span>
-    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">get_instance_segmentation_model</span><span class="p">(</span>
+            <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="n">num_channels</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span>
+        <span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -5248,7 +5292,7 @@ If provided, must match the number of input files.</p>
 
 
 <h2 id="geoai.train.train_MaskRCNN_model" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">train_MaskRCNN_model</span><span class="p">(</span><span class="n">images_dir</span><span class="p">,</span> <span class="n">labels_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pretrained_model_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">visualize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resume_training</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">print_freq</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">train_MaskRCNN_model</span><span class="p">(</span><span class="n">images_dir</span><span class="p">,</span> <span class="n">labels_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pretrained_model_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">visualize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resume_training</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">print_freq</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 <a href="#geoai.train.train_MaskRCNN_model" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -5335,6 +5379,22 @@ Defaults to 3.</p>
             </td>
             <td>
                   <code>3</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>model</code>
+            </td>
+            <td>
+                  <code><span title="torch.nn.Module">Module</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Predefined model. If None, a new model is created.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -5835,11 +5895,15 @@ will try to load optimizer and scheduler states as well. Defaults to False.</p>
 <span class="normal">850</span>
 <span class="normal">851</span>
 <span class="normal">852</span>
-<span class="normal">853</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_MaskRCNN_model</span><span class="p">(</span>
+<span class="normal">853</span>
+<span class="normal">854</span>
+<span class="normal">855</span>
+<span class="normal">856</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_MaskRCNN_model</span><span class="p">(</span>
     <span class="n">images_dir</span><span class="p">,</span>
     <span class="n">labels_dir</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">,</span>
     <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">pretrained_model_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
@@ -5864,6 +5928,7 @@ will try to load optimizer and scheduler states as well. Defaults to False.</p>
 <span class="sd">        output_dir (str): Directory to save model checkpoints and results.</span>
 <span class="sd">        num_channels (int, optional): Number of input channels. If None, auto-detected.</span>
 <span class="sd">            Defaults to 3.</span>
+<span class="sd">        model (torch.nn.Module, optional): Predefined model. If None, a new model is created.</span>
 <span class="sd">        pretrained (bool): Whether to use pretrained backbone. This is ignored if</span>
 <span class="sd">            pretrained_model_path is provided. Defaults to True.</span>
 <span class="sd">        pretrained_model_path (str, optional): Path to a .pth file to load as a</span>
@@ -5971,9 +6036,10 @@ will try to load optimizer and scheduler states as well. Defaults to False.</p>
     <span class="p">)</span>
 
     <span class="c1"># Initialize model (2 classes: background and building)</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">get_instance_segmentation_model</span><span class="p">(</span>
-        <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="n">num_channels</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span>
-    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">get_instance_segmentation_model</span><span class="p">(</span>
+            <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="n">num_channels</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span>
+        <span class="p">)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
     <span class="c1"># Set up optimizer</span>
