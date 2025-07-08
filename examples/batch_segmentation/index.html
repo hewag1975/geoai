@@ -12,24 +12,28 @@
         <meta name="author" content="opengeos">
       
       
-        <link rel="canonical" href="https://opengeoai.org/examples/samgeo/swimming_pools/">
+        <link rel="canonical" href="https://opengeoai.org/examples/batch_segmentation/">
       
       
+        <link rel="prev" href="../water_detection/">
       
       
-      <link rel="icon" href="../../../assets/logo.ico">
+        <link rel="next" href="../dataviz/raster_viz/">
+      
+      
+      <link rel="icon" href="../../assets/logo.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Swimming pools - geoai</title>
+        <title>Batch segmentation - geoai</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,11 +52,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mapping-swimming-pools-with-text-prompts" class="md-skip">
+        <a href="#batch-segmentation" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +98,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="geoai" class="md-header__button md-logo" aria-label="geoai" data-md-component="logo">
+    <a href="../.." title="geoai" class="md-header__button md-logo" aria-label="geoai" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Swimming pools
+              Batch segmentation
             
           </span>
         </div>
@@ -234,9 +238,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="geoai" class="md-nav__button md-logo" aria-label="geoai" data-md-component="logo">
+    <a href="../.." title="geoai" class="md-nav__button md-logo" aria-label="geoai" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     geoai
@@ -263,7 +267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -285,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -307,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../usage/" class="md-nav__link">
+      <a href="../../usage/" class="md-nav__link">
         
   
   
@@ -329,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../../contributing/" class="md-nav__link">
         
   
   
@@ -351,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   
@@ -414,18 +418,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -441,7 +447,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -455,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_data/" class="md-nav__link">
+      <a href="../download_data/" class="md-nav__link">
         
   
   
@@ -478,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_sentinel2/" class="md-nav__link">
+      <a href="../download_sentinel2/" class="md-nav__link">
         
   
   
@@ -501,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_naip/" class="md-nav__link">
+      <a href="../download_naip/" class="md-nav__link">
         
   
   
@@ -524,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planetary_computer/" class="md-nav__link">
+      <a href="../planetary_computer/" class="md-nav__link">
         
   
   
@@ -547,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../view_metadata/" class="md-nav__link">
+      <a href="../view_metadata/" class="md-nav__link">
         
   
   
@@ -570,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../create_vector/" class="md-nav__link">
+      <a href="../create_vector/" class="md-nav__link">
         
   
   
@@ -593,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../edit_vector/" class="md-nav__link">
+      <a href="../edit_vector/" class="md-nav__link">
         
   
   
@@ -616,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../image_chips/" class="md-nav__link">
+      <a href="../image_chips/" class="md-nav__link">
         
   
   
@@ -639,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_usa/" class="md-nav__link">
+      <a href="../building_footprints_usa/" class="md-nav__link">
         
   
   
@@ -662,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_africa/" class="md-nav__link">
+      <a href="../building_footprints_africa/" class="md-nav__link">
         
   
   
@@ -685,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_china/" class="md-nav__link">
+      <a href="../building_footprints_china/" class="md-nav__link">
         
   
   
@@ -708,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_regularization/" class="md-nav__link">
+      <a href="../building_regularization/" class="md-nav__link">
         
   
   
@@ -731,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../geometric_properties/" class="md-nav__link">
+      <a href="../geometric_properties/" class="md-nav__link">
         
   
   
@@ -754,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../car_detection/" class="md-nav__link">
+      <a href="../car_detection/" class="md-nav__link">
         
   
   
@@ -777,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ship_detection/" class="md-nav__link">
+      <a href="../ship_detection/" class="md-nav__link">
         
   
   
@@ -800,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../solar_panel_detection/" class="md-nav__link">
+      <a href="../solar_panel_detection/" class="md-nav__link">
         
   
   
@@ -823,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../text_prompt_segmentation/" class="md-nav__link">
+      <a href="../text_prompt_segmentation/" class="md-nav__link">
         
   
   
@@ -846,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parking_spot_detection/" class="md-nav__link">
+      <a href="../parking_spot_detection/" class="md-nav__link">
         
   
   
@@ -869,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_visualization/" class="md-nav__link">
+      <a href="../data_visualization/" class="md-nav__link">
         
   
   
@@ -892,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_object_detection_model/" class="md-nav__link">
+      <a href="../train_object_detection_model/" class="md-nav__link">
         
   
   
@@ -915,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_segmentation_model/" class="md-nav__link">
+      <a href="../train_segmentation_model/" class="md-nav__link">
         
   
   
@@ -938,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_landcover_classification/" class="md-nav__link">
+      <a href="../train_landcover_classification/" class="md-nav__link">
         
   
   
@@ -961,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_building_footprints_usa/" class="md-nav__link">
+      <a href="../train_building_footprints_usa/" class="md-nav__link">
         
   
   
@@ -984,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_solar_panel_detection/" class="md-nav__link">
+      <a href="../train_solar_panel_detection/" class="md-nav__link">
         
   
   
@@ -1007,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_car_detection/" class="md-nav__link">
+      <a href="../train_car_detection/" class="md-nav__link">
         
   
   
@@ -1030,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_ship_detection/" class="md-nav__link">
+      <a href="../train_ship_detection/" class="md-nav__link">
         
   
   
@@ -1053,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_water_detection/" class="md-nav__link">
+      <a href="../train_water_detection/" class="md-nav__link">
         
   
   
@@ -1076,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_dynamics/" class="md-nav__link">
+      <a href="../water_dynamics/" class="md-nav__link">
         
   
   
@@ -1099,7 +1105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wetland_mapping/" class="md-nav__link">
+      <a href="../wetland_mapping/" class="md-nav__link">
         
   
   
@@ -1122,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -1145,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../globe_projection/" class="md-nav__link">
+      <a href="../globe_projection/" class="md-nav__link">
         
   
   
@@ -1168,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../samgeo/" class="md-nav__link">
         
   
   
@@ -1191,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grounded_sam/" class="md-nav__link">
+      <a href="../grounded_sam/" class="md-nav__link">
         
   
   
@@ -1214,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../load_model_checkpoint/" class="md-nav__link">
+      <a href="../load_model_checkpoint/" class="md-nav__link">
         
   
   
@@ -1237,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_detection/" class="md-nav__link">
+      <a href="../water_detection/" class="md-nav__link">
         
   
   
@@ -1257,10 +1263,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../batch_segmentation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Batch segmentation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1271,6 +1299,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download sample data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train-semantic-segmentation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Train semantic segmentation model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate the model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-inference-on-a-single-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run inference on a single image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-inference-on-multiple-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run inference on multiple images
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1283,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dataviz/raster_viz/" class="md-nav__link">
+      <a href="../dataviz/raster_viz/" class="md-nav__link">
         
   
   
@@ -1306,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dataviz/vector_viz/" class="md-nav__link">
+      <a href="../dataviz/vector_viz/" class="md-nav__link">
         
   
   
@@ -1329,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dataviz/lidar_viz/" class="md-nav__link">
+      <a href="../dataviz/lidar_viz/" class="md-nav__link">
         
   
   
@@ -1397,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshops/GeoAI_Workshop_2025/" class="md-nav__link">
+      <a href="../../workshops/GeoAI_Workshop_2025/" class="md-nav__link">
         
   
   
@@ -1465,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../classify/" class="md-nav__link">
+      <a href="../../classify/" class="md-nav__link">
         
   
   
@@ -1488,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../geoai/" class="md-nav__link">
+      <a href="../../geoai/" class="md-nav__link">
         
   
   
@@ -1511,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/" class="md-nav__link">
+      <a href="../../download/" class="md-nav__link">
         
   
   
@@ -1534,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../extract/" class="md-nav__link">
+      <a href="../../extract/" class="md-nav__link">
         
   
   
@@ -1557,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hf/" class="md-nav__link">
+      <a href="../../hf/" class="md-nav__link">
         
   
   
@@ -1580,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sam/" class="md-nav__link">
+      <a href="../../sam/" class="md-nav__link">
         
   
   
@@ -1603,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../segmentation/" class="md-nav__link">
+      <a href="../../segmentation/" class="md-nav__link">
         
   
   
@@ -1626,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../train/" class="md-nav__link">
+      <a href="../../train/" class="md-nav__link">
         
   
   
@@ -1649,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../utils/" class="md-nav__link">
+      <a href="../../utils/" class="md-nav__link">
         
   
   
@@ -1699,72 +1810,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-dependencies" class="md-nav__link">
+  <a href="#install-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      Install dependencies
+      Install packages
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-interactive-map" class="md-nav__link">
+  <a href="#import-libraries" class="md-nav__link">
     <span class="md-ellipsis">
-      Create an interactive map
+      Import libraries
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-a-sample-image" class="md-nav__link">
+  <a href="#download-sample-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Download a sample image
+      Download sample data
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-langsam-class" class="md-nav__link">
+  <a href="#train-semantic-segmentation-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Initialize LangSAM class
+      Train semantic segmentation model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#specify-text-prompts" class="md-nav__link">
+  <a href="#evaluate-the-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Specify text prompts
+      Evaluate the model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#segment-the-image" class="md-nav__link">
+  <a href="#run-inference-on-a-single-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Segment the image
+      Run inference on a single image
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-the-results" class="md-nav__link">
+  <a href="#run-inference-on-multiple-images" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualize the results
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactive-segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interactive segmentation
+      Run inference on multiple images
     </span>
   </a>
   
@@ -1783,7 +1885,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/examples/samgeo/swimming_pools/swimming_pools.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/examples/batch_segmentation/batch_segmentation.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -2238,22 +2340,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="mapping-swimming-pools-with-text-prompts">Mapping swimming pools with text prompts<a class="anchor-link" href="#mapping-swimming-pools-with-text-prompts">¶</a></h1><p><a href="https://studiolab.sagemaker.aws/import/github/opengeos/segment-geospatial/blob/main/docs/examples/swimming_pools.ipynb"><img alt="image" src="https://studiolab.sagemaker.aws/studiolab.svg"/></a>
-<a href="https://pccompute.westeurope.cloudapp.azure.com/compute/hub/user-redirect/git-pull?repo=https://github.com/opengeos/segment-geospatial&amp;urlpath=lab/tree/segment-geospatial/docs/examples/swimming_pools.ipynb&amp;branch=main"><img alt="image" src="https://img.shields.io/badge/Open-Planetary%20Computer-black?style=flat&amp;logo=microsoft"/></a>
-<a href="https://colab.research.google.com/github/opengeos/segment-geospatial/blob/main/docs/examples/swimming_pools.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p>This notebook shows how to map swimming pools with text prompts and the Segment Anything Model (SAM).</p>
-<p>Make sure you use GPU runtime for this notebook. For Google Colab, go to <code>Runtime</code> -&gt; <code>Change runtime type</code> and select <code>GPU</code> as the hardware accelerator.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="install-dependencies">Install dependencies<a class="anchor-link" href="#install-dependencies">¶</a></h2><p>Uncomment and run the following cell to install the required dependencies.</p>
+<h1 id="batch-segmentation">Batch Segmentation<a class="anchor-link" href="#batch-segmentation">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/batch_segmentation.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>This notebook demonstrates how to train semantic segmentation models and run batch segmentation.</p>
+<h2 id="install-packages">Install packages<a class="anchor-link" href="#install-packages">¶</a></h2><p>To use the new functionality, ensure the required packages are installed.</p>
 </div>
 </div>
 </div>
@@ -2276,11 +2365,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install segment-geospatial groundingdino-py leafmap localtileserver</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install geoai-py</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># %pip install segment-geospatial groundingdino-py leafmap localtileserver</div>
+<div class="clipboard-copy-txt" id="cell-1"># %pip install geoai-py</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="import-libraries">Import libraries<a class="anchor-link" href="#import-libraries">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2303,13 +2403,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">leafmap</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">samgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">tms_to_geotiff</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">samgeo.text_sam</span><span class="w"> </span><span class="kn">import</span> <span class="n">LangSAM</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import leafmap
-from samgeo import tms_to_geotiff
-from samgeo.text_sam import LangSAM</div>
+<div class="clipboard-copy-txt" id="cell-2">import geoai</div>
 </div>
 </div>
 </div>
@@ -2322,7 +2418,7 @@ from samgeo.text_sam import LangSAM</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="create-an-interactive-map">Create an interactive map<a class="anchor-link" href="#create-an-interactive-map">¶</a></h2>
+<h2 id="download-sample-data">Download sample data<a class="anchor-link" href="#download-sample-data">¶</a></h2><p>We'll use the <a href="https://www.kaggle.com/datasets/franciscoescobar/satellite-images-of-water-bodies">waterbody dataset</a> from Kaggle. You will need to create an account and download the dataset. I have already downloaded the dataset and saved a copy on Hugging Face. Let's download the dataset:</p>
 </div>
 </div>
 </div>
@@ -2345,26 +2441,11 @@ from samgeo.text_sam import LangSAM</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mf">34.040984</span><span class="p">,</span> <span class="o">-</span><span class="mf">118.491668</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">"600px"</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="s2">"SATELLITE"</span><span class="p">)</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/waterbody-dataset.zip"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">m = leafmap.Map(center=[34.040984, -118.491668], zoom=19, height="600px")
-m.add_basemap("SATELLITE")
-m</div>
+<div class="clipboard-copy-txt" id="cell-3">url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/waterbody-dataset.zip"</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-a-sample-image">Download a sample image<a class="anchor-link" href="#download-a-sample-image">¶</a></h2><p>Pan and zoom the map to select the area of interest. Use the draw tools to draw a polygon or rectangle on the map</p>
 </div>
 </div>
 </div>
@@ -2387,15 +2468,28 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">bbox</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">user_roi_bounds</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">bbox</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">118.4932</span><span class="p">,</span> <span class="mf">34.0404</span><span class="p">,</span> <span class="o">-</span><span class="mf">118.4903</span><span class="p">,</span> <span class="mf">34.0417</span><span class="p">]</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">out_folder</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">bbox = m.user_roi_bounds()
-if bbox is None:
-    bbox = [-118.4932, 34.0404, -118.4903, 34.0417]</div>
+<div class="clipboard-copy-txt" id="cell-4">out_folder = geoai.download_file(url)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="train-semantic-segmentation-model">Train semantic segmentation model<a class="anchor-link" href="#train-semantic-segmentation-model">¶</a></h2><p>Now we'll train a semantic segmentation model using the new <code>train_segmentation_model</code> function. This function supports various architectures from <code>segmentation-models-pytorch</code>:</p>
+<ul>
+<li><strong>Architectures</strong>: <code>unet</code>, <code>unetplusplus</code> <code>deeplabv3</code>, <code>deeplabv3plus</code>, <code>fpn</code>, <code>pspnet</code>, <code>linknet</code>, <code>manet</code></li>
+<li><strong>Encoders</strong>: <code>resnet34</code>, <code>resnet50</code>, <code>efficientnet-b0</code>, <code>mobilenet_v2</code>, etc.</li>
+</ul>
+<p>For more details, please refer to the <a href="https://smp.readthedocs.io/en/latest/models.html">segmentation-models-pytorch documentation</a>.</p>
+<p>Let's train the module using U-Net with ResNet34 encoder:</p>
 </div>
 </div>
 </div>
@@ -2418,11 +2512,39 @@ if bbox is None:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="s2">"Image.tif"</span>
-<span class="n">tms_to_geotiff</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">"Satellite"</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Test train_segmentation_model with automatic size detection</span>
+<span class="n">geoai</span><span class="o">.</span><span class="n">train_segmentation_model</span><span class="p">(</span>
+    <span class="n">images_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
+    <span class="n">labels_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/masks"</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/unet_models"</span><span class="p">,</span>
+    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
+    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
+    <span class="n">encoder_weights</span><span class="o">=</span><span class="s2">"imagenet"</span><span class="p">,</span>
+    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># background and water</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">image = "Image.tif"
-tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=True)</div>
+<div class="clipboard-copy-txt" id="cell-5"># Test train_segmentation_model with automatic size detection
+geoai.train_segmentation_model(
+    images_dir=f"{out_folder}/images",
+    labels_dir=f"{out_folder}/masks",
+    output_dir=f"{out_folder}/unet_models",
+    architecture="unet",
+    encoder_name="resnet34",
+    encoder_weights="imagenet",
+    num_channels=3,
+    num_classes=2,  # background and water
+    batch_size=8,
+    num_epochs=30,
+    learning_rate=0.001,
+    val_split=0.2,
+    verbose=True,
+)</div>
 </div>
 </div>
 </div>
@@ -2435,7 +2557,7 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>You can also use your own image. Uncomment and run the following cell to use your own image.</p>
+<h2 id="evaluate-the-model">Evaluate the model<a class="anchor-link" href="#evaluate-the-model">¶</a></h2><p>Let's examine the training curves and model performance:</p>
 </div>
 </div>
 </div>
@@ -2458,9 +2580,17 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># image = '/path/to/your/own/image.tif'</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">plot_performance_metrics</span><span class="p">(</span>
+    <span class="n">history_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/unet_models/training_history.pth"</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6"># image = '/path/to/your/own/image.tif'</div>
+<div class="clipboard-copy-txt" id="cell-6">geoai.plot_performance_metrics(
+    history_path=f"{out_folder}/unet_models/training_history.pth",
+    figsize=(15, 5),
+    verbose=True,
+)</div>
 </div>
 </div>
 </div>
@@ -2473,7 +2603,18 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Display the downloaded image on the map.</p>
+<p><img alt="image" src="https://github.com/user-attachments/assets/381ce436-3520-4706-9def-b0a7ae8244ac"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="run-inference-on-a-single-image">Run inference on a single image<a class="anchor-link" href="#run-inference-on-a-single-image">¶</a></h2><p>You can run inference on a new image using the <code>semantic_segmentation</code> function. I don't have a new image to test on, so I'll use one of the training images. In reality, you would use your own images not used in training.</p>
 </div>
 </div>
 </div>
@@ -2496,26 +2637,19 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Image"</span><span class="p">)</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">test_image_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/images/water_body_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.jpg"</span>
+<span class="n">ground_truth_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/masks/water_body_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.jpg"</span>
+<span class="n">prediction_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/prediction/water_body_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.png"</span>  <span class="c1"># save as png to preserve exact values and avoid compression artifacts</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/unet_models/best_model.pth"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">m.layers[-1].visible = False
-m.add_raster(image, layer_name="Image")
-m</div>
+<div class="clipboard-copy-txt" id="cell-7">index = 3
+test_image_path = f"{out_folder}/images/water_body_{index}.jpg"
+ground_truth_path = f"{out_folder}/masks/water_body_{index}.jpg"
+prediction_path = f"{out_folder}/prediction/water_body_{index}.png"  # save as png to preserve exact values and avoid compression artifacts
+model_path = f"{out_folder}/unet_models/best_model.pth"</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="initialize-langsam-class">Initialize LangSAM class<a class="anchor-link" href="#initialize-langsam-class">¶</a></h2><p>The initialization of the LangSAM class might take a few minutes. The initialization downloads the model weights and sets up the model for inference.</p>
 </div>
 </div>
 </div>
@@ -2538,22 +2672,35 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span> <span class="o">=</span> <span class="n">LangSAM</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run semantic segmentation inference</span>
+<span class="n">geoai</span><span class="o">.</span><span class="n">semantic_segmentation</span><span class="p">(</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="n">test_image_path</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="n">prediction_path</span><span class="p">,</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
+    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
+    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
+    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">sam = LangSAM()</div>
+<div class="clipboard-copy-txt" id="cell-8"># Run semantic segmentation inference
+geoai.semantic_segmentation(
+    input_path=test_image_path,
+    output_path=prediction_path,
+    model_path=model_path,
+    architecture="unet",
+    encoder_name="resnet34",
+    num_channels=3,
+    num_classes=2,
+    window_size=512,
+    overlap=256,
+    batch_size=4,
+)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="specify-text-prompts">Specify text prompts<a class="anchor-link" href="#specify-text-prompts">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2576,9 +2723,25 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">text_prompt</span> <span class="o">=</span> <span class="s2">"swimming pool"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">plot_prediction_comparison</span><span class="p">(</span>
+    <span class="n">original_image</span><span class="o">=</span><span class="n">test_image_path</span><span class="p">,</span>
+    <span class="n">prediction_image</span><span class="o">=</span><span class="n">prediction_path</span><span class="p">,</span>
+    <span class="n">ground_truth_image</span><span class="o">=</span><span class="n">ground_truth_path</span><span class="p">,</span>
+    <span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s2">"Original"</span><span class="p">,</span> <span class="s2">"Prediction"</span><span class="p">,</span> <span class="s2">"Ground Truth"</span><span class="p">],</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">save_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/prediction/water_body_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">_comparison.png"</span><span class="p">,</span>
+    <span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">text_prompt = "swimming pool"</div>
+<div class="clipboard-copy-txt" id="cell-9">fig = geoai.plot_prediction_comparison(
+    original_image=test_image_path,
+    prediction_image=prediction_path,
+    ground_truth_image=ground_truth_path,
+    titles=["Original", "Prediction", "Ground Truth"],
+    figsize=(15, 5),
+    save_path=f"{out_folder}/prediction/water_body_{index}_comparison.png",
+    show_plot=True,
+)</div>
 </div>
 </div>
 </div>
@@ -2591,10 +2754,18 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="segment-the-image">Segment the image<a class="anchor-link" href="#segment-the-image">¶</a></h2><p>Part of the model prediction includes setting appropriate thresholds for object detection and text association with the detected objects. These threshold values range from 0 to 1 and are set while calling the predict method of the LangSAM class.</p>
-<p><code>box_threshold</code>: This value is used for object detection in the image. A higher value makes the model more selective, identifying only the most confident object instances, leading to fewer overall detections. A lower value, conversely, makes the model more tolerant, leading to increased detections, including potentially less confident ones.</p>
-<p><code>text_threshold</code>: This value is used to associate the detected objects with the provided text prompt. A higher value requires a stronger association between the object and the text prompt, leading to more precise but potentially fewer associations. A lower value allows for looser associations, which could increase the number of associations but also introduce less precise matches.</p>
-<p>Remember to test different threshold values on your specific data. The optimal threshold can vary depending on the quality and nature of your images, as well as the specificity of your text prompts. Make sure to choose a balance that suits your requirements, whether that's precision or recall.</p>
+<p><img alt="image" src="https://github.com/user-attachments/assets/00308228-0819-4161-9a35-6a98f4cefa93"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="run-inference-on-multiple-images">Run inference on multiple images<a class="anchor-link" href="#run-inference-on-multiple-images">¶</a></h2><p>First, let's download the test images and masks.</p>
 </div>
 </div>
 </div>
@@ -2617,22 +2788,11 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">text_prompt</span><span class="p">,</span> <span class="n">box_threshold</span><span class="o">=</span><span class="mf">0.24</span><span class="p">,</span> <span class="n">text_threshold</span><span class="o">=</span><span class="mf">0.24</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/waterbody-dataset-sample.zip"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">sam.predict(image, text_prompt, box_threshold=0.24, text_threshold=0.24)</div>
+<div class="clipboard-copy-txt" id="cell-10">url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/waterbody-dataset-sample.zip"</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-the-results">Visualize the results<a class="anchor-link" href="#visualize-the-results">¶</a></h2><p>Show the result with bounding boxes on the map.</p>
 </div>
 </div>
 </div>
@@ -2655,43 +2815,17 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_anns</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">box_color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Automatic Segmentation of Swimming Pools"</span><span class="p">,</span>
-    <span class="n">blend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">images_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span>
+<span class="n">masks_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks"</span>
+<span class="n">predictions_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/predictions"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">sam.show_anns(
-    cmap="Blues",
-    box_color="red",
-    title="Automatic Segmentation of Swimming Pools",
-    blend=True,
-)</div>
+<div class="clipboard-copy-txt" id="cell-11">data_dir = geoai.download_file(url)
+images_dir = f"{data_dir}/images"
+masks_dir = f"{data_dir}/masks"
+predictions_dir = f"{data_dir}/predictions"</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/aXbxCFt.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Show the result without bounding boxes on the map.</p>
 </div>
 </div>
 </div>
@@ -2714,247 +2848,35 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_anns</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span>
-    <span class="n">add_boxes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Automatic Segmentation of Swimming Pools"</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">semantic_segmentation_batch</span><span class="p">(</span>
+    <span class="n">input_dir</span><span class="o">=</span><span class="n">images_dir</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">predictions_dir</span><span class="p">,</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
+    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
+    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
+    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">sam.show_anns(
-    cmap="Blues",
-    add_boxes=False,
-    alpha=0.5,
-    title="Automatic Segmentation of Swimming Pools",
+<div class="clipboard-copy-txt" id="cell-12">geoai.semantic_segmentation_batch(
+    input_dir=images_dir,
+    output_dir=predictions_dir,
+    model_path=model_path,
+    architecture="unet",
+    encoder_name="resnet34",
+    num_channels=3,
+    num_classes=2,
+    window_size=512,
+    overlap=256,
+    batch_size=4,
+    quiet=True,
 )</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/9wOkCHC.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Show the result as a grayscale image.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_anns</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Greys_r"</span><span class="p">,</span>
-    <span class="n">add_boxes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Automatic Segmentation of Swimming Pools"</span><span class="p">,</span>
-    <span class="n">blend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">output</span><span class="o">=</span><span class="s2">"pools.tif"</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-13">sam.show_anns(
-    cmap="Greys_r",
-    add_boxes=False,
-    alpha=1,
-    title="Automatic Segmentation of Swimming Pools",
-    blend=False,
-    output="pools.tif",
-)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/lbNtUou.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Convert the result to a vector format.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">raster_to_vector</span><span class="p">(</span><span class="s2">"pools.tif"</span><span class="p">,</span> <span class="s2">"pools.shp"</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-14">sam.raster_to_vector("pools.tif", "pools.shp")</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Show the results on the interactive map.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span><span class="s2">"pools.tif"</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Pools"</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">style</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#3388ff"</span><span class="p">,</span>
-    <span class="s2">"weight"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">"fillColor"</span><span class="p">:</span> <span class="s2">"#7c4185"</span><span class="p">,</span>
-    <span class="s2">"fillOpacity"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_vector</span><span class="p">(</span><span class="s2">"pools.shp"</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Vector"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
-<span class="n">m</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-15">m.add_raster("pools.tif", layer_name="Pools", palette="Blues", opacity=0.5, nodata=0)
-style = {
-    "color": "#3388ff",
-    "weight": 2,
-    "fillColor": "#7c4185",
-    "fillOpacity": 0.5,
-}
-m.add_vector("pools.shp", layer_name="Vector", style=style)
-m</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/HmFYDAf.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="interactive-segmentation">Interactive segmentation<a class="anchor-link" href="#interactive-segmentation">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_map</span><span class="p">()</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-16">sam.show_map()</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/4Q2qpMA.gif"/></p>
 </div>
 </div>
 </div>
@@ -2988,7 +2910,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 27, 2024 16:50:48 UTC"><span class="timeago" datetime="2024-07-27T16:50:48+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 27, 2024 16:50:48 UTC">2024-07-27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 8, 2025 04:04:39 UTC"><span class="timeago" datetime="2025-07-08T04:04:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 8, 2025 04:04:39 UTC">2025-07-08</span>
   </span>
 
     
@@ -2998,7 +2920,7 @@ m</div>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 11, 2023 23:10:59 UTC"><span class="timeago" datetime="2023-10-11T23:10:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 11, 2023 23:10:59 UTC">2023-10-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 28, 2025 04:38:24 UTC"><span class="timeago" datetime="2025-02-28T04:38:24+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 28, 2025 04:38:24 UTC">2025-02-28</span>
   </span>
 
     
@@ -3057,14 +2979,14 @@ m</div>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
-        <script src="../../../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
     
   </body>
