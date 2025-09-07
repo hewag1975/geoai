@@ -1418,6 +1418,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/JPEG2000/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JPEG2000
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7285,13 +7308,7 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3473</span>
-<span class="normal">3474</span>
-<span class="normal">3475</span>
-<span class="normal">3476</span>
-<span class="normal">3477</span>
-<span class="normal">3478</span>
-<span class="normal">3479</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3479</span>
 <span class="normal">3480</span>
 <span class="normal">3481</span>
 <span class="normal">3482</span>
@@ -7352,7 +7369,13 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 <span class="normal">3537</span>
 <span class="normal">3538</span>
 <span class="normal">3539</span>
-<span class="normal">3540</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation</span><span class="p">(</span>
+<span class="normal">3540</span>
+<span class="normal">3541</span>
+<span class="normal">3542</span>
+<span class="normal">3543</span>
+<span class="normal">3544</span>
+<span class="normal">3545</span>
+<span class="normal">3546</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation</span><span class="p">(</span>
     <span class="n">input_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -7657,13 +7680,7 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3543</span>
-<span class="normal">3544</span>
-<span class="normal">3545</span>
-<span class="normal">3546</span>
-<span class="normal">3547</span>
-<span class="normal">3548</span>
-<span class="normal">3549</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3549</span>
 <span class="normal">3550</span>
 <span class="normal">3551</span>
 <span class="normal">3552</span>
@@ -7756,7 +7773,13 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 <span class="normal">3639</span>
 <span class="normal">3640</span>
 <span class="normal">3641</span>
-<span class="normal">3642</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation_batch</span><span class="p">(</span>
+<span class="normal">3642</span>
+<span class="normal">3643</span>
+<span class="normal">3644</span>
+<span class="normal">3645</span>
+<span class="normal">3646</span>
+<span class="normal">3647</span>
+<span class="normal">3648</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation_batch</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -11481,7 +11504,13 @@ inference method for either GeoTIFF files or regular image formats (JPG, PNG, et
 <span class="normal">3231</span>
 <span class="normal">3232</span>
 <span class="normal">3233</span>
-<span class="normal">3234</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation</span><span class="p">(</span>
+<span class="normal">3234</span>
+<span class="normal">3235</span>
+<span class="normal">3236</span>
+<span class="normal">3237</span>
+<span class="normal">3238</span>
+<span class="normal">3239</span>
+<span class="normal">3240</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation</span><span class="p">(</span>
     <span class="n">input_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -11525,11 +11554,17 @@ inference method for either GeoTIFF files or regular image formats (JPG, PNG, et
 
     <span class="c1"># Detect file format based on extension</span>
     <span class="n">input_ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">input_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="n">is_geotiff</span> <span class="o">=</span> <span class="n">input_ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;.tiff&quot;</span><span class="p">]</span>
+    <span class="n">is_geotiff</span> <span class="o">=</span> <span class="n">input_ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;.tiff&quot;</span><span class="p">,</span> <span class="s2">&quot;.jp2&quot;</span><span class="p">,</span> <span class="s2">&quot;.img&quot;</span><span class="p">]</span>
+    <span class="n">formats</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;.tif&quot;</span><span class="p">:</span> <span class="s2">&quot;GeoTIFF&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.tiff&quot;</span><span class="p">:</span> <span class="s2">&quot;GeoTIFF&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.jp2&quot;</span><span class="p">:</span> <span class="s2">&quot;JP2OpenJPEG&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;.img&quot;</span><span class="p">:</span> <span class="s2">&quot;IMG&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Input file format: </span><span class="si">{</span><span class="s1">&#39;GeoTIFF&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_geotiff</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Regular image&#39;</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">input_ext</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Input file format: </span><span class="si">{</span><span class="n">formats</span><span class="p">[</span><span class="n">input_ext</span><span class="p">]</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_geotiff</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Regular image&#39;</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">input_ext</span><span class="si">}</span><span class="s2">)&quot;</span>
         <span class="p">)</span>
 
     <span class="c1"># Load model</span>
@@ -11917,13 +11952,7 @@ inputs and "png" for other formats. If provided, must match the number of input 
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3237</span>
-<span class="normal">3238</span>
-<span class="normal">3239</span>
-<span class="normal">3240</span>
-<span class="normal">3241</span>
-<span class="normal">3242</span>
-<span class="normal">3243</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3243</span>
 <span class="normal">3244</span>
 <span class="normal">3245</span>
 <span class="normal">3246</span>
@@ -12087,7 +12116,13 @@ inputs and "png" for other formats. If provided, must match the number of input 
 <span class="normal">3404</span>
 <span class="normal">3405</span>
 <span class="normal">3406</span>
-<span class="normal">3407</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation_batch</span><span class="p">(</span>
+<span class="normal">3407</span>
+<span class="normal">3408</span>
+<span class="normal">3409</span>
+<span class="normal">3410</span>
+<span class="normal">3411</span>
+<span class="normal">3412</span>
+<span class="normal">3413</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation_batch</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -13491,13 +13526,7 @@ will try to load optimizer and scheduler states as well. Defaults to False.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3410</span>
-<span class="normal">3411</span>
-<span class="normal">3412</span>
-<span class="normal">3413</span>
-<span class="normal">3414</span>
-<span class="normal">3415</span>
-<span class="normal">3416</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3416</span>
 <span class="normal">3417</span>
 <span class="normal">3418</span>
 <span class="normal">3419</span>
@@ -13551,7 +13580,13 @@ will try to load optimizer and scheduler states as well. Defaults to False.</p>
 <span class="normal">3467</span>
 <span class="normal">3468</span>
 <span class="normal">3469</span>
-<span class="normal">3470</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_instance_segmentation_model</span><span class="p">(</span>
+<span class="normal">3470</span>
+<span class="normal">3471</span>
+<span class="normal">3472</span>
+<span class="normal">3473</span>
+<span class="normal">3474</span>
+<span class="normal">3475</span>
+<span class="normal">3476</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_instance_segmentation_model</span><span class="p">(</span>
     <span class="n">images_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">labels_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
