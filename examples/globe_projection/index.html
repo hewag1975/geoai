@@ -1560,6 +1560,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1818,6 +1841,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../geo_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    geo_agents module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../geoai/" class="md-nav__link">
         
   
@@ -1893,6 +1939,29 @@
   
   <span class="md-ellipsis">
     hf module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    map_tools module
     
   </span>
   
@@ -2674,11 +2743,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_globe_control</span><span class="p">()</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">m = geoai.MapLibre(center=[-100, 40], zoom=3, style="liberty")
+<div class="clipboard-copy-txt" id="cell-3">m = geoai.Map(center=[-100, 40], zoom=3, style="liberty")
 m.add_globe_control()
 m</div>
 </div>
@@ -2727,12 +2796,12 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"positron"</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"positron"</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="s2">"Esri.WorldImagery"</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_overture_3d_buildings</span><span class="p">()</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">m = geoai.MapLibre(center=[-100, 40], zoom=3, style="positron", projection="globe")
+<div class="clipboard-copy-txt" id="cell-4">m = geoai.Map(center=[-100, 40], zoom=3, style="positron", projection="globe")
 m.add_basemap("Esri.WorldImagery")
 m.add_overture_3d_buildings()
 m</div>
@@ -2782,7 +2851,7 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
     <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mf">19.43</span><span class="p">,</span> <span class="mf">49.49</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"positron"</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span>
 <span class="p">)</span>
 <span class="n">source</span> <span class="o">=</span> <span class="p">{</span>
@@ -2825,7 +2894,7 @@ m</div>
 <span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">m = geoai.MapLibre(
+<div class="clipboard-copy-txt" id="cell-5">m = geoai.Map(
     center=[19.43, 49.49], zoom=3, pitch=60, style="positron", projection="globe"
 )
 source = {
@@ -2918,7 +2987,7 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
 <span class="n">first_symbol_id</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">find_first_symbol_layer</span><span class="p">()[</span><span class="s2">"id"</span><span class="p">]</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span>
     <span class="n">data</span><span class="p">,</span>
@@ -2934,7 +3003,7 @@ m</div>
 <span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">m = geoai.MapLibre(style="liberty", projection="globe")
+<div class="clipboard-copy-txt" id="cell-7">m = geoai.Map(style="liberty", projection="globe")
 first_symbol_id = m.find_first_symbol_layer()["id"]
 m.add_data(
     data,
@@ -2995,7 +3064,7 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"liberty"</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
 <span class="n">train_raster_url</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train.tif"</span>
 <span class="p">)</span>
@@ -3006,7 +3075,7 @@ m</div>
 <span class="n">m</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">m = geoai.MapLibre(style="liberty", projection="globe")
+<div class="clipboard-copy-txt" id="cell-8">m = geoai.Map(style="liberty", projection="globe")
 train_raster_url = (
     "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train.tif"
 )
@@ -3080,13 +3149,13 @@ item = "LC08_L2SP_047027_20201204_02_T1"</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_stac_layer</span><span class="p">(</span>
     <span class="n">collection</span><span class="o">=</span><span class="n">collection</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">assets</span><span class="o">=</span><span class="s2">"SR_B7,SR_B5,SR_B4"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"False color"</span>
 <span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">m = geoai.MapLibre(projection="globe")
+<div class="clipboard-copy-txt" id="cell-10">m = geoai.Map(projection="globe")
 m.add_stac_layer(
     collection=collection, item=item, assets="SR_B7,SR_B5,SR_B4", name="False color"
 )
@@ -3115,7 +3184,7 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_stac_layer</span><span class="p">(</span>
     <span class="n">collection</span><span class="o">=</span><span class="n">collection</span><span class="p">,</span>
     <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span>
@@ -3124,7 +3193,7 @@ m</div>
 <span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">m = geoai.MapLibre(projection="globe")
+<div class="clipboard-copy-txt" id="cell-11">m = geoai.Map(projection="globe")
 m.add_stac_layer(
     collection=collection,
     item=item,
@@ -3156,7 +3225,7 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_stac_layer</span><span class="p">(</span>
     <span class="n">collection</span><span class="o">=</span><span class="n">collection</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">assets</span><span class="o">=</span><span class="s2">"SR_B5,SR_B4,SR_B3"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"Color infrared"</span>
 <span class="p">)</span>
@@ -3170,7 +3239,7 @@ m</div>
 <span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">m = geoai.MapLibre(projection="globe")
+<div class="clipboard-copy-txt" id="cell-12">m = geoai.Map(projection="globe")
 m.add_stac_layer(
     collection=collection, item=item, assets="SR_B5,SR_B4,SR_B3", name="Color infrared"
 )
@@ -3218,7 +3287,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 12, 2025 15:44:42 UTC"><span class="timeago" datetime="2025-04-12T15:44:42+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 12, 2025 15:44:42 UTC">2025-04-12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 15, 2025 04:03:33 UTC"><span class="timeago" datetime="2025-09-15T04:03:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 15, 2025 04:03:33 UTC">2025-09-15</span>
   </span>
 
     

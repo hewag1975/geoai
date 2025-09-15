@@ -18,7 +18,7 @@
         <link rel="prev" href="../DINOv3_visualization/">
       
       
-        <link rel="next" href="../../workshops/GeoAI_Workshop_2025/">
+        <link rel="next" href="../AI_agents/">
       
       
       <link rel="icon" href="../../assets/logo.ico">
@@ -1471,6 +1471,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1729,6 +1752,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../geo_agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    geo_agents module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../geoai/" class="md-nav__link">
         
   
@@ -1804,6 +1850,29 @@
   
   <span class="md-ellipsis">
     hf module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    map_tools module
     
   </span>
   
@@ -2555,12 +2624,12 @@ ee.Initialize(project="your-ee-project")</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">,</span> <span class="n">sidebar_visible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">,</span> <span class="n">sidebar_visible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="s2">"USGS.Imagery"</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_alphaearth_gui</span><span class="p">()</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">m = geoai.MapLibre(projection="globe", sidebar_visible=True)
+<div class="clipboard-copy-txt" id="cell-4">m = geoai.Map(projection="globe", sidebar_visible=True)
 m.add_basemap("USGS.Imagery")
 m.add_alphaearth_gui()
 m</div>
@@ -2599,11 +2668,11 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">MapLibre</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">,</span> <span class="n">sidebar_visible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">,</span> <span class="n">sidebar_visible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="s2">"USGS.Imagery"</span><span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">m = geoai.MapLibre(projection="globe", sidebar_visible=True)
+<div class="clipboard-copy-txt" id="cell-5">m = geoai.Map(projection="globe", sidebar_visible=True)
 m.add_basemap("USGS.Imagery")
 m</div>
 </div>
@@ -2830,7 +2899,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 10, 2025 13:14:17 UTC"><span class="timeago" datetime="2025-09-10T13:14:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 10, 2025 13:14:17 UTC">2025-09-10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 15, 2025 04:03:33 UTC"><span class="timeago" datetime="2025-09-15T04:03:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 15, 2025 04:03:33 UTC">2025-09-15</span>
   </span>
 
     
