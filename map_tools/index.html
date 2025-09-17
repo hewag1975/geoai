@@ -4698,7 +4698,7 @@
         <span class="n">visible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">bands</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">nodata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="n">titiler_endpoint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://titiler.xyz&quot;</span><span class="p">,</span>
+        <span class="n">titiler_endpoint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://giswqs-titiler-endpoint.hf.space&quot;</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a Cloud Optimized GeoTIFF (COG) layer to the map.</span>
 
@@ -4710,7 +4710,7 @@
 <span class="sd">            visible: Whether the layer is initially visible (default: True).</span>
 <span class="sd">            bands: Optional list of band indices to display.</span>
 <span class="sd">            nodata: No data value (default: 0).</span>
-<span class="sd">            titiler_endpoint: TiTiler endpoint URL (default: &quot;https://titiler.xyz&quot;).</span>
+<span class="sd">            titiler_endpoint: TiTiler endpoint URL (default: &quot;https://giswqs-titiler-endpoint.hf.space&quot;).</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Confirmation message with COG URL.</span>
@@ -6268,7 +6268,7 @@
 
 
 <h3 id="geoai.agents.map_tools.MapTools.add_cog_layer" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">add_cog_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;TiTiler&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="o">=</span><span class="s1">&#39;https://titiler.xyz&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">add_cog_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;TiTiler&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="o">=</span><span class="s1">&#39;https://giswqs-titiler-endpoint.hf.space&#39;</span><span class="p">)</span></code>
 
 <a href="#geoai.agents.map_tools.MapTools.add_cog_layer" class="headerlink" title="Permanent link">&para;</a></h3>
 
@@ -6410,11 +6410,11 @@
             </td>
             <td>
               <div class="doc-md-description">
-                <p>TiTiler endpoint URL (default: "https://titiler.xyz").</p>
+                <p>TiTiler endpoint URL (default: "https://giswqs-titiler-endpoint.hf.space").</p>
               </div>
             </td>
             <td>
-                  <code>&#39;https://titiler.xyz&#39;</code>
+                  <code>&#39;https://giswqs-titiler-endpoint.hf.space&#39;</code>
             </td>
           </tr>
       </tbody>
@@ -6486,7 +6486,7 @@
     <span class="n">visible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">bands</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">nodata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="n">titiler_endpoint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://titiler.xyz&quot;</span><span class="p">,</span>
+    <span class="n">titiler_endpoint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://giswqs-titiler-endpoint.hf.space&quot;</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a Cloud Optimized GeoTIFF (COG) layer to the map.</span>
 
@@ -6498,7 +6498,7 @@
 <span class="sd">        visible: Whether the layer is initially visible (default: True).</span>
 <span class="sd">        bands: Optional list of band indices to display.</span>
 <span class="sd">        nodata: No data value (default: 0).</span>
-<span class="sd">        titiler_endpoint: TiTiler endpoint URL (default: &quot;https://titiler.xyz&quot;).</span>
+<span class="sd">        titiler_endpoint: TiTiler endpoint URL (default: &quot;https://giswqs-titiler-endpoint.hf.space&quot;).</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Confirmation message with COG URL.</span>
