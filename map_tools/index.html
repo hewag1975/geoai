@@ -4593,14 +4593,7 @@
 <span class="normal">1492</span>
 <span class="normal">1493</span>
 <span class="normal">1494</span>
-<span class="normal">1495</span>
-<span class="normal">1496</span>
-<span class="normal">1497</span>
-<span class="normal">1498</span>
-<span class="normal">1499</span>
-<span class="normal">1500</span>
-<span class="normal">1501</span>
-<span class="normal">1502</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MapTools</span><span class="p">:</span>
+<span class="normal">1495</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MapTools</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Collection of tools for interacting with leafmap instances.&quot;&quot;&quot;</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MapSession</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -4807,7 +4800,6 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            pitch (float): The pitch value to set.</span>
-<span class="sd">            **kwargs (Any): Additional keyword arguments to control the pitch.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            None</span>
@@ -5079,7 +5071,7 @@
         <span class="n">array_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">client_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cors_all&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
         <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">            If you are using this function in JupyterHub on a remote server</span>
@@ -5106,12 +5098,6 @@
 <span class="sd">                the palette when plotting a single band. Defaults to None.</span>
 <span class="sd">            nodata (float, optional): The value from the band to use to interpret</span>
 <span class="sd">                as not valid data. Defaults to None.</span>
-<span class="sd">            attribution (str, optional): Attribution for the source raster. This</span>
-<span class="sd">                defaults to a message about it being a local file.. Defaults to None.</span>
-<span class="sd">            layer_name (str, optional): The layer name to use. Defaults to &#39;Raster&#39;.</span>
-<span class="sd">            layer_index (int, optional): The index of the layer. Defaults to None.</span>
-<span class="sd">            zoom_to_layer (bool, optional): Whether to zoom to the extent of the</span>
-<span class="sd">                layer. Defaults to True.</span>
 <span class="sd">            visible (bool, optional): Whether the layer is visible. Defaults to True.</span>
 <span class="sd">            opacity (float, optional): The opacity of the layer. Defaults to 1.0.</span>
 <span class="sd">            array_args (dict, optional): Additional arguments to pass to</span>
@@ -5153,8 +5139,8 @@
         <span class="n">remove_port</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">preview</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-    <span class="p">):</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Render the map to an HTML page.</span>
 
 <span class="sd">        Args:</span>
@@ -5339,7 +5325,6 @@
 <span class="sd">        Adds a marker to the map.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            marker (Marker, optional): A Marker object. Defaults to None.</span>
 <span class="sd">            lng_lat (List[Union[float, float]]): A list of two floats</span>
 <span class="sd">                representing the longitude and latitude of the marker.</span>
 <span class="sd">            popup (Optional[str], optional): The text to display in a popup when</span>
@@ -5474,7 +5459,6 @@
 <span class="sd">        Args:</span>
 <span class="sd">            zoom (float): The zoom level to zoom to.</span>
 <span class="sd">            options (Dict[str, Any], optional): Additional options to control the zoom. Defaults to {}.</span>
-<span class="sd">            **kwargs (Any): Additional keyword arguments to control the zoom.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            None</span>
@@ -5642,7 +5626,7 @@
         <span class="n">dpi</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;figure&quot;</span><span class="p">,</span>
         <span class="n">transparent</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">position</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;bottom-right&quot;</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a colorbar to the map.</span>
@@ -5769,7 +5753,9 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Video added: </span><span class="si">{</span><span class="n">layer_id</span><span class="si">}</span><span class="s2">&quot;</span>
 
     <span class="nd">@tool</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">add_nlcd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_nlcd</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds National Land Cover Database (NLCD) data to the map.</span>
 
@@ -6818,6 +6804,7 @@ label, and orientation.</p>
                 <code>**kwargs</code>
             </td>
             <td>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6857,7 +6844,16 @@ label, and orientation.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1042</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1033</span>
+<span class="normal">1034</span>
+<span class="normal">1035</span>
+<span class="normal">1036</span>
+<span class="normal">1037</span>
+<span class="normal">1038</span>
+<span class="normal">1039</span>
+<span class="normal">1040</span>
+<span class="normal">1041</span>
+<span class="normal">1042</span>
 <span class="normal">1043</span>
 <span class="normal">1044</span>
 <span class="normal">1045</span>
@@ -6920,16 +6916,7 @@ label, and orientation.</p>
 <span class="normal">1102</span>
 <span class="normal">1103</span>
 <span class="normal">1104</span>
-<span class="normal">1105</span>
-<span class="normal">1106</span>
-<span class="normal">1107</span>
-<span class="normal">1108</span>
-<span class="normal">1109</span>
-<span class="normal">1110</span>
-<span class="normal">1111</span>
-<span class="normal">1112</span>
-<span class="normal">1113</span>
-<span class="normal">1114</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1105</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_colorbar</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">width</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span>
@@ -6949,7 +6936,7 @@ label, and orientation.</p>
     <span class="n">dpi</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;figure&quot;</span><span class="p">,</span>
     <span class="n">transparent</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">position</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;bottom-right&quot;</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add a colorbar to the map.</span>
@@ -7425,7 +7412,14 @@ fields, which can be a list of column names to be included in the popup.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1208</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1201</span>
+<span class="normal">1202</span>
+<span class="normal">1203</span>
+<span class="normal">1204</span>
+<span class="normal">1205</span>
+<span class="normal">1206</span>
+<span class="normal">1207</span>
+<span class="normal">1208</span>
 <span class="normal">1209</span>
 <span class="normal">1210</span>
 <span class="normal">1211</span>
@@ -7535,14 +7529,7 @@ fields, which can be a list of column names to be included in the popup.</p>
 <span class="normal">1315</span>
 <span class="normal">1316</span>
 <span class="normal">1317</span>
-<span class="normal">1318</span>
-<span class="normal">1319</span>
-<span class="normal">1320</span>
-<span class="normal">1321</span>
-<span class="normal">1322</span>
-<span class="normal">1323</span>
-<span class="normal">1324</span>
-<span class="normal">1325</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1318</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_data</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
@@ -7810,7 +7797,8 @@ drawing control.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">235</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">234</span>
+<span class="normal">235</span>
 <span class="normal">236</span>
 <span class="normal">237</span>
 <span class="normal">238</span>
@@ -7849,8 +7837,7 @@ drawing control.</p>
 <span class="normal">271</span>
 <span class="normal">272</span>
 <span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">274</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_draw_control</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">options</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -8020,7 +8007,16 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">958</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">949</span>
+<span class="normal">950</span>
+<span class="normal">951</span>
+<span class="normal">952</span>
+<span class="normal">953</span>
+<span class="normal">954</span>
+<span class="normal">955</span>
+<span class="normal">956</span>
+<span class="normal">957</span>
+<span class="normal">958</span>
 <span class="normal">959</span>
 <span class="normal">960</span>
 <span class="normal">961</span>
@@ -8040,16 +8036,7 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 <span class="normal">975</span>
 <span class="normal">976</span>
 <span class="normal">977</span>
-<span class="normal">978</span>
-<span class="normal">979</span>
-<span class="normal">980</span>
-<span class="normal">981</span>
-<span class="normal">982</span>
-<span class="normal">983</span>
-<span class="normal">984</span>
-<span class="normal">985</span>
-<span class="normal">986</span>
-<span class="normal">987</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">978</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_html</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">html</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -8255,7 +8242,15 @@ Can be one of 'top-right', 'top-left', 'bottom-right', 'bottom-left'.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">773</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">765</span>
+<span class="normal">766</span>
+<span class="normal">767</span>
+<span class="normal">768</span>
+<span class="normal">769</span>
+<span class="normal">770</span>
+<span class="normal">771</span>
+<span class="normal">772</span>
+<span class="normal">773</span>
 <span class="normal">774</span>
 <span class="normal">775</span>
 <span class="normal">776</span>
@@ -8287,15 +8282,7 @@ Can be one of 'top-right', 'top-left', 'bottom-right', 'bottom-left'.</p>
 <span class="normal">802</span>
 <span class="normal">803</span>
 <span class="normal">804</span>
-<span class="normal">805</span>
-<span class="normal">806</span>
-<span class="normal">807</span>
-<span class="normal">808</span>
-<span class="normal">809</span>
-<span class="normal">810</span>
-<span class="normal">811</span>
-<span class="normal">812</span>
-<span class="normal">813</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">805</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_image</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -8623,7 +8610,14 @@ For more information, refer to https://maplibre.org/maplibre-style-spec/layers/#
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1400</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1393</span>
+<span class="normal">1394</span>
+<span class="normal">1395</span>
+<span class="normal">1396</span>
+<span class="normal">1397</span>
+<span class="normal">1398</span>
+<span class="normal">1399</span>
+<span class="normal">1400</span>
 <span class="normal">1401</span>
 <span class="normal">1402</span>
 <span class="normal">1403</span>
@@ -8676,14 +8670,7 @@ For more information, refer to https://maplibre.org/maplibre-style-spec/layers/#
 <span class="normal">1450</span>
 <span class="normal">1451</span>
 <span class="normal">1452</span>
-<span class="normal">1453</span>
-<span class="normal">1454</span>
-<span class="normal">1455</span>
-<span class="normal">1456</span>
-<span class="normal">1457</span>
-<span class="normal">1458</span>
-<span class="normal">1459</span>
-<span class="normal">1460</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1453</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_labels</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">source</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
@@ -8890,7 +8877,16 @@ or "bottom-right". Defaults to "top-left".</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1116</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1107</span>
+<span class="normal">1108</span>
+<span class="normal">1109</span>
+<span class="normal">1110</span>
+<span class="normal">1111</span>
+<span class="normal">1112</span>
+<span class="normal">1113</span>
+<span class="normal">1114</span>
+<span class="normal">1115</span>
+<span class="normal">1116</span>
 <span class="normal">1117</span>
 <span class="normal">1118</span>
 <span class="normal">1119</span>
@@ -8917,16 +8913,7 @@ or "bottom-right". Defaults to "top-left".</p>
 <span class="normal">1140</span>
 <span class="normal">1141</span>
 <span class="normal">1142</span>
-<span class="normal">1143</span>
-<span class="normal">1144</span>
-<span class="normal">1145</span>
-<span class="normal">1146</span>
-<span class="normal">1147</span>
-<span class="normal">1148</span>
-<span class="normal">1149</span>
-<span class="normal">1150</span>
-<span class="normal">1151</span>
-<span class="normal">1152</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_layer_control</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">layer_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -9189,7 +9176,16 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 989</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 980</span>
+<span class="normal"> 981</span>
+<span class="normal"> 982</span>
+<span class="normal"> 983</span>
+<span class="normal"> 984</span>
+<span class="normal"> 985</span>
+<span class="normal"> 986</span>
+<span class="normal"> 987</span>
+<span class="normal"> 988</span>
+<span class="normal"> 989</span>
 <span class="normal"> 990</span>
 <span class="normal"> 991</span>
 <span class="normal"> 992</span>
@@ -9231,16 +9227,7 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 <span class="normal">1028</span>
 <span class="normal">1029</span>
 <span class="normal">1030</span>
-<span class="normal">1031</span>
-<span class="normal">1032</span>
-<span class="normal">1033</span>
-<span class="normal">1034</span>
-<span class="normal">1035</span>
-<span class="normal">1036</span>
-<span class="normal">1037</span>
-<span class="normal">1038</span>
-<span class="normal">1039</span>
-<span class="normal">1040</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1031</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_legend</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Legend&quot;</span><span class="p">,</span>
@@ -9567,7 +9554,14 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1327</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1320</span>
+<span class="normal">1321</span>
+<span class="normal">1322</span>
+<span class="normal">1323</span>
+<span class="normal">1324</span>
+<span class="normal">1325</span>
+<span class="normal">1326</span>
+<span class="normal">1327</span>
 <span class="normal">1328</span>
 <span class="normal">1329</span>
 <span class="normal">1330</span>
@@ -9631,14 +9625,7 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 <span class="normal">1388</span>
 <span class="normal">1389</span>
 <span class="normal">1390</span>
-<span class="normal">1391</span>
-<span class="normal">1392</span>
-<span class="normal">1393</span>
-<span class="normal">1394</span>
-<span class="normal">1395</span>
-<span class="normal">1396</span>
-<span class="normal">1397</span>
-<span class="normal">1398</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1391</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_mapillary</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">minzoom</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
@@ -9743,22 +9730,6 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>marker</code>
-            </td>
-            <td>
-                  <code><span title="Marker">Marker</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A Marker object. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>lng_lat</code>
             </td>
             <td>
@@ -9837,7 +9808,14 @@ customize the marker. Defaults to None.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">748</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">741</span>
+<span class="normal">742</span>
+<span class="normal">743</span>
+<span class="normal">744</span>
+<span class="normal">745</span>
+<span class="normal">746</span>
+<span class="normal">747</span>
+<span class="normal">748</span>
 <span class="normal">749</span>
 <span class="normal">750</span>
 <span class="normal">751</span>
@@ -9852,15 +9830,7 @@ customize the marker. Defaults to None.</p>
 <span class="normal">760</span>
 <span class="normal">761</span>
 <span class="normal">762</span>
-<span class="normal">763</span>
-<span class="normal">764</span>
-<span class="normal">765</span>
-<span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
-<span class="normal">769</span>
-<span class="normal">770</span>
-<span class="normal">771</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">763</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_marker</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">lng_lat</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
@@ -9871,7 +9841,6 @@ customize the marker. Defaults to None.</p>
 <span class="sd">    Adds a marker to the map.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        marker (Marker, optional): A Marker object. Defaults to None.</span>
 <span class="sd">        lng_lat (List[Union[float, float]]): A list of two floats</span>
 <span class="sd">            representing the longitude and latitude of the marker.</span>
 <span class="sd">        popup (Optional[str], optional): The text to display in a popup when</span>
@@ -9952,6 +9921,7 @@ customize the marker. Defaults to None.</p>
                 <code>**kwargs</code>
             </td>
             <td>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9991,7 +9961,16 @@ customize the marker. Defaults to None.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1188</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1179</span>
+<span class="normal">1180</span>
+<span class="normal">1181</span>
+<span class="normal">1182</span>
+<span class="normal">1183</span>
+<span class="normal">1184</span>
+<span class="normal">1185</span>
+<span class="normal">1186</span>
+<span class="normal">1187</span>
+<span class="normal">1188</span>
 <span class="normal">1189</span>
 <span class="normal">1190</span>
 <span class="normal">1191</span>
@@ -10002,15 +9981,10 @@ customize the marker. Defaults to None.</p>
 <span class="normal">1196</span>
 <span class="normal">1197</span>
 <span class="normal">1198</span>
-<span class="normal">1199</span>
-<span class="normal">1200</span>
-<span class="normal">1201</span>
-<span class="normal">1202</span>
-<span class="normal">1203</span>
-<span class="normal">1204</span>
-<span class="normal">1205</span>
-<span class="normal">1206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">add_nlcd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">1199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_nlcd</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2023</span><span class="p">],</span> <span class="n">add_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Adds National Land Cover Database (NLCD) data to the map.</span>
 
@@ -10226,7 +10200,8 @@ See https://eodagmbh.github.io/py-maplibregl/api/layer/ for more information.</p
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">429</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">428</span>
+<span class="normal">429</span>
 <span class="normal">430</span>
 <span class="normal">431</span>
 <span class="normal">432</span>
@@ -10276,8 +10251,7 @@ See https://eodagmbh.github.io/py-maplibregl/api/layer/ for more information.</p
 <span class="normal">476</span>
 <span class="normal">477</span>
 <span class="normal">478</span>
-<span class="normal">479</span>
-<span class="normal">480</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">479</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_nwi_basemap</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NWI Wetlands&quot;</span><span class="p">,</span>
@@ -10885,7 +10859,14 @@ See https://docs.mapbox.com/style-spec/reference/layers/ for more info.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">698</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">691</span>
+<span class="normal">692</span>
+<span class="normal">693</span>
+<span class="normal">694</span>
+<span class="normal">695</span>
+<span class="normal">696</span>
+<span class="normal">697</span>
+<span class="normal">698</span>
 <span class="normal">699</span>
 <span class="normal">700</span>
 <span class="normal">701</span>
@@ -10926,14 +10907,7 @@ See https://docs.mapbox.com/style-spec/reference/layers/ for more info.</p>
 <span class="normal">736</span>
 <span class="normal">737</span>
 <span class="normal">738</span>
-<span class="normal">739</span>
-<span class="normal">740</span>
-<span class="normal">741</span>
-<span class="normal">742</span>
-<span class="normal">743</span>
-<span class="normal">744</span>
-<span class="normal">745</span>
-<span class="normal">746</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">739</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_pmtiles</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -11128,72 +11102,6 @@ as not valid data. Defaults to None.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>attribution</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Attribution for the source raster. This
-defaults to a message about it being a local file.. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>layer_name</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The layer name to use. Defaults to 'Raster'.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>layer_index</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The index of the layer. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>zoom_to_layer</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to zoom to the extent of the
-layer. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>visible</code>
             </td>
             <td>
@@ -11280,6 +11188,7 @@ Defaults to True.</p>
                 <code>**kwargs</code>
             </td>
             <td>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11297,7 +11206,8 @@ Defaults to True.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">482</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">481</span>
+<span class="normal">482</span>
 <span class="normal">483</span>
 <span class="normal">484</span>
 <span class="normal">485</span>
@@ -11368,14 +11278,7 @@ Defaults to True.</p>
 <span class="normal">550</span>
 <span class="normal">551</span>
 <span class="normal">552</span>
-<span class="normal">553</span>
-<span class="normal">554</span>
-<span class="normal">555</span>
-<span class="normal">556</span>
-<span class="normal">557</span>
-<span class="normal">558</span>
-<span class="normal">559</span>
-<span class="normal">560</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">553</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_raster</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">source</span><span class="p">,</span>
@@ -11392,7 +11295,7 @@ Defaults to True.</p>
     <span class="n">array_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">client_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cors_all&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
     <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server</span>
@@ -11419,12 +11322,6 @@ Defaults to True.</p>
 <span class="sd">            the palette when plotting a single band. Defaults to None.</span>
 <span class="sd">        nodata (float, optional): The value from the band to use to interpret</span>
 <span class="sd">            as not valid data. Defaults to None.</span>
-<span class="sd">        attribution (str, optional): Attribution for the source raster. This</span>
-<span class="sd">            defaults to a message about it being a local file.. Defaults to None.</span>
-<span class="sd">        layer_name (str, optional): The layer name to use. Defaults to &#39;Raster&#39;.</span>
-<span class="sd">        layer_index (int, optional): The index of the layer. Defaults to None.</span>
-<span class="sd">        zoom_to_layer (bool, optional): Whether to zoom to the extent of the</span>
-<span class="sd">            layer. Defaults to True.</span>
 <span class="sd">        visible (bool, optional): Whether the layer is visible. Defaults to True.</span>
 <span class="sd">        opacity (float, optional): The opacity of the layer. Defaults to 1.0.</span>
 <span class="sd">        array_args (dict, optional): Additional arguments to pass to</span>
@@ -11663,7 +11560,16 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">909</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">900</span>
+<span class="normal">901</span>
+<span class="normal">902</span>
+<span class="normal">903</span>
+<span class="normal">904</span>
+<span class="normal">905</span>
+<span class="normal">906</span>
+<span class="normal">907</span>
+<span class="normal">908</span>
+<span class="normal">909</span>
 <span class="normal">910</span>
 <span class="normal">911</span>
 <span class="normal">912</span>
@@ -11701,16 +11607,7 @@ To make the background half transparent, set this to "rgba(255, 255, 255, 0.5)".
 <span class="normal">944</span>
 <span class="normal">945</span>
 <span class="normal">946</span>
-<span class="normal">947</span>
-<span class="normal">948</span>
-<span class="normal">949</span>
-<span class="normal">950</span>
-<span class="normal">951</span>
-<span class="normal">952</span>
-<span class="normal">953</span>
-<span class="normal">954</span>
-<span class="normal">955</span>
-<span class="normal">956</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">947</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_text</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -12236,7 +12133,8 @@ m.add_vector_tile(
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">277</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">276</span>
+<span class="normal">277</span>
 <span class="normal">278</span>
 <span class="normal">279</span>
 <span class="normal">280</span>
@@ -12322,8 +12220,7 @@ m.add_vector_tile(
 <span class="normal">360</span>
 <span class="normal">361</span>
 <span class="normal">362</span>
-<span class="normal">363</span>
-<span class="normal">364</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">363</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_vector_tile</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -12540,7 +12437,16 @@ will be added on top. Defaults to None.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1154</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1145</span>
+<span class="normal">1146</span>
+<span class="normal">1147</span>
+<span class="normal">1148</span>
+<span class="normal">1149</span>
+<span class="normal">1150</span>
+<span class="normal">1151</span>
+<span class="normal">1152</span>
+<span class="normal">1153</span>
+<span class="normal">1154</span>
 <span class="normal">1155</span>
 <span class="normal">1156</span>
 <span class="normal">1157</span>
@@ -12563,16 +12469,7 @@ will be added on top. Defaults to None.</p>
 <span class="normal">1174</span>
 <span class="normal">1175</span>
 <span class="normal">1176</span>
-<span class="normal">1177</span>
-<span class="normal">1178</span>
-<span class="normal">1179</span>
-<span class="normal">1180</span>
-<span class="normal">1181</span>
-<span class="normal">1182</span>
-<span class="normal">1183</span>
-<span class="normal">1184</span>
-<span class="normal">1185</span>
-<span class="normal">1186</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_video</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">urls</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
@@ -12852,7 +12749,8 @@ See https://eodagmbh.github.io/py-maplibregl/api/layer/ for more information.</p
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">366</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">365</span>
+<span class="normal">366</span>
 <span class="normal">367</span>
 <span class="normal">368</span>
 <span class="normal">369</span>
@@ -12912,8 +12810,7 @@ See https://eodagmbh.github.io/py-maplibregl/api/layer/ for more information.</p
 <span class="normal">423</span>
 <span class="normal">424</span>
 <span class="normal">425</span>
-<span class="normal">426</span>
-<span class="normal">427</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">426</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">add_wms_layer</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -13220,12 +13117,12 @@ See https://eodagmbh.github.io/py-maplibregl/api/layer/ for more information.</p
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">902</span>
-<span class="normal">903</span>
-<span class="normal">904</span>
-<span class="normal">905</span>
-<span class="normal">906</span>
-<span class="normal">907</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">893</span>
+<span class="normal">894</span>
+<span class="normal">895</span>
+<span class="normal">896</span>
+<span class="normal">897</span>
+<span class="normal">898</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">first_symbol_layer_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get the ID of the first symbol layer in the map&#39;s current style.</span>
@@ -13411,14 +13308,14 @@ See https://eodagmbh.github.io/py-maplibregl/api/layer/ for more information.</p
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1462</span>
-<span class="normal">1463</span>
-<span class="normal">1464</span>
-<span class="normal">1465</span>
-<span class="normal">1466</span>
-<span class="normal">1467</span>
-<span class="normal">1468</span>
-<span class="normal">1469</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1455</span>
+<span class="normal">1456</span>
+<span class="normal">1457</span>
+<span class="normal">1458</span>
+<span class="normal">1459</span>
+<span class="normal">1460</span>
+<span class="normal">1461</span>
+<span class="normal">1462</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_layer_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets layer names as a list.</span>
 
@@ -13521,7 +13418,15 @@ see https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#jumpto</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">863</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">855</span>
+<span class="normal">856</span>
+<span class="normal">857</span>
+<span class="normal">858</span>
+<span class="normal">859</span>
+<span class="normal">860</span>
+<span class="normal">861</span>
+<span class="normal">862</span>
+<span class="normal">863</span>
 <span class="normal">864</span>
 <span class="normal">865</span>
 <span class="normal">866</span>
@@ -13530,15 +13435,7 @@ see https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#jumpto</p>
 <span class="normal">869</span>
 <span class="normal">870</span>
 <span class="normal">871</span>
-<span class="normal">872</span>
-<span class="normal">873</span>
-<span class="normal">874</span>
-<span class="normal">875</span>
-<span class="normal">876</span>
-<span class="normal">877</span>
-<span class="normal">878</span>
-<span class="normal">879</span>
-<span class="normal">880</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">872</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">jump_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Jumps the map to a specified location.</span>
@@ -13667,7 +13564,15 @@ For more information, see https://maplibre.org/maplibre-gl-js/docs/API/classes/M
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">838</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">830</span>
+<span class="normal">831</span>
+<span class="normal">832</span>
+<span class="normal">833</span>
+<span class="normal">834</span>
+<span class="normal">835</span>
+<span class="normal">836</span>
+<span class="normal">837</span>
+<span class="normal">838</span>
 <span class="normal">839</span>
 <span class="normal">840</span>
 <span class="normal">841</span>
@@ -13682,15 +13587,7 @@ For more information, see https://maplibre.org/maplibre-gl-js/docs/API/classes/M
 <span class="normal">850</span>
 <span class="normal">851</span>
 <span class="normal">852</span>
-<span class="normal">853</span>
-<span class="normal">854</span>
-<span class="normal">855</span>
-<span class="normal">856</span>
-<span class="normal">857</span>
-<span class="normal">858</span>
-<span class="normal">859</span>
-<span class="normal">860</span>
-<span class="normal">861</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">853</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">pan_to</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">lnglat</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
@@ -13851,11 +13748,11 @@ For more information, see https://maplibre.org/maplibre-gl-js/docs/API/classes/M
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1498</span>
-<span class="normal">1499</span>
-<span class="normal">1500</span>
-<span class="normal">1501</span>
-<span class="normal">1502</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1491</span>
+<span class="normal">1492</span>
+<span class="normal">1493</span>
+<span class="normal">1494</span>
+<span class="normal">1495</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">remove_terrain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove terrain visualization from the map.&quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">m</span><span class="o">.</span><span class="n">remove_terrain</span><span class="p">()</span>
@@ -13972,7 +13869,15 @@ For more information, see https://maplibre.org/maplibre-gl-js/docs/API/classes/M
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">815</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">807</span>
+<span class="normal">808</span>
+<span class="normal">809</span>
+<span class="normal">810</span>
+<span class="normal">811</span>
+<span class="normal">812</span>
+<span class="normal">813</span>
+<span class="normal">814</span>
+<span class="normal">815</span>
 <span class="normal">816</span>
 <span class="normal">817</span>
 <span class="normal">818</span>
@@ -13985,15 +13890,7 @@ For more information, see https://maplibre.org/maplibre-gl-js/docs/API/classes/M
 <span class="normal">825</span>
 <span class="normal">826</span>
 <span class="normal">827</span>
-<span class="normal">828</span>
-<span class="normal">829</span>
-<span class="normal">830</span>
-<span class="normal">831</span>
-<span class="normal">832</span>
-<span class="normal">833</span>
-<span class="normal">834</span>
-<span class="normal">835</span>
-<span class="normal">836</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">828</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">rotate_to</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">bearing</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -14185,6 +14082,7 @@ Defaults to False.</p>
                 <code>**kwargs</code>
             </td>
             <td>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -14211,6 +14109,7 @@ Defaults to False.</p>
       <tbody>
           <tr class="doc-section-item">
 <td><code>str</code></td>            <td>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -14224,7 +14123,14 @@ Defaults to False.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">562</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">555</span>
+<span class="normal">556</span>
+<span class="normal">557</span>
+<span class="normal">558</span>
+<span class="normal">559</span>
+<span class="normal">560</span>
+<span class="normal">561</span>
+<span class="normal">562</span>
 <span class="normal">563</span>
 <span class="normal">564</span>
 <span class="normal">565</span>
@@ -14264,14 +14170,7 @@ Defaults to False.</p>
 <span class="normal">599</span>
 <span class="normal">600</span>
 <span class="normal">601</span>
-<span class="normal">602</span>
-<span class="normal">603</span>
-<span class="normal">604</span>
-<span class="normal">605</span>
-<span class="normal">606</span>
-<span class="normal">607</span>
-<span class="normal">608</span>
-<span class="normal">609</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">602</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">save_map</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">output</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;map.html&quot;</span><span class="p">,</span>
@@ -14282,8 +14181,8 @@ Defaults to False.</p>
     <span class="n">remove_port</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">preview</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="p">):</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Render the map to an HTML page.</span>
 
 <span class="sd">    Args:</span>
@@ -14412,7 +14311,14 @@ Defaults to False.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">647</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">640</span>
+<span class="normal">641</span>
+<span class="normal">642</span>
+<span class="normal">643</span>
+<span class="normal">644</span>
+<span class="normal">645</span>
+<span class="normal">646</span>
+<span class="normal">647</span>
 <span class="normal">648</span>
 <span class="normal">649</span>
 <span class="normal">650</span>
@@ -14420,14 +14326,7 @@ Defaults to False.</p>
 <span class="normal">652</span>
 <span class="normal">653</span>
 <span class="normal">654</span>
-<span class="normal">655</span>
-<span class="normal">656</span>
-<span class="normal">657</span>
-<span class="normal">658</span>
-<span class="normal">659</span>
-<span class="normal">660</span>
-<span class="normal">661</span>
-<span class="normal">662</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">655</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">set_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set the color of a layer.</span>
@@ -14552,7 +14451,14 @@ Defaults to False.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">629</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">622</span>
+<span class="normal">623</span>
+<span class="normal">624</span>
+<span class="normal">625</span>
+<span class="normal">626</span>
+<span class="normal">627</span>
+<span class="normal">628</span>
+<span class="normal">629</span>
 <span class="normal">630</span>
 <span class="normal">631</span>
 <span class="normal">632</span>
@@ -14561,14 +14467,7 @@ Defaults to False.</p>
 <span class="normal">635</span>
 <span class="normal">636</span>
 <span class="normal">637</span>
-<span class="normal">638</span>
-<span class="normal">639</span>
-<span class="normal">640</span>
-<span class="normal">641</span>
-<span class="normal">642</span>
-<span class="normal">643</span>
-<span class="normal">644</span>
-<span class="normal">645</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">638</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">set_layout_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">prop</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set the layout property of a layer.</span>
@@ -14678,7 +14577,14 @@ Defaults to False.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">664</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span>
+<span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
 <span class="normal">665</span>
 <span class="normal">666</span>
 <span class="normal">667</span>
@@ -14686,14 +14592,7 @@ Defaults to False.</p>
 <span class="normal">669</span>
 <span class="normal">670</span>
 <span class="normal">671</span>
-<span class="normal">672</span>
-<span class="normal">673</span>
-<span class="normal">674</span>
-<span class="normal">675</span>
-<span class="normal">676</span>
-<span class="normal">677</span>
-<span class="normal">678</span>
-<span class="normal">679</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">672</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">set_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">opacity</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set the opacity of a layer.</span>
@@ -14818,7 +14717,14 @@ Defaults to False.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">611</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">604</span>
+<span class="normal">605</span>
+<span class="normal">606</span>
+<span class="normal">607</span>
+<span class="normal">608</span>
+<span class="normal">609</span>
+<span class="normal">610</span>
+<span class="normal">611</span>
 <span class="normal">612</span>
 <span class="normal">613</span>
 <span class="normal">614</span>
@@ -14827,14 +14733,7 @@ Defaults to False.</p>
 <span class="normal">617</span>
 <span class="normal">618</span>
 <span class="normal">619</span>
-<span class="normal">620</span>
-<span class="normal">621</span>
-<span class="normal">622</span>
-<span class="normal">623</span>
-<span class="normal">624</span>
-<span class="normal">625</span>
-<span class="normal">626</span>
-<span class="normal">627</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">620</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">set_paint_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">prop</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set the paint property of a layer.</span>
@@ -14902,22 +14801,6 @@ the pitch. For more information, see https://maplibre.org/maplibre-gl-js/docs/AP
                 <em>required</em>
             </td>
           </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>**kwargs</code>
-            </td>
-            <td>
-                  <code><span title="typing.Any">Any</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Additional keyword arguments to control the pitch.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
       </tbody>
     </table>
 
@@ -14964,8 +14847,7 @@ the pitch. For more information, see https://maplibre.org/maplibre-gl-js/docs/AP
 <span class="normal">229</span>
 <span class="normal">230</span>
 <span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Set the pitch of the map&quot;</span><span class="p">)</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Set the pitch of the map&quot;</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">set_pitch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pitch</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sets the pitch of the map.</span>
@@ -14977,7 +14859,6 @@ the pitch. For more information, see https://maplibre.org/maplibre-gl-js/docs/AP
 
 <span class="sd">    Args:</span>
 <span class="sd">        pitch (float): The pitch value to set.</span>
-<span class="sd">        **kwargs (Any): Additional keyword arguments to control the pitch.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        None</span>
@@ -15101,7 +14982,14 @@ the pitch. For more information, see https://maplibre.org/maplibre-gl-js/docs/AP
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1471</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1464</span>
+<span class="normal">1465</span>
+<span class="normal">1466</span>
+<span class="normal">1467</span>
+<span class="normal">1468</span>
+<span class="normal">1469</span>
+<span class="normal">1470</span>
+<span class="normal">1471</span>
 <span class="normal">1472</span>
 <span class="normal">1473</span>
 <span class="normal">1474</span>
@@ -15119,14 +15007,7 @@ the pitch. For more information, see https://maplibre.org/maplibre-gl-js/docs/AP
 <span class="normal">1486</span>
 <span class="normal">1487</span>
 <span class="normal">1488</span>
-<span class="normal">1489</span>
-<span class="normal">1490</span>
-<span class="normal">1491</span>
-<span class="normal">1492</span>
-<span class="normal">1493</span>
-<span class="normal">1494</span>
-<span class="normal">1495</span>
-<span class="normal">1496</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">1489</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">set_terrain</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">source</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://elevation-tiles-prod.s3.amazonaws.com/terrarium/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png&quot;</span><span class="p">,</span>
@@ -15245,7 +15126,14 @@ the pitch. For more information, see https://maplibre.org/maplibre-gl-js/docs/AP
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">681</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">674</span>
+<span class="normal">675</span>
+<span class="normal">676</span>
+<span class="normal">677</span>
+<span class="normal">678</span>
+<span class="normal">679</span>
+<span class="normal">680</span>
+<span class="normal">681</span>
 <span class="normal">682</span>
 <span class="normal">683</span>
 <span class="normal">684</span>
@@ -15253,14 +15141,7 @@ the pitch. For more information, see https://maplibre.org/maplibre-gl-js/docs/AP
 <span class="normal">686</span>
 <span class="normal">687</span>
 <span class="normal">688</span>
-<span class="normal">689</span>
-<span class="normal">690</span>
-<span class="normal">691</span>
-<span class="normal">692</span>
-<span class="normal">693</span>
-<span class="normal">694</span>
-<span class="normal">695</span>
-<span class="normal">696</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">689</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">set_visibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">visible</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set the visibility of a layer.</span>
@@ -15342,22 +15223,6 @@ https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#zoomto</p>
                   <code>{}</code>
             </td>
           </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>**kwargs</code>
-            </td>
-            <td>
-                  <code><span title="typing.Any">Any</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Additional keyword arguments to control the zoom.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
       </tbody>
     </table>
 
@@ -15387,7 +15252,15 @@ https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#zoomto</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/map_tools.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">882</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">874</span>
+<span class="normal">875</span>
+<span class="normal">876</span>
+<span class="normal">877</span>
+<span class="normal">878</span>
+<span class="normal">879</span>
+<span class="normal">880</span>
+<span class="normal">881</span>
+<span class="normal">882</span>
 <span class="normal">883</span>
 <span class="normal">884</span>
 <span class="normal">885</span>
@@ -15396,16 +15269,7 @@ https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#zoomto</p>
 <span class="normal">888</span>
 <span class="normal">889</span>
 <span class="normal">890</span>
-<span class="normal">891</span>
-<span class="normal">892</span>
-<span class="normal">893</span>
-<span class="normal">894</span>
-<span class="normal">895</span>
-<span class="normal">896</span>
-<span class="normal">897</span>
-<span class="normal">898</span>
-<span class="normal">899</span>
-<span class="normal">900</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
+<span class="normal">891</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@tool</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">zoom_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoom</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Zooms the map to a specified zoom level.</span>
@@ -15417,7 +15281,6 @@ https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#zoomto</p>
 <span class="sd">    Args:</span>
 <span class="sd">        zoom (float): The zoom level to zoom to.</span>
 <span class="sd">        options (Dict[str, Any], optional): Additional options to control the zoom. Defaults to {}.</span>
-<span class="sd">        **kwargs (Any): Additional keyword arguments to control the zoom.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        None</span>

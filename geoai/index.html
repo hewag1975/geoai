@@ -26833,17 +26833,18 @@ Can include {vector_name} and {index} placeholders.</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>list</code></td>            <td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>List of paths to the created raster files.</p>
+                <p>List[str]: List of paths to the created raster files.</p>
               </div>
             </td>
           </tr>
@@ -26962,7 +26963,7 @@ Can include {vector_name} and {index} placeholders.</p>
     <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span>
     <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="p">):</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Batch convert vector data to multiple rasters based on different extents or reference rasters.</span>
 
@@ -26981,7 +26982,7 @@ Can include {vector_name} and {index} placeholders.</p>
 <span class="sd">        nodata (int): No data value for the output raster.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        list: List of paths to the created raster files.</span>
+<span class="sd">        List[str]: List of paths to the created raster files.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Create output directory if it doesn&#39;t exist</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -27646,7 +27647,8 @@ mean for the whole dataset for computing individual stds.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">347</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">346</span>
+<span class="normal">347</span>
 <span class="normal">348</span>
 <span class="normal">349</span>
 <span class="normal">350</span>
@@ -27682,8 +27684,7 @@ mean for the whole dataset for computing individual stds.</p>
 <span class="normal">380</span>
 <span class="normal">381</span>
 <span class="normal">382</span>
-<span class="normal">383</span>
-<span class="normal">384</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calc_stats</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">divide_by</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="normal">383</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calc_stats</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">divide_by</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the statistics (mean and std) for the entire dataset.</span>
 
@@ -28758,6 +28759,7 @@ mean for the whole dataset for computing individual stds.</p>
       <tbody>
           <tr class="doc-section-item">
 <td><code>str</code></td>            <td>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -28921,7 +28923,7 @@ mean for the whole dataset for computing individual stds.</p>
 <span class="normal">3779</span>
 <span class="normal">3780</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_overview_image</span><span class="p">(</span>
     <span class="n">src</span><span class="p">,</span> <span class="n">tile_coordinates</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">,</span> <span class="n">stride</span><span class="p">,</span> <span class="n">geojson_path</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">):</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an overview image showing all tiles and their status, with optional GeoJSON export.</span>
 
 <span class="sd">    Args:</span>
@@ -30354,7 +30356,8 @@ dataset sampler.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">387</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">386</span>
+<span class="normal">387</span>
 <span class="normal">388</span>
 <span class="normal">389</span>
 <span class="normal">390</span>
@@ -30466,8 +30469,9 @@ dataset sampler.</p>
 <span class="sd">        xr.DataArray: The xarray DataArray.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="kn">from</span><span class="w"> </span><span class="nn">affine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Affine</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">namedtuple</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">affine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Affine</span>
 
     <span class="n">BoundingBox</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;BoundingBox&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;minx&quot;</span><span class="p">,</span> <span class="s2">&quot;maxx&quot;</span><span class="p">,</span> <span class="s2">&quot;miny&quot;</span><span class="p">,</span> <span class="s2">&quot;maxy&quot;</span><span class="p">])</span>
 
@@ -33050,17 +33054,18 @@ filename matching. The number of images and masks must be equal.</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>dict</code></td>            <td>
+            <td>
+                  <code><span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Dictionary containing batch processing statistics</p>
+                <p>Dict[str, Any]: Dictionary containing batch processing statistics</p>
               </div>
             </td>
           </tr>
@@ -33339,7 +33344,7 @@ filename matching. The number of images and masks must be equal.</p>
     <span class="n">skip_empty_tiles</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">image_extensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">mask_extensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="p">):</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Export georeferenced GeoTIFF tiles from folders of images and masks.</span>
 
@@ -33367,7 +33372,7 @@ filename matching. The number of images and masks must be equal.</p>
 <span class="sd">        mask_extensions (list): List of mask file extensions to process (default: common raster/vector formats)</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        dict: Dictionary containing batch processing statistics</span>
+<span class="sd">        Dict[str, Any]: Dictionary containing batch processing statistics</span>
 
 <span class="sd">    Raises:</span>
 <span class="sd">        ValueError: If no images or masks found, or if counts don&#39;t match</span>
@@ -33682,6 +33687,7 @@ filename matching. The number of images and masks must be equal.</p>
       <tbody>
           <tr class="doc-section-item">
 <td><code>str</code></td>            <td>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -33799,7 +33805,7 @@ filename matching. The number of images and masks must be equal.</p>
 <span class="normal">3884</span>
 <span class="normal">3885</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">export_tiles_to_geojson</span><span class="p">(</span>
     <span class="n">tile_coordinates</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">tile_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">):</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Export tile rectangles directly to GeoJSON without creating an overview image.</span>
 
@@ -39475,6 +39481,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
                 <code>mask_path</code>
             </td>
             <td>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39490,6 +39497,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
                 <code>output_path</code>
             </td>
             <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39505,6 +39513,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
                 <code>simplify_tolerance</code>
             </td>
             <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39520,6 +39529,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
                 <code>mask_threshold</code>
             </td>
             <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39535,6 +39545,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
                 <code>min_object_area</code>
             </td>
             <td>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39550,6 +39561,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
                 <code>max_object_area</code>
             </td>
             <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="int">int</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39565,6 +39577,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
                 <code>nms_iou_threshold</code>
             </td>
             <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39583,13 +39596,14 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>Any</code></td>            <td>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -39806,14 +39820,14 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
 <span class="normal">4832</span>
 <span class="normal">4833</span>
 <span class="normal">4834</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">masks_to_vector</span><span class="p">(</span>
-    <span class="n">mask_path</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">simplify_tolerance</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">mask_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">min_object_area</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-    <span class="n">max_object_area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">nms_iou_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-<span class="p">):</span>
+    <span class="n">mask_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">simplify_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">mask_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">min_object_area</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">max_object_area</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">nms_iou_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert a building mask GeoTIFF to vector polygons and save as a vector dataset.</span>
 
@@ -39827,7 +39841,7 @@ a labeled mask GeoTIFF, and saves mask scores and geometries to a CSV file.</p>
 <span class="sd">        nms_iou_threshold: IoU threshold for non-maximum suppression (default: self.nms_iou_threshold)</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        GeoDataFrame with building footprints</span>
+<span class="sd">        Any: GeoDataFrame with building footprints</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Set default output path if not provided</span>
     <span class="c1"># if output_path is None:</span>
@@ -40618,17 +40632,18 @@ area change. Default is 0.7 (allows reduction to 70% of original area).</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>Any</code></td>            <td>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>geopandas.GeoDataFrame: A GeoDataFrame containing the orthogonalized features.</p>
+                <p>A GeoDataFrame containing the orthogonalized features.</p>
               </div>
             </td>
           </tr>
@@ -41678,7 +41693,7 @@ area change. Default is 0.7 (allows reduction to 70% of original area).</p>
     <span class="n">min_segments</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
     <span class="n">area_tolerance</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
     <span class="n">detect_triangles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">):</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Orthogonalizes object masks in a GeoTIFF file.</span>
 
@@ -41702,7 +41717,7 @@ area change. Default is 0.7 (allows reduction to 70% of original area).</p>
 <span class="sd">        detect_triangles (bool, optional): If True, performs additional check to avoid creating triangular shapes.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        geopandas.GeoDataFrame: A GeoDataFrame containing the orthogonalized features.</span>
+<span class="sd">        Any: A GeoDataFrame containing the orthogonalized features.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
@@ -42862,7 +42877,8 @@ Credit to the torchgeo developers for the original implementation.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">275</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">274</span>
+<span class="normal">275</span>
 <span class="normal">276</span>
 <span class="normal">277</span>
 <span class="normal">278</span>
@@ -42930,8 +42946,7 @@ Credit to the torchgeo developers for the original implementation.</p>
 <span class="normal">340</span>
 <span class="normal">341</span>
 <span class="normal">342</span>
-<span class="normal">343</span>
-<span class="normal">344</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_batch</span><span class="p">(</span>
+<span class="normal">343</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_batch</span><span class="p">(</span>
     <span class="n">batch</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
     <span class="n">bright</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
     <span class="n">cols</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
@@ -43125,7 +43140,8 @@ Credit to the torchgeo developers for the original implementation.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">231</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">230</span>
+<span class="normal">231</span>
 <span class="normal">232</span>
 <span class="normal">233</span>
 <span class="normal">234</span>
@@ -43146,8 +43162,7 @@ Credit to the torchgeo developers for the original implementation.</p>
 <span class="normal">249</span>
 <span class="normal">250</span>
 <span class="normal">251</span>
-<span class="normal">252</span>
-<span class="normal">253</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_images</span><span class="p">(</span>
+<span class="normal">252</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_images</span><span class="p">(</span>
     <span class="n">images</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">],</span>
     <span class="n">axs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">],</span>
     <span class="n">chnls</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -43278,7 +43293,8 @@ Credit to the torchgeo developers for the original implementation.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">256</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">255</span>
+<span class="normal">256</span>
 <span class="normal">257</span>
 <span class="normal">258</span>
 <span class="normal">259</span>
@@ -43293,8 +43309,7 @@ Credit to the torchgeo developers for the original implementation.</p>
 <span class="normal">268</span>
 <span class="normal">269</span>
 <span class="normal">270</span>
-<span class="normal">271</span>
-<span class="normal">272</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_masks</span><span class="p">(</span>
+<span class="normal">271</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_masks</span><span class="p">(</span>
     <span class="n">masks</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">],</span> <span class="n">axs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">],</span> <span class="n">cmap</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Blues&quot;</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -47391,6 +47406,7 @@ not saved. Defaults to None.</p>
                 <code>**kwargs</code>
             </td>
             <td>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -47416,7 +47432,7 @@ not saved. Defaults to None.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -47426,7 +47442,7 @@ not saved. Defaults to None.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
+                  <code><span title="typing.Any">Any</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -47569,8 +47585,8 @@ not saved. Defaults to None.</p>
     <span class="n">num_cores</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">include_metadata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">:</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Regularizes polygon geometries in a GeoDataFrame by aligning edges.</span>
 
 <span class="sd">    Aligns edges to be parallel or perpendicular (optionally also 45 degrees)</span>
@@ -49477,22 +49493,6 @@ If False, only pixels whose center is within the geometry will be burned in.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>scale_factor</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The scale factor to apply to the image. Defaults to 1.0.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>figsize</code>
             </td>
             <td>
@@ -49644,8 +49644,7 @@ If False, only pixels whose center is within the geometry will be burned in.</p>
 <span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">view_image</span><span class="p">(</span>
+<span class="normal">227</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">view_image</span><span class="p">(</span>
     <span class="n">image</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">],</span>
     <span class="n">transpose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">bdx</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -49663,7 +49662,6 @@ If False, only pixels whose center is within the geometry will be burned in.</p>
 <span class="sd">        image (Union[np.ndarray, torch.Tensor]): The image to visualize.</span>
 <span class="sd">        transpose (bool, optional): Whether to transpose the image. Defaults to False.</span>
 <span class="sd">        bdx (Optional[int], optional): The band index to visualize. Defaults to None.</span>
-<span class="sd">        scale_factor (float, optional): The scale factor to apply to the image. Defaults to 1.0.</span>
 <span class="sd">        figsize (Tuple[int, int], optional): The size of the figure. Defaults to (10, 5).</span>
 <span class="sd">        axis_off (bool, optional): Whether to turn off the axis. Defaults to True.</span>
 <span class="sd">        title (Optional[str], optional): The title of the plot. Defaults to None.</span>
@@ -51040,26 +51038,12 @@ get_folium_tile_layer function. Defaults to None.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Additional keyword arguments to pass to GeoDataFrame.explore() function.</p>
+                <p>Additional keyword arguments to pass to GeoDataFrame.explore() function.
+See https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.explore.html</p>
               </div>
             </td>
             <td>
                   <code>{}</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>See https</code>
-            </td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>//geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.explore.html</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
             </td>
           </tr>
       </tbody>
@@ -51236,7 +51220,7 @@ get_folium_tile_layer function. Defaults to None.</p>
 <span class="sd">        tiles_args (dict, optional): Additional arguments for the localtileserver client.</span>
 <span class="sd">            get_folium_tile_layer function. Defaults to None.</span>
 <span class="sd">        **kwargs: Additional keyword arguments to pass to GeoDataFrame.explore() function.</span>
-<span class="sd">        See https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.explore.html</span>
+<span class="sd">            See https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.explore.html</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        folium.Map: The map object with the vector data added.</span>
