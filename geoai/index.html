@@ -31540,12 +31540,12 @@ Defaults to ["point", "polygon", "line_string", "trash"].</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7833</span>
-<span class="normal">7834</span>
-<span class="normal">7835</span>
-<span class="normal">7836</span>
-<span class="normal">7837</span>
-<span class="normal">7838</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">empty_cache</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7847</span>
+<span class="normal">7848</span>
+<span class="normal">7849</span>
+<span class="normal">7850</span>
+<span class="normal">7851</span>
+<span class="normal">7852</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">empty_cache</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Empty the cache of the current device.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
         <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
@@ -36204,17 +36204,17 @@ CUDA (NVIDIA GPU) &gt; MPS (Apple Silicon GPU) &gt; CPU</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7593</span>
-<span class="normal">7594</span>
-<span class="normal">7595</span>
-<span class="normal">7596</span>
-<span class="normal">7597</span>
-<span class="normal">7598</span>
-<span class="normal">7599</span>
-<span class="normal">7600</span>
-<span class="normal">7601</span>
-<span class="normal">7602</span>
-<span class="normal">7603</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_device</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7607</span>
+<span class="normal">7608</span>
+<span class="normal">7609</span>
+<span class="normal">7610</span>
+<span class="normal">7611</span>
+<span class="normal">7612</span>
+<span class="normal">7613</span>
+<span class="normal">7614</span>
+<span class="normal">7615</span>
+<span class="normal">7616</span>
+<span class="normal">7617</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_device</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the best available device for deep learning in the order:</span>
 <span class="sd">    CUDA (NVIDIA GPU) &gt; MPS (Apple Silicon GPU) &gt; CPU</span>
@@ -36917,18 +36917,18 @@ or None if the file cannot be opened</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7740</span>
-<span class="normal">7741</span>
-<span class="normal">7742</span>
-<span class="normal">7743</span>
-<span class="normal">7744</span>
-<span class="normal">7745</span>
-<span class="normal">7746</span>
-<span class="normal">7747</span>
-<span class="normal">7748</span>
-<span class="normal">7749</span>
-<span class="normal">7750</span>
-<span class="normal">7751</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_raster_resolution</span><span class="p">(</span><span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7754</span>
+<span class="normal">7755</span>
+<span class="normal">7756</span>
+<span class="normal">7757</span>
+<span class="normal">7758</span>
+<span class="normal">7759</span>
+<span class="normal">7760</span>
+<span class="normal">7761</span>
+<span class="normal">7762</span>
+<span class="normal">7763</span>
+<span class="normal">7764</span>
+<span class="normal">7765</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_raster_resolution</span><span class="p">(</span><span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get pixel resolution from the raster using rasterio.</span>
 
 <span class="sd">    Args:</span>
@@ -43359,7 +43359,7 @@ Credit to the torchgeo developers for the original implementation.</p>
 
 
 <h2 id="geoai.geoai.plot_performance_metrics" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">plot_performance_metrics</span><span class="p">(</span><span class="n">history_path</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">plot_performance_metrics</span><span class="p">(</span><span class="n">history_path</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#geoai.geoai.plot_performance_metrics" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -43500,8 +43500,26 @@ Credit to the torchgeo developers for the original implementation.</p>
 <span class="normal">7587</span>
 <span class="normal">7588</span>
 <span class="normal">7589</span>
-<span class="normal">7590</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_performance_metrics</span><span class="p">(</span>
-    <span class="n">history_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">figsize</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="normal">7590</span>
+<span class="normal">7591</span>
+<span class="normal">7592</span>
+<span class="normal">7593</span>
+<span class="normal">7594</span>
+<span class="normal">7595</span>
+<span class="normal">7596</span>
+<span class="normal">7597</span>
+<span class="normal">7598</span>
+<span class="normal">7599</span>
+<span class="normal">7600</span>
+<span class="normal">7601</span>
+<span class="normal">7602</span>
+<span class="normal">7603</span>
+<span class="normal">7604</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_performance_metrics</span><span class="p">(</span>
+    <span class="n">history_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot performance metrics from a history object.</span>
 
@@ -43510,6 +43528,8 @@ Credit to the torchgeo developers for the original implementation.</p>
 <span class="sd">        figsize: The figure size.</span>
 <span class="sd">        verbose: Whether to print the best and final metrics.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">history</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">history_path</span><span class="p">)</span>
 
     <span class="c1"># Handle different key naming conventions</span>
@@ -43558,6 +43578,14 @@ Credit to the torchgeo developers for the original implementation.</p>
         <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">save_path</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;dpi&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">150</span>
+        <span class="k">if</span> <span class="s2">&quot;bbox_inches&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;bbox_inches&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;tight&quot;</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
@@ -43825,21 +43853,7 @@ The generated matplotlib figure object.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7606</span>
-<span class="normal">7607</span>
-<span class="normal">7608</span>
-<span class="normal">7609</span>
-<span class="normal">7610</span>
-<span class="normal">7611</span>
-<span class="normal">7612</span>
-<span class="normal">7613</span>
-<span class="normal">7614</span>
-<span class="normal">7615</span>
-<span class="normal">7616</span>
-<span class="normal">7617</span>
-<span class="normal">7618</span>
-<span class="normal">7619</span>
-<span class="normal">7620</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7620</span>
 <span class="normal">7621</span>
 <span class="normal">7622</span>
 <span class="normal">7623</span>
@@ -43956,7 +43970,21 @@ The generated matplotlib figure object.</p>
 <span class="normal">7734</span>
 <span class="normal">7735</span>
 <span class="normal">7736</span>
-<span class="normal">7737</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_prediction_comparison</span><span class="p">(</span>
+<span class="normal">7737</span>
+<span class="normal">7738</span>
+<span class="normal">7739</span>
+<span class="normal">7740</span>
+<span class="normal">7741</span>
+<span class="normal">7742</span>
+<span class="normal">7743</span>
+<span class="normal">7744</span>
+<span class="normal">7745</span>
+<span class="normal">7746</span>
+<span class="normal">7747</span>
+<span class="normal">7748</span>
+<span class="normal">7749</span>
+<span class="normal">7750</span>
+<span class="normal">7751</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_prediction_comparison</span><span class="p">(</span>
     <span class="n">original_image</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">],</span>
     <span class="n">prediction_image</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">],</span>
     <span class="n">ground_truth_image</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -48204,21 +48232,7 @@ not saved. Defaults to None.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/utils.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7754</span>
-<span class="normal">7755</span>
-<span class="normal">7756</span>
-<span class="normal">7757</span>
-<span class="normal">7758</span>
-<span class="normal">7759</span>
-<span class="normal">7760</span>
-<span class="normal">7761</span>
-<span class="normal">7762</span>
-<span class="normal">7763</span>
-<span class="normal">7764</span>
-<span class="normal">7765</span>
-<span class="normal">7766</span>
-<span class="normal">7767</span>
-<span class="normal">7768</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">7768</span>
 <span class="normal">7769</span>
 <span class="normal">7770</span>
 <span class="normal">7771</span>
@@ -48280,7 +48294,21 @@ not saved. Defaults to None.</p>
 <span class="normal">7827</span>
 <span class="normal">7828</span>
 <span class="normal">7829</span>
-<span class="normal">7830</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">stack_bands</span><span class="p">(</span>
+<span class="normal">7830</span>
+<span class="normal">7831</span>
+<span class="normal">7832</span>
+<span class="normal">7833</span>
+<span class="normal">7834</span>
+<span class="normal">7835</span>
+<span class="normal">7836</span>
+<span class="normal">7837</span>
+<span class="normal">7838</span>
+<span class="normal">7839</span>
+<span class="normal">7840</span>
+<span class="normal">7841</span>
+<span class="normal">7842</span>
+<span class="normal">7843</span>
+<span class="normal">7844</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">stack_bands</span><span class="p">(</span>
     <span class="n">input_files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
     <span class="n">output_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">resolution</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
