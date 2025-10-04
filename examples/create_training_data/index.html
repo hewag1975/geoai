@@ -12,24 +12,28 @@
         <meta name="author" content="opengeos">
       
       
-        <link rel="canonical" href="https://opengeoai.org/examples/samgeo/text_prompts/">
+        <link rel="canonical" href="https://opengeoai.org/examples/create_training_data/">
       
       
+        <link rel="prev" href="../image_tiling/">
       
       
-      <link rel="icon" href="../../../assets/logo.ico">
+        <link rel="next" href="../building_footprints_usa/">
+      
+      
+      <link rel="icon" href="../../assets/logo.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Text prompts - GeoAI</title>
+        <title>Create training data - GeoAI</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,11 +52,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#segmenting-remote-sensing-imagery-with-text-prompts-and-the-segment-anything-model-sam" class="md-skip">
+        <a href="#creating-training-data-for-deep-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +98,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="GeoAI" class="md-header__button md-logo" aria-label="GeoAI" data-md-component="logo">
+    <a href="../.." title="GeoAI" class="md-header__button md-logo" aria-label="GeoAI" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Text prompts
+              Create training data
             
           </span>
         </div>
@@ -234,9 +238,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="GeoAI" class="md-nav__button md-logo" aria-label="GeoAI" data-md-component="logo">
+    <a href="../.." title="GeoAI" class="md-nav__button md-logo" aria-label="GeoAI" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     GeoAI
@@ -263,7 +267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -285,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -307,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../../contributing/" class="md-nav__link">
         
   
   
@@ -370,18 +374,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -397,7 +403,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -411,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_data/" class="md-nav__link">
+      <a href="../download_data/" class="md-nav__link">
         
   
   
@@ -434,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_sentinel2/" class="md-nav__link">
+      <a href="../download_sentinel2/" class="md-nav__link">
         
   
   
@@ -457,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_naip/" class="md-nav__link">
+      <a href="../download_naip/" class="md-nav__link">
         
   
   
@@ -480,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planetary_computer/" class="md-nav__link">
+      <a href="../planetary_computer/" class="md-nav__link">
         
   
   
@@ -503,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../view_metadata/" class="md-nav__link">
+      <a href="../view_metadata/" class="md-nav__link">
         
   
   
@@ -526,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../create_vector/" class="md-nav__link">
+      <a href="../create_vector/" class="md-nav__link">
         
   
   
@@ -549,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../edit_vector/" class="md-nav__link">
+      <a href="../edit_vector/" class="md-nav__link">
         
   
   
@@ -572,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../image_chips/" class="md-nav__link">
+      <a href="../image_chips/" class="md-nav__link">
         
   
   
@@ -595,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../image_tiling/" class="md-nav__link">
+      <a href="../image_tiling/" class="md-nav__link">
         
   
   
@@ -615,10 +621,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../create_training_data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Create training data
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -629,6 +657,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Sample Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Sample Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-sample-image-and-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualize Sample Image and Annotations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-1-single-vector-file-covering-all-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: Single Vector File Covering All Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-2-multiple-vector-files-matched-by-sorted-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Multiple Vector Files Matched by Sorted Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-3-multiple-vector-files-matched-by-filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3: Multiple Vector Files Matched by Filename
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-generated-tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualize Generated Tiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage-custom-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage: Custom Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train-a-segmentation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Train a Segmentation Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -641,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_usa/" class="md-nav__link">
+      <a href="../building_footprints_usa/" class="md-nav__link">
         
   
   
@@ -664,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_africa/" class="md-nav__link">
+      <a href="../building_footprints_africa/" class="md-nav__link">
         
   
   
@@ -687,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_china/" class="md-nav__link">
+      <a href="../building_footprints_china/" class="md-nav__link">
         
   
   
@@ -710,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_regularization/" class="md-nav__link">
+      <a href="../building_regularization/" class="md-nav__link">
         
   
   
@@ -733,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../geometric_properties/" class="md-nav__link">
+      <a href="../geometric_properties/" class="md-nav__link">
         
   
   
@@ -756,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../car_detection/" class="md-nav__link">
+      <a href="../car_detection/" class="md-nav__link">
         
   
   
@@ -779,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ship_detection/" class="md-nav__link">
+      <a href="../ship_detection/" class="md-nav__link">
         
   
   
@@ -802,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../solar_panel_detection/" class="md-nav__link">
+      <a href="../solar_panel_detection/" class="md-nav__link">
         
   
   
@@ -825,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../text_prompt_segmentation/" class="md-nav__link">
+      <a href="../text_prompt_segmentation/" class="md-nav__link">
         
   
   
@@ -848,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parking_spot_detection/" class="md-nav__link">
+      <a href="../parking_spot_detection/" class="md-nav__link">
         
   
   
@@ -871,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_visualization/" class="md-nav__link">
+      <a href="../data_visualization/" class="md-nav__link">
         
   
   
@@ -894,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_object_detection_model/" class="md-nav__link">
+      <a href="../train_object_detection_model/" class="md-nav__link">
         
   
   
@@ -917,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_segmentation_model/" class="md-nav__link">
+      <a href="../train_segmentation_model/" class="md-nav__link">
         
   
   
@@ -940,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_instance_segmentation_model/" class="md-nav__link">
+      <a href="../train_instance_segmentation_model/" class="md-nav__link">
         
   
   
@@ -963,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_landcover_classification/" class="md-nav__link">
+      <a href="../train_landcover_classification/" class="md-nav__link">
         
   
   
@@ -986,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_building_footprints_usa/" class="md-nav__link">
+      <a href="../train_building_footprints_usa/" class="md-nav__link">
         
   
   
@@ -1009,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_solar_panel_detection/" class="md-nav__link">
+      <a href="../train_solar_panel_detection/" class="md-nav__link">
         
   
   
@@ -1032,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_car_detection/" class="md-nav__link">
+      <a href="../train_car_detection/" class="md-nav__link">
         
   
   
@@ -1055,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_ship_detection/" class="md-nav__link">
+      <a href="../train_ship_detection/" class="md-nav__link">
         
   
   
@@ -1078,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_water_detection/" class="md-nav__link">
+      <a href="../train_water_detection/" class="md-nav__link">
         
   
   
@@ -1101,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_dynamics/" class="md-nav__link">
+      <a href="../water_dynamics/" class="md-nav__link">
         
   
   
@@ -1124,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wetland_mapping/" class="md-nav__link">
+      <a href="../wetland_mapping/" class="md-nav__link">
         
   
   
@@ -1147,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wetland_dynamics/" class="md-nav__link">
+      <a href="../wetland_dynamics/" class="md-nav__link">
         
   
   
@@ -1170,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -1193,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../globe_projection/" class="md-nav__link">
+      <a href="../globe_projection/" class="md-nav__link">
         
   
   
@@ -1216,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../samgeo/" class="md-nav__link">
         
   
   
@@ -1239,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grounded_sam/" class="md-nav__link">
+      <a href="../grounded_sam/" class="md-nav__link">
         
   
   
@@ -1262,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../load_model_checkpoint/" class="md-nav__link">
+      <a href="../load_model_checkpoint/" class="md-nav__link">
         
   
   
@@ -1285,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_detection/" class="md-nav__link">
+      <a href="../water_detection/" class="md-nav__link">
         
   
   
@@ -1308,7 +1455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_detection_s2/" class="md-nav__link">
+      <a href="../water_detection_s2/" class="md-nav__link">
         
   
   
@@ -1331,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_segmentation/" class="md-nav__link">
+      <a href="../batch_segmentation/" class="md-nav__link">
         
   
   
@@ -1354,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_detection_lidar/" class="md-nav__link">
+      <a href="../building_detection_lidar/" class="md-nav__link">
         
   
   
@@ -1377,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../instance_segmentation/" class="md-nav__link">
+      <a href="../instance_segmentation/" class="md-nav__link">
         
   
   
@@ -1400,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../change_detection/" class="md-nav__link">
+      <a href="../change_detection/" class="md-nav__link">
         
   
   
@@ -1423,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../JPEG2000/" class="md-nav__link">
+      <a href="../JPEG2000/" class="md-nav__link">
         
   
   
@@ -1446,7 +1593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DINOv3/" class="md-nav__link">
+      <a href="../DINOv3/" class="md-nav__link">
         
   
   
@@ -1469,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DINOv3_visualization/" class="md-nav__link">
+      <a href="../DINOv3_visualization/" class="md-nav__link">
         
   
   
@@ -1492,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DINOv3_wetlands/" class="md-nav__link">
+      <a href="../DINOv3_wetlands/" class="md-nav__link">
         
   
   
@@ -1515,7 +1662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AlphaEarth/" class="md-nav__link">
+      <a href="../AlphaEarth/" class="md-nav__link">
         
   
   
@@ -1538,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI_agents/" class="md-nav__link">
+      <a href="../AI_agents/" class="md-nav__link">
         
   
   
@@ -1606,7 +1753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshops/GeoAI_Workshop_2025/" class="md-nav__link">
+      <a href="../../workshops/GeoAI_Workshop_2025/" class="md-nav__link">
         
   
   
@@ -1629,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshops/AWS_2025/" class="md-nav__link">
+      <a href="../../workshops/AWS_2025/" class="md-nav__link">
         
   
   
@@ -1652,7 +1799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshops/TNView_2025/" class="md-nav__link">
+      <a href="../../workshops/TNView_2025/" class="md-nav__link">
         
   
   
@@ -1720,7 +1867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../change_detection/" class="md-nav__link">
+      <a href="../../change_detection/" class="md-nav__link">
         
   
   
@@ -1743,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../classify/" class="md-nav__link">
+      <a href="../../classify/" class="md-nav__link">
         
   
   
@@ -1766,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../detectron2/" class="md-nav__link">
+      <a href="../../detectron2/" class="md-nav__link">
         
   
   
@@ -1789,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dinov3/" class="md-nav__link">
+      <a href="../../dinov3/" class="md-nav__link">
         
   
   
@@ -1812,7 +1959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../geo_agents/" class="md-nav__link">
+      <a href="../../geo_agents/" class="md-nav__link">
         
   
   
@@ -1835,7 +1982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../geoai/" class="md-nav__link">
+      <a href="../../geoai/" class="md-nav__link">
         
   
   
@@ -1858,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/" class="md-nav__link">
+      <a href="../../download/" class="md-nav__link">
         
   
   
@@ -1881,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../extract/" class="md-nav__link">
+      <a href="../../extract/" class="md-nav__link">
         
   
   
@@ -1904,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hf/" class="md-nav__link">
+      <a href="../../hf/" class="md-nav__link">
         
   
   
@@ -1927,7 +2074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../map_tools/" class="md-nav__link">
+      <a href="../../map_tools/" class="md-nav__link">
         
   
   
@@ -1950,7 +2097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../map_widgets/" class="md-nav__link">
+      <a href="../../map_widgets/" class="md-nav__link">
         
   
   
@@ -1973,7 +2120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sam/" class="md-nav__link">
+      <a href="../../sam/" class="md-nav__link">
         
   
   
@@ -1996,7 +2143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../segmentation/" class="md-nav__link">
+      <a href="../../segmentation/" class="md-nav__link">
         
   
   
@@ -2019,7 +2166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../train/" class="md-nav__link">
+      <a href="../../train/" class="md-nav__link">
         
   
   
@@ -2042,7 +2189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../utils/" class="md-nav__link">
+      <a href="../../utils/" class="md-nav__link">
         
   
   
@@ -2092,72 +2239,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-dependencies" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Install dependencies
+      Setup
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-interactive-map" class="md-nav__link">
+  <a href="#download-sample-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Create an interactive map
+      Download Sample Data
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-a-sample-image" class="md-nav__link">
+  <a href="#explore-sample-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Download a sample image
+      Explore Sample Data
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-langsam-class" class="md-nav__link">
+  <a href="#visualize-sample-image-and-annotations" class="md-nav__link">
     <span class="md-ellipsis">
-      Initialize LangSAM class
+      Visualize Sample Image and Annotations
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#specify-text-prompts" class="md-nav__link">
+  <a href="#method-1-single-vector-file-covering-all-images" class="md-nav__link">
     <span class="md-ellipsis">
-      Specify text prompts
+      Method 1: Single Vector File Covering All Images
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#segment-the-image" class="md-nav__link">
+  <a href="#method-2-multiple-vector-files-matched-by-sorted-order" class="md-nav__link">
     <span class="md-ellipsis">
-      Segment the image
+      Method 2: Multiple Vector Files Matched by Sorted Order
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-the-results" class="md-nav__link">
+  <a href="#method-3-multiple-vector-files-matched-by-filename" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualize the results
+      Method 3: Multiple Vector Files Matched by Filename
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-segmentation" class="md-nav__link">
+  <a href="#visualize-generated-tiles" class="md-nav__link">
     <span class="md-ellipsis">
-      Interactive segmentation
+      Visualize Generated Tiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage-custom-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage: Custom Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train-a-segmentation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Train a Segmentation Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -2176,7 +2350,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/examples/samgeo/text_prompts/text_prompts.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/examples/create_training_data/create_training_data.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -2631,11 +2805,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="segmenting-remote-sensing-imagery-with-text-prompts-and-the-segment-anything-model-sam">Segmenting remote sensing imagery with text prompts and the Segment Anything Model (SAM)<a class="anchor-link" href="#segmenting-remote-sensing-imagery-with-text-prompts-and-the-segment-anything-model-sam">¶</a></h1><p><a href="https://studiolab.sagemaker.aws/import/github/opengeos/segment-geospatial/blob/main/docs/examples/text_prompts.ipynb"><img alt="image" src="https://studiolab.sagemaker.aws/studiolab.svg"/></a>
-<a href="https://pccompute.westeurope.cloudapp.azure.com/compute/hub/user-redirect/git-pull?repo=https://github.com/opengeos/segment-geospatial&amp;urlpath=lab/tree/segment-geospatial/docs/examples/text_prompts.ipynb&amp;branch=main"><img alt="image" src="https://img.shields.io/badge/Open-Planetary%20Computer-black?style=flat&amp;logo=microsoft"/></a>
-<a href="https://colab.research.google.com/github/opengeos/segment-geospatial/blob/main/docs/examples/text_prompts.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p>This notebook shows how to generate object masks from text prompts with the Segment Anything Model (SAM).</p>
-<p>Make sure you use GPU runtime for this notebook. For Google Colab, go to <code>Runtime</code> -&gt; <code>Change runtime type</code> and select <code>GPU</code> as the hardware accelerator.</p>
+<h1 id="creating-training-data-for-deep-learning">Creating Training Data for Deep Learning<a class="anchor-link" href="#creating-training-data-for-deep-learning">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/create_training_data.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>This notebook demonstrates how to create training data (image and mask tiles) from georeferenced imagery and vector annotations using the improved <code>export_geotiff_tiles_batch</code> function.</p>
+<p>The function now supports three different input modes:</p>
+<ol>
+<li><strong>Single vector file covering all images</strong> - Most efficient for large annotation files</li>
+<li><strong>Multiple vector files matched by filename</strong> - Good for paired datasets</li>
+<li><strong>Multiple vector files matched by sorted order</strong> - Good for sequential datasets</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2646,7 +2823,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="install-dependencies">Install dependencies<a class="anchor-link" href="#install-dependencies">¶</a></h2><p>Uncomment and run the following cell to install the required dependencies.</p>
+<h2 id="setup">Setup<a class="anchor-link" href="#setup">¶</a></h2><p>Import the required functions and check the sample data structure.</p>
 </div>
 </div>
 </div>
@@ -2669,11 +2846,34 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install segment-geospatial groundingdino-py leafmap localtileserver</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoai.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">,</span> <span class="n">download_file</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rasterio.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># %pip install segment-geospatial groundingdino-py leafmap localtileserver</div>
+<div class="clipboard-copy-txt" id="cell-1">import os
+import geoai
+from geoai.utils import export_geotiff_tiles_batch, download_file
+import geopandas as gpd
+import rasterio
+from rasterio.plot import show
+import matplotlib.pyplot as plt</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="download-sample-data">Download Sample Data<a class="anchor-link" href="#download-sample-data">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2696,13 +2896,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">leafmap</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">samgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">tms_to_geotiff</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">samgeo.text_sam</span><span class="w"> </span><span class="kn">import</span> <span class="n">LangSAM</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train_tiles.zip"</span>
+<span class="n">download_dir</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import leafmap
-from samgeo import tms_to_geotiff
-from samgeo.text_sam import LangSAM</div>
+<div class="clipboard-copy-txt" id="cell-2">url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train_tiles.zip"
+download_dir = download_file(url)</div>
 </div>
 </div>
 </div>
@@ -2715,7 +2913,12 @@ from samgeo.text_sam import LangSAM</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="create-an-interactive-map">Create an interactive map<a class="anchor-link" href="#create-an-interactive-map">¶</a></h2>
+<h2 id="explore-sample-data">Explore Sample Data<a class="anchor-link" href="#explore-sample-data">¶</a></h2><p>The sample data contains:</p>
+<ul>
+<li><strong>images/</strong>: Two NAIP RGB image tiles</li>
+<li><strong>masks1/</strong>: Single GeoJSON file with all building annotations</li>
+<li><strong>masks2/</strong>: Separate GeoJSON files for each image tile</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2738,13 +2941,35 @@ from samgeo.text_sam import LangSAM</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">22.17615</span><span class="p">,</span> <span class="o">-</span><span class="mf">51.253043</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">"800px"</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="s2">"SATELLITE"</span><span class="p">)</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># List available data</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">download_dir</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Images:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Masks (single file):"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks1"</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Masks (multiple files):"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks2"</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">m = leafmap.Map(center=[-22.17615, -51.253043], zoom=18, height="800px")
-m.add_basemap("SATELLITE")
-m</div>
+<div class="clipboard-copy-txt" id="cell-3"># List available data
+data_dir = os.path.join(download_dir, "data")
+
+print("Images:")
+for f in sorted(os.listdir(f"{data_dir}/images")):
+    print(f"  - {f}")
+
+print("\nMasks (single file):")
+for f in sorted(os.listdir(f"{data_dir}/masks1")):
+    print(f"  - {f}")
+
+print("\nMasks (multiple files):")
+for f in sorted(os.listdir(f"{data_dir}/masks2")):
+    print(f"  - {f}")</div>
 </div>
 </div>
 </div>
@@ -2757,7 +2982,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-a-sample-image">Download a sample image<a class="anchor-link" href="#download-a-sample-image">¶</a></h2><p>Pan and zoom the map to select the area of interest. Use the draw tools to draw a polygon or rectangle on the map</p>
+<h2 id="visualize-sample-image-and-annotations">Visualize Sample Image and Annotations<a class="anchor-link" href="#visualize-sample-image-and-annotations">¶</a></h2><p>Let's look at one of the images and its corresponding building annotations.</p>
 </div>
 </div>
 </div>
@@ -2780,15 +3005,79 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">bbox</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">user_roi_bounds</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">bbox</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">51.2565</span><span class="p">,</span> <span class="o">-</span><span class="mf">22.1777</span><span class="p">,</span> <span class="o">-</span><span class="mf">51.2512</span><span class="p">,</span> <span class="o">-</span><span class="mf">22.175</span><span class="p">]</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Load and display first image</span>
+<span class="n">image_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images/naip_rgb_train_tile1.tif"</span>
+<span class="n">mask_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks2/naip_rgb_train_tile1.geojson"</span>
+
+<span class="c1"># Display image</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Plot image</span>
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+    <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"NAIP RGB Image"</span><span class="p">)</span>
+
+    <span class="c1"># Load and plot building footprints</span>
+    <span class="n">buildings</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">mask_path</span><span class="p">)</span>
+
+    <span class="c1"># Reproject to image CRS if needed</span>
+    <span class="k">if</span> <span class="n">buildings</span><span class="o">.</span><span class="n">crs</span> <span class="o">!=</span> <span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="p">:</span>
+        <span class="n">buildings</span> <span class="o">=</span> <span class="n">buildings</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+
+    <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Image with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">buildings</span><span class="p">)</span><span class="si">}</span><span class="s2"> Building Footprints"</span><span class="p">)</span>
+    <span class="n">buildings</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Image shape: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Image CRS: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of buildings: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">buildings</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">bbox = m.user_roi_bounds()
-if bbox is None:
-    bbox = [-51.2565, -22.1777, -51.2512, -22.175]</div>
+<div class="clipboard-copy-txt" id="cell-4"># Load and display first image
+image_path = f"{data_dir}/images/naip_rgb_train_tile1.tif"
+mask_path = f"{data_dir}/masks2/naip_rgb_train_tile1.geojson"
+
+# Display image
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+
+# Plot image
+with rasterio.open(image_path) as src:
+    show(src, ax=ax1, title="NAIP RGB Image")
+
+    # Load and plot building footprints
+    buildings = gpd.read_file(mask_path)
+
+    # Reproject to image CRS if needed
+    if buildings.crs != src.crs:
+        buildings = buildings.to_crs(src.crs)
+
+    show(src, ax=ax2, title=f"Image with {len(buildings)} Building Footprints")
+    buildings.plot(ax=ax2, facecolor="none", edgecolor="red", linewidth=1)
+
+plt.tight_layout()
+plt.show()
+
+print(f"\nImage shape: {src.shape}")
+print(f"Image CRS: {src.crs}")
+print(f"Number of buildings: {len(buildings)}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="method-1-single-vector-file-covering-all-images">Method 1: Single Vector File Covering All Images<a class="anchor-link" href="#method-1-single-vector-file-covering-all-images">¶</a></h2><p>This is the most efficient method when you have one large annotation file covering multiple image tiles. The function automatically:</p>
+<ul>
+<li>Loads the vector file once</li>
+<li>Spatially filters features for each image based on bounds</li>
+<li>Generates tiles only where features exist</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2811,11 +3100,47 @@ if bbox is None:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="s2">"Image.tif"</span>
-<span class="n">tms_to_geotiff</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">"Satellite"</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Use single mask file for all images</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+    <span class="n">images_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
+    <span class="n">masks_file</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks1/naip_train_buildings.geojson"</span><span class="p">,</span>
+    <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/method1_single_mask"</span><span class="p">,</span>
+    <span class="n">tile_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>  <span class="c1"># No overlap</span>
+    <span class="n">class_value_field</span><span class="o">=</span><span class="s2">"class"</span><span class="p">,</span>
+    <span class="n">skip_empty_tiles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Skip tiles with no buildings</span>
+    <span class="n">max_tiles</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>  <span class="c1"># Limit for demo purposes</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="s1">'='</span><span class="o">*</span><span class="mi">60</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Results:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Images processed: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'processed_pairs'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Total tiles generated: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'total_tiles'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Tiles with features: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'tiles_with_features'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">"  Feature percentage: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'tiles_with_features'</span><span class="p">]</span><span class="o">/</span><span class="n">stats</span><span class="p">[</span><span class="s1">'total_tiles'</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%"</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">image = "Image.tif"
-tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=True)</div>
+<div class="clipboard-copy-txt" id="cell-5"># Use single mask file for all images
+stats = export_geotiff_tiles_batch(
+    images_folder=f"{data_dir}/images",
+    masks_file=f"{data_dir}/masks1/naip_train_buildings.geojson",
+    output_folder="output/method1_single_mask",
+    tile_size=256,
+    stride=256,  # No overlap
+    class_value_field="class",
+    skip_empty_tiles=True,  # Skip tiles with no buildings
+    max_tiles=20,  # Limit for demo purposes
+)
+
+print(f"\n{'='*60}")
+print("Results:")
+print(f"  Images processed: {stats['processed_pairs']}")
+print(f"  Total tiles generated: {stats['total_tiles']}")
+print(f"  Tiles with features: {stats['tiles_with_features']}")
+print(
+    f"  Feature percentage: {stats['tiles_with_features']/stats['total_tiles']*100:.1f}%"
+)</div>
 </div>
 </div>
 </div>
@@ -2828,7 +3153,7 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>You can also use your own image. Uncomment and run the following cell to use your own image.</p>
+<h2 id="method-2-multiple-vector-files-matched-by-sorted-order">Method 2: Multiple Vector Files Matched by Sorted Order<a class="anchor-link" href="#method-2-multiple-vector-files-matched-by-sorted-order">¶</a></h2><p>This method pairs images and masks alphabetically by sorted order. The 1st image pairs with the 1st mask, 2nd with 2nd, etc.</p>
 </div>
 </div>
 </div>
@@ -2851,9 +3176,43 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># image = '/path/to/your/own/image.tif'</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Use multiple mask files matched by sorted order</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+    <span class="n">images_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
+    <span class="n">masks_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks2"</span><span class="p">,</span>
+    <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/method2_sorted_order"</span><span class="p">,</span>
+    <span class="n">tile_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">class_value_field</span><span class="o">=</span><span class="s2">"class"</span><span class="p">,</span>
+    <span class="n">skip_empty_tiles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">match_by_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Match by sorted order</span>
+    <span class="n">max_tiles</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="s1">'='</span><span class="o">*</span><span class="mi">60</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Results:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Images processed: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'processed_pairs'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Total tiles generated: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'total_tiles'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Tiles with features: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'tiles_with_features'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6"># image = '/path/to/your/own/image.tif'</div>
+<div class="clipboard-copy-txt" id="cell-6"># Use multiple mask files matched by sorted order
+stats = export_geotiff_tiles_batch(
+    images_folder=f"{data_dir}/images",
+    masks_folder=f"{data_dir}/masks2",
+    output_folder="output/method2_sorted_order",
+    tile_size=256,
+    stride=256,
+    class_value_field="class",
+    skip_empty_tiles=True,
+    match_by_name=False,  # Match by sorted order
+    max_tiles=20,
+)
+
+print(f"\n{'='*60}")
+print("Results:")
+print(f"  Images processed: {stats['processed_pairs']}")
+print(f"  Total tiles generated: {stats['total_tiles']}")
+print(f"  Tiles with features: {stats['tiles_with_features']}")</div>
 </div>
 </div>
 </div>
@@ -2866,7 +3225,8 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Display the downloaded image on the map.</p>
+<h2 id="method-3-multiple-vector-files-matched-by-filename">Method 3: Multiple Vector Files Matched by Filename<a class="anchor-link" href="#method-3-multiple-vector-files-matched-by-filename">¶</a></h2><p>This method pairs images and masks by matching their base filenames (e.g., <code>image1.tif</code> → <code>image1.geojson</code>).</p>
+<p><strong>Note</strong>: This requires images and masks to have matching base names. The sample dataset doesn't have matching names, so this example creates a compatible structure first.</p>
 </div>
 </div>
 </div>
@@ -2889,13 +3249,33 @@ tms_to_geotiff(output=image, bbox=bbox, zoom=19, source="Satellite", overwrite=T
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Image"</span><span class="p">)</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+    <span class="n">images_folder</span><span class="o">=</span><span class="s2">"data/images"</span><span class="p">,</span>
+    <span class="n">masks_folder</span><span class="o">=</span><span class="s2">"data/masks2"</span><span class="p">,</span>
+    <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/method3_filename_match"</span><span class="p">,</span>
+    <span class="n">tile_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">class_value_field</span><span class="o">=</span><span class="s2">"class"</span><span class="p">,</span>
+    <span class="n">skip_empty_tiles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">match_by_name</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Match by filename</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Method 3 requires matching base filenames between images and masks."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Example: 'image001.tif' pairs with 'image001.geojson'"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">m.layers[-1].visible = False
-m.add_raster(image, layer_name="Image")
-m</div>
+<div class="clipboard-copy-txt" id="cell-7">stats = export_geotiff_tiles_batch(
+    images_folder="data/images",
+    masks_folder="data/masks2",
+    output_folder="output/method3_filename_match",
+    tile_size=256,
+    stride=256,
+    class_value_field="class",
+    skip_empty_tiles=True,
+    match_by_name=True,  # Match by filename
+)
+
+print("Method 3 requires matching base filenames between images and masks.")
+print("Example: 'image001.tif' pairs with 'image001.geojson'")</div>
 </div>
 </div>
 </div>
@@ -2908,7 +3288,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="initialize-langsam-class">Initialize LangSAM class<a class="anchor-link" href="#initialize-langsam-class">¶</a></h2><p>The initialization of the LangSAM class might take a few minutes. The initialization downloads the model weights and sets up the model for inference.</p>
+<h2 id="visualize-generated-tiles">Visualize Generated Tiles<a class="anchor-link" href="#visualize-generated-tiles">¶</a></h2><p>Let's look at some of the generated training tiles.</p>
 </div>
 </div>
 </div>
@@ -2931,9 +3311,43 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span> <span class="o">=</span> <span class="n">LangSAM</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># List generated tiles</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"output/method1_single_mask"</span>
+<span class="n">image_tiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">))[:</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Display first 6 image and mask pairs</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tile_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_tiles</span><span class="p">):</span>
+    <span class="c1"># Load image tile</span>
+    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">/images/</span><span class="si">{</span><span class="n">tile_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+        <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Image </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Load mask tile</span>
+    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">/masks/</span><span class="si">{</span><span class="n">tile_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+        <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Mask </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">sam = LangSAM()</div>
+<div class="clipboard-copy-txt" id="cell-8"># List generated tiles
+output_dir = "output/method1_single_mask"
+image_tiles = sorted(os.listdir(f"{output_dir}/images"))[:6]
+
+# Display first 6 image and mask pairs
+fig, axes = plt.subplots(2, 6, figsize=(18, 6))
+
+for idx, tile_name in enumerate(image_tiles):
+    # Load image tile
+    with rasterio.open(f"{output_dir}/images/{tile_name}") as src:
+        show(src, ax=axes[0, idx], title=f"Image {idx+1}")
+
+    # Load mask tile
+    with rasterio.open(f"{output_dir}/masks/{tile_name}") as src:
+        show(src, ax=axes[1, idx], title=f"Mask {idx+1}", cmap="gray")
+
+plt.tight_layout()
+plt.show()</div>
 </div>
 </div>
 </div>
@@ -2946,7 +3360,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="specify-text-prompts">Specify text prompts<a class="anchor-link" href="#specify-text-prompts">¶</a></h2>
+<h2 id="advanced-usage-custom-parameters">Advanced Usage: Custom Parameters<a class="anchor-link" href="#advanced-usage-custom-parameters">¶</a></h2><p>The function supports many parameters for customization:</p>
 </div>
 </div>
 </div>
@@ -2969,9 +3383,45 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">text_prompt</span> <span class="o">=</span> <span class="s2">"tree"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Advanced example with custom parameters</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+    <span class="n">images_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
+    <span class="n">masks_file</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks1/naip_train_buildings.geojson"</span><span class="p">,</span>
+    <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/advanced_example"</span><span class="p">,</span>
+    <span class="n">tile_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>  <span class="c1"># Larger tiles</span>
+    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>  <span class="c1"># 50% overlap for better coverage</span>
+    <span class="n">class_value_field</span><span class="o">=</span><span class="s2">"class"</span><span class="p">,</span>  <span class="c1"># Field containing class labels</span>
+    <span class="n">buffer_radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># Add 0.5m buffer around buildings</span>
+    <span class="n">skip_empty_tiles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Skip tiles with no features</span>
+    <span class="n">all_touched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Include pixels touching features</span>
+    <span class="n">max_tiles</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># Limit number of tiles per image</span>
+    <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Show progress</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Generated </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'total_tiles'</span><span class="p">]</span><span class="si">}</span><span class="s2"> tiles with 50% overlap"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Output structure:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - output/advanced_example/images/  (image tiles)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - output/advanced_example/masks/   (mask tiles)"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">text_prompt = "tree"</div>
+<div class="clipboard-copy-txt" id="cell-9"># Advanced example with custom parameters
+stats = export_geotiff_tiles_batch(
+    images_folder=f"{data_dir}/images",
+    masks_file=f"{data_dir}/masks1/naip_train_buildings.geojson",
+    output_folder="output/advanced_example",
+    tile_size=512,  # Larger tiles
+    stride=256,  # 50% overlap for better coverage
+    class_value_field="class",  # Field containing class labels
+    buffer_radius=0.5,  # Add 0.5m buffer around buildings
+    skip_empty_tiles=True,  # Skip tiles with no features
+    all_touched=True,  # Include pixels touching features
+    max_tiles=10,  # Limit number of tiles per image
+    quiet=False,  # Show progress
+)
+
+print(f"\nGenerated {stats['total_tiles']} tiles with 50% overlap")
+print(f"Output structure:")
+print(f"  - output/advanced_example/images/  (image tiles)")
+print(f"  - output/advanced_example/masks/   (mask tiles)")</div>
 </div>
 </div>
 </div>
@@ -2984,10 +3434,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="segment-the-image">Segment the image<a class="anchor-link" href="#segment-the-image">¶</a></h2><p>Part of the model prediction includes setting appropriate thresholds for object detection and text association with the detected objects. These threshold values range from 0 to 1 and are set while calling the predict method of the LangSAM class.</p>
-<p><code>box_threshold</code>: This value is used for object detection in the image. A higher value makes the model more selective, identifying only the most confident object instances, leading to fewer overall detections. A lower value, conversely, makes the model more tolerant, leading to increased detections, including potentially less confident ones.</p>
-<p><code>text_threshold</code>: This value is used to associate the detected objects with the provided text prompt. A higher value requires a stronger association between the object and the text prompt, leading to more precise but potentially fewer associations. A lower value allows for looser associations, which could increase the number of associations but also introduce less precise matches.</p>
-<p>Remember to test different threshold values on your specific data. The optimal threshold can vary depending on the quality and nature of your images, as well as the specificity of your text prompts. Make sure to choose a balance that suits your requirements, whether that's precision or recall.</p>
+<h2 id="train-a-segmentation-model">Train a Segmentation Model<a class="anchor-link" href="#train-a-segmentation-model">¶</a></h2>
 </div>
 </div>
 </div>
@@ -3010,22 +3457,39 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">text_prompt</span><span class="p">,</span> <span class="n">box_threshold</span><span class="o">=</span><span class="mf">0.24</span><span class="p">,</span> <span class="n">text_threshold</span><span class="o">=</span><span class="mf">0.24</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">train_segmentation_model</span><span class="p">(</span>
+    <span class="n">images_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"output/method3_filename_match/images"</span><span class="p">,</span>
+    <span class="n">labels_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"output/method3_filename_match/masks"</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"output/unet_models"</span><span class="p">,</span>
+    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
+    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
+    <span class="n">encoder_weights</span><span class="o">=</span><span class="s2">"imagenet"</span><span class="p">,</span>
+    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># background and building</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">sam.predict(image, text_prompt, box_threshold=0.24, text_threshold=0.24)</div>
+<div class="clipboard-copy-txt" id="cell-10">geoai.train_segmentation_model(
+    images_dir=f"output/method3_filename_match/images",
+    labels_dir=f"output/method3_filename_match/masks",
+    output_dir=f"output/unet_models",
+    architecture="unet",
+    encoder_name="resnet34",
+    encoder_weights="imagenet",
+    num_channels=3,
+    num_classes=2,  # background and building
+    batch_size=8,
+    num_epochs=5,
+    learning_rate=0.001,
+    val_split=0.2,
+    verbose=True,
+)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-the-results">Visualize the results<a class="anchor-link" href="#visualize-the-results">¶</a></h2><p>Show the result with bounding boxes on the map.</p>
 </div>
 </div>
 </div>
@@ -3048,18 +3512,16 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_anns</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Greens"</span><span class="p">,</span>
-    <span class="n">box_color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Automatic Segmentation of Trees"</span><span class="p">,</span>
-    <span class="n">blend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">plot_performance_metrics</span><span class="p">(</span>
+    <span class="n">history_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"output/unet_models/training_history.pth"</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">sam.show_anns(
-    cmap="Greens",
-    box_color="red",
-    title="Automatic Segmentation of Trees",
-    blend=True,
+<div class="clipboard-copy-txt" id="cell-11">geoai.plot_performance_metrics(
+    history_path=f"output/unet_models/training_history.pth",
+    figsize=(15, 5),
+    verbose=True,
 )</div>
 </div>
 </div>
@@ -3073,270 +3535,43 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/ytKMTlA.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Show the result without bounding boxes on the map.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_anns</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Greens"</span><span class="p">,</span>
-    <span class="n">add_boxes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Automatic Segmentation of Trees"</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-12">sam.show_anns(
-    cmap="Greens",
-    add_boxes=False,
-    alpha=0.5,
-    title="Automatic Segmentation of Trees",
-)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/3Iq2kt1.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Show the result as a grayscale image.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_anns</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">"Greys_r"</span><span class="p">,</span>
-    <span class="n">add_boxes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">title</span><span class="o">=</span><span class="s2">"Automatic Segmentation of Trees"</span><span class="p">,</span>
-    <span class="n">blend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">output</span><span class="o">=</span><span class="s2">"trees.tif"</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-13">sam.show_anns(
-    cmap="Greys_r",
-    add_boxes=False,
-    alpha=1,
-    title="Automatic Segmentation of Trees",
-    blend=False,
-    output="trees.tif",
-)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/KtHwFbF.png"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Convert the result to a vector format.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">raster_to_vector</span><span class="p">(</span><span class="s2">"trees.tif"</span><span class="p">,</span> <span class="s2">"trees.shp"</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-14">sam.raster_to_vector("trees.tif", "trees.shp")</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Show the results on the interactive map.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span><span class="s2">"trees.tif"</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Trees"</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">"Greens"</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">style</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#3388ff"</span><span class="p">,</span>
-    <span class="s2">"weight"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">"fillColor"</span><span class="p">:</span> <span class="s2">"#7c4185"</span><span class="p">,</span>
-    <span class="s2">"fillOpacity"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_vector</span><span class="p">(</span><span class="s2">"trees.shp"</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Vector"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
-<span class="n">m</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-15">m.add_raster("trees.tif", layer_name="Trees", palette="Greens", opacity=0.5, nodata=0)
-style = {
-    "color": "#3388ff",
-    "weight": 2,
-    "fillColor": "#7c4185",
-    "fillOpacity": 0.5,
-}
-m.add_vector("trees.shp", layer_name="Vector", style=style)
-m</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="interactive-segmentation">Interactive segmentation<a class="anchor-link" href="#interactive-segmentation">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sam</span><span class="o">.</span><span class="n">show_map</span><span class="p">()</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-16">sam.show_map()</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://i.imgur.com/wydt5Xt.gif"/></p>
+<h2 id="summary">Summary<a class="anchor-link" href="#summary">¶</a></h2><p>The improved <code>export_geotiff_tiles_batch</code> function provides flexible options for creating training data:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Use Case</th>
+<th>Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single vector file</td>
+<td>One annotation file covering all images</td>
+<td><code>masks_file="path/to/file.geojson"</code></td>
+</tr>
+<tr>
+<td>Multiple files (by name)</td>
+<td>Paired files with matching names</td>
+<td><code>masks_folder="path/to/masks", match_by_name=True</code></td>
+</tr>
+<tr>
+<td>Multiple files (by order)</td>
+<td>Paired files in sorted order</td>
+<td><code>masks_folder="path/to/masks", match_by_name=False</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Supports both raster and vector masks</li>
+<li>Automatic CRS reprojection</li>
+<li>Spatial filtering for single mask files</li>
+<li>Configurable tile size, stride, and overlap</li>
+<li>Optional empty tile filtering</li>
+<li>Buffer support for vector annotations</li>
+<li>Detailed statistics reporting</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3370,7 +3605,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 27, 2024 16:50:48 UTC"><span class="timeago" datetime="2024-07-27T16:50:48+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 27, 2024 16:50:48 UTC">2024-07-27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 4, 2025 04:15:28 UTC"><span class="timeago" datetime="2025-10-04T04:15:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 4, 2025 04:15:28 UTC">2025-10-04</span>
   </span>
 
     
@@ -3380,7 +3615,7 @@ m</div>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 11, 2023 23:10:59 UTC"><span class="timeago" datetime="2023-10-11T23:10:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 11, 2023 23:10:59 UTC">2023-10-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 4, 2025 04:15:28 UTC"><span class="timeago" datetime="2025-10-04T04:15:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 4, 2025 04:15:28 UTC">2025-10-04</span>
   </span>
 
     
@@ -3439,14 +3674,14 @@ m</div>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../../../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
     
   </body>
