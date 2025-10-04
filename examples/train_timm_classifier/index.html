@@ -12,13 +12,13 @@
         <meta name="author" content="opengeos">
       
       
-        <link rel="canonical" href="https://opengeoai.org/examples/train_instance_segmentation_model/">
+        <link rel="canonical" href="https://opengeoai.org/examples/train_timm_classifier/">
       
       
-        <link rel="prev" href="../train_segmentation_model/">
+        <link rel="prev" href="../AI_agents/">
       
       
-        <link rel="next" href="../train_landcover_classification/">
+        <link rel="next" href="../train_timm_segmentation/">
       
       
       <link rel="icon" href="../../assets/logo.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Train instance segmentation model - GeoAI</title>
+        <title>Train timm classifier - GeoAI</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#train-an-instance-segmentation-model-using-mask-r-cnn" class="md-skip">
+        <a href="#train-an-image-classifier-with-timm-models" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Train instance segmentation model
+              Train timm classifier
             
           </span>
         </div>
@@ -943,32 +943,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Train instance segmentation model
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../train_instance_segmentation_model/" class="md-nav__link">
         
   
   
@@ -979,263 +957,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install packages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Import libraries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-sample-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download sample data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-sample-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize sample data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create training data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#train-instance-segmentation-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Train instance segmentation model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Train instance segmentation model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-differences-from-semantic-segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Differences from Semantic Segmentation:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Architecture:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#training-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training Parameters:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adjust-confidence-threshold-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adjust confidence threshold (optional)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vectorize-masks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vectorize masks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-geometric-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add geometric properties
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize results
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-by-area" class="md-nav__link">
-    <span class="md-ellipsis">
-      Filter by area
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compare-predictions-with-imagery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compare predictions with imagery
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-performance-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Performance Analysis
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instance-vs-semantic-segmentation-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instance vs Semantic Segmentation Comparison
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instance vs Semantic Segmentation Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-instance-segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use Instance Segmentation:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-semantic-segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use Semantic Segmentation:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Outputs:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Considerations:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Metrics:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#batch-processing-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Batch Processing (Optional)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-multi-channel-input-rgbn" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced: Multi-channel Input (RGBN)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1843,10 +1564,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../train_timm_classifier/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Train timm classifier
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1857,6 +1600,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-available-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Available Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Sample Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-training-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Training Data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2469,6 +2286,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Install packages
@@ -2487,219 +2313,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#explore-available-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore Available Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#download-sample-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Download sample data
+      Download Sample Data
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-sample-data" class="md-nav__link">
+  <a href="#prepare-training-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualize sample data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create training data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#train-instance-segmentation-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Train instance segmentation model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Train instance segmentation model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-differences-from-semantic-segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Differences from Semantic Segmentation:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Architecture:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#training-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training Parameters:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adjust-confidence-threshold-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adjust confidence threshold (optional)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vectorize-masks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vectorize masks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-geometric-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add geometric properties
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize results
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-by-area" class="md-nav__link">
-    <span class="md-ellipsis">
-      Filter by area
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compare-predictions-with-imagery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compare predictions with imagery
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-performance-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Performance Analysis
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instance-vs-semantic-segmentation-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instance vs Semantic Segmentation Comparison
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instance vs Semantic Segmentation Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-instance-segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use Instance Segmentation:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-semantic-segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use Semantic Segmentation:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Outputs:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Considerations:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Metrics:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#batch-processing-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Batch Processing (Optional)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-multi-channel-input-rgbn" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced: Multi-channel Input (RGBN)
+      Prepare Training Data
     </span>
   </a>
   
@@ -2718,7 +2352,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/examples/train_instance_segmentation_model/train_instance_segmentation_model.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/examples/train_timm_classifier/train_timm_classifier.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -3173,8 +2807,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="train-an-instance-segmentation-model-using-mask-r-cnn">Train an Instance Segmentation Model using Mask R-CNN<a class="anchor-link" href="#train-an-instance-segmentation-model-using-mask-r-cnn">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/train_instance_segmentation_model.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p>This notebook demonstrates how to train instance segmentation models for object detection (e.g., building detection) using Mask R-CNN. Unlike semantic segmentation, instance segmentation can distinguish between individual objects of the same class, providing separate masks for each instance.</p>
+<h1 id="train-an-image-classifier-with-timm-models">Train an Image Classifier with TIMM Models<a class="anchor-link" href="#train-an-image-classifier-with-timm-models">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/train_timm_classifier.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>This notebook demonstrates how to train an image classification model using the <a href="https://github.com/huggingface/pytorch-image-models">PyTorch Image Models (timm)</a> library. The <code>geoai.timm_train</code> module provides a high-level API for training state-of-the-art computer vision models on remote sensing imagery.</p>
+<h2 id="key-features">Key Features<a class="anchor-link" href="#key-features">¶</a></h2><ul>
+<li><strong>1000+ Pre-trained Models</strong>: Access to ResNet, EfficientNet, Vision Transformers (ViT), ConvNeXt, and more</li>
+<li><strong>Multi-channel Support</strong>: Train on RGB, RGBN (RGB + NIR), or any number of channels</li>
+<li><strong>PyTorch Lightning Integration</strong>: Automatic training loops, checkpointing, and early stopping</li>
+<li><strong>Transfer Learning</strong>: Fine-tune pretrained models or train from scratch</li>
+</ul>
 <h2 id="install-packages">Install packages<a class="anchor-link" href="#install-packages">¶</a></h2><p>To use the new functionality, ensure the required packages are installed.</p>
 </div>
 </div>
@@ -3198,9 +2838,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install geoai-py</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install geoai-py timm lightning datasets</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># %pip install geoai-py</div>
+<div class="clipboard-copy-txt" id="cell-1"># %pip install geoai-py timm lightning datasets</div>
 </div>
 </div>
 </div>
@@ -3236,9 +2876,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoai.timm_train</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">list_timm_models</span><span class="p">,</span>
+    <span class="n">get_timm_model</span><span class="p">,</span>
+    <span class="n">RemoteSensingDataset</span><span class="p">,</span>
+    <span class="n">train_timm_classifier</span><span class="p">,</span>
+    <span class="n">predict_with_timm</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import geoai</div>
+<div class="clipboard-copy-txt" id="cell-2">import os
+import geoai
+from geoai.timm_train import (
+    list_timm_models,
+    get_timm_model,
+    RemoteSensingDataset,
+    train_timm_classifier,
+    predict_with_timm,
+)</div>
 </div>
 </div>
 </div>
@@ -3251,7 +2907,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-sample-data">Download sample data<a class="anchor-link" href="#download-sample-data">¶</a></h2><p>We'll use the same dataset as the semantic segmentation example for consistency.</p>
+<h2 id="explore-available-models">Explore Available Models<a class="anchor-link" href="#explore-available-models">¶</a></h2><p>The timm library provides over 1000 pretrained models. Let's explore some popular architectures:</p>
 </div>
 </div>
 </div>
@@ -3274,21 +2930,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_raster_url</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train.tif"</span>
-<span class="p">)</span>
-<span class="n">train_vector_url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_train_buildings.geojson"</span>
-<span class="n">test_raster_url</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_test.tif"</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># List ResNet models</span>
+<span class="n">resnet_models</span> <span class="o">=</span> <span class="n">list_timm_models</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="s2">"resnet"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ResNet models:"</span><span class="p">,</span> <span class="n">resnet_models</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">train_raster_url = (
-    "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train.tif"
-)
-train_vector_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_train_buildings.geojson"
-test_raster_url = (
-    "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_test.tif"
-)</div>
+<div class="clipboard-copy-txt" id="cell-3"># List ResNet models
+resnet_models = list_timm_models(filter="resnet", limit=10)
+print("ResNet models:", resnet_models)</div>
 </div>
 </div>
 </div>
@@ -3313,26 +2961,15 @@ test_raster_url = (
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_raster_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">train_raster_url</span><span class="p">)</span>
-<span class="n">train_vector_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">train_vector_url</span><span class="p">)</span>
-<span class="n">test_raster_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">test_raster_url</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># List EfficientNet models</span>
+<span class="n">efficientnet_models</span> <span class="o">=</span> <span class="n">list_timm_models</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="s2">"efficientnet"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"EfficientNet models:"</span><span class="p">,</span> <span class="n">efficientnet_models</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">train_raster_path = geoai.download_file(train_raster_url)
-train_vector_path = geoai.download_file(train_vector_url)
-test_raster_path = geoai.download_file(test_raster_url)</div>
+<div class="clipboard-copy-txt" id="cell-4"># List EfficientNet models
+efficientnet_models = list_timm_models(filter="efficientnet", limit=10)
+print("EfficientNet models:", efficientnet_models)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-sample-data">Visualize sample data<a class="anchor-link" href="#visualize-sample-data">¶</a></h2>
 </div>
 </div>
 </div>
@@ -3355,11 +2992,38 @@ test_raster_path = geoai.download_file(test_raster_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">get_raster_info</span><span class="p">(</span><span class="n">train_raster_path</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># List Vision Transformer models</span>
+<span class="n">vit_models</span> <span class="o">=</span> <span class="n">list_timm_models</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="s2">"vit"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Vision Transformer models:"</span><span class="p">,</span> <span class="n">vit_models</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">geoai.get_raster_info(train_raster_path)</div>
+<div class="clipboard-copy-txt" id="cell-5"># List Vision Transformer models
+vit_models = list_timm_models(filter="vit", limit=10)
+print("Vision Transformer models:", vit_models)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="download-sample-data">Download Sample Data<a class="anchor-link" href="#download-sample-data">¶</a></h2><p>For this example, we'll use the <a href="https://huggingface.co/datasets/timm/eurosat-rgb">EuroSAT RGB dataset</a> from Hugging Face. This dataset contains Sentinel-2 satellite RGB images in 10 land use/land cover classes:</p>
+<ul>
+<li>AnnualCrop</li>
+<li>Forest</li>
+<li>HerbaceousVegetation</li>
+<li>Highway</li>
+<li>Industrial</li>
+<li>Pasture</li>
+<li>PermanentCrop</li>
+<li>Residential</li>
+<li>River</li>
+<li>SeaLake</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3382,11 +3046,82 @@ test_raster_path = geoai.download_file(test_raster_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">train_vector_path</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># Load EuroSAT RGB dataset from Hugging Face</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Loading EuroSAT dataset from Hugging Face..."</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">"timm/eurosat-rgb"</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">"train"</span><span class="p">)</span>
+
+<span class="c1"># Create a temporary directory to save images</span>
+<span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">"eurosat_"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saving images to: </span><span class="si">{</span><span class="n">temp_dir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Save images to disk organized by class</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span><span class="o">.</span><span class="n">names</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Classes: </span><span class="si">{</span><span class="n">class_names</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span>
+    <span class="n">class_name</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+
+    <span class="c1"># Create class directory</span>
+    <span class="n">class_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="n">class_name</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">class_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Save image as JPEG</span>
+    <span class="n">img_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">class_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">idx</span><span class="si">:</span><span class="s2">05d</span><span class="si">}</span><span class="s2">.jpg"</span><span class="p">)</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saved </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="si">}</span><span class="s2"> images to </span><span class="si">{</span><span class="n">temp_dir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">geoai.view_vector_interactive(train_vector_path, tiles=train_raster_path)</div>
+<div class="clipboard-copy-txt" id="cell-6">from datasets import load_dataset
+import tempfile
+import shutil
+from PIL import Image
+
+# Load EuroSAT RGB dataset from Hugging Face
+print("Loading EuroSAT dataset from Hugging Face...")
+dataset = load_dataset("timm/eurosat-rgb", split="train")
+
+# Create a temporary directory to save images
+temp_dir = tempfile.mkdtemp(prefix="eurosat_")
+print(f"Saving images to: {temp_dir}")
+
+# Save images to disk organized by class
+class_names = dataset.features["label"].names
+print(f"Classes: {class_names}")
+
+for idx, sample in enumerate(dataset):
+    img = sample["image"]
+    label = sample["label"]
+    class_name = class_names[label]
+
+    # Create class directory
+    class_dir = os.path.join(temp_dir, class_name)
+    os.makedirs(class_dir, exist_ok=True)
+
+    # Save image as JPEG
+    img_path = os.path.join(class_dir, f"{idx:05d}.jpg")
+    img.save(img_path)
+
+print(f"Saved {len(dataset)} images to {temp_dir}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="prepare-training-data">Prepare Training Data<a class="anchor-link" href="#prepare-training-data">¶</a></h2><p>Now we'll load all image paths and create train/val/test splits.</p>
 </div>
 </div>
 </div>
@@ -3409,9 +3144,47 @@ test_raster_path = geoai.download_file(test_raster_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_raster</span><span class="p">(</span><span class="n">test_raster_path</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Get all image paths and labels</span>
+<span class="n">image_paths</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">class_idx</span><span class="p">,</span> <span class="n">class_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">class_names</span><span class="p">):</span>
+    <span class="n">class_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="n">class_name</span><span class="p">)</span>
+    <span class="n">class_images</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">class_dir</span><span class="p">,</span> <span class="s2">"*.jpg"</span><span class="p">)))</span>
+
+    <span class="n">image_paths</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">class_images</span><span class="p">)</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">class_idx</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_images</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total images: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">image_paths</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of classes: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class distribution:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">class_idx</span><span class="p">,</span> <span class="n">class_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">class_names</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">class_idx</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">geoai.view_raster(test_raster_path)</div>
+<div class="clipboard-copy-txt" id="cell-7">import glob
+from sklearn.model_selection import train_test_split
+
+# Get all image paths and labels
+image_paths = []
+labels = []
+
+for class_idx, class_name in enumerate(class_names):
+    class_dir = os.path.join(temp_dir, class_name)
+    class_images = sorted(glob.glob(os.path.join(class_dir, "*.jpg")))
+
+    image_paths.extend(class_images)
+    labels.extend([class_idx] * len(class_images))
+
+print(f"Total images: {len(image_paths)}")
+print(f"Number of classes: {len(class_names)}")
+print(f"Class distribution:")
+for class_idx, class_name in enumerate(class_names):
+    count = labels.count(class_idx)
+    print(f"  {class_name}: {count}")</div>
 </div>
 </div>
 </div>
@@ -3424,7 +3197,7 @@ test_raster_path = geoai.download_file(test_raster_url)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="create-training-data">Create training data<a class="anchor-link" href="#create-training-data">¶</a></h2><p>We'll create training tiles from the imagery and vector labels.</p>
+<h1 id="split-data-into-train-validation-and-test-sets">Split data into train, validation, and test sets<a class="anchor-link" href="#split-data-into-train-validation-and-test-sets">¶</a></h1>
 </div>
 </div>
 </div>
@@ -3447,56 +3220,31 @@ test_raster_path = geoai.download_file(test_raster_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">out_folder</span> <span class="o">=</span> <span class="s2">"buildings_instance"</span>
-<span class="n">tiles</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles</span><span class="p">(</span>
-    <span class="n">in_raster</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">,</span>
-    <span class="n">out_folder</span><span class="o">=</span><span class="n">out_folder</span><span class="p">,</span>
-    <span class="n">in_class_data</span><span class="o">=</span><span class="n">train_vector_path</span><span class="p">,</span>
-    <span class="n">tile_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
-    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
-    <span class="n">buffer_radius</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_paths</span><span class="p">,</span> <span class="n">test_paths</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">test_labels</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">image_paths</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">labels</span>
 <span class="p">)</span>
+
+<span class="n">train_paths</span><span class="p">,</span> <span class="n">val_paths</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">val_labels</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">train_paths</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">train_labels</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training samples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_paths</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Validation samples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">val_paths</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test samples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_paths</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">out_folder = "buildings_instance"
-tiles = geoai.export_geotiff_tiles(
-    in_raster=train_raster_path,
-    out_folder=out_folder,
-    in_class_data=train_vector_path,
-    tile_size=512,
-    stride=256,
-    buffer_radius=0,
-)</div>
+<div class="clipboard-copy-txt" id="cell-8">train_paths, test_paths, train_labels, test_labels = train_test_split(
+    image_paths, labels, test_size=0.2, random_state=42, stratify=labels
+)
+
+train_paths, val_paths, train_labels, val_labels = train_test_split(
+    train_paths, train_labels, test_size=0.2, random_state=42, stratify=train_labels
+)
+
+print(f"Training samples: {len(train_paths)}")
+print(f"Validation samples: {len(val_paths)}")
+print(f"Test samples: {len(test_paths)}")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="train-instance-segmentation-model">Train instance segmentation model<a class="anchor-link" href="#train-instance-segmentation-model">¶</a></h2><p>Now we'll train an instance segmentation model using the <code>train_instance_segmentation_model</code> function. This function uses Mask R-CNN, which is specifically designed for instance segmentation tasks.</p>
-<h3 id="key-differences-from-semantic-segmentation">Key Differences from Semantic Segmentation:<a class="anchor-link" href="#key-differences-from-semantic-segmentation">¶</a></h3><ul>
-<li><strong>Instance Segmentation</strong>: Identifies and segments each individual object separately (e.g., distinguishes Building A from Building B)</li>
-<li><strong>Semantic Segmentation</strong>: Only classifies pixels into categories (all buildings are treated as one class)</li>
-</ul>
-<h3 id="model-architecture">Model Architecture:<a class="anchor-link" href="#model-architecture">¶</a></h3><p>Mask R-CNN combines:</p>
-<ul>
-<li><strong>Faster R-CNN</strong> for object detection (bounding boxes)</li>
-<li><strong>FCN</strong> for pixel-level segmentation (masks)</li>
-<li><strong>ResNet-50 + FPN</strong> backbone for feature extraction</li>
-</ul>
-<h3 id="training-parameters">Training Parameters:<a class="anchor-link" href="#training-parameters">¶</a></h3><ul>
-<li><code>num_classes</code>: Number of classes including background (default: 2 for background + buildings)</li>
-<li><code>num_channels</code>: Number of input channels (3 for RGB, 4 for RGBN)</li>
-<li><code>batch_size</code>: Typically smaller than semantic segmentation (4-8) due to model complexity</li>
-<li><code>num_epochs</code>: Number of training epochs</li>
-<li><code>learning_rate</code>: Initial learning rate (default: 0.005)</li>
-<li><code>val_split</code>: Fraction of data for validation (default: 0.2)</li>
-</ul>
 </div>
 </div>
 </div>
@@ -3519,35 +3267,45 @@ tiles = geoai.export_geotiff_tiles(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Train Mask R-CNN model</span>
-<span class="n">geoai</span><span class="o">.</span><span class="n">train_instance_segmentation_model</span><span class="p">(</span>
-    <span class="n">images_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
-    <span class="n">labels_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/labels"</span><span class="p">,</span>
-    <span class="n">output_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/instance_models"</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># background + building</span>
-    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
-    <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">visualize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># Show one sample from each class</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">class_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">class_names</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">idx</span> <span class="o">//</span> <span class="mi">5</span><span class="p">,</span> <span class="n">idx</span> <span class="o">%</span> <span class="mi">5</span><span class="p">]</span>
+
+    <span class="c1"># Find first image of this class</span>
+    <span class="n">img_idx</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_paths</span><span class="p">[</span><span class="n">img_idx</span><span class="p">])</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">class_name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9"># Train Mask R-CNN model
-geoai.train_instance_segmentation_model(
-    images_dir=f"{out_folder}/images",
-    labels_dir=f"{out_folder}/labels",
-    output_dir=f"{out_folder}/instance_models",
-    num_classes=2,  # background + building
-    num_channels=3,
-    batch_size=4,
-    num_epochs=10,
-    learning_rate=0.005,
-    val_split=0.2,
-    visualize=True,
-    verbose=True,
-)</div>
+<div class="clipboard-copy-txt" id="cell-9">import matplotlib.pyplot as plt
+from PIL import Image
+
+# Show one sample from each class
+fig, axes = plt.subplots(2, 5, figsize=(20, 8))
+
+for idx, class_name in enumerate(class_names):
+    ax = axes[idx // 5, idx % 5]
+
+    # Find first image of this class
+    img_idx = labels.index(idx)
+    img = Image.open(image_paths[img_idx])
+
+    ax.imshow(img)
+    ax.set_title(class_name, fontsize=12)
+    ax.axis("off")
+
+plt.tight_layout()
+plt.show()</div>
 </div>
 </div>
 </div>
@@ -3560,7 +3318,7 @@ geoai.train_instance_segmentation_model(
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="run-inference">Run inference<a class="anchor-link" href="#run-inference">¶</a></h2><p>Now we'll use the trained model to make predictions on the test image. The <code>instance_segmentation</code> function performs sliding window inference to handle large images.</p>
+<h2 id="create-datasets">Create Datasets<a class="anchor-link" href="#create-datasets">¶</a></h2><p>The <code>RemoteSensingDataset</code> class handles loading images with support for multi-channel imagery.</p>
 </div>
 </div>
 </div>
@@ -3583,15 +3341,64 @@ geoai.train_instance_segmentation_model(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Define paths</span>
-<span class="n">masks_path</span> <span class="o">=</span> <span class="s2">"naip_test_instance_prediction.tif"</span>
-<span class="n">model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/instance_models/best_model.pth"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Create datasets</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">RemoteSensingDataset</span><span class="p">(</span>
+    <span class="n">image_paths</span><span class="o">=</span><span class="n">train_paths</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">train_labels</span><span class="p">,</span>
+    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>  <span class="c1"># RGB images</span>
+<span class="p">)</span>
+
+<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">RemoteSensingDataset</span><span class="p">(</span>
+    <span class="n">image_paths</span><span class="o">=</span><span class="n">val_paths</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">val_labels</span><span class="p">,</span>
+    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">RemoteSensingDataset</span><span class="p">(</span>
+    <span class="n">image_paths</span><span class="o">=</span><span class="n">test_paths</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">test_labels</span><span class="p">,</span>
+    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Train dataset size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Validation dataset size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">val_dataset</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test dataset size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10"># Define paths
-masks_path = "naip_test_instance_prediction.tif"
-model_path = f"{out_folder}/instance_models/best_model.pth"</div>
+<div class="clipboard-copy-txt" id="cell-10"># Create datasets
+train_dataset = RemoteSensingDataset(
+    image_paths=train_paths,
+    labels=train_labels,
+    num_channels=3,  # RGB images
+)
+
+val_dataset = RemoteSensingDataset(
+    image_paths=val_paths,
+    labels=val_labels,
+    num_channels=3,
+)
+
+test_dataset = RemoteSensingDataset(
+    image_paths=test_paths,
+    labels=test_labels,
+    num_channels=3,
+)
+
+print(f"Train dataset size: {len(train_dataset)}")
+print(f"Validation dataset size: {len(val_dataset)}")
+print(f"Test dataset size: {len(test_dataset)}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="train-a-resnet50-classifier">Train a ResNet50 Classifier<a class="anchor-link" href="#train-a-resnet50-classifier">¶</a></h2><p>Let's train a ResNet50 model with pretrained ImageNet weights for transfer learning on the 10-class EuroSAT dataset.</p>
 </div>
 </div>
 </div>
@@ -3614,30 +3421,52 @@ model_path = f"{out_folder}/instance_models/best_model.pth"</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run instance segmentation inference</span>
-<span class="n">geoai</span><span class="o">.</span><span class="n">instance_segmentation</span><span class="p">(</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="n">masks_path</span><span class="p">,</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
-    <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
-    <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Train ResNet50 classifier</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"timm_output/resnet50"</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">train_timm_classifier</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span>
+    <span class="n">val_dataset</span><span class="o">=</span><span class="n">val_dataset</span><span class="p">,</span>
+    <span class="n">test_dataset</span><span class="o">=</span><span class="n">test_dataset</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">"resnet50"</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span>  <span class="c1"># 10 classes</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+    <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">freeze_backbone</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">monitor_metric</span><span class="o">=</span><span class="s2">"val_acc"</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"max"</span><span class="p">,</span>
+    <span class="n">patience</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">save_top_k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11"># Run instance segmentation inference
-geoai.instance_segmentation(
-    input_path=test_raster_path,
-    output_path=masks_path,
-    model_path=model_path,
-    num_classes=2,
-    num_channels=3,
-    window_size=512,
-    overlap=256,
-    confidence_threshold=0.5,
-    batch_size=4,
+<div class="clipboard-copy-txt" id="cell-11"># Train ResNet50 classifier
+output_dir = "timm_output/resnet50"
+
+model = train_timm_classifier(
+    train_dataset=train_dataset,
+    val_dataset=val_dataset,
+    test_dataset=test_dataset,
+    model_name="resnet50",
+    num_classes=len(class_names),  # 10 classes
+    in_channels=3,
+    pretrained=True,
+    output_dir=output_dir,
+    batch_size=32,
+    num_epochs=20,
+    learning_rate=1e-3,
+    weight_decay=1e-4,
+    num_workers=4,
+    freeze_backbone=False,
+    monitor_metric="val_acc",
+    mode="max",
+    patience=5,
+    save_top_k=1,
 )</div>
 </div>
 </div>
@@ -3651,7 +3480,7 @@ geoai.instance_segmentation(
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="adjust-confidence-threshold-optional">Adjust confidence threshold (optional)<a class="anchor-link" href="#adjust-confidence-threshold-optional">¶</a></h2><p>You can control which predictions to keep by adjusting the confidence threshold. Higher values (e.g., 0.7) will be more conservative and only keep high-confidence detections, while lower values (e.g., 0.3) will be more permissive.</p>
+<h2 id="train-an-efficientnet-b0-classifier">Train an EfficientNet-B0 Classifier<a class="anchor-link" href="#train-an-efficientnet-b0-classifier">¶</a></h2><p>EfficientNet models provide an excellent balance between accuracy and efficiency.</p>
 </div>
 </div>
 </div>
@@ -3674,34 +3503,52 @@ geoai.instance_segmentation(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run inference with higher confidence threshold</span>
-<span class="n">masks_path_high_conf</span> <span class="o">=</span> <span class="s2">"naip_test_instance_prediction_high_conf.tif"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Train EfficientNet-B0 classifier</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"timm_output/efficientnet_b0"</span>
 
-<span class="n">geoai</span><span class="o">.</span><span class="n">instance_segmentation</span><span class="p">(</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="n">masks_path_high_conf</span><span class="p">,</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
-    <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
-    <span class="n">confidence_threshold</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>  <span class="c1"># Higher threshold for more confident predictions</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">train_timm_classifier</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span>
+    <span class="n">val_dataset</span><span class="o">=</span><span class="n">val_dataset</span><span class="p">,</span>
+    <span class="n">test_dataset</span><span class="o">=</span><span class="n">test_dataset</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">"efficientnet_b0"</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+    <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">freeze_backbone</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">monitor_metric</span><span class="o">=</span><span class="s2">"val_acc"</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"max"</span><span class="p">,</span>
+    <span class="n">patience</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">save_top_k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12"># Run inference with higher confidence threshold
-masks_path_high_conf = "naip_test_instance_prediction_high_conf.tif"
+<div class="clipboard-copy-txt" id="cell-12"># Train EfficientNet-B0 classifier
+output_dir = "timm_output/efficientnet_b0"
 
-geoai.instance_segmentation(
-    input_path=test_raster_path,
-    output_path=masks_path_high_conf,
-    model_path=model_path,
-    num_classes=2,
-    num_channels=3,
-    window_size=512,
-    overlap=256,
-    confidence_threshold=0.7,  # Higher threshold for more confident predictions
-    batch_size=4,
+model = train_timm_classifier(
+    train_dataset=train_dataset,
+    val_dataset=val_dataset,
+    test_dataset=test_dataset,
+    model_name="efficientnet_b0",
+    num_classes=len(class_names),
+    in_channels=3,
+    pretrained=True,
+    output_dir=output_dir,
+    batch_size=32,
+    num_epochs=20,
+    learning_rate=1e-3,
+    weight_decay=1e-4,
+    num_workers=4,
+    freeze_backbone=False,
+    monitor_metric="val_acc",
+    mode="max",
+    patience=5,
+    save_top_k=1,
 )</div>
 </div>
 </div>
@@ -3715,7 +3562,7 @@ geoai.instance_segmentation(
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="vectorize-masks">Vectorize masks<a class="anchor-link" href="#vectorize-masks">¶</a></h2><p>Convert the predicted mask to vector format for better visualization and analysis.</p>
+<h2 id="fine-tuning-with-frozen-backbone">Fine-tuning with Frozen Backbone<a class="anchor-link" href="#fine-tuning-with-frozen-backbone">¶</a></h2><p>For faster training, you can freeze the backbone and only train the classification head:</p>
 </div>
 </div>
 </div>
@@ -3738,11 +3585,45 @@ geoai.instance_segmentation(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">output_vector_path</span> <span class="o">=</span> <span class="s2">"naip_test_instance_prediction.geojson"</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">orthogonalize</span><span class="p">(</span><span class="n">masks_path</span><span class="p">,</span> <span class="n">output_vector_path</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Fine-tune only the classifier head</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"timm_output/resnet50_frozen"</span>
+
+<span class="n">model_frozen</span> <span class="o">=</span> <span class="n">train_timm_classifier</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span>
+    <span class="n">val_dataset</span><span class="o">=</span><span class="n">val_dataset</span><span class="p">,</span>
+    <span class="n">test_dataset</span><span class="o">=</span><span class="n">test_dataset</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">"resnet50"</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">freeze_backbone</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Freeze backbone weights</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># Fewer epochs needed</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+    <span class="n">monitor_metric</span><span class="o">=</span><span class="s2">"val_acc"</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"max"</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13">output_vector_path = "naip_test_instance_prediction.geojson"
-gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
+<div class="clipboard-copy-txt" id="cell-13"># Fine-tune only the classifier head
+output_dir = "timm_output/resnet50_frozen"
+
+model_frozen = train_timm_classifier(
+    train_dataset=train_dataset,
+    val_dataset=val_dataset,
+    test_dataset=test_dataset,
+    model_name="resnet50",
+    num_classes=len(class_names),
+    in_channels=3,
+    pretrained=True,
+    freeze_backbone=True,  # Freeze backbone weights
+    output_dir=output_dir,
+    batch_size=32,
+    num_epochs=10,  # Fewer epochs needed
+    learning_rate=1e-3,
+    monitor_metric="val_acc",
+    mode="max",
+)</div>
 </div>
 </div>
 </div>
@@ -3755,7 +3636,7 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="add-geometric-properties">Add geometric properties<a class="anchor-link" href="#add-geometric-properties">¶</a></h2><p>Calculate area, perimeter, and other geometric properties for each detected building.</p>
+<h2 id="make-predictions">Make Predictions<a class="anchor-link" href="#make-predictions">¶</a></h2><p>Use the trained model to make predictions on test images.</p>
 </div>
 </div>
 </div>
@@ -3778,9 +3659,49 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gdf_props</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">add_geometric_properties</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">area_unit</span><span class="o">=</span><span class="s2">"m2"</span><span class="p">,</span> <span class="n">length_unit</span><span class="o">=</span><span class="s2">"m"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Load the best model checkpoint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoai.timm_train</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimmClassifier</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+
+<span class="c1"># Path to the best model checkpoint</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="s2">"timm_output/resnet50/models/last.ckpt"</span>
+
+<span class="c1"># Load model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">TimmClassifier</span><span class="o">.</span><span class="n">load_from_checkpoint</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">)</span>
+
+<span class="c1"># Make predictions</span>
+<span class="n">predictions</span><span class="p">,</span> <span class="n">probabilities</span> <span class="o">=</span> <span class="n">predict_with_timm</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+    <span class="n">image_paths</span><span class="o">=</span><span class="n">test_paths</span><span class="p">[:</span><span class="mi">20</span><span class="p">],</span>  <span class="c1"># Predict on first 20 test images</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">return_probabilities</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Predictions shape: </span><span class="si">{</span><span class="n">predictions</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Probabilities shape: </span><span class="si">{</span><span class="n">probabilities</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Sample predictions: </span><span class="si">{</span><span class="p">[</span><span class="n">class_names</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">predictions</span><span class="p">[:</span><span class="mi">5</span><span class="p">]]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">gdf_props = geoai.add_geometric_properties(gdf, area_unit="m2", length_unit="m")</div>
+<div class="clipboard-copy-txt" id="cell-14"># Load the best model checkpoint
+from geoai.timm_train import TimmClassifier
+import torch
+
+# Path to the best model checkpoint
+checkpoint_path = "timm_output/resnet50/models/last.ckpt"
+
+# Load model
+model = TimmClassifier.load_from_checkpoint(checkpoint_path)
+
+# Make predictions
+predictions, probabilities = predict_with_timm(
+    model=model,
+    image_paths=test_paths[:20],  # Predict on first 20 test images
+    batch_size=8,
+    return_probabilities=True,
+)
+
+print(f"Predictions shape: {predictions.shape}")
+print(f"Probabilities shape: {probabilities.shape}")
+print(f"Sample predictions: {[class_names[p] for p in predictions[:5]]}")</div>
 </div>
 </div>
 </div>
@@ -3793,7 +3714,7 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-results">Visualize results<a class="anchor-link" href="#visualize-results">¶</a></h2>
+<h2 id="visualize-predictions">Visualize Predictions<a class="anchor-link" href="#visualize-predictions">¶</a></h2>
 </div>
 </div>
 </div>
@@ -3816,15 +3737,76 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_raster</span><span class="p">(</span>
-    <span class="n">masks_path</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"tab20"</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">"ipyleaflet"</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># Visualize predictions</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_paths</span><span class="p">[:</span><span class="mi">20</span><span class="p">]):</span>
+        <span class="k">break</span>
+
+    <span class="c1"># Load and display image</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">test_paths</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">pred_class</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="n">predictions</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
+    <span class="n">true_class</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="n">test_labels</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
+    <span class="n">confidence</span> <span class="o">=</span> <span class="n">probabilities</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="n">predictions</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="n">color</span> <span class="o">=</span> <span class="s2">"green"</span> <span class="k">if</span> <span class="n">predictions</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">test_labels</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">else</span> <span class="s2">"red"</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"Pred: </span><span class="si">{</span><span class="n">pred_class</span><span class="si">}</span><span class="se">\n</span><span class="s2">True: </span><span class="si">{</span><span class="n">true_class</span><span class="si">}</span><span class="se">\n</span><span class="s2">(</span><span class="si">{</span><span class="n">confidence</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)"</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">geoai.view_raster(
-    masks_path, nodata=0, cmap="tab20", basemap=test_raster_path, backend="ipyleaflet"
-)</div>
+<div class="clipboard-copy-txt" id="cell-15">import matplotlib.pyplot as plt
+from PIL import Image
+
+# Visualize predictions
+fig, axes = plt.subplots(4, 5, figsize=(20, 16))
+
+for idx, ax in enumerate(axes.flat):
+    if idx &gt;= len(test_paths[:20]):
+        break
+
+    # Load and display image
+    img = Image.open(test_paths[idx])
+
+    ax.imshow(img)
+    pred_class = class_names[predictions[idx]]
+    true_class = class_names[test_labels[idx]]
+    confidence = probabilities[idx][predictions[idx]] * 100
+
+    color = "green" if predictions[idx] == test_labels[idx] else "red"
+    ax.set_title(
+        f"Pred: {pred_class}\nTrue: {true_class}\n({confidence:.1f}%)",
+        color=color,
+        fontsize=10,
+    )
+    ax.axis("off")
+
+plt.tight_layout()
+plt.show()</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="using-class-weights-for-imbalanced-datasets">Using Class Weights for Imbalanced Datasets<a class="anchor-link" href="#using-class-weights-for-imbalanced-datasets">¶</a></h2><p>When dealing with imbalanced datasets, you can provide class weights to the loss function:</p>
 </div>
 </div>
 </div>
@@ -3847,9 +3829,63 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">gdf_props</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">"area_m2"</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils.class_weight</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_class_weight</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Compute class weights</span>
+<span class="n">class_weights</span> <span class="o">=</span> <span class="n">compute_class_weight</span><span class="p">(</span>
+    <span class="n">class_weight</span><span class="o">=</span><span class="s2">"balanced"</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">train_labels</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">train_labels</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class weights: </span><span class="si">{</span><span class="n">class_weights</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Train with class weights</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"timm_output/resnet50_weighted"</span>
+
+<span class="n">model_weighted</span> <span class="o">=</span> <span class="n">train_timm_classifier</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span>
+    <span class="n">val_dataset</span><span class="o">=</span><span class="n">val_dataset</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">"resnet50"</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+    <span class="n">class_weights</span><span class="o">=</span><span class="n">class_weights</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>  <span class="c1"># Pass class weights</span>
+    <span class="n">monitor_metric</span><span class="o">=</span><span class="s2">"val_acc"</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"max"</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">geoai.view_vector_interactive(gdf_props, column="area_m2", tiles=test_raster_path)</div>
+<div class="clipboard-copy-txt" id="cell-16">from sklearn.utils.class_weight import compute_class_weight
+import numpy as np
+
+# Compute class weights
+class_weights = compute_class_weight(
+    class_weight="balanced", classes=np.unique(train_labels), y=train_labels
+)
+
+print(f"Class weights: {class_weights}")
+
+# Train with class weights
+output_dir = "timm_output/resnet50_weighted"
+
+model_weighted = train_timm_classifier(
+    train_dataset=train_dataset,
+    val_dataset=val_dataset,
+    model_name="resnet50",
+    num_classes=len(class_names),
+    in_channels=3,
+    pretrained=True,
+    output_dir=output_dir,
+    batch_size=32,
+    num_epochs=20,
+    learning_rate=1e-3,
+    class_weights=class_weights.tolist(),  # Pass class weights
+    monitor_metric="val_acc",
+    mode="max",
+)</div>
 </div>
 </div>
 </div>
@@ -3862,7 +3898,31 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="filter-by-area">Filter by area<a class="anchor-link" href="#filter-by-area">¶</a></h2><p>Filter out small detections that might be noise or artifacts.</p>
+<h2 id="summary">Summary<a class="anchor-link" href="#summary">¶</a></h2><p>This notebook demonstrated:</p>
+<ol>
+<li><strong>Model Selection</strong>: Exploring 1000+ available timm models (ResNet, EfficientNet, ViT)</li>
+<li><strong>Data Loading</strong>: Using the EuroSAT RGB dataset from Hugging Face</li>
+<li><strong>Training</strong>: Training various architectures on 10-class land cover classification</li>
+<li><strong>Transfer Learning</strong>: Fine-tuning pretrained models with frozen backbones</li>
+<li><strong>Inference</strong>: Making predictions and visualizations</li>
+<li><strong>Class Weighting</strong>: Handling imbalanced datasets</li>
+</ol>
+<h2 id="key-parameters">Key Parameters<a class="anchor-link" href="#key-parameters">¶</a></h2><ul>
+<li><code>model_name</code>: Choose from 1000+ timm models</li>
+<li><code>num_classes</code>: Number of output classes</li>
+<li><code>in_channels</code>: Number of input channels (3 for RGB, 4 for RGBN, etc.)</li>
+<li><code>pretrained</code>: Use ImageNet pretrained weights for transfer learning</li>
+<li><code>freeze_backbone</code>: Freeze backbone for faster fine-tuning</li>
+<li><code>class_weights</code>: Handle imbalanced datasets</li>
+<li><code>monitor_metric</code>: Track 'val_loss' or 'val_acc' for checkpointing</li>
+<li><code>patience</code>: Early stopping patience</li>
+</ul>
+<h2 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h2><ul>
+<li>Experiment with different model architectures (ConvNeXt, Swin Transformer, etc.)</li>
+<li>Try data augmentation for improved performance</li>
+<li>Use learning rate schedulers for better convergence</li>
+<li>Deploy models for inference on satellite imagery</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3885,83 +3945,62 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gdf_filtered</span> <span class="o">=</span> <span class="n">gdf_props</span><span class="p">[(</span><span class="n">gdf_props</span><span class="p">[</span><span class="s2">"area_m2"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)]</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-17">gdf_filtered = gdf_props[(gdf_props["area_m2"] &gt; 50)]</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">gdf_filtered</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">"area_m2"</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-18">geoai.view_vector_interactive(gdf_filtered, column="area_m2", tiles=test_raster_path)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="compare-predictions-with-imagery">Compare predictions with imagery<a class="anchor-link" href="#compare-predictions-with-imagery">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">create_split_map</span><span class="p">(</span>
-    <span class="n">left_layer</span><span class="o">=</span><span class="n">gdf_filtered</span><span class="p">,</span>
-    <span class="n">right_layer</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">,</span>
-    <span class="n">left_args</span><span class="o">=</span><span class="p">{</span><span class="s2">"style"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"color"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="s2">"fillOpacity"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}},</span>
-    <span class="n">basemap</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils.class_weight</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_class_weight</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Compute class weights</span>
+<span class="n">class_weights</span> <span class="o">=</span> <span class="n">compute_class_weight</span><span class="p">(</span>
+    <span class="n">class_weight</span><span class="o">=</span><span class="s2">"balanced"</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">train_labels</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">train_labels</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class weights: </span><span class="si">{</span><span class="n">class_weights</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Train with class weights</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"timm_output/resnet50_weighted"</span>
+
+<span class="n">model_weighted</span> <span class="o">=</span> <span class="n">train_timm_classifier</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span>
+    <span class="n">val_dataset</span><span class="o">=</span><span class="n">val_dataset</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">"resnet50"</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+    <span class="n">class_weights</span><span class="o">=</span><span class="n">class_weights</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>  <span class="c1"># Pass class weights</span>
+    <span class="n">monitor_metric</span><span class="o">=</span><span class="s2">"val_acc"</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"max"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">geoai.create_split_map(
-    left_layer=gdf_filtered,
-    right_layer=test_raster_path,
-    left_args={"style": {"color": "red", "fillOpacity": 0.2}},
-    basemap=test_raster_path,
+<div class="clipboard-copy-txt" id="cell-17">from sklearn.utils.class_weight import compute_class_weight
+import numpy as np
+
+# Compute class weights
+class_weights = compute_class_weight(
+    class_weight="balanced", classes=np.unique(train_labels), y=train_labels
+)
+
+print(f"Class weights: {class_weights}")
+
+# Train with class weights
+output_dir = "timm_output/resnet50_weighted"
+
+model_weighted = train_timm_classifier(
+    train_dataset=train_dataset,
+    val_dataset=val_dataset,
+    model_name="resnet50",
+    num_classes=len(class_names),
+    in_channels=3,
+    pretrained=True,
+    output_dir=output_dir,
+    batch_size=16,
+    num_epochs=20,
+    learning_rate=1e-3,
+    class_weights=class_weights.tolist(),  # Pass class weights
+    monitor_metric="val_acc",
+    mode="max",
 )</div>
 </div>
 </div>
@@ -3975,248 +4014,32 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="model-performance-analysis">Model Performance Analysis<a class="anchor-link" href="#model-performance-analysis">¶</a></h2><p>Let's examine the training curves and model performance:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">plot_performance_metrics</span><span class="p">(</span>
-    <span class="n">history_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/instance_models/training_history.pth"</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-20">geoai.plot_performance_metrics(
-    history_path=f"{out_folder}/instance_models/training_history.pth",
-    figsize=(15, 5),
-    verbose=True,
-)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="instance-vs-semantic-segmentation-comparison">Instance vs Semantic Segmentation Comparison<a class="anchor-link" href="#instance-vs-semantic-segmentation-comparison">¶</a></h2><h3 id="when-to-use-instance-segmentation">When to use Instance Segmentation:<a class="anchor-link" href="#when-to-use-instance-segmentation">¶</a></h3><ol>
-<li><strong>Individual object analysis</strong>: When you need to count, measure, or analyze individual objects</li>
-<li><strong>Overlapping objects</strong>: When objects of the same class may overlap or touch</li>
-<li><strong>Object tracking</strong>: When tracking individual objects across frames or images</li>
-<li><strong>Spatial relationships</strong>: When analyzing relationships between individual objects</li>
+<h2 id="summary">Summary<a class="anchor-link" href="#summary">¶</a></h2><p>This notebook demonstrated:</p>
+<ol>
+<li><strong>Model Selection</strong>: Exploring 1000+ available timm models</li>
+<li><strong>Data Preparation</strong>: Creating datasets for remote sensing imagery</li>
+<li><strong>Training</strong>: Training various architectures (ResNet, EfficientNet, ViT)</li>
+<li><strong>Multi-channel Support</strong>: Handling 4-band RGBN imagery</li>
+<li><strong>Transfer Learning</strong>: Fine-tuning pretrained models with frozen backbones</li>
+<li><strong>Inference</strong>: Making predictions on new images</li>
+<li><strong>Class Weighting</strong>: Handling imbalanced datasets</li>
 </ol>
-<h3 id="when-to-use-semantic-segmentation">When to use Semantic Segmentation:<a class="anchor-link" href="#when-to-use-semantic-segmentation">¶</a></h3><ol>
-<li><strong>Area coverage</strong>: When you only need to know what percentage of an image contains a certain class</li>
-<li><strong>Land cover mapping</strong>: For continuous features like vegetation, water, roads</li>
-<li><strong>Simpler models</strong>: When you want faster training and inference</li>
-<li><strong>Pixel-level classification</strong>: When object boundaries are less important</li>
-</ol>
-<h3 id="model-outputs">Model Outputs:<a class="anchor-link" href="#model-outputs">¶</a></h3><p><strong>Instance Segmentation (Mask R-CNN)</strong>:</p>
-<ul>
-<li>Bounding boxes for each object</li>
-<li>Confidence scores for each detection</li>
-<li>Binary mask for each individual object</li>
-<li>Class label for each object</li>
+<h2 id="key-parameters">Key Parameters<a class="anchor-link" href="#key-parameters">¶</a></h2><ul>
+<li><code>model_name</code>: Choose from 1000+ timm models</li>
+<li><code>num_classes</code>: Number of output classes</li>
+<li><code>in_channels</code>: Number of input channels (3 for RGB, 4 for RGBN, etc.)</li>
+<li><code>pretrained</code>: Use ImageNet pretrained weights for transfer learning</li>
+<li><code>freeze_backbone</code>: Freeze backbone for faster fine-tuning</li>
+<li><code>class_weights</code>: Handle imbalanced datasets</li>
+<li><code>monitor_metric</code>: Track 'val_loss' or 'val_acc' for checkpointing</li>
+<li><code>patience</code>: Early stopping patience</li>
 </ul>
-<p><strong>Semantic Segmentation</strong>:</p>
-<ul>
-<li>Single multi-class mask covering the entire image</li>
-<li>Probability map (optional)</li>
-<li>No distinction between individual objects</li>
+<h2 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h2><ul>
+<li>Experiment with different model architectures</li>
+<li>Try data augmentation for improved performance</li>
+<li>Use learning rate schedulers for better convergence</li>
+<li>Deploy models for inference on large raster datasets</li>
 </ul>
-<h3 id="performance-considerations">Performance Considerations:<a class="anchor-link" href="#performance-considerations">¶</a></h3><table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Instance Segmentation</th>
-<th>Semantic Segmentation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Training Time</strong></td>
-<td>Slower (more complex model)</td>
-<td>Faster</td>
-</tr>
-<tr>
-<td><strong>Inference Time</strong></td>
-<td>Slower</td>
-<td>Faster</td>
-</tr>
-<tr>
-<td><strong>Memory Usage</strong></td>
-<td>Higher</td>
-<td>Lower</td>
-</tr>
-<tr>
-<td><strong>Accuracy</strong></td>
-<td>Better for distinct objects</td>
-<td>Better for continuous classes</td>
-</tr>
-<tr>
-<td><strong>Typical Batch Size</strong></td>
-<td>2-8</td>
-<td>8-32</td>
-</tr>
-</tbody>
-</table>
-<h3 id="metrics">Metrics:<a class="anchor-link" href="#metrics">¶</a></h3><p><strong>Instance Segmentation Metrics</strong>:</p>
-<ul>
-<li><strong>AP (Average Precision)</strong>: Precision at different IoU thresholds</li>
-<li><strong>AP@0.5</strong>: Average Precision at IoU threshold of 0.5</li>
-<li><strong>AP@0.75</strong>: Average Precision at IoU threshold of 0.75</li>
-<li><strong>AR (Average Recall)</strong>: Recall averaged across IoU thresholds</li>
-</ul>
-<p><strong>Semantic Segmentation Metrics</strong>:</p>
-<ul>
-<li><strong>IoU (Intersection over Union)</strong>: Overlap between prediction and ground truth</li>
-<li><strong>Dice Score</strong>: Similar to IoU but more sensitive to small objects</li>
-<li><strong>Pixel Accuracy</strong>: Percentage of correctly classified pixels</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="batch-processing-optional">Batch Processing (Optional)<a class="anchor-link" href="#batch-processing-optional">¶</a></h2><p>If you have multiple images to process, you can use the batch inference function:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Uncomment to process multiple images</span>
-<span class="c1"># geoai.instance_segmentation_batch(</span>
-<span class="c1">#     input_dir="path/to/input/images",</span>
-<span class="c1">#     output_dir="path/to/output/masks",</span>
-<span class="c1">#     model_path=model_path,</span>
-<span class="c1">#     num_classes=2,</span>
-<span class="c1">#     num_channels=3,</span>
-<span class="c1">#     window_size=512,</span>
-<span class="c1">#     overlap=256,</span>
-<span class="c1">#     confidence_threshold=0.5,</span>
-<span class="c1">#     batch_size=4,</span>
-<span class="c1"># )</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-21"># Uncomment to process multiple images
-# geoai.instance_segmentation_batch(
-#     input_dir="path/to/input/images",
-#     output_dir="path/to/output/masks",
-#     model_path=model_path,
-#     num_classes=2,
-#     num_channels=3,
-#     window_size=512,
-#     overlap=256,
-#     confidence_threshold=0.5,
-#     batch_size=4,
-# )</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="advanced-multi-channel-input-rgbn">Advanced: Multi-channel Input (RGBN)<a class="anchor-link" href="#advanced-multi-channel-input-rgbn">¶</a></h2><p>If your imagery includes a near-infrared (NIR) band, you can train with 4 channels:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Example for 4-channel (RGBN) imagery</span>
-<span class="c1"># geoai.train_instance_segmentation_model(</span>
-<span class="c1">#     images_dir=f"{out_folder}/images",</span>
-<span class="c1">#     labels_dir=f"{out_folder}/labels",</span>
-<span class="c1">#     output_dir=f"{out_folder}/instance_models_rgbn",</span>
-<span class="c1">#     num_classes=2,</span>
-<span class="c1">#     num_channels=4,  # RGB + NIR</span>
-<span class="c1">#     batch_size=4,</span>
-<span class="c1">#     num_epochs=10,</span>
-<span class="c1">#     learning_rate=0.005,</span>
-<span class="c1">#     val_split=0.2,</span>
-<span class="c1">#     verbose=True,</span>
-<span class="c1"># )</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-22"># Example for 4-channel (RGBN) imagery
-# geoai.train_instance_segmentation_model(
-#     images_dir=f"{out_folder}/images",
-#     labels_dir=f"{out_folder}/labels",
-#     output_dir=f"{out_folder}/instance_models_rgbn",
-#     num_classes=2,
-#     num_channels=4,  # RGB + NIR
-#     batch_size=4,
-#     num_epochs=10,
-#     learning_rate=0.005,
-#     val_split=0.2,
-#     verbose=True,
-# )</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -4250,7 +4073,7 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 4, 2025 00:48:34 UTC"><span class="timeago" datetime="2025-10-04T00:48:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 4, 2025 00:48:34 UTC">2025-10-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 4, 2025 21:03:13 UTC"><span class="timeago" datetime="2025-10-04T21:03:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 4, 2025 21:03:13 UTC">2025-10-04</span>
   </span>
 
     
@@ -4260,7 +4083,7 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 4, 2025 00:48:34 UTC"><span class="timeago" datetime="2025-10-04T00:48:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 4, 2025 00:48:34 UTC">2025-10-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 4, 2025 21:03:13 UTC"><span class="timeago" datetime="2025-10-04T21:03:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 4, 2025 21:03:13 UTC">2025-10-04</span>
   </span>
 
     
