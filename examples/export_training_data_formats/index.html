@@ -12,9 +12,13 @@
         <meta name="author" content="opengeos">
       
       
-        <link rel="canonical" href="https://opengeoai.org/examples/_template/">
+        <link rel="canonical" href="https://opengeoai.org/examples/export_training_data_formats/">
       
       
+        <link rel="prev" href="../create_training_data/">
+      
+      
+        <link rel="next" href="../building_footprints_usa/">
       
       
       <link rel="icon" href="../../assets/logo.ico">
@@ -22,7 +26,7 @@
     
     
       
-        <title>template - GeoAI</title>
+        <title>Export training data formats - GeoAI</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#template" class="md-skip">
+        <a href="#export-training-data-in-multiple-formats-pascal-voc-coco-yolo" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-               template
+              Export training data formats
             
           </span>
         </div>
@@ -370,18 +374,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -397,7 +403,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -638,10 +644,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../export_training_data_formats/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Export training data formats
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -652,6 +680,194 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download sample data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualize sample data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-1-pascal-voc-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format 1: PASCAL VOC (XML)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format 1: PASCAL VOC (XML)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examine-pascal-voc-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examine PASCAL VOC output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-2-coco-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format 2: COCO (JSON)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format 2: COCO (JSON)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examine-coco-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examine COCO output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-3-yolo-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format 3: YOLO (Text)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format 3: YOLO (Text)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examine-yolo-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examine YOLO output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format Comparison
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-each-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Each Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GeoAI Extensions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-class-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Class Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2207,9 +2423,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-package" class="md-nav__link">
+  <a href="#install-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      Install package
+      Install packages
     </span>
   </a>
   
@@ -2234,36 +2450,141 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-data" class="md-nav__link">
+  <a href="#visualize-sample-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualize data
+      Visualize sample data
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-model" class="md-nav__link">
+  <a href="#format-1-pascal-voc-xml" class="md-nav__link">
     <span class="md-ellipsis">
-      Initialize model
+      Format 1: PASCAL VOC (XML)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format 1: PASCAL VOC (XML)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examine-pascal-voc-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examine PASCAL VOC output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-2-coco-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format 2: COCO (JSON)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format 2: COCO (JSON)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examine-coco-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examine COCO output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-3-yolo-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format 3: YOLO (Text)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format 3: YOLO (Text)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examine-yolo-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examine YOLO output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format Comparison
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-each-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Each Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GeoAI Extensions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-class-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Class Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-inference" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Run inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize results
+      Summary
     </span>
   </a>
   
@@ -2282,7 +2603,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/examples/_template/_template.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/examples/export_training_data_formats/export_training_data_formats.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -2731,19 +3052,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="template">Template<a class="anchor-link" href="#template">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/template.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<h2 id="install-package">Install package<a class="anchor-link" href="#install-package">¶</a></h2><p>To use the <code>geoai-py</code> package, ensure it is installed in your environment. Uncomment the command below if needed.</p>
+<h1 id="export-training-data-in-multiple-formats-pascal-voc-coco-yolo">Export Training Data in Multiple Formats (PASCAL VOC, COCO, YOLO)<a class="anchor-link" href="#export-training-data-in-multiple-formats-pascal-voc-coco-yolo">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/export_training_data_formats.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>This notebook demonstrates how to export geospatial training data in three popular object detection formats:</p>
+<ul>
+<li><strong>PASCAL VOC</strong>: XML-based format, widely used in computer vision</li>
+<li><strong>COCO</strong>: JSON-based format, standard for object detection benchmarks</li>
+<li><strong>YOLO</strong>: Text-based format with normalized coordinates, optimized for YOLO models</li>
+</ul>
+<h2 id="install-packages">Install packages<a class="anchor-link" href="#install-packages">¶</a></h2><p>Ensure the required packages are installed.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2770,7 +3097,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2781,7 +3108,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2800,26 +3127,30 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import geoai</div>
+<div class="clipboard-copy-txt" id="cell-2">import geoai
+import json
+from pathlib import Path</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-sample-data">Download sample data<a class="anchor-link" href="#download-sample-data">¶</a></h2>
+<h2 id="download-sample-data">Download sample data<a class="anchor-link" href="#download-sample-data">¶</a></h2><p>We'll use the same building detection dataset from the segmentation example.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2837,27 +3168,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_raster_url</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train.tif"</span>
+<span class="p">)</span>
+<span class="n">train_vector_url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_train_buildings.geojson"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3"></div>
+<div class="clipboard-copy-txt" id="cell-3">train_raster_url = (
+    "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train.tif"
+)
+train_vector_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_train_buildings.geojson"</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-data">Visualize data<a class="anchor-link" href="#visualize-data">¶</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2875,27 +3201,29 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_raster_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">train_raster_url</span><span class="p">)</span>
+<span class="n">train_vector_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">train_vector_url</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4"></div>
+<div class="clipboard-copy-txt" id="cell-4">train_raster_path = geoai.download_file(train_raster_url)
+train_vector_path = geoai.download_file(train_vector_url)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="initialize-model">Initialize model<a class="anchor-link" href="#initialize-model">¶</a></h2>
+<h2 id="visualize-sample-data">Visualize sample data<a class="anchor-link" href="#visualize-sample-data">¶</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2913,27 +3241,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">get_raster_info</span><span class="p">(</span><span class="n">train_raster_path</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5"></div>
+<div class="clipboard-copy-txt" id="cell-5">geoai.get_raster_info(train_raster_path)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="run-inference">Run inference<a class="anchor-link" href="#run-inference">¶</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2951,27 +3268,33 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">train_vector_path</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6"></div>
+<div class="clipboard-copy-txt" id="cell-6">geoai.view_vector_interactive(train_vector_path, tiles=train_raster_path)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-results">Visualize results<a class="anchor-link" href="#visualize-results">¶</a></h2>
+<h2 id="format-1-pascal-voc-xml">Format 1: PASCAL VOC (XML)<a class="anchor-link" href="#format-1-pascal-voc-xml">¶</a></h2><p>PASCAL VOC format stores annotations in XML files with bounding boxes and class labels. This is the default format and is widely used in traditional object detection frameworks.</p>
+<p><strong>Output structure:</strong></p>
+<pre><code>pascal_voc_output/
+├── images/          # GeoTIFF tiles
+├── labels/          # Label masks (GeoTIFF)
+└── annotations/     # XML annotation files
+</code></pre>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=11">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2989,11 +3312,505 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pascal_output</span> <span class="o">=</span> <span class="s2">"buildings_pascal_voc"</span>
+
+<span class="n">stats</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles</span><span class="p">(</span>
+    <span class="n">in_raster</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">,</span>
+    <span class="n">out_folder</span><span class="o">=</span><span class="n">pascal_output</span><span class="p">,</span>
+    <span class="n">in_class_data</span><span class="o">=</span><span class="n">train_vector_path</span><span class="p">,</span>
+    <span class="n">tile_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">buffer_radius</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tiles</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># Limit for demo purposes</span>
+    <span class="n">metadata_format</span><span class="o">=</span><span class="s2">"PASCAL_VOC"</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7"></div>
+<div class="clipboard-copy-txt" id="cell-7">pascal_output = "buildings_pascal_voc"
+
+stats = geoai.export_geotiff_tiles(
+    in_raster=train_raster_path,
+    out_folder=pascal_output,
+    in_class_data=train_vector_path,
+    tile_size=512,
+    stride=256,
+    buffer_radius=0,
+    max_tiles=10,  # Limit for demo purposes
+    metadata_format="PASCAL_VOC",
+)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="examine-pascal-voc-output">Examine PASCAL VOC output<a class="anchor-link" href="#examine-pascal-voc-output">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=13">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># List annotation files</span>
+<span class="n">xml_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pascal_output</span><span class="si">}</span><span class="s2">/annotations"</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.xml"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">xml_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> XML annotation files"</span><span class="p">)</span>
+
+<span class="c1"># Display first annotation file</span>
+<span class="k">if</span> <span class="n">xml_files</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">xml_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Sample annotation (</span><span class="si">{</span><span class="n">xml_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">):</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8"># List annotation files
+xml_files = list(Path(f"{pascal_output}/annotations").glob("*.xml"))
+print(f"Found {len(xml_files)} XML annotation files")
+
+# Display first annotation file
+if xml_files:
+    with open(xml_files[0], "r") as f:
+        print(f"\nSample annotation ({xml_files[0].name}):\n")
+        print(f.read())</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=14">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="format-2-coco-json">Format 2: COCO (JSON)<a class="anchor-link" href="#format-2-coco-json">¶</a></h2><p>COCO format uses a single JSON file containing all annotations, images, and categories. This is the standard format for modern object detection benchmarks.</p>
+<p><strong>Output structure:</strong></p>
+<pre><code>coco_output/
+├── images/              # GeoTIFF tiles
+├── labels/              # Label masks (GeoTIFF)
+└── annotations/
+    └── instances.json   # COCO annotations
+</code></pre>
+<p><strong>COCO JSON structure:</strong></p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tile_000000.tif"</span><span class="p">,</span><span class="w"> </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">512</span><span class="p">,</span><span class="w"> </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">512</span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"annotations"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">x</span><span class="p">,</span><span class="w"> </span><span class="err">y</span><span class="p">,</span><span class="w"> </span><span class="err">w</span><span class="p">,</span><span class="w"> </span><span class="err">h</span><span class="p">]}],</span>
+<span class="w">  </span><span class="nt">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"building"</span><span class="p">,</span><span class="w"> </span><span class="nt">"supercategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=15">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">coco_output</span> <span class="o">=</span> <span class="s2">"buildings_coco"</span>
+
+<span class="n">stats</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles</span><span class="p">(</span>
+    <span class="n">in_raster</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">,</span>
+    <span class="n">out_folder</span><span class="o">=</span><span class="n">coco_output</span><span class="p">,</span>
+    <span class="n">in_class_data</span><span class="o">=</span><span class="n">train_vector_path</span><span class="p">,</span>
+    <span class="n">tile_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">buffer_radius</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tiles</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">metadata_format</span><span class="o">=</span><span class="s2">"COCO"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9">coco_output = "buildings_coco"
+
+stats = geoai.export_geotiff_tiles(
+    in_raster=train_raster_path,
+    out_folder=coco_output,
+    in_class_data=train_vector_path,
+    tile_size=512,
+    stride=256,
+    buffer_radius=0,
+    max_tiles=10,
+    metadata_format="COCO",
+)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="examine-coco-output">Examine COCO output<a class="anchor-link" href="#examine-coco-output">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=17">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Load COCO annotations</span>
+<span class="n">coco_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coco_output</span><span class="si">}</span><span class="s2">/annotations/instances.json"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">coco_file</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">coco_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"COCO Dataset Summary:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Images: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">coco_data</span><span class="p">[</span><span class="s1">'images'</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Annotations: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">coco_data</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Categories: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">coco_data</span><span class="p">[</span><span class="s1">'categories'</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Display categories</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Categories:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">coco_data</span><span class="p">[</span><span class="s2">"categories"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Display first image</span>
+<span class="k">if</span> <span class="n">coco_data</span><span class="p">[</span><span class="s2">"images"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">First image:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">coco_data</span><span class="p">[</span><span class="s1">'images'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Display first annotation</span>
+<span class="k">if</span> <span class="n">coco_data</span><span class="p">[</span><span class="s2">"annotations"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">First annotation:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">coco_data</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10"># Load COCO annotations
+coco_file = f"{coco_output}/annotations/instances.json"
+with open(coco_file, "r") as f:
+    coco_data = json.load(f)
+
+print(f"COCO Dataset Summary:")
+print(f"  Images: {len(coco_data['images'])}")
+print(f"  Annotations: {len(coco_data['annotations'])}")
+print(f"  Categories: {len(coco_data['categories'])}")
+
+# Display categories
+print(f"\nCategories:")
+for cat in coco_data["categories"]:
+    print(f"  {cat}")
+
+# Display first image
+if coco_data["images"]:
+    print(f"\nFirst image:")
+    print(f"  {coco_data['images'][0]}")
+
+# Display first annotation
+if coco_data["annotations"]:
+    print(f"\nFirst annotation:")
+    print(f"  {coco_data['annotations'][0]}")</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=18">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="format-3-yolo-text">Format 3: YOLO (Text)<a class="anchor-link" href="#format-3-yolo-text">¶</a></h2><p>YOLO format uses text files with normalized bounding box coordinates. Each image has a corresponding <code>.txt</code> file with one line per object.</p>
+<p><strong>Output structure:</strong></p>
+<pre><code>yolo_output/
+├── images/           # GeoTIFF tiles
+├── labels/           # Label masks (GeoTIFF) + YOLO .txt files
+└── classes.txt       # Class names (one per line)
+</code></pre>
+<p><strong>YOLO annotation format (normalized coordinates 0-1):</strong></p>
+<pre><code>&lt;class_id&gt; &lt;x_center&gt; &lt;y_center&gt; &lt;width&gt; &lt;height&gt;
+0 0.5 0.5 0.3 0.2
+</code></pre>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=19">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">yolo_output</span> <span class="o">=</span> <span class="s2">"buildings_yolo"</span>
+
+<span class="n">stats</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles</span><span class="p">(</span>
+    <span class="n">in_raster</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">,</span>
+    <span class="n">out_folder</span><span class="o">=</span><span class="n">yolo_output</span><span class="p">,</span>
+    <span class="n">in_class_data</span><span class="o">=</span><span class="n">train_vector_path</span><span class="p">,</span>
+    <span class="n">tile_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">buffer_radius</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tiles</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">metadata_format</span><span class="o">=</span><span class="s2">"YOLO"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-11">yolo_output = "buildings_yolo"
+
+stats = geoai.export_geotiff_tiles(
+    in_raster=train_raster_path,
+    out_folder=yolo_output,
+    in_class_data=train_vector_path,
+    tile_size=512,
+    stride=256,
+    buffer_radius=0,
+    max_tiles=10,
+    metadata_format="YOLO",
+)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=20">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="examine-yolo-output">Examine YOLO output<a class="anchor-link" href="#examine-yolo-output">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=21">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Load classes</span>
+<span class="n">classes_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">yolo_output</span><span class="si">}</span><span class="s2">/classes.txt"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">classes_file</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Classes (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span><span class="si">}</span><span class="s2">):"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">classes</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># List annotation files</span>
+<span class="n">txt_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">yolo_output</span><span class="si">}</span><span class="s2">/labels"</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.txt"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">txt_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> YOLO annotation files"</span><span class="p">)</span>
+
+<span class="c1"># Display first annotation file</span>
+<span class="k">if</span> <span class="n">txt_files</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">txt_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Sample annotation (</span><span class="si">{</span><span class="n">txt_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">):"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Format: &lt;class_id&gt; &lt;x_center&gt; &lt;y_center&gt; &lt;width&gt; &lt;height&gt;"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>  <span class="c1"># Show first 5 objects</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  ... and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2"> more objects"</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12"># Load classes
+classes_file = f"{yolo_output}/classes.txt"
+with open(classes_file, "r") as f:
+    classes = f.read().strip().split("\n")
+
+print(f"Classes ({len(classes)}):")
+for i, cls in enumerate(classes):
+    print(f"  {i}: {cls}")
+
+# List annotation files
+txt_files = list(Path(f"{yolo_output}/labels").glob("*.txt"))
+print(f"\nFound {len(txt_files)} YOLO annotation files")
+
+# Display first annotation file
+if txt_files:
+    with open(txt_files[0], "r") as f:
+        lines = f.readlines()
+    print(f"\nSample annotation ({txt_files[0].name}):")
+    print(f"  Format: <class_id> <x_center> <y_center> <width> <height>")
+    for line in lines[:5]:  # Show first 5 objects
+        print(f"  {line.strip()}")
+    if len(lines) &gt; 5:
+        print(f"  ... and {len(lines) - 5} more objects")</height></width></y_center></x_center></class_id></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=22">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="format-comparison">Format Comparison<a class="anchor-link" href="#format-comparison">¶</a></h2><h3 id="when-to-use-each-format">When to Use Each Format<a class="anchor-link" href="#when-to-use-each-format">¶</a></h3><table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Best For</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PASCAL VOC</strong></td>
+<td>Traditional CV frameworks, quick inspection</td>
+<td>Human-readable XML, one file per image</td>
+<td>Verbose, not ideal for large datasets</td>
+</tr>
+<tr>
+<td><strong>COCO</strong></td>
+<td>Modern object detection, benchmarking, complex datasets</td>
+<td>Efficient JSON, supports multiple annotations types</td>
+<td>Single file can be large, requires parsing</td>
+</tr>
+<tr>
+<td><strong>YOLO</strong></td>
+<td>YOLO models (v3-v8), real-time detection</td>
+<td>Compact, fast to parse, normalized coordinates</td>
+<td>Less human-readable, limited metadata</td>
+</tr>
+</tbody>
+</table>
+<h3 id="coordinate-systems">Coordinate Systems<a class="anchor-link" href="#coordinate-systems">¶</a></h3><ul>
+<li><strong>PASCAL VOC</strong>: Absolute pixel coordinates <code>[xmin, ymin, xmax, ymax]</code></li>
+<li><strong>COCO</strong>: Absolute pixel coordinates <code>[x, y, width, height]</code> (top-left corner)</li>
+<li><strong>YOLO</strong>: Normalized coordinates <code>[x_center, y_center, width, height]</code> (0-1 range)</li>
+</ul>
+<h3 id="geoai-extensions">GeoAI Extensions<a class="anchor-link" href="#geoai-extensions">¶</a></h3><p>All formats preserve geospatial information:</p>
+<ul>
+<li><strong>PASCAL VOC</strong>: CRS, transform, and bounds in <code>&lt;georeference&gt;</code> element</li>
+<li><strong>COCO</strong>: CRS and transform as custom fields in image metadata</li>
+<li><strong>YOLO</strong>: Georeferenced GeoTIFF tiles maintain spatial context</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="multi-class-example">Multi-Class Example<a class="anchor-link" href="#multi-class-example">¶</a></h2><p>The formats also support multi-class datasets. Here's how class information is stored:</p>
+<p><strong>PASCAL VOC:</strong></p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;object&gt;</span>
+<span class="w">  </span><span class="nt">&lt;name&gt;</span>building<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;bndbox&gt;</span>...<span class="nt">&lt;/bndbox&gt;</span>
+<span class="nt">&lt;/object&gt;</span>
+</pre></div>
+<p><strong>COCO:</strong></p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"building"</span><span class="p">,</span><span class="w"> </span><span class="nt">"supercategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"road"</span><span class="p">,</span><span class="w"> </span><span class="nt">"supercategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<p><strong>YOLO:</strong></p>
+<pre><code>classes.txt:
+building
+road
+
+annotations:
+0 0.5 0.5 0.3 0.2  # class_id 0 = building
+1 0.7 0.3 0.2 0.1  # class_id 1 = road
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="summary">Summary<a class="anchor-link" href="#summary">¶</a></h2><p>The <code>export_geotiff_tiles</code> function now supports three popular annotation formats:</p>
+<ul>
+<li>✅ <strong>PASCAL VOC</strong> (XML) - Traditional, human-readable</li>
+<li>✅ <strong>COCO</strong> (JSON) - Modern benchmark standard</li>
+<li>✅ <strong>YOLO</strong> (TXT) - Lightweight, optimized for YOLO</li>
+</ul>
+<p>All formats maintain geospatial context through georeferenced GeoTIFF tiles, making them ideal for training object detection models on remote sensing imagery.</p>
+<p>Choose the format that best fits your model training framework:</p>
+<ul>
+<li>Use <strong>COCO</strong> for detectron2, MMDetection, or benchmark comparisons</li>
+<li>Use <strong>YOLO</strong> for YOLOv5, YOLOv8, or ultralytics</li>
+<li>Use <strong>PASCAL VOC</strong> for TensorFlow Object Detection API or legacy frameworks</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3027,7 +3844,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 8, 2025 03:44:00 UTC"><span class="timeago" datetime="2025-03-08T03:44:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 8, 2025 03:44:00 UTC">2025-03-08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 5, 2025 19:28:24 UTC"><span class="timeago" datetime="2025-10-05T19:28:24+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 5, 2025 19:28:24 UTC">2025-10-05</span>
   </span>
 
     
@@ -3037,7 +3854,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 7, 2025 18:25:29 UTC"><span class="timeago" datetime="2025-03-07T18:25:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 7, 2025 18:25:29 UTC">2025-03-07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 5, 2025 19:28:24 UTC"><span class="timeago" datetime="2025-10-05T19:28:24+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 5, 2025 19:28:24 UTC">2025-10-05</span>
   </span>
 
     
