@@ -2940,19 +2940,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">geoai.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">,</span> <span class="n">download_file</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rasterio.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">import os
-import geoai
-from geoai.utils import export_geotiff_tiles_batch, download_file
-import geopandas as gpd
-import rasterio
-from rasterio.plot import show
-import matplotlib.pyplot as plt</div>
+import geoai</div>
 </div>
 </div>
 </div>
@@ -2989,10 +2979,10 @@ import matplotlib.pyplot as plt</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train_tiles.zip"</span>
-<span class="n">download_dir</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">download_dir</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/naip_rgb_train_tiles.zip"
-download_dir = download_file(url)</div>
+download_dir = geoai.download_file(url)</div>
 </div>
 </div>
 </div>
@@ -3101,59 +3091,28 @@ for f in sorted(os.listdir(f"{data_dir}/masks2")):
 <span class="n">image_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images/naip_rgb_train_tile1.tif"</span>
 <span class="n">mask_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks2/naip_rgb_train_tile1.geojson"</span>
 
-<span class="c1"># Display image</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-
-<span class="c1"># Plot image</span>
-<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
-    <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"NAIP RGB Image"</span><span class="p">)</span>
-
-    <span class="c1"># Load and plot building footprints</span>
-    <span class="n">buildings</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">mask_path</span><span class="p">)</span>
-
-    <span class="c1"># Reproject to image CRS if needed</span>
-    <span class="k">if</span> <span class="n">buildings</span><span class="o">.</span><span class="n">crs</span> <span class="o">!=</span> <span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="p">:</span>
-        <span class="n">buildings</span> <span class="o">=</span> <span class="n">buildings</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
-
-    <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Image with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">buildings</span><span class="p">)</span><span class="si">}</span><span class="s2"> Building Footprints"</span><span class="p">)</span>
-    <span class="n">buildings</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Image shape: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Image CRS: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of buildings: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">buildings</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">display_image_with_vector</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">mask_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of buildings: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">'num_features'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-4"># Load and display first image
 image_path = f"{data_dir}/images/naip_rgb_train_tile1.tif"
 mask_path = f"{data_dir}/masks2/naip_rgb_train_tile1.geojson"
 
-# Display image
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
-
-# Plot image
-with rasterio.open(image_path) as src:
-    show(src, ax=ax1, title="NAIP RGB Image")
-
-    # Load and plot building footprints
-    buildings = gpd.read_file(mask_path)
-
-    # Reproject to image CRS if needed
-    if buildings.crs != src.crs:
-        buildings = buildings.to_crs(src.crs)
-
-    show(src, ax=ax2, title=f"Image with {len(buildings)} Building Footprints")
-    buildings.plot(ax=ax2, facecolor="none", edgecolor="red", linewidth=1)
-
-plt.tight_layout()
-plt.show()
-
-print(f"\nImage shape: {src.shape}")
-print(f"Image CRS: {src.crs}")
-print(f"Number of buildings: {len(buildings)}")</div>
+fig, axes, info = geoai.display_image_with_vector(image_path, mask_path)
+print(f"Number of buildings: {info['num_features']}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="image" src="https://github.com/user-attachments/assets/70b51e79-369a-4ff5-960c-f693938c1f99"/></p>
 </div>
 </div>
 </div>
@@ -3193,7 +3152,7 @@ print(f"Number of buildings: {len(buildings)}")</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Use single mask file for all images</span>
-<span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
     <span class="n">images_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
     <span class="n">masks_file</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks1/naip_train_buildings.geojson"</span><span class="p">,</span>
     <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/method1_single_mask"</span><span class="p">,</span>
@@ -3202,6 +3161,7 @@ print(f"Number of buildings: {len(buildings)}")</div>
     <span class="n">class_value_field</span><span class="o">=</span><span class="s2">"class"</span><span class="p">,</span>
     <span class="n">skip_empty_tiles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Skip tiles with no buildings</span>
     <span class="n">max_tiles</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>  <span class="c1"># Limit for demo purposes</span>
+    <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="s1">'='</span><span class="o">*</span><span class="mi">60</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -3214,7 +3174,7 @@ print(f"Number of buildings: {len(buildings)}")</div>
 <span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-5"># Use single mask file for all images
-stats = export_geotiff_tiles_batch(
+stats = geoai.export_geotiff_tiles_batch(
     images_folder=f"{data_dir}/images",
     masks_file=f"{data_dir}/masks1/naip_train_buildings.geojson",
     output_folder="output/method1_single_mask",
@@ -3223,6 +3183,7 @@ stats = export_geotiff_tiles_batch(
     class_value_field="class",
     skip_empty_tiles=True,  # Skip tiles with no buildings
     max_tiles=20,  # Limit for demo purposes
+    quiet=False,
 )
 
 print(f"\n{'='*60}")
@@ -3269,7 +3230,7 @@ print(
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Use multiple mask files matched by sorted order</span>
-<span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
     <span class="n">images_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
     <span class="n">masks_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks2"</span><span class="p">,</span>
     <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/method2_sorted_order"</span><span class="p">,</span>
@@ -3288,7 +3249,7 @@ print(
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Tiles with features: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'tiles_with_features'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-6"># Use multiple mask files matched by sorted order
-stats = export_geotiff_tiles_batch(
+stats = geoai.export_geotiff_tiles_batch(
     images_folder=f"{data_dir}/images",
     masks_folder=f"{data_dir}/masks2",
     output_folder="output/method2_sorted_order",
@@ -3341,7 +3302,7 @@ print(f"  Tiles with features: {stats['tiles_with_features']}")</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
     <span class="n">images_folder</span><span class="o">=</span><span class="s2">"data/images"</span><span class="p">,</span>
     <span class="n">masks_folder</span><span class="o">=</span><span class="s2">"data/masks2"</span><span class="p">,</span>
     <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/method3_filename_match"</span><span class="p">,</span>
@@ -3355,7 +3316,7 @@ print(f"  Tiles with features: {stats['tiles_with_features']}")</div>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Method 3 requires matching base filenames between images and masks."</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Example: 'image001.tif' pairs with 'image001.geojson'"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">stats = export_geotiff_tiles_batch(
+<div class="clipboard-copy-txt" id="cell-7">stats = geoai.export_geotiff_tiles_batch(
     images_folder="data/images",
     masks_folder="data/masks2",
     output_folder="output/method3_filename_match",
@@ -3403,45 +3364,24 @@ print("Example: 'image001.tif' pairs with 'image001.geojson'")</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># List generated tiles</span>
-<span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"output/method1_single_mask"</span>
-<span class="n">image_tiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">))[:</span><span class="mi">6</span><span class="p">]</span>
-
-<span class="c1"># Display first 6 image and mask pairs</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tile_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_tiles</span><span class="p">):</span>
-    <span class="c1"># Load image tile</span>
-    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">/images/</span><span class="si">{</span><span class="n">tile_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
-        <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Image </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-    <span class="c1"># Load mask tile</span>
-    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">/masks/</span><span class="si">{</span><span class="n">tile_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
-        <span class="n">show</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Mask </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"output/method1_single_mask"</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">display_training_tiles</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">num_tiles</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8"># List generated tiles
-output_dir = "output/method1_single_mask"
-image_tiles = sorted(os.listdir(f"{output_dir}/images"))[:6]
-
-# Display first 6 image and mask pairs
-fig, axes = plt.subplots(2, 6, figsize=(18, 6))
-
-for idx, tile_name in enumerate(image_tiles):
-    # Load image tile
-    with rasterio.open(f"{output_dir}/images/{tile_name}") as src:
-        show(src, ax=axes[0, idx], title=f"Image {idx+1}")
-
-    # Load mask tile
-    with rasterio.open(f"{output_dir}/masks/{tile_name}") as src:
-        show(src, ax=axes[1, idx], title=f"Mask {idx+1}", cmap="gray")
-
-plt.tight_layout()
-plt.show()</div>
+<div class="clipboard-copy-txt" id="cell-8">output_dir = "output/method1_single_mask"
+fig = geoai.display_training_tiles(output_dir, num_tiles=6)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="image" src="https://github.com/user-attachments/assets/8302e157-10b8-4a33-a4b4-882d446e8ebf"/></p>
 </div>
 </div>
 </div>
@@ -3476,7 +3416,7 @@ plt.show()</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Advanced example with custom parameters</span>
-<span class="n">stats</span> <span class="o">=</span> <span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
     <span class="n">images_folder</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
     <span class="n">masks_file</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/masks1/naip_train_buildings.geojson"</span><span class="p">,</span>
     <span class="n">output_folder</span><span class="o">=</span><span class="s2">"output/advanced_example"</span><span class="p">,</span>
@@ -3496,7 +3436,7 @@ plt.show()</div>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - output/advanced_example/masks/   (mask tiles)"</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-9"># Advanced example with custom parameters
-stats = export_geotiff_tiles_batch(
+stats = geoai.export_geotiff_tiles_batch(
     images_folder=f"{data_dir}/images",
     masks_file=f"{data_dir}/masks1/naip_train_buildings.geojson",
     output_folder="output/advanced_example",
@@ -3559,7 +3499,7 @@ print(f"  - output/advanced_example/masks/   (mask tiles)")</div>
     <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># background and building</span>
     <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
-    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
     <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
     <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
     <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -3575,7 +3515,7 @@ print(f"  - output/advanced_example/masks/   (mask tiles)")</div>
     num_channels=3,
     num_classes=2,  # background and building
     batch_size=8,
-    num_epochs=5,
+    num_epochs=20,
     learning_rate=0.001,
     val_split=0.2,
     verbose=True,
@@ -3617,6 +3557,17 @@ print(f"  - output/advanced_example/masks/   (mask tiles)")</div>
 )</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="image" src="https://github.com/user-attachments/assets/98db1249-b478-4b3b-90eb-87bf3569fc78"/></p>
 </div>
 </div>
 </div>
@@ -3697,7 +3648,7 @@ print(f"  - output/advanced_example/masks/   (mask tiles)")</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 4, 2025 04:15:28 UTC"><span class="timeago" datetime="2025-10-04T04:15:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 4, 2025 04:15:28 UTC">2025-10-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 5, 2025 13:46:08 UTC"><span class="timeago" datetime="2025-10-05T13:46:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 5, 2025 13:46:08 UTC">2025-10-05</span>
   </span>
 
     
