@@ -3238,46 +3238,67 @@ for url in sample_urls:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Extract image patches for training</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_paths</span><span class="p">):</span>
-    <span class="n">patch_output_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/patches_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># # Extract image patches for training</span>
+<span class="c1"># for i, image_path in enumerate(image_paths):</span>
+<span class="c1">#     patch_output_dir = f"{data_dir}/patches_{i}"</span>
 
-    <span class="c1"># Extract patches from the raster</span>
-    <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles</span><span class="p">(</span>
-        <span class="n">in_raster</span><span class="o">=</span><span class="n">image_path</span><span class="p">,</span>
-        <span class="n">out_folder</span><span class="o">=</span><span class="n">patch_output_dir</span><span class="p">,</span>
-        <span class="n">tile_size</span><span class="o">=</span><span class="mi">224</span><span class="p">,</span>  <span class="c1"># Common size for vision models</span>
-        <span class="n">stride</span><span class="o">=</span><span class="mi">112</span><span class="p">,</span>  <span class="c1"># 50% overlap</span>
-        <span class="nb">format</span><span class="o">=</span><span class="s2">"PNG"</span><span class="p">,</span>  <span class="c1"># Lightly Train works well with PNG</span>
-    <span class="p">)</span>
+<span class="c1">#     # Extract patches from the raster</span>
+<span class="c1">#     geoai.export_geotiff_tiles(</span>
+<span class="c1">#         in_raster=image_path,</span>
+<span class="c1">#         out_folder=patch_output_dir,</span>
+<span class="c1">#         tile_size=224,  # Common size for vision models</span>
+<span class="c1">#         stride=112,  # 50% overlap</span>
+<span class="c1">#     )</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Extracted patches from </span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">patch_output_dir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1">#     print(f"Extracted patches from {image_path} to {patch_output_dir}")</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-4"># # Extract image patches for training
+# for i, image_path in enumerate(image_paths):
+#     patch_output_dir = f"{data_dir}/patches_{i}"
 
-<span class="c1"># Count total training images</span>
+#     # Extract patches from the raster
+#     geoai.export_geotiff_tiles(
+#         in_raster=image_path,
+#         out_folder=patch_output_dir,
+#         tile_size=224,  # Common size for vision models
+#         stride=112,  # 50% overlap
+#     )
+
+#     print(f"Extracted patches from {image_path} to {patch_output_dir}")</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Count total training images</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
 
-<span class="n">all_patches</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/**/images/*.png"</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">all_patches</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/**/images/*.tif"</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Total training patches: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_patches</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4"># Extract image patches for training
-for i, image_path in enumerate(image_paths):
-    patch_output_dir = f"{data_dir}/patches_{i}"
-
-    # Extract patches from the raster
-    geoai.export_geotiff_tiles(
-        in_raster=image_path,
-        out_folder=patch_output_dir,
-        tile_size=224,  # Common size for vision models
-        stride=112,  # 50% overlap
-        format="PNG",  # Lightly Train works well with PNG
-    )
-
-    print(f"Extracted patches from {image_path} to {patch_output_dir}")
-
-# Count total training images
+<div class="clipboard-copy-txt" id="cell-5"># Count total training images
 import glob
 
-all_patches = glob.glob(f"{data_dir}/**/images/*.png", recursive=True)
+all_patches = glob.glob(f"{data_dir}/**/images/*.tif", recursive=True)
 print(f"\nTotal training patches: {len(all_patches)}")</div>
 </div>
 </div>
@@ -3285,7 +3306,7 @@ print(f"\nTotal training patches: {len(all_patches)}")</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3296,7 +3317,7 @@ print(f"\nTotal training patches: {len(all_patches)}")</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=10">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3304,7 +3325,7 @@ print(f"\nTotal training patches: {len(all_patches)}")</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3335,7 +3356,7 @@ print(f"\nTotal training patches: {len(all_patches)}")</div>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Each patch is </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> pixels"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">import matplotlib.pyplot as plt
+<div class="clipboard-copy-txt" id="cell-6">import matplotlib.pyplot as plt
 from PIL import Image
 
 # Display a few sample patches
@@ -3361,19 +3382,24 @@ print(f"Each patch is {img.size} pixels")</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=11">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="train-self-supervised-model">Train self-supervised model<a class="anchor-link" href="#train-self-supervised-model">¶</a></h2><p>Now we'll train a self-supervised model using Lightly Train. We'll use the DINOv2 distillation method, which is recommended for geospatial imagery as it provides excellent representations.</p>
+<h2 id="train-self-supervised-model">Train self-supervised model<a class="anchor-link" href="#train-self-supervised-model">¶</a></h2><p>Now we'll train a self-supervised model using Lightly Train. We'll use the <strong>SimCLR</strong> method, which works well with CNN models like ResNet.</p>
+<p><strong>Method compatibility:</strong></p>
+<ul>
+<li><strong>SimCLR</strong> or <strong>DINO</strong>: Works with CNN models (ResNet, EfficientNet, etc.)</li>
+<li><strong>DINOv2</strong>: Requires Vision Transformer (ViT) models only</li>
+</ul>
 <p><strong>Note</strong>: Training will take some time depending on your hardware. For demonstration purposes, we're using a small number of epochs. In practice, you might want to train for 100+ epochs.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=11">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=12">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3381,7 +3407,7 @@ print(f"Each patch is {img.size} pixels")</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3396,23 +3422,25 @@ print(f"Each patch is {img.size} pixels")</div>
     <span class="n">data_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/patches_0/images"</span><span class="p">,</span>  <span class="c1"># Use patches from first image</span>
     <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
     <span class="n">model</span><span class="o">=</span><span class="s2">"torchvision/resnet50"</span><span class="p">,</span>  <span class="c1"># Base architecture</span>
-    <span class="n">method</span><span class="o">=</span><span class="s2">"dinov2_distillation"</span><span class="p">,</span>  <span class="c1"># Self-supervised method</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"simclr"</span><span class="p">,</span>  <span class="c1"># Use SimCLR for CNN models like ResNet</span>
     <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># Small number for demo</span>
     <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>  <span class="c1"># Adjust based on your GPU</span>
-    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+    <span class="n">optim_args</span><span class="o">=</span><span class="p">{</span><span class="s2">"lr"</span><span class="p">:</span> <span class="mf">1e-4</span><span class="p">},</span>  <span class="c1"># Pass learning rate through optim_args</span>
+    <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Model training completed! Pretrained model saved to: </span><span class="si">{</span><span class="n">model_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6"># Train a self-supervised model using Lightly Train
+<div class="clipboard-copy-txt" id="cell-7"># Train a self-supervised model using Lightly Train
 model_path = geoai.lightly_train_model(
     data_dir=f"{data_dir}/patches_0/images",  # Use patches from first image
     output_dir=output_dir,
     model="torchvision/resnet50",  # Base architecture
-    method="dinov2_distillation",  # Self-supervised method
+    method="simclr",  # Use SimCLR for CNN models like ResNet
     epochs=10,  # Small number for demo
     batch_size=32,  # Adjust based on your GPU
-    learning_rate=1e-4,
+    optim_args={"lr": 1e-4},  # Pass learning rate through optim_args
+    overwrite=True,
 )
 
 print(f"\nModel training completed! Pretrained model saved to: {model_path}")</div>
@@ -3422,7 +3450,7 @@ print(f"\nModel training completed! Pretrained model saved to: {model_path}")</d
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=13">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3433,7 +3461,7 @@ print(f"\nModel training completed! Pretrained model saved to: {model_path}")</d
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=13">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=14">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3441,7 +3469,7 @@ print(f"\nModel training completed! Pretrained model saved to: {model_path}")</d
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3462,7 +3490,7 @@ print(f"\nModel training completed! Pretrained model saved to: {model_path}")</d
 <span class="c1"># The model is now ready for fine-tuning on your specific task</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Model is ready for fine-tuning on downstream tasks!"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7"># Load the pretrained model
+<div class="clipboard-copy-txt" id="cell-8"># Load the pretrained model
 pretrained_model = geoai.load_lightly_pretrained_model(
     model_path=model_path, model_architecture="torchvision/resnet50"
 )
@@ -3478,74 +3506,19 @@ print("\nModel is ready for fine-tuning on downstream tasks!")</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=14">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="generate-embeddings">Generate embeddings<a class="anchor-link" href="#generate-embeddings">¶</a></h2><p>We can also use the pretrained model to generate embeddings for our images. These embeddings capture rich representations learned through self-supervised training.</p>
+<h2 id="generate-embeddings">Generate embeddings<a class="anchor-link" href="#generate-embeddings">¶</a></h2><p>We can also use the pretrained model checkpoint to generate embeddings for our images. These embeddings capture rich representations learned through self-supervised training.</p>
+<p><strong>Note</strong>: We need to use the checkpoint file (.ckpt) for embedding generation, not the exported model (.pt).</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=15">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Generate embeddings for our images</span>
-<span class="n">embeddings_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">lightly_embed_images</span><span class="p">(</span>
-    <span class="n">data_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/patches_0/images"</span><span class="p">,</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">embeddings_dir</span><span class="si">}</span><span class="s2">/image_embeddings.npy"</span><span class="p">,</span>
-    <span class="n">model_architecture</span><span class="o">=</span><span class="s2">"torchvision/resnet50"</span><span class="p">,</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Embeddings saved to: </span><span class="si">{</span><span class="n">embeddings_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-8"># Generate embeddings for our images
-embeddings_path = geoai.lightly_embed_images(
-    data_dir=f"{data_dir}/patches_0/images",
-    model_path=model_path,
-    output_path=f"{embeddings_dir}/image_embeddings.npy",
-    model_architecture="torchvision/resnet50",
-    batch_size=32,
-)
-
-print(f"Embeddings saved to: {embeddings_path}")</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="analyze-embeddings">Analyze embeddings<a class="anchor-link" href="#analyze-embeddings">¶</a></h2><p>Let's load and analyze the generated embeddings to understand what our model has learned.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=17">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=16">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3563,59 +3536,51 @@ print(f"Embeddings saved to: {embeddings_path}")</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Load and analyze the embeddings</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">embeddings_path</span><span class="p">):</span>
-    <span class="n">embeddings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">embeddings_path</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Embeddings shape: </span><span class="si">{</span><span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Embedding dimension: </span><span class="si">{</span><span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of images embedded: </span><span class="si">{</span><span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Generate embeddings for our images</span>
+<span class="c1"># Note: We use the checkpoint file (.ckpt) for embedding generation</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s2">"checkpoints"</span><span class="p">,</span> <span class="s2">"last.ckpt"</span><span class="p">)</span>
 
-    <span class="c1"># Basic statistics</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Embedding statistics:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mean: </span><span class="si">{</span><span class="n">embeddings</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Std: </span><span class="si">{</span><span class="n">embeddings</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Min: </span><span class="si">{</span><span class="n">embeddings</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Max: </span><span class="si">{</span><span class="n">embeddings</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="s2">"Embeddings file not found. This might be due to the embedding generation process."</span>
-    <span class="p">)</span>
+<span class="n">embeddings_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">lightly_embed_images</span><span class="p">(</span>
+    <span class="n">data_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/patches_0/images"</span><span class="p">,</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">embeddings_dir</span><span class="si">}</span><span class="s2">/image_embeddings.pt"</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Embeddings saved to: </span><span class="si">{</span><span class="n">embeddings_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9"># Load and analyze the embeddings
-if os.path.exists(embeddings_path):
-    embeddings = np.load(embeddings_path)
-    print(f"Embeddings shape: {embeddings.shape}")
-    print(f"Embedding dimension: {embeddings.shape[1]}")
-    print(f"Number of images embedded: {embeddings.shape[0]}")
+<div class="clipboard-copy-txt" id="cell-9"># Generate embeddings for our images
+# Note: We use the checkpoint file (.ckpt) for embedding generation
+checkpoint_path = os.path.join(output_dir, "checkpoints", "last.ckpt")
 
-    # Basic statistics
-    print(f"\nEmbedding statistics:")
-    print(f"Mean: {embeddings.mean():.4f}")
-    print(f"Std: {embeddings.std():.4f}")
-    print(f"Min: {embeddings.min():.4f}")
-    print(f"Max: {embeddings.max():.4f}")
-else:
-    print(
-        "Embeddings file not found. This might be due to the embedding generation process."
-    )</div>
+embeddings_path = geoai.lightly_embed_images(
+    data_dir=f"{data_dir}/patches_0/images",
+    model_path=checkpoint_path,
+    output_path=f"{embeddings_dir}/image_embeddings.pt",
+    batch_size=32,
+    overwrite=True,
+)
+
+print(f"Embeddings saved to: {embeddings_path}")</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=18">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-embeddings-with-t-sne">Visualize embeddings with t-SNE<a class="anchor-link" href="#visualize-embeddings-with-t-sne">¶</a></h2><p>Let's use t-SNE to visualize the high-dimensional embeddings in 2D space. This helps us understand how well the model groups similar images.</p>
+<h2 id="analyze-embeddings">Analyze embeddings<a class="anchor-link" href="#analyze-embeddings">¶</a></h2><p>Let's load and analyze the generated embeddings to understand what our model has learned.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=19">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=18">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3633,6 +3598,92 @@ else:
 </div>
 </clipboard-copy>
 </div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Load and analyze the embeddings</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">embeddings_path</span><span class="p">):</span>
+    <span class="c1"># Load PyTorch tensor embeddings</span>
+    <span class="n">embeddings</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">embeddings_path</span><span class="p">)</span>
+
+    <span class="c1"># Convert to numpy for analysis if it's a tensor</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+        <span class="n">embeddings_np</span> <span class="o">=</span> <span class="n">embeddings</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="s2">"embeddings"</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">embeddings_np</span> <span class="o">=</span> <span class="n">embeddings</span><span class="p">[</span><span class="s2">"embeddings"</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Embeddings shape: </span><span class="si">{</span><span class="n">embeddings_np</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Embedding dimension: </span><span class="si">{</span><span class="n">embeddings_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of images embedded: </span><span class="si">{</span><span class="n">embeddings_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Basic statistics</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Embedding statistics:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mean: </span><span class="si">{</span><span class="n">embeddings_np</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Std: </span><span class="si">{</span><span class="n">embeddings_np</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Min: </span><span class="si">{</span><span class="n">embeddings_np</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Max: </span><span class="si">{</span><span class="n">embeddings_np</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">"Embeddings file not found. This might be due to the embedding generation process."</span>
+    <span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10"># Load and analyze the embeddings
+if os.path.exists(embeddings_path):
+    # Load PyTorch tensor embeddings
+    embeddings = torch.load(embeddings_path)
+
+    # Convert to numpy for analysis if it's a tensor
+    if isinstance(embeddings, torch.Tensor):
+        embeddings_np = embeddings.cpu().numpy()["embeddings"]
+    else:
+        embeddings_np = embeddings["embeddings"]
+
+    print(f"Embeddings shape: {embeddings_np.shape}")
+    print(f"Embedding dimension: {embeddings_np.shape[1]}")
+    print(f"Number of images embedded: {embeddings_np.shape[0]}")
+
+    # Basic statistics
+    print(f"\nEmbedding statistics:")
+    print(f"Mean: {embeddings_np.mean():.4f}")
+    print(f"Std: {embeddings_np.std():.4f}")
+    print(f"Min: {embeddings_np.min():.4f}")
+    print(f"Max: {embeddings_np.max():.4f}")
+else:
+    print(
+        "Embeddings file not found. This might be due to the embedding generation process."
+    )</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=19">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="visualize-embeddings-with-t-sne">Visualize embeddings with t-SNE<a class="anchor-link" href="#visualize-embeddings-with-t-sne">¶</a></h2><p>Let's use t-SNE to visualize the high-dimensional embeddings in 2D space. This helps us understand how well the model groups similar images.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=20">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Visualize embeddings using t-SNE</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">embeddings_path</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
@@ -3641,9 +3692,9 @@ else:
 
         <span class="c1"># Apply t-SNE for dimensionality reduction</span>
         <span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span>
-            <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">embeddings_np</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="p">)</span>
-        <span class="n">embeddings_2d</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+        <span class="n">embeddings_2d</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">embeddings_np</span><span class="p">)</span>
 
         <span class="c1"># Create visualization</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -3672,7 +3723,7 @@ else:
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Embeddings not available for visualization."</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10"># Visualize embeddings using t-SNE
+<div class="clipboard-copy-txt" id="cell-11"># Visualize embeddings using t-SNE
 if os.path.exists(embeddings_path):
     try:
         from sklearn.manifold import TSNE
@@ -3680,9 +3731,9 @@ if os.path.exists(embeddings_path):
 
         # Apply t-SNE for dimensionality reduction
         tsne = TSNE(
-            n_components=2, random_state=42, perplexity=min(30, len(embeddings) - 1)
+            n_components=2, random_state=42, perplexity=min(30, len(embeddings_np) - 1)
         )
-        embeddings_2d = tsne.fit_transform(embeddings)
+        embeddings_2d = tsne.fit_transform(embeddings_np)
 
         # Create visualization
         plt.figure(figsize=(10, 8))
@@ -3716,7 +3767,7 @@ else:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=20">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3753,25 +3804,54 @@ else:
 <span class="n">most_similar_indices</span> <span class="o">=</span> <span class="n">similarities</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>  <span class="c1"># Top 5 similar</span>
 </pre></div>
 <h3 id="4-different-architectures-and-methods">4. Different architectures and methods<a class="anchor-link" href="#4-different-architectures-and-methods">¶</a></h3><p>Try different combinations for your specific use case:</p>
+<p><strong>For CNN models (ResNet, EfficientNet):</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># SimCLR method (recommended for CNNs)</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">lightly_train_model</span><span class="p">(</span>
+    <span class="n">data_dir</span><span class="o">=</span><span class="s2">"path/to/images"</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">"output"</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"torchvision/resnet50"</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"simclr"</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+
+<span class="c1"># Or DINO method (also works with CNNs)</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">lightly_train_model</span><span class="p">(</span>
+    <span class="n">data_dir</span><span class="o">=</span><span class="s2">"path/to/images"</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">"output"</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"timm/efficientnet_b0"</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"dino"</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+</pre></div>
+<p><strong>For Vision Transformer (ViT) models:</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># DINOv2 (recommended for ViTs, excellent for geospatial imagery)</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">lightly_train_model</span><span class="p">(</span>
+    <span class="n">data_dir</span><span class="o">=</span><span class="s2">"path/to/images"</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">"output"</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"timm/vit_base_patch16_224"</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"dinov2"</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+</pre></div>
 <p><strong>Model architectures:</strong></p>
 <ul>
-<li><code>"torchvision/resnet50"</code> - Good general purpose model</li>
-<li><code>"torchvision/resnet101"</code> - Larger model for more complex features</li>
-<li><code>"timm/efficientnet_b0"</code> - Efficient architecture</li>
-<li><code>"timm/vit_base_patch16_224"</code> - Vision Transformer</li>
+<li><code>"torchvision/resnet50"</code> - Good general purpose CNN</li>
+<li><code>"torchvision/resnet101"</code> - Larger CNN for more complex features</li>
+<li><code>"timm/efficientnet_b0"</code> - Efficient CNN architecture</li>
+<li><code>"timm/vit_base_patch16_224"</code> - Vision Transformer (use with dinov2)</li>
 </ul>
 <p><strong>Self-supervised methods:</strong></p>
 <ul>
-<li><code>"dinov2_distillation"</code> - Recommended for geospatial imagery</li>
-<li><code>"dinov2"</code> - Standard DINOv2</li>
-<li><code>"dino"</code> - Original DINO method</li>
-<li><code>"simclr"</code> - Contrastive learning approach</li>
+<li><code>"simclr"</code> - Contrastive learning, works with CNNs</li>
+<li><code>"dino"</code> - Works with both CNNs and ViTs</li>
+<li><code>"dinov2"</code> - Advanced method, requires ViT models</li>
+<li><code>"dinov2_distillation"</code> - Enhanced DINOv2, requires ViT models</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=22">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3782,7 +3862,7 @@ else:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=22">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=23">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3790,7 +3870,7 @@ else:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3807,7 +3887,7 @@ else:
 <span class="c1"># shutil.rmtree(embeddings_dir, ignore_errors=True)</span>
 <span class="c1"># print("Temporary files cleaned up.")</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11"># Uncomment to clean up temporary files
+<div class="clipboard-copy-txt" id="cell-12"># Uncomment to clean up temporary files
 # import shutil
 # shutil.rmtree(data_dir, ignore_errors=True)
 # shutil.rmtree(output_dir, ignore_errors=True)
@@ -3848,7 +3928,7 @@ else:
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 9, 2025 03:41:40 UTC"><span class="timeago" datetime="2025-10-09T03:41:40+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 9, 2025 03:41:40 UTC">2025-10-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 9, 2025 15:47:52 UTC"><span class="timeago" datetime="2025-10-09T15:47:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 9, 2025 15:47:52 UTC">2025-10-09</span>
   </span>
 
     

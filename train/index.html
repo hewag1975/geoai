@@ -2501,6 +2501,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="lightly_train_model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geoai.train.lightly_train_model--for-cnn-models-resnet-efficientnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      For CNN models (ResNet, EfficientNet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai.train.lightly_train_model--for-vit-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      For ViT models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3006,6 +3030,30 @@
       lightly_train_model
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="lightly_train_model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geoai.train.lightly_train_model--for-cnn-models-resnet-efficientnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      For CNN models (ResNet, EfficientNet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai.train.lightly_train_model--for-vit-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      For ViT models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -9248,7 +9296,7 @@ to handle overlapping detections from different windows, preventing artifacts.</
 
 
 <h2 id="geoai.train.lightly_embed_images" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">lightly_embed_images</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">model_architecture</span><span class="o">=</span><span class="s1">&#39;torchvision/resnet50&#39;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">lightly_embed_images</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">model_architecture</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#geoai.train.lightly_embed_images" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -9294,7 +9342,7 @@ to handle overlapping detections from different windows, preventing artifacts.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Path to the pretrained model file.</p>
+                <p>Path to the pretrained model checkpoint file (.ckpt).</p>
               </div>
             </td>
             <td>
@@ -9310,7 +9358,7 @@ to handle overlapping detections from different windows, preventing artifacts.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Path to save the embeddings (as .npy or .pt file).</p>
+                <p>Path to save the embeddings (as .pt file).</p>
               </div>
             </td>
             <td>
@@ -9326,12 +9374,13 @@ to handle overlapping detections from different windows, preventing artifacts.</
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Architecture of the pretrained model.
-Default is "torchvision/resnet50".</p>
+                <p>Architecture of the pretrained model (deprecated,
+kept for backwards compatibility but not used). The model architecture
+is automatically loaded from the checkpoint.</p>
               </div>
             </td>
             <td>
-                  <code>&#39;torchvision/resnet50&#39;</code>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -9359,7 +9408,8 @@ Default is "torchvision/resnet50".</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Additional arguments passed to lightly_train.embed().</p>
+                <p>Additional arguments passed to lightly_train.embed().
+Supported kwargs include: image_size, num_workers, accelerator, etc.</p>
               </div>
             </td>
             <td>
@@ -9426,6 +9476,12 @@ Default is "torchvision/resnet50".</p>
     </table>
 
 
+<details class="note" open>
+  <summary>Note</summary>
+  <p>The model_path should point to a .ckpt file from the training output,
+typically located at: output_dir/checkpoints/last.ckpt</p>
+</details>
+
 <details class="example" open>
   <summary>Example</summary>
   <blockquote>
@@ -9433,8 +9489,8 @@ Default is "torchvision/resnet50".</p>
 <blockquote>
 <p>embeddings_path = lightly_embed_images(
 ...     data_dir="path/to/images",
-...     model_path="path/to/pretrained_model.pt",
-...     output_path="path/to/embeddings.npy",
+...     model_path="output_dir/checkpoints/last.ckpt",
+...     output_path="embeddings.pt",
 ...     batch_size=32
 ... )
 print(f"Embeddings saved to: {embeddings_path}")</p>
@@ -9445,58 +9501,7 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4094</span>
-<span class="normal">4095</span>
-<span class="normal">4096</span>
-<span class="normal">4097</span>
-<span class="normal">4098</span>
-<span class="normal">4099</span>
-<span class="normal">4100</span>
-<span class="normal">4101</span>
-<span class="normal">4102</span>
-<span class="normal">4103</span>
-<span class="normal">4104</span>
-<span class="normal">4105</span>
-<span class="normal">4106</span>
-<span class="normal">4107</span>
-<span class="normal">4108</span>
-<span class="normal">4109</span>
-<span class="normal">4110</span>
-<span class="normal">4111</span>
-<span class="normal">4112</span>
-<span class="normal">4113</span>
-<span class="normal">4114</span>
-<span class="normal">4115</span>
-<span class="normal">4116</span>
-<span class="normal">4117</span>
-<span class="normal">4118</span>
-<span class="normal">4119</span>
-<span class="normal">4120</span>
-<span class="normal">4121</span>
-<span class="normal">4122</span>
-<span class="normal">4123</span>
-<span class="normal">4124</span>
-<span class="normal">4125</span>
-<span class="normal">4126</span>
-<span class="normal">4127</span>
-<span class="normal">4128</span>
-<span class="normal">4129</span>
-<span class="normal">4130</span>
-<span class="normal">4131</span>
-<span class="normal">4132</span>
-<span class="normal">4133</span>
-<span class="normal">4134</span>
-<span class="normal">4135</span>
-<span class="normal">4136</span>
-<span class="normal">4137</span>
-<span class="normal">4138</span>
-<span class="normal">4139</span>
-<span class="normal">4140</span>
-<span class="normal">4141</span>
-<span class="normal">4142</span>
-<span class="normal">4143</span>
-<span class="normal">4144</span>
-<span class="normal">4145</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4145</span>
 <span class="normal">4146</span>
 <span class="normal">4147</span>
 <span class="normal">4148</span>
@@ -9511,11 +9516,68 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
 <span class="normal">4157</span>
 <span class="normal">4158</span>
 <span class="normal">4159</span>
-<span class="normal">4160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_embed_images</span><span class="p">(</span>
+<span class="normal">4160</span>
+<span class="normal">4161</span>
+<span class="normal">4162</span>
+<span class="normal">4163</span>
+<span class="normal">4164</span>
+<span class="normal">4165</span>
+<span class="normal">4166</span>
+<span class="normal">4167</span>
+<span class="normal">4168</span>
+<span class="normal">4169</span>
+<span class="normal">4170</span>
+<span class="normal">4171</span>
+<span class="normal">4172</span>
+<span class="normal">4173</span>
+<span class="normal">4174</span>
+<span class="normal">4175</span>
+<span class="normal">4176</span>
+<span class="normal">4177</span>
+<span class="normal">4178</span>
+<span class="normal">4179</span>
+<span class="normal">4180</span>
+<span class="normal">4181</span>
+<span class="normal">4182</span>
+<span class="normal">4183</span>
+<span class="normal">4184</span>
+<span class="normal">4185</span>
+<span class="normal">4186</span>
+<span class="normal">4187</span>
+<span class="normal">4188</span>
+<span class="normal">4189</span>
+<span class="normal">4190</span>
+<span class="normal">4191</span>
+<span class="normal">4192</span>
+<span class="normal">4193</span>
+<span class="normal">4194</span>
+<span class="normal">4195</span>
+<span class="normal">4196</span>
+<span class="normal">4197</span>
+<span class="normal">4198</span>
+<span class="normal">4199</span>
+<span class="normal">4200</span>
+<span class="normal">4201</span>
+<span class="normal">4202</span>
+<span class="normal">4203</span>
+<span class="normal">4204</span>
+<span class="normal">4205</span>
+<span class="normal">4206</span>
+<span class="normal">4207</span>
+<span class="normal">4208</span>
+<span class="normal">4209</span>
+<span class="normal">4210</span>
+<span class="normal">4211</span>
+<span class="normal">4212</span>
+<span class="normal">4213</span>
+<span class="normal">4214</span>
+<span class="normal">4215</span>
+<span class="normal">4216</span>
+<span class="normal">4217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_embed_images</span><span class="p">(</span>
     <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="n">model_architecture</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;torchvision/resnet50&quot;</span><span class="p">,</span>
+    <span class="n">model_architecture</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Deprecated, kept for backwards compatibility</span>
     <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -9524,12 +9586,14 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data_dir (str): Directory containing images to embed.</span>
-<span class="sd">        model_path (str): Path to the pretrained model file.</span>
-<span class="sd">        output_path (str): Path to save the embeddings (as .npy or .pt file).</span>
-<span class="sd">        model_architecture (str): Architecture of the pretrained model.</span>
-<span class="sd">            Default is &quot;torchvision/resnet50&quot;.</span>
+<span class="sd">        model_path (str): Path to the pretrained model checkpoint file (.ckpt).</span>
+<span class="sd">        output_path (str): Path to save the embeddings (as .pt file).</span>
+<span class="sd">        model_architecture (str): Architecture of the pretrained model (deprecated,</span>
+<span class="sd">            kept for backwards compatibility but not used). The model architecture</span>
+<span class="sd">            is automatically loaded from the checkpoint.</span>
 <span class="sd">        batch_size (int): Batch size for embedding generation. Default is 64.</span>
 <span class="sd">        **kwargs: Additional arguments passed to lightly_train.embed().</span>
+<span class="sd">            Supported kwargs include: image_size, num_workers, accelerator, etc.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        str: Path to the saved embeddings file.</span>
@@ -9538,11 +9602,15 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
 <span class="sd">        ImportError: If lightly-train is not installed.</span>
 <span class="sd">        FileNotFoundError: If data_dir or model_path does not exist.</span>
 
+<span class="sd">    Note:</span>
+<span class="sd">        The model_path should point to a .ckpt file from the training output,</span>
+<span class="sd">        typically located at: output_dir/checkpoints/last.ckpt</span>
+
 <span class="sd">    Example:</span>
 <span class="sd">        &gt;&gt;&gt; embeddings_path = lightly_embed_images(</span>
 <span class="sd">        ...     data_dir=&quot;path/to/images&quot;,</span>
-<span class="sd">        ...     model_path=&quot;path/to/pretrained_model.pt&quot;,</span>
-<span class="sd">        ...     output_path=&quot;path/to/embeddings.npy&quot;,</span>
+<span class="sd">        ...     model_path=&quot;output_dir/checkpoints/last.ckpt&quot;,</span>
+<span class="sd">        ...     output_path=&quot;embeddings.pt&quot;,</span>
 <span class="sd">        ...     batch_size=32</span>
 <span class="sd">        ... )</span>
 <span class="sd">        &gt;&gt;&gt; print(f&quot;Embeddings saved to: {embeddings_path}&quot;)</span>
@@ -9567,11 +9635,11 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Generate embeddings using Lightly Train</span>
+    <span class="c1"># Note: model_architecture is not used - it&#39;s inferred from the checkpoint</span>
     <span class="n">lightly_train</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span>
         <span class="n">out</span><span class="o">=</span><span class="n">output_path</span><span class="p">,</span>
         <span class="n">data</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
         <span class="n">checkpoint</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
-        <span class="n">model</span><span class="o">=</span><span class="n">model_architecture</span><span class="p">,</span>
         <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
@@ -9668,7 +9736,10 @@ timm, ultralytics, etc. Default is "torchvision/resnet50".</p>
             <td>
               <div class="doc-md-description">
                 <p>Self-supervised learning method. Options include:
-"dinov2_distillation" (recommended), "dinov2", "dino", "simclr".
+- "simclr": Works with CNN models (ResNet, EfficientNet, etc.)
+- "dino": Works with both CNNs and ViTs
+- "dinov2": Requires ViT models only
+- "dinov2_distillation": Requires ViT models only (recommended for ViTs)
 Default is "dinov2_distillation".</p>
               </div>
             </td>
@@ -9792,7 +9863,7 @@ Default is "dinov2_distillation".</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If data_dir does not exist or is empty.</p>
+                <p>If data_dir does not exist, is empty, or incompatible model/method.</p>
               </div>
             </td>
           </tr>
@@ -9800,18 +9871,34 @@ Default is "dinov2_distillation".</p>
     </table>
 
 
+<details class="note" open>
+  <summary>Note</summary>
+  <p>Model/Method compatibility:
+- CNN models (ResNet, EfficientNet): Use "simclr" or "dino"
+- ViT models: Use "dinov2", "dinov2_distillation", or "dino"</p>
+</details>
+
 <details class="example" open>
   <summary>Example</summary>
   <blockquote>
 <blockquote>
 <blockquote>
+<h3 id="geoai.train.lightly_train_model--for-cnn-models-resnet-efficientnet">For CNN models (ResNet, EfficientNet)<a class="headerlink" href="#geoai.train.lightly_train_model--for-cnn-models-resnet-efficientnet" title="Permanent link">&para;</a></h3>
 <p>model_path = lightly_train_model(
 ...     data_dir="path/to/unlabeled/images",
 ...     output_dir="path/to/output",
 ...     model="torchvision/resnet50",
+...     method="simclr",  # Use simclr for CNNs
 ...     epochs=50
-... )
-print(f"Pretrained model saved to: {model_path}")</p>
+... )</p>
+<h3 id="geoai.train.lightly_train_model--for-vit-models">For ViT models<a class="headerlink" href="#geoai.train.lightly_train_model--for-vit-models" title="Permanent link">&para;</a></h3>
+<p>model_path = lightly_train_model(
+...     data_dir="path/to/unlabeled/images",
+...     output_dir="path/to/output",
+...     model="timm/vit_base_patch16_224",
+...     method="dinov2",  # dinov2 requires ViT
+...     epochs=50
+... )</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -9920,7 +10007,58 @@ print(f"Pretrained model saved to: {model_path}")</p>
 <span class="normal">4014</span>
 <span class="normal">4015</span>
 <span class="normal">4016</span>
-<span class="normal">4017</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_train_model</span><span class="p">(</span>
+<span class="normal">4017</span>
+<span class="normal">4018</span>
+<span class="normal">4019</span>
+<span class="normal">4020</span>
+<span class="normal">4021</span>
+<span class="normal">4022</span>
+<span class="normal">4023</span>
+<span class="normal">4024</span>
+<span class="normal">4025</span>
+<span class="normal">4026</span>
+<span class="normal">4027</span>
+<span class="normal">4028</span>
+<span class="normal">4029</span>
+<span class="normal">4030</span>
+<span class="normal">4031</span>
+<span class="normal">4032</span>
+<span class="normal">4033</span>
+<span class="normal">4034</span>
+<span class="normal">4035</span>
+<span class="normal">4036</span>
+<span class="normal">4037</span>
+<span class="normal">4038</span>
+<span class="normal">4039</span>
+<span class="normal">4040</span>
+<span class="normal">4041</span>
+<span class="normal">4042</span>
+<span class="normal">4043</span>
+<span class="normal">4044</span>
+<span class="normal">4045</span>
+<span class="normal">4046</span>
+<span class="normal">4047</span>
+<span class="normal">4048</span>
+<span class="normal">4049</span>
+<span class="normal">4050</span>
+<span class="normal">4051</span>
+<span class="normal">4052</span>
+<span class="normal">4053</span>
+<span class="normal">4054</span>
+<span class="normal">4055</span>
+<span class="normal">4056</span>
+<span class="normal">4057</span>
+<span class="normal">4058</span>
+<span class="normal">4059</span>
+<span class="normal">4060</span>
+<span class="normal">4061</span>
+<span class="normal">4062</span>
+<span class="normal">4063</span>
+<span class="normal">4064</span>
+<span class="normal">4065</span>
+<span class="normal">4066</span>
+<span class="normal">4067</span>
+<span class="normal">4068</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_train_model</span><span class="p">(</span>
     <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;torchvision/resnet50&quot;</span><span class="p">,</span>
@@ -9939,7 +10077,10 @@ print(f"Pretrained model saved to: {model_path}")</p>
 <span class="sd">        model (str): Model architecture to train. Supports models from torchvision,</span>
 <span class="sd">            timm, ultralytics, etc. Default is &quot;torchvision/resnet50&quot;.</span>
 <span class="sd">        method (str): Self-supervised learning method. Options include:</span>
-<span class="sd">            &quot;dinov2_distillation&quot; (recommended), &quot;dinov2&quot;, &quot;dino&quot;, &quot;simclr&quot;.</span>
+<span class="sd">            - &quot;simclr&quot;: Works with CNN models (ResNet, EfficientNet, etc.)</span>
+<span class="sd">            - &quot;dino&quot;: Works with both CNNs and ViTs</span>
+<span class="sd">            - &quot;dinov2&quot;: Requires ViT models only</span>
+<span class="sd">            - &quot;dinov2_distillation&quot;: Requires ViT models only (recommended for ViTs)</span>
 <span class="sd">            Default is &quot;dinov2_distillation&quot;.</span>
 <span class="sd">        epochs (int): Number of training epochs. Default is 100.</span>
 <span class="sd">        batch_size (int): Batch size for training. Default is 64.</span>
@@ -9951,16 +10092,30 @@ print(f"Pretrained model saved to: {model_path}")</p>
 
 <span class="sd">    Raises:</span>
 <span class="sd">        ImportError: If lightly-train is not installed.</span>
-<span class="sd">        ValueError: If data_dir does not exist or is empty.</span>
+<span class="sd">        ValueError: If data_dir does not exist, is empty, or incompatible model/method.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Model/Method compatibility:</span>
+<span class="sd">        - CNN models (ResNet, EfficientNet): Use &quot;simclr&quot; or &quot;dino&quot;</span>
+<span class="sd">        - ViT models: Use &quot;dinov2&quot;, &quot;dinov2_distillation&quot;, or &quot;dino&quot;</span>
 
 <span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # For CNN models (ResNet, EfficientNet)</span>
 <span class="sd">        &gt;&gt;&gt; model_path = lightly_train_model(</span>
 <span class="sd">        ...     data_dir=&quot;path/to/unlabeled/images&quot;,</span>
 <span class="sd">        ...     output_dir=&quot;path/to/output&quot;,</span>
 <span class="sd">        ...     model=&quot;torchvision/resnet50&quot;,</span>
+<span class="sd">        ...     method=&quot;simclr&quot;,  # Use simclr for CNNs</span>
 <span class="sd">        ...     epochs=50</span>
 <span class="sd">        ... )</span>
-<span class="sd">        &gt;&gt;&gt; print(f&quot;Pretrained model saved to: {model_path}&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # For ViT models</span>
+<span class="sd">        &gt;&gt;&gt; model_path = lightly_train_model(</span>
+<span class="sd">        ...     data_dir=&quot;path/to/unlabeled/images&quot;,</span>
+<span class="sd">        ...     output_dir=&quot;path/to/output&quot;,</span>
+<span class="sd">        ...     model=&quot;timm/vit_base_patch16_224&quot;,</span>
+<span class="sd">        ...     method=&quot;dinov2&quot;,  # dinov2 requires ViT</span>
+<span class="sd">        ...     epochs=50</span>
+<span class="sd">        ... )</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">LIGHTLY_TRAIN_AVAILABLE</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
@@ -9980,11 +10135,46 @@ print(f"Pretrained model saved to: {model_path}")</p>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">image_files</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No image files found in </span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+    <span class="c1"># Validate model/method compatibility</span>
+    <span class="n">is_vit_model</span> <span class="o">=</span> <span class="s2">&quot;vit&quot;</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;vision_transformer&quot;</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;dinov2&quot;</span><span class="p">,</span> <span class="s2">&quot;dinov2_distillation&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_vit_model</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Method &#39;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&#39; requires a Vision Transformer (ViT) model, but got &#39;</span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&#39;.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Solutions:</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  1. Use a ViT model: model=&#39;timm/vit_base_patch16_224&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  2. Use a CNN-compatible method: method=&#39;simclr&#39; or method=&#39;dino&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">For CNN models (ResNet, EfficientNet), use &#39;simclr&#39; or &#39;dino&#39;.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;For ViT models, use &#39;dinov2&#39;, &#39;dinov2_distillation&#39;, or &#39;dino&#39;.&quot;</span>
+        <span class="p">)</span>
+
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">image_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> images in </span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting self-supervised pretraining with </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> method...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model: </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1"># Create output directory</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Detect if running in notebook environment and set appropriate configuration</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_notebook</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">IPython</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ipython</span>
+
+            <span class="k">if</span> <span class="n">get_ipython</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">NameError</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># Force single-device training in notebooks to avoid DDP strategy issues</span>
+    <span class="k">if</span> <span class="n">is_notebook</span><span class="p">():</span>
+        <span class="c1"># Only override if not explicitly set by user</span>
+        <span class="k">if</span> <span class="s2">&quot;accelerator&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="c1"># Use CPU in notebooks to avoid DDP incompatibility</span>
+            <span class="c1"># Users can still override by passing accelerator=&#39;gpu&#39;</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;accelerator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cpu&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;devices&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;devices&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Force single device</span>
 
     <span class="c1"># Train the model using Lightly Train</span>
     <span class="n">lightly_train</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
@@ -9994,7 +10184,6 @@ print(f"Pretrained model saved to: {model_path}")</p>
         <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
         <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span>
         <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
-        <span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
 
@@ -10180,58 +10369,7 @@ Default is "torchvision/resnet50".</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4020</span>
-<span class="normal">4021</span>
-<span class="normal">4022</span>
-<span class="normal">4023</span>
-<span class="normal">4024</span>
-<span class="normal">4025</span>
-<span class="normal">4026</span>
-<span class="normal">4027</span>
-<span class="normal">4028</span>
-<span class="normal">4029</span>
-<span class="normal">4030</span>
-<span class="normal">4031</span>
-<span class="normal">4032</span>
-<span class="normal">4033</span>
-<span class="normal">4034</span>
-<span class="normal">4035</span>
-<span class="normal">4036</span>
-<span class="normal">4037</span>
-<span class="normal">4038</span>
-<span class="normal">4039</span>
-<span class="normal">4040</span>
-<span class="normal">4041</span>
-<span class="normal">4042</span>
-<span class="normal">4043</span>
-<span class="normal">4044</span>
-<span class="normal">4045</span>
-<span class="normal">4046</span>
-<span class="normal">4047</span>
-<span class="normal">4048</span>
-<span class="normal">4049</span>
-<span class="normal">4050</span>
-<span class="normal">4051</span>
-<span class="normal">4052</span>
-<span class="normal">4053</span>
-<span class="normal">4054</span>
-<span class="normal">4055</span>
-<span class="normal">4056</span>
-<span class="normal">4057</span>
-<span class="normal">4058</span>
-<span class="normal">4059</span>
-<span class="normal">4060</span>
-<span class="normal">4061</span>
-<span class="normal">4062</span>
-<span class="normal">4063</span>
-<span class="normal">4064</span>
-<span class="normal">4065</span>
-<span class="normal">4066</span>
-<span class="normal">4067</span>
-<span class="normal">4068</span>
-<span class="normal">4069</span>
-<span class="normal">4070</span>
-<span class="normal">4071</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4071</span>
 <span class="normal">4072</span>
 <span class="normal">4073</span>
 <span class="normal">4074</span>
@@ -10251,7 +10389,58 @@ Default is "torchvision/resnet50".</p>
 <span class="normal">4088</span>
 <span class="normal">4089</span>
 <span class="normal">4090</span>
-<span class="normal">4091</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_lightly_pretrained_model</span><span class="p">(</span>
+<span class="normal">4091</span>
+<span class="normal">4092</span>
+<span class="normal">4093</span>
+<span class="normal">4094</span>
+<span class="normal">4095</span>
+<span class="normal">4096</span>
+<span class="normal">4097</span>
+<span class="normal">4098</span>
+<span class="normal">4099</span>
+<span class="normal">4100</span>
+<span class="normal">4101</span>
+<span class="normal">4102</span>
+<span class="normal">4103</span>
+<span class="normal">4104</span>
+<span class="normal">4105</span>
+<span class="normal">4106</span>
+<span class="normal">4107</span>
+<span class="normal">4108</span>
+<span class="normal">4109</span>
+<span class="normal">4110</span>
+<span class="normal">4111</span>
+<span class="normal">4112</span>
+<span class="normal">4113</span>
+<span class="normal">4114</span>
+<span class="normal">4115</span>
+<span class="normal">4116</span>
+<span class="normal">4117</span>
+<span class="normal">4118</span>
+<span class="normal">4119</span>
+<span class="normal">4120</span>
+<span class="normal">4121</span>
+<span class="normal">4122</span>
+<span class="normal">4123</span>
+<span class="normal">4124</span>
+<span class="normal">4125</span>
+<span class="normal">4126</span>
+<span class="normal">4127</span>
+<span class="normal">4128</span>
+<span class="normal">4129</span>
+<span class="normal">4130</span>
+<span class="normal">4131</span>
+<span class="normal">4132</span>
+<span class="normal">4133</span>
+<span class="normal">4134</span>
+<span class="normal">4135</span>
+<span class="normal">4136</span>
+<span class="normal">4137</span>
+<span class="normal">4138</span>
+<span class="normal">4139</span>
+<span class="normal">4140</span>
+<span class="normal">4141</span>
+<span class="normal">4142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_lightly_pretrained_model</span><span class="p">(</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_architecture</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;torchvision/resnet50&quot;</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
