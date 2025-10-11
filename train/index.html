@@ -2378,15 +2378,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#geoai.train.dice_coefficient" class="md-nav__link">
-    <span class="md-ellipsis">
-      dice_coefficient
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#geoai.train.evaluate" class="md-nav__link">
     <span class="md-ellipsis">
       evaluate
@@ -2399,6 +2390,15 @@
   <a href="#geoai.train.evaluate_semantic" class="md-nav__link">
     <span class="md-ellipsis">
       evaluate_semantic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geoai.train.f1_score" class="md-nav__link">
+    <span class="md-ellipsis">
+      f1_score
     </span>
   </a>
   
@@ -2908,15 +2908,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#geoai.train.dice_coefficient" class="md-nav__link">
-    <span class="md-ellipsis">
-      dice_coefficient
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#geoai.train.evaluate" class="md-nav__link">
     <span class="md-ellipsis">
       evaluate
@@ -2929,6 +2920,15 @@
   <a href="#geoai.train.evaluate_semantic" class="md-nav__link">
     <span class="md-ellipsis">
       evaluate_semantic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geoai.train.f1_score" class="md-nav__link">
+    <span class="md-ellipsis">
+      f1_score
     </span>
   </a>
   
@@ -5319,219 +5319,6 @@ If None, images will keep their original sizes.</p>
 <div class="doc doc-object doc-function">
 
 
-<h2 id="geoai.train.dice_coefficient" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">dice_coefficient</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-<a href="#geoai.train.dice_coefficient" class="headerlink" title="Permanent link">&para;</a></h2>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Calculate Dice coefficient for segmentation (binary or multi-class).</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>pred</code>
-            </td>
-            <td>
-                  <code><span title="torch.Tensor">Tensor</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Predicted mask (probabilities or logits) with shape [C, H, W] or [H, W].</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>target</code>
-            </td>
-            <td>
-                  <code><span title="torch.Tensor">Tensor</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Ground truth mask with shape [H, W].</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>smooth</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Smoothing factor to avoid division by zero.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1e-06</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>num_classes</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of classes. If None, auto-detected.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>float</code></td>            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Mean Dice coefficient across all classes.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-            <details class="quote">
-              <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2036</span>
-<span class="normal">2037</span>
-<span class="normal">2038</span>
-<span class="normal">2039</span>
-<span class="normal">2040</span>
-<span class="normal">2041</span>
-<span class="normal">2042</span>
-<span class="normal">2043</span>
-<span class="normal">2044</span>
-<span class="normal">2045</span>
-<span class="normal">2046</span>
-<span class="normal">2047</span>
-<span class="normal">2048</span>
-<span class="normal">2049</span>
-<span class="normal">2050</span>
-<span class="normal">2051</span>
-<span class="normal">2052</span>
-<span class="normal">2053</span>
-<span class="normal">2054</span>
-<span class="normal">2055</span>
-<span class="normal">2056</span>
-<span class="normal">2057</span>
-<span class="normal">2058</span>
-<span class="normal">2059</span>
-<span class="normal">2060</span>
-<span class="normal">2061</span>
-<span class="normal">2062</span>
-<span class="normal">2063</span>
-<span class="normal">2064</span>
-<span class="normal">2065</span>
-<span class="normal">2066</span>
-<span class="normal">2067</span>
-<span class="normal">2068</span>
-<span class="normal">2069</span>
-<span class="normal">2070</span>
-<span class="normal">2071</span>
-<span class="normal">2072</span>
-<span class="normal">2073</span>
-<span class="normal">2074</span>
-<span class="normal">2075</span>
-<span class="normal">2076</span>
-<span class="normal">2077</span>
-<span class="normal">2078</span>
-<span class="normal">2079</span>
-<span class="normal">2080</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dice_coefficient</span><span class="p">(</span>
-    <span class="n">pred</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
-    <span class="n">target</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
-    <span class="n">smooth</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate Dice coefficient for segmentation (binary or multi-class).</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        pred (torch.Tensor): Predicted mask (probabilities or logits) with shape [C, H, W] or [H, W].</span>
-<span class="sd">        target (torch.Tensor): Ground truth mask with shape [H, W].</span>
-<span class="sd">        smooth (float): Smoothing factor to avoid division by zero.</span>
-<span class="sd">        num_classes (int, optional): Number of classes. If None, auto-detected.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        float: Mean Dice coefficient across all classes.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Convert predictions to class predictions</span>
-    <span class="k">if</span> <span class="n">pred</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># [C, H, W] format</span>
-        <span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">pred_classes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">pred</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># [H, W] format</span>
-        <span class="n">pred_classes</span> <span class="o">=</span> <span class="n">pred</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unexpected prediction dimensions: </span><span class="si">{</span><span class="n">pred</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Auto-detect number of classes if not provided</span>
-    <span class="k">if</span> <span class="n">num_classes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">num_classes</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pred_classes</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">target</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="c1"># Calculate Dice for each class and average</span>
-    <span class="n">dice_scores</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">class_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_classes</span><span class="p">):</span>
-        <span class="n">pred_class</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_classes</span> <span class="o">==</span> <span class="n">class_id</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
-        <span class="n">target_class</span> <span class="o">=</span> <span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="n">class_id</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
-
-        <span class="n">intersection</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_class</span> <span class="o">*</span> <span class="n">target_class</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-        <span class="n">union</span> <span class="o">=</span> <span class="n">pred_class</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">target_class</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-        <span class="k">if</span> <span class="n">union</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">dice</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">intersection</span> <span class="o">+</span> <span class="n">smooth</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">union</span> <span class="o">+</span> <span class="n">smooth</span><span class="p">)</span>
-            <span class="n">dice_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dice</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
-
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dice_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">dice_scores</span><span class="p">)</span> <span class="k">if</span> <span class="n">dice_scores</span> <span class="k">else</span> <span class="mf">0.0</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
 <h2 id="geoai.train.evaluate" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">evaluate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span></code>
 
@@ -5912,7 +5699,7 @@ If None, images will keep their original sizes.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Evaluation metrics including loss, IoU, and Dice.</p>
+                <p>Evaluation metrics including loss, IoU, and F1.</p>
               </div>
             </td>
           </tr>
@@ -5990,12 +5777,12 @@ If None, images will keep their original sizes.</p>
 <span class="sd">        num_classes (int): Number of classes for evaluation metrics.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        dict: Evaluation metrics including loss, IoU, and Dice.</span>
+<span class="sd">        dict: Evaluation metrics including loss, IoU, and F1.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 
     <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">dice_scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">f1_scores</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">iou_scores</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">num_batches</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
 
@@ -6012,17 +5799,230 @@ If None, images will keep their original sizes.</p>
 
             <span class="c1"># Calculate metrics for each sample in the batch</span>
             <span class="k">for</span> <span class="n">pred</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
-                <span class="n">dice</span> <span class="o">=</span> <span class="n">dice_coefficient</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">)</span>
+                <span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">)</span>
                 <span class="n">iou</span> <span class="o">=</span> <span class="n">iou_coefficient</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="n">num_classes</span><span class="p">)</span>
-                <span class="n">dice_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dice</span><span class="p">)</span>
+                <span class="n">f1_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
                 <span class="n">iou_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">iou</span><span class="p">)</span>
 
     <span class="c1"># Calculate metrics</span>
     <span class="n">avg_loss</span> <span class="o">=</span> <span class="n">total_loss</span> <span class="o">/</span> <span class="n">num_batches</span>
-    <span class="n">avg_dice</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dice_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">dice_scores</span><span class="p">)</span> <span class="k">if</span> <span class="n">dice_scores</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">avg_f1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">)</span> <span class="k">if</span> <span class="n">f1_scores</span> <span class="k">else</span> <span class="mi">0</span>
     <span class="n">avg_iou</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">iou_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">iou_scores</span><span class="p">)</span> <span class="k">if</span> <span class="n">iou_scores</span> <span class="k">else</span> <span class="mi">0</span>
 
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">avg_loss</span><span class="p">,</span> <span class="s2">&quot;Dice&quot;</span><span class="p">:</span> <span class="n">avg_dice</span><span class="p">,</span> <span class="s2">&quot;IoU&quot;</span><span class="p">:</span> <span class="n">avg_iou</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">avg_loss</span><span class="p">,</span> <span class="s2">&quot;F1&quot;</span><span class="p">:</span> <span class="n">avg_f1</span><span class="p">,</span> <span class="s2">&quot;IoU&quot;</span><span class="p">:</span> <span class="n">avg_iou</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="geoai.train.f1_score" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">f1_score</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#geoai.train.f1_score" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculate F1 score (also known as Dice coefficient) for segmentation (binary or multi-class).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>pred</code>
+            </td>
+            <td>
+                  <code><span title="torch.Tensor">Tensor</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Predicted mask (probabilities or logits) with shape [C, H, W] or [H, W].</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>target</code>
+            </td>
+            <td>
+                  <code><span title="torch.Tensor">Tensor</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ground truth mask with shape [H, W].</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>smooth</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Smoothing factor to avoid division by zero.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1e-06</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>num_classes</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of classes. If None, auto-detected.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>float</code></td>            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Mean F1 score across all classes.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>geoai/train.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2036</span>
+<span class="normal">2037</span>
+<span class="normal">2038</span>
+<span class="normal">2039</span>
+<span class="normal">2040</span>
+<span class="normal">2041</span>
+<span class="normal">2042</span>
+<span class="normal">2043</span>
+<span class="normal">2044</span>
+<span class="normal">2045</span>
+<span class="normal">2046</span>
+<span class="normal">2047</span>
+<span class="normal">2048</span>
+<span class="normal">2049</span>
+<span class="normal">2050</span>
+<span class="normal">2051</span>
+<span class="normal">2052</span>
+<span class="normal">2053</span>
+<span class="normal">2054</span>
+<span class="normal">2055</span>
+<span class="normal">2056</span>
+<span class="normal">2057</span>
+<span class="normal">2058</span>
+<span class="normal">2059</span>
+<span class="normal">2060</span>
+<span class="normal">2061</span>
+<span class="normal">2062</span>
+<span class="normal">2063</span>
+<span class="normal">2064</span>
+<span class="normal">2065</span>
+<span class="normal">2066</span>
+<span class="normal">2067</span>
+<span class="normal">2068</span>
+<span class="normal">2069</span>
+<span class="normal">2070</span>
+<span class="normal">2071</span>
+<span class="normal">2072</span>
+<span class="normal">2073</span>
+<span class="normal">2074</span>
+<span class="normal">2075</span>
+<span class="normal">2076</span>
+<span class="normal">2077</span>
+<span class="normal">2078</span>
+<span class="normal">2079</span>
+<span class="normal">2080</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f1_score</span><span class="p">(</span>
+    <span class="n">pred</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+    <span class="n">target</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+    <span class="n">smooth</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="p">,</span>
+    <span class="n">num_classes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate F1 score (also known as Dice coefficient) for segmentation (binary or multi-class).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pred (torch.Tensor): Predicted mask (probabilities or logits) with shape [C, H, W] or [H, W].</span>
+<span class="sd">        target (torch.Tensor): Ground truth mask with shape [H, W].</span>
+<span class="sd">        smooth (float): Smoothing factor to avoid division by zero.</span>
+<span class="sd">        num_classes (int, optional): Number of classes. If None, auto-detected.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Mean F1 score across all classes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Convert predictions to class predictions</span>
+    <span class="k">if</span> <span class="n">pred</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># [C, H, W] format</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">pred_classes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">pred</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># [H, W] format</span>
+        <span class="n">pred_classes</span> <span class="o">=</span> <span class="n">pred</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unexpected prediction dimensions: </span><span class="si">{</span><span class="n">pred</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Auto-detect number of classes if not provided</span>
+    <span class="k">if</span> <span class="n">num_classes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">num_classes</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pred_classes</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">target</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Calculate F1 score for each class and average</span>
+    <span class="n">f1_scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">class_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_classes</span><span class="p">):</span>
+        <span class="n">pred_class</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_classes</span> <span class="o">==</span> <span class="n">class_id</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+        <span class="n">target_class</span> <span class="o">=</span> <span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="n">class_id</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+
+        <span class="n">intersection</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_class</span> <span class="o">*</span> <span class="n">target_class</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">union</span> <span class="o">=</span> <span class="n">pred_class</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">target_class</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">union</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">intersection</span> <span class="o">+</span> <span class="n">smooth</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">union</span> <span class="o">+</span> <span class="n">smooth</span><span class="p">)</span>
+            <span class="n">f1_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">)</span> <span class="k">if</span> <span class="n">f1_scores</span> <span class="k">else</span> <span class="mf">0.0</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -7823,10 +7823,7 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3744</span>
-<span class="normal">3745</span>
-<span class="normal">3746</span>
-<span class="normal">3747</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3747</span>
 <span class="normal">3748</span>
 <span class="normal">3749</span>
 <span class="normal">3750</span>
@@ -7890,7 +7887,10 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 <span class="normal">3808</span>
 <span class="normal">3809</span>
 <span class="normal">3810</span>
-<span class="normal">3811</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation</span><span class="p">(</span>
+<span class="normal">3811</span>
+<span class="normal">3812</span>
+<span class="normal">3813</span>
+<span class="normal">3814</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation</span><span class="p">(</span>
     <span class="n">input_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -8195,10 +8195,7 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3814</span>
-<span class="normal">3815</span>
-<span class="normal">3816</span>
-<span class="normal">3817</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3817</span>
 <span class="normal">3818</span>
 <span class="normal">3819</span>
 <span class="normal">3820</span>
@@ -8294,7 +8291,10 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 <span class="normal">3910</span>
 <span class="normal">3911</span>
 <span class="normal">3912</span>
-<span class="normal">3913</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation_batch</span><span class="p">(</span>
+<span class="normal">3913</span>
+<span class="normal">3914</span>
+<span class="normal">3915</span>
+<span class="normal">3916</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation_batch</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -9501,10 +9501,7 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4145</span>
-<span class="normal">4146</span>
-<span class="normal">4147</span>
-<span class="normal">4148</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4148</span>
 <span class="normal">4149</span>
 <span class="normal">4150</span>
 <span class="normal">4151</span>
@@ -9573,7 +9570,10 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
 <span class="normal">4214</span>
 <span class="normal">4215</span>
 <span class="normal">4216</span>
-<span class="normal">4217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_embed_images</span><span class="p">(</span>
+<span class="normal">4217</span>
+<span class="normal">4218</span>
+<span class="normal">4219</span>
+<span class="normal">4220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_embed_images</span><span class="p">(</span>
     <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -9906,10 +9906,7 @@ Default is "dinov2_distillation".</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3916</span>
-<span class="normal">3917</span>
-<span class="normal">3918</span>
-<span class="normal">3919</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3919</span>
 <span class="normal">3920</span>
 <span class="normal">3921</span>
 <span class="normal">3922</span>
@@ -10058,7 +10055,10 @@ Default is "dinov2_distillation".</p>
 <span class="normal">4065</span>
 <span class="normal">4066</span>
 <span class="normal">4067</span>
-<span class="normal">4068</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_train_model</span><span class="p">(</span>
+<span class="normal">4068</span>
+<span class="normal">4069</span>
+<span class="normal">4070</span>
+<span class="normal">4071</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_train_model</span><span class="p">(</span>
     <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;torchvision/resnet50&quot;</span><span class="p">,</span>
@@ -10369,10 +10369,7 @@ Default is "torchvision/resnet50".</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4071</span>
-<span class="normal">4072</span>
-<span class="normal">4073</span>
-<span class="normal">4074</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4074</span>
 <span class="normal">4075</span>
 <span class="normal">4076</span>
 <span class="normal">4077</span>
@@ -10440,7 +10437,10 @@ Default is "torchvision/resnet50".</p>
 <span class="normal">4139</span>
 <span class="normal">4140</span>
 <span class="normal">4141</span>
-<span class="normal">4142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_lightly_pretrained_model</span><span class="p">(</span>
+<span class="normal">4142</span>
+<span class="normal">4143</span>
+<span class="normal">4144</span>
+<span class="normal">4145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_lightly_pretrained_model</span><span class="p">(</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_architecture</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;torchvision/resnet50&quot;</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -12024,10 +12024,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2763</span>
-<span class="normal">2764</span>
-<span class="normal">2765</span>
-<span class="normal">2766</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">2766</span>
 <span class="normal">2767</span>
 <span class="normal">2768</span>
 <span class="normal">2769</span>
@@ -12287,7 +12284,10 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 <span class="normal">3023</span>
 <span class="normal">3024</span>
 <span class="normal">3025</span>
-<span class="normal">3026</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_geotiff</span><span class="p">(</span>
+<span class="normal">3026</span>
+<span class="normal">3027</span>
+<span class="normal">3028</span>
+<span class="normal">3029</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_geotiff</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
     <span class="n">geotiff_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -12838,10 +12838,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3029</span>
-<span class="normal">3030</span>
-<span class="normal">3031</span>
-<span class="normal">3032</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3032</span>
 <span class="normal">3033</span>
 <span class="normal">3034</span>
 <span class="normal">3035</span>
@@ -13162,7 +13159,10 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 <span class="normal">3350</span>
 <span class="normal">3351</span>
 <span class="normal">3352</span>
-<span class="normal">3353</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_image</span><span class="p">(</span>
+<span class="normal">3353</span>
+<span class="normal">3354</span>
+<span class="normal">3355</span>
+<span class="normal">3356</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_image</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
     <span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -13793,10 +13793,7 @@ Must be between 0 and 1.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3356</span>
-<span class="normal">3357</span>
-<span class="normal">3358</span>
-<span class="normal">3359</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3359</span>
 <span class="normal">3360</span>
 <span class="normal">3361</span>
 <span class="normal">3362</span>
@@ -13932,7 +13929,10 @@ Must be between 0 and 1.</p>
 <span class="normal">3492</span>
 <span class="normal">3493</span>
 <span class="normal">3494</span>
-<span class="normal">3495</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation</span><span class="p">(</span>
+<span class="normal">3495</span>
+<span class="normal">3496</span>
+<span class="normal">3497</span>
+<span class="normal">3498</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation</span><span class="p">(</span>
     <span class="n">input_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -14395,10 +14395,7 @@ inputs and "png" for other formats. If provided, must match the number of input 
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3498</span>
-<span class="normal">3499</span>
-<span class="normal">3500</span>
-<span class="normal">3501</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3501</span>
 <span class="normal">3502</span>
 <span class="normal">3503</span>
 <span class="normal">3504</span>
@@ -14565,7 +14562,10 @@ inputs and "png" for other formats. If provided, must match the number of input 
 <span class="normal">3665</span>
 <span class="normal">3666</span>
 <span class="normal">3667</span>
-<span class="normal">3668</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation_batch</span><span class="p">(</span>
+<span class="normal">3668</span>
+<span class="normal">3669</span>
+<span class="normal">3670</span>
+<span class="normal">3671</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation_batch</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -16069,10 +16069,7 @@ or not used (for 'yolo' format - labels are in images_dir/labels/).</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3671</span>
-<span class="normal">3672</span>
-<span class="normal">3673</span>
-<span class="normal">3674</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3674</span>
 <span class="normal">3675</span>
 <span class="normal">3676</span>
 <span class="normal">3677</span>
@@ -16139,7 +16136,10 @@ or not used (for 'yolo' format - labels are in images_dir/labels/).</p>
 <span class="normal">3738</span>
 <span class="normal">3739</span>
 <span class="normal">3740</span>
-<span class="normal">3741</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_instance_segmentation_model</span><span class="p">(</span>
+<span class="normal">3741</span>
+<span class="normal">3742</span>
+<span class="normal">3743</span>
+<span class="normal">3744</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_instance_segmentation_model</span><span class="p">(</span>
     <span class="n">images_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">labels_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -17518,7 +17518,10 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
 <span class="normal">2757</span>
 <span class="normal">2758</span>
 <span class="normal">2759</span>
-<span class="normal">2760</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_segmentation_model</span><span class="p">(</span>
+<span class="normal">2760</span>
+<span class="normal">2761</span>
+<span class="normal">2762</span>
+<span class="normal">2763</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_segmentation_model</span><span class="p">(</span>
     <span class="n">images_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">labels_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -17825,7 +17828,7 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">()</span><span class="si">}</span><span class="s2"> GPUs for training&quot;</span><span class="p">)</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">DataParallel</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 
-    <span class="c1"># Set up loss function (CrossEntropyLoss for multi-class, can also use DiceLoss)</span>
+    <span class="c1"># Set up loss function (CrossEntropyLoss for multi-class, can also use F1Loss)</span>
     <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
 
     <span class="c1"># Set up optimizer</span>
@@ -17843,7 +17846,7 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
     <span class="n">train_losses</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">val_losses</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">val_ious</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">val_dices</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">val_f1s</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">start_epoch</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="c1"># Load checkpoint if provided</span>
@@ -17879,8 +17882,11 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
                         <span class="n">val_losses</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;val_losses&quot;</span><span class="p">]</span>
                     <span class="k">if</span> <span class="s2">&quot;val_ious&quot;</span> <span class="ow">in</span> <span class="n">checkpoint</span><span class="p">:</span>
                         <span class="n">val_ious</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;val_ious&quot;</span><span class="p">]</span>
-                    <span class="k">if</span> <span class="s2">&quot;val_dices&quot;</span> <span class="ow">in</span> <span class="n">checkpoint</span><span class="p">:</span>
-                        <span class="n">val_dices</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;val_dices&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="s2">&quot;val_f1s&quot;</span> <span class="ow">in</span> <span class="n">checkpoint</span><span class="p">:</span>
+                        <span class="n">val_f1s</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;val_f1s&quot;</span><span class="p">]</span>
+                    <span class="c1"># Also check for old val_dices format for backward compatibility</span>
+                    <span class="k">elif</span> <span class="s2">&quot;val_dices&quot;</span> <span class="ow">in</span> <span class="n">checkpoint</span><span class="p">:</span>
+                        <span class="n">val_f1s</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;val_dices&quot;</span><span class="p">]</span>
 
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Resuming training from epoch </span><span class="si">{</span><span class="n">start_epoch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Previous best IoU: </span><span class="si">{</span><span class="n">best_iou</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -17920,7 +17926,7 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
         <span class="p">)</span>
         <span class="n">val_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s2">&quot;loss&quot;</span><span class="p">])</span>
         <span class="n">val_ious</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s2">&quot;IoU&quot;</span><span class="p">])</span>
-        <span class="n">val_dices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s2">&quot;Dice&quot;</span><span class="p">])</span>
+        <span class="n">val_f1s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s2">&quot;F1&quot;</span><span class="p">])</span>
 
         <span class="c1"># Update learning rate</span>
         <span class="n">lr_scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s2">&quot;loss&quot;</span><span class="p">])</span>
@@ -17931,7 +17937,7 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
             <span class="sa">f</span><span class="s2">&quot;Train Loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, &quot;</span>
             <span class="sa">f</span><span class="s2">&quot;Val Loss: </span><span class="si">{</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, &quot;</span>
             <span class="sa">f</span><span class="s2">&quot;Val IoU: </span><span class="si">{</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s1">&#39;IoU&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;Val Dice: </span><span class="si">{</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s1">&#39;Dice&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Val F1: </span><span class="si">{</span><span class="n">eval_metrics</span><span class="p">[</span><span class="s1">&#39;F1&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">)</span>
 
         <span class="c1"># Save best model</span>
@@ -17956,7 +17962,7 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
                     <span class="s2">&quot;train_losses&quot;</span><span class="p">:</span> <span class="n">train_losses</span><span class="p">,</span>
                     <span class="s2">&quot;val_losses&quot;</span><span class="p">:</span> <span class="n">val_losses</span><span class="p">,</span>
                     <span class="s2">&quot;val_ious&quot;</span><span class="p">:</span> <span class="n">val_ious</span><span class="p">,</span>
-                    <span class="s2">&quot;val_dices&quot;</span><span class="p">:</span> <span class="n">val_dices</span><span class="p">,</span>
+                    <span class="s2">&quot;val_f1s&quot;</span><span class="p">:</span> <span class="n">val_f1s</span><span class="p">,</span>
                 <span class="p">},</span>
                 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;checkpoint_epoch_</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">.pth&quot;</span><span class="p">),</span>
             <span class="p">)</span>
@@ -17969,7 +17975,7 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
         <span class="s2">&quot;train_losses&quot;</span><span class="p">:</span> <span class="n">train_losses</span><span class="p">,</span>
         <span class="s2">&quot;val_losses&quot;</span><span class="p">:</span> <span class="n">val_losses</span><span class="p">,</span>
         <span class="s2">&quot;val_ious&quot;</span><span class="p">:</span> <span class="n">val_ious</span><span class="p">,</span>
-        <span class="s2">&quot;val_dices&quot;</span><span class="p">:</span> <span class="n">val_dices</span><span class="p">,</span>
+        <span class="s2">&quot;val_f1s&quot;</span><span class="p">:</span> <span class="n">val_f1s</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s2">&quot;training_history.pth&quot;</span><span class="p">))</span>
 
@@ -17985,7 +17991,7 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total epochs: </span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best validation IoU: </span><span class="si">{</span><span class="n">best_iou</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final validation IoU: </span><span class="si">{</span><span class="n">val_ious</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final validation Dice: </span><span class="si">{</span><span class="n">val_dices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final validation F1: </span><span class="si">{</span><span class="n">val_f1s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final validation loss: </span><span class="si">{</span><span class="n">val_losses</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training complete! Best IoU: </span><span class="si">{</span><span class="n">best_iou</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -18014,10 +18020,10 @@ resizing, set this parameter explicitly. Example: (512, 512). Defaults to None.<
             <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
             <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_dices</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Val Dice&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dice Score&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_f1s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Val F1&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;F1 Score&quot;</span><span class="p">)</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Epoch&quot;</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Dice&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;F1&quot;</span><span class="p">)</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
