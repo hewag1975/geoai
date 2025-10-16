@@ -7891,74 +7891,74 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3897</span>
-<span class="normal">3898</span>
-<span class="normal">3899</span>
-<span class="normal">3900</span>
-<span class="normal">3901</span>
-<span class="normal">3902</span>
-<span class="normal">3903</span>
-<span class="normal">3904</span>
-<span class="normal">3905</span>
-<span class="normal">3906</span>
-<span class="normal">3907</span>
-<span class="normal">3908</span>
-<span class="normal">3909</span>
-<span class="normal">3910</span>
-<span class="normal">3911</span>
-<span class="normal">3912</span>
-<span class="normal">3913</span>
-<span class="normal">3914</span>
-<span class="normal">3915</span>
-<span class="normal">3916</span>
-<span class="normal">3917</span>
-<span class="normal">3918</span>
-<span class="normal">3919</span>
-<span class="normal">3920</span>
-<span class="normal">3921</span>
-<span class="normal">3922</span>
-<span class="normal">3923</span>
-<span class="normal">3924</span>
-<span class="normal">3925</span>
-<span class="normal">3926</span>
-<span class="normal">3927</span>
-<span class="normal">3928</span>
-<span class="normal">3929</span>
-<span class="normal">3930</span>
-<span class="normal">3931</span>
-<span class="normal">3932</span>
-<span class="normal">3933</span>
-<span class="normal">3934</span>
-<span class="normal">3935</span>
-<span class="normal">3936</span>
-<span class="normal">3937</span>
-<span class="normal">3938</span>
-<span class="normal">3939</span>
-<span class="normal">3940</span>
-<span class="normal">3941</span>
-<span class="normal">3942</span>
-<span class="normal">3943</span>
-<span class="normal">3944</span>
-<span class="normal">3945</span>
-<span class="normal">3946</span>
-<span class="normal">3947</span>
-<span class="normal">3948</span>
-<span class="normal">3949</span>
-<span class="normal">3950</span>
-<span class="normal">3951</span>
-<span class="normal">3952</span>
-<span class="normal">3953</span>
-<span class="normal">3954</span>
-<span class="normal">3955</span>
-<span class="normal">3956</span>
-<span class="normal">3957</span>
-<span class="normal">3958</span>
-<span class="normal">3959</span>
-<span class="normal">3960</span>
-<span class="normal">3961</span>
-<span class="normal">3962</span>
-<span class="normal">3963</span>
-<span class="normal">3964</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation</span><span class="p">(</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3974</span>
+<span class="normal">3975</span>
+<span class="normal">3976</span>
+<span class="normal">3977</span>
+<span class="normal">3978</span>
+<span class="normal">3979</span>
+<span class="normal">3980</span>
+<span class="normal">3981</span>
+<span class="normal">3982</span>
+<span class="normal">3983</span>
+<span class="normal">3984</span>
+<span class="normal">3985</span>
+<span class="normal">3986</span>
+<span class="normal">3987</span>
+<span class="normal">3988</span>
+<span class="normal">3989</span>
+<span class="normal">3990</span>
+<span class="normal">3991</span>
+<span class="normal">3992</span>
+<span class="normal">3993</span>
+<span class="normal">3994</span>
+<span class="normal">3995</span>
+<span class="normal">3996</span>
+<span class="normal">3997</span>
+<span class="normal">3998</span>
+<span class="normal">3999</span>
+<span class="normal">4000</span>
+<span class="normal">4001</span>
+<span class="normal">4002</span>
+<span class="normal">4003</span>
+<span class="normal">4004</span>
+<span class="normal">4005</span>
+<span class="normal">4006</span>
+<span class="normal">4007</span>
+<span class="normal">4008</span>
+<span class="normal">4009</span>
+<span class="normal">4010</span>
+<span class="normal">4011</span>
+<span class="normal">4012</span>
+<span class="normal">4013</span>
+<span class="normal">4014</span>
+<span class="normal">4015</span>
+<span class="normal">4016</span>
+<span class="normal">4017</span>
+<span class="normal">4018</span>
+<span class="normal">4019</span>
+<span class="normal">4020</span>
+<span class="normal">4021</span>
+<span class="normal">4022</span>
+<span class="normal">4023</span>
+<span class="normal">4024</span>
+<span class="normal">4025</span>
+<span class="normal">4026</span>
+<span class="normal">4027</span>
+<span class="normal">4028</span>
+<span class="normal">4029</span>
+<span class="normal">4030</span>
+<span class="normal">4031</span>
+<span class="normal">4032</span>
+<span class="normal">4033</span>
+<span class="normal">4034</span>
+<span class="normal">4035</span>
+<span class="normal">4036</span>
+<span class="normal">4037</span>
+<span class="normal">4038</span>
+<span class="normal">4039</span>
+<span class="normal">4040</span>
+<span class="normal">4041</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation</span><span class="p">(</span>
     <span class="n">input_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -8263,84 +8263,7 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3967</span>
-<span class="normal">3968</span>
-<span class="normal">3969</span>
-<span class="normal">3970</span>
-<span class="normal">3971</span>
-<span class="normal">3972</span>
-<span class="normal">3973</span>
-<span class="normal">3974</span>
-<span class="normal">3975</span>
-<span class="normal">3976</span>
-<span class="normal">3977</span>
-<span class="normal">3978</span>
-<span class="normal">3979</span>
-<span class="normal">3980</span>
-<span class="normal">3981</span>
-<span class="normal">3982</span>
-<span class="normal">3983</span>
-<span class="normal">3984</span>
-<span class="normal">3985</span>
-<span class="normal">3986</span>
-<span class="normal">3987</span>
-<span class="normal">3988</span>
-<span class="normal">3989</span>
-<span class="normal">3990</span>
-<span class="normal">3991</span>
-<span class="normal">3992</span>
-<span class="normal">3993</span>
-<span class="normal">3994</span>
-<span class="normal">3995</span>
-<span class="normal">3996</span>
-<span class="normal">3997</span>
-<span class="normal">3998</span>
-<span class="normal">3999</span>
-<span class="normal">4000</span>
-<span class="normal">4001</span>
-<span class="normal">4002</span>
-<span class="normal">4003</span>
-<span class="normal">4004</span>
-<span class="normal">4005</span>
-<span class="normal">4006</span>
-<span class="normal">4007</span>
-<span class="normal">4008</span>
-<span class="normal">4009</span>
-<span class="normal">4010</span>
-<span class="normal">4011</span>
-<span class="normal">4012</span>
-<span class="normal">4013</span>
-<span class="normal">4014</span>
-<span class="normal">4015</span>
-<span class="normal">4016</span>
-<span class="normal">4017</span>
-<span class="normal">4018</span>
-<span class="normal">4019</span>
-<span class="normal">4020</span>
-<span class="normal">4021</span>
-<span class="normal">4022</span>
-<span class="normal">4023</span>
-<span class="normal">4024</span>
-<span class="normal">4025</span>
-<span class="normal">4026</span>
-<span class="normal">4027</span>
-<span class="normal">4028</span>
-<span class="normal">4029</span>
-<span class="normal">4030</span>
-<span class="normal">4031</span>
-<span class="normal">4032</span>
-<span class="normal">4033</span>
-<span class="normal">4034</span>
-<span class="normal">4035</span>
-<span class="normal">4036</span>
-<span class="normal">4037</span>
-<span class="normal">4038</span>
-<span class="normal">4039</span>
-<span class="normal">4040</span>
-<span class="normal">4041</span>
-<span class="normal">4042</span>
-<span class="normal">4043</span>
-<span class="normal">4044</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4044</span>
 <span class="normal">4045</span>
 <span class="normal">4046</span>
 <span class="normal">4047</span>
@@ -8362,7 +8285,84 @@ segmentation-models-pytorch, making it future-proof for new model additions.</p>
 <span class="normal">4063</span>
 <span class="normal">4064</span>
 <span class="normal">4065</span>
-<span class="normal">4066</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation_batch</span><span class="p">(</span>
+<span class="normal">4066</span>
+<span class="normal">4067</span>
+<span class="normal">4068</span>
+<span class="normal">4069</span>
+<span class="normal">4070</span>
+<span class="normal">4071</span>
+<span class="normal">4072</span>
+<span class="normal">4073</span>
+<span class="normal">4074</span>
+<span class="normal">4075</span>
+<span class="normal">4076</span>
+<span class="normal">4077</span>
+<span class="normal">4078</span>
+<span class="normal">4079</span>
+<span class="normal">4080</span>
+<span class="normal">4081</span>
+<span class="normal">4082</span>
+<span class="normal">4083</span>
+<span class="normal">4084</span>
+<span class="normal">4085</span>
+<span class="normal">4086</span>
+<span class="normal">4087</span>
+<span class="normal">4088</span>
+<span class="normal">4089</span>
+<span class="normal">4090</span>
+<span class="normal">4091</span>
+<span class="normal">4092</span>
+<span class="normal">4093</span>
+<span class="normal">4094</span>
+<span class="normal">4095</span>
+<span class="normal">4096</span>
+<span class="normal">4097</span>
+<span class="normal">4098</span>
+<span class="normal">4099</span>
+<span class="normal">4100</span>
+<span class="normal">4101</span>
+<span class="normal">4102</span>
+<span class="normal">4103</span>
+<span class="normal">4104</span>
+<span class="normal">4105</span>
+<span class="normal">4106</span>
+<span class="normal">4107</span>
+<span class="normal">4108</span>
+<span class="normal">4109</span>
+<span class="normal">4110</span>
+<span class="normal">4111</span>
+<span class="normal">4112</span>
+<span class="normal">4113</span>
+<span class="normal">4114</span>
+<span class="normal">4115</span>
+<span class="normal">4116</span>
+<span class="normal">4117</span>
+<span class="normal">4118</span>
+<span class="normal">4119</span>
+<span class="normal">4120</span>
+<span class="normal">4121</span>
+<span class="normal">4122</span>
+<span class="normal">4123</span>
+<span class="normal">4124</span>
+<span class="normal">4125</span>
+<span class="normal">4126</span>
+<span class="normal">4127</span>
+<span class="normal">4128</span>
+<span class="normal">4129</span>
+<span class="normal">4130</span>
+<span class="normal">4131</span>
+<span class="normal">4132</span>
+<span class="normal">4133</span>
+<span class="normal">4134</span>
+<span class="normal">4135</span>
+<span class="normal">4136</span>
+<span class="normal">4137</span>
+<span class="normal">4138</span>
+<span class="normal">4139</span>
+<span class="normal">4140</span>
+<span class="normal">4141</span>
+<span class="normal">4142</span>
+<span class="normal">4143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instance_segmentation_batch</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -9569,79 +9569,79 @@ print(f"Embeddings saved to: {embeddings_path}")</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4298</span>
-<span class="normal">4299</span>
-<span class="normal">4300</span>
-<span class="normal">4301</span>
-<span class="normal">4302</span>
-<span class="normal">4303</span>
-<span class="normal">4304</span>
-<span class="normal">4305</span>
-<span class="normal">4306</span>
-<span class="normal">4307</span>
-<span class="normal">4308</span>
-<span class="normal">4309</span>
-<span class="normal">4310</span>
-<span class="normal">4311</span>
-<span class="normal">4312</span>
-<span class="normal">4313</span>
-<span class="normal">4314</span>
-<span class="normal">4315</span>
-<span class="normal">4316</span>
-<span class="normal">4317</span>
-<span class="normal">4318</span>
-<span class="normal">4319</span>
-<span class="normal">4320</span>
-<span class="normal">4321</span>
-<span class="normal">4322</span>
-<span class="normal">4323</span>
-<span class="normal">4324</span>
-<span class="normal">4325</span>
-<span class="normal">4326</span>
-<span class="normal">4327</span>
-<span class="normal">4328</span>
-<span class="normal">4329</span>
-<span class="normal">4330</span>
-<span class="normal">4331</span>
-<span class="normal">4332</span>
-<span class="normal">4333</span>
-<span class="normal">4334</span>
-<span class="normal">4335</span>
-<span class="normal">4336</span>
-<span class="normal">4337</span>
-<span class="normal">4338</span>
-<span class="normal">4339</span>
-<span class="normal">4340</span>
-<span class="normal">4341</span>
-<span class="normal">4342</span>
-<span class="normal">4343</span>
-<span class="normal">4344</span>
-<span class="normal">4345</span>
-<span class="normal">4346</span>
-<span class="normal">4347</span>
-<span class="normal">4348</span>
-<span class="normal">4349</span>
-<span class="normal">4350</span>
-<span class="normal">4351</span>
-<span class="normal">4352</span>
-<span class="normal">4353</span>
-<span class="normal">4354</span>
-<span class="normal">4355</span>
-<span class="normal">4356</span>
-<span class="normal">4357</span>
-<span class="normal">4358</span>
-<span class="normal">4359</span>
-<span class="normal">4360</span>
-<span class="normal">4361</span>
-<span class="normal">4362</span>
-<span class="normal">4363</span>
-<span class="normal">4364</span>
-<span class="normal">4365</span>
-<span class="normal">4366</span>
-<span class="normal">4367</span>
-<span class="normal">4368</span>
-<span class="normal">4369</span>
-<span class="normal">4370</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_embed_images</span><span class="p">(</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4375</span>
+<span class="normal">4376</span>
+<span class="normal">4377</span>
+<span class="normal">4378</span>
+<span class="normal">4379</span>
+<span class="normal">4380</span>
+<span class="normal">4381</span>
+<span class="normal">4382</span>
+<span class="normal">4383</span>
+<span class="normal">4384</span>
+<span class="normal">4385</span>
+<span class="normal">4386</span>
+<span class="normal">4387</span>
+<span class="normal">4388</span>
+<span class="normal">4389</span>
+<span class="normal">4390</span>
+<span class="normal">4391</span>
+<span class="normal">4392</span>
+<span class="normal">4393</span>
+<span class="normal">4394</span>
+<span class="normal">4395</span>
+<span class="normal">4396</span>
+<span class="normal">4397</span>
+<span class="normal">4398</span>
+<span class="normal">4399</span>
+<span class="normal">4400</span>
+<span class="normal">4401</span>
+<span class="normal">4402</span>
+<span class="normal">4403</span>
+<span class="normal">4404</span>
+<span class="normal">4405</span>
+<span class="normal">4406</span>
+<span class="normal">4407</span>
+<span class="normal">4408</span>
+<span class="normal">4409</span>
+<span class="normal">4410</span>
+<span class="normal">4411</span>
+<span class="normal">4412</span>
+<span class="normal">4413</span>
+<span class="normal">4414</span>
+<span class="normal">4415</span>
+<span class="normal">4416</span>
+<span class="normal">4417</span>
+<span class="normal">4418</span>
+<span class="normal">4419</span>
+<span class="normal">4420</span>
+<span class="normal">4421</span>
+<span class="normal">4422</span>
+<span class="normal">4423</span>
+<span class="normal">4424</span>
+<span class="normal">4425</span>
+<span class="normal">4426</span>
+<span class="normal">4427</span>
+<span class="normal">4428</span>
+<span class="normal">4429</span>
+<span class="normal">4430</span>
+<span class="normal">4431</span>
+<span class="normal">4432</span>
+<span class="normal">4433</span>
+<span class="normal">4434</span>
+<span class="normal">4435</span>
+<span class="normal">4436</span>
+<span class="normal">4437</span>
+<span class="normal">4438</span>
+<span class="normal">4439</span>
+<span class="normal">4440</span>
+<span class="normal">4441</span>
+<span class="normal">4442</span>
+<span class="normal">4443</span>
+<span class="normal">4444</span>
+<span class="normal">4445</span>
+<span class="normal">4446</span>
+<span class="normal">4447</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_embed_images</span><span class="p">(</span>
     <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -9974,84 +9974,7 @@ Default is "dinov2_distillation".</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4069</span>
-<span class="normal">4070</span>
-<span class="normal">4071</span>
-<span class="normal">4072</span>
-<span class="normal">4073</span>
-<span class="normal">4074</span>
-<span class="normal">4075</span>
-<span class="normal">4076</span>
-<span class="normal">4077</span>
-<span class="normal">4078</span>
-<span class="normal">4079</span>
-<span class="normal">4080</span>
-<span class="normal">4081</span>
-<span class="normal">4082</span>
-<span class="normal">4083</span>
-<span class="normal">4084</span>
-<span class="normal">4085</span>
-<span class="normal">4086</span>
-<span class="normal">4087</span>
-<span class="normal">4088</span>
-<span class="normal">4089</span>
-<span class="normal">4090</span>
-<span class="normal">4091</span>
-<span class="normal">4092</span>
-<span class="normal">4093</span>
-<span class="normal">4094</span>
-<span class="normal">4095</span>
-<span class="normal">4096</span>
-<span class="normal">4097</span>
-<span class="normal">4098</span>
-<span class="normal">4099</span>
-<span class="normal">4100</span>
-<span class="normal">4101</span>
-<span class="normal">4102</span>
-<span class="normal">4103</span>
-<span class="normal">4104</span>
-<span class="normal">4105</span>
-<span class="normal">4106</span>
-<span class="normal">4107</span>
-<span class="normal">4108</span>
-<span class="normal">4109</span>
-<span class="normal">4110</span>
-<span class="normal">4111</span>
-<span class="normal">4112</span>
-<span class="normal">4113</span>
-<span class="normal">4114</span>
-<span class="normal">4115</span>
-<span class="normal">4116</span>
-<span class="normal">4117</span>
-<span class="normal">4118</span>
-<span class="normal">4119</span>
-<span class="normal">4120</span>
-<span class="normal">4121</span>
-<span class="normal">4122</span>
-<span class="normal">4123</span>
-<span class="normal">4124</span>
-<span class="normal">4125</span>
-<span class="normal">4126</span>
-<span class="normal">4127</span>
-<span class="normal">4128</span>
-<span class="normal">4129</span>
-<span class="normal">4130</span>
-<span class="normal">4131</span>
-<span class="normal">4132</span>
-<span class="normal">4133</span>
-<span class="normal">4134</span>
-<span class="normal">4135</span>
-<span class="normal">4136</span>
-<span class="normal">4137</span>
-<span class="normal">4138</span>
-<span class="normal">4139</span>
-<span class="normal">4140</span>
-<span class="normal">4141</span>
-<span class="normal">4142</span>
-<span class="normal">4143</span>
-<span class="normal">4144</span>
-<span class="normal">4145</span>
-<span class="normal">4146</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4146</span>
 <span class="normal">4147</span>
 <span class="normal">4148</span>
 <span class="normal">4149</span>
@@ -10126,7 +10049,84 @@ Default is "dinov2_distillation".</p>
 <span class="normal">4218</span>
 <span class="normal">4219</span>
 <span class="normal">4220</span>
-<span class="normal">4221</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_train_model</span><span class="p">(</span>
+<span class="normal">4221</span>
+<span class="normal">4222</span>
+<span class="normal">4223</span>
+<span class="normal">4224</span>
+<span class="normal">4225</span>
+<span class="normal">4226</span>
+<span class="normal">4227</span>
+<span class="normal">4228</span>
+<span class="normal">4229</span>
+<span class="normal">4230</span>
+<span class="normal">4231</span>
+<span class="normal">4232</span>
+<span class="normal">4233</span>
+<span class="normal">4234</span>
+<span class="normal">4235</span>
+<span class="normal">4236</span>
+<span class="normal">4237</span>
+<span class="normal">4238</span>
+<span class="normal">4239</span>
+<span class="normal">4240</span>
+<span class="normal">4241</span>
+<span class="normal">4242</span>
+<span class="normal">4243</span>
+<span class="normal">4244</span>
+<span class="normal">4245</span>
+<span class="normal">4246</span>
+<span class="normal">4247</span>
+<span class="normal">4248</span>
+<span class="normal">4249</span>
+<span class="normal">4250</span>
+<span class="normal">4251</span>
+<span class="normal">4252</span>
+<span class="normal">4253</span>
+<span class="normal">4254</span>
+<span class="normal">4255</span>
+<span class="normal">4256</span>
+<span class="normal">4257</span>
+<span class="normal">4258</span>
+<span class="normal">4259</span>
+<span class="normal">4260</span>
+<span class="normal">4261</span>
+<span class="normal">4262</span>
+<span class="normal">4263</span>
+<span class="normal">4264</span>
+<span class="normal">4265</span>
+<span class="normal">4266</span>
+<span class="normal">4267</span>
+<span class="normal">4268</span>
+<span class="normal">4269</span>
+<span class="normal">4270</span>
+<span class="normal">4271</span>
+<span class="normal">4272</span>
+<span class="normal">4273</span>
+<span class="normal">4274</span>
+<span class="normal">4275</span>
+<span class="normal">4276</span>
+<span class="normal">4277</span>
+<span class="normal">4278</span>
+<span class="normal">4279</span>
+<span class="normal">4280</span>
+<span class="normal">4281</span>
+<span class="normal">4282</span>
+<span class="normal">4283</span>
+<span class="normal">4284</span>
+<span class="normal">4285</span>
+<span class="normal">4286</span>
+<span class="normal">4287</span>
+<span class="normal">4288</span>
+<span class="normal">4289</span>
+<span class="normal">4290</span>
+<span class="normal">4291</span>
+<span class="normal">4292</span>
+<span class="normal">4293</span>
+<span class="normal">4294</span>
+<span class="normal">4295</span>
+<span class="normal">4296</span>
+<span class="normal">4297</span>
+<span class="normal">4298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lightly_train_model</span><span class="p">(</span>
     <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;torchvision/resnet50&quot;</span><span class="p">,</span>
@@ -10437,78 +10437,78 @@ Default is "torchvision/resnet50".</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4224</span>
-<span class="normal">4225</span>
-<span class="normal">4226</span>
-<span class="normal">4227</span>
-<span class="normal">4228</span>
-<span class="normal">4229</span>
-<span class="normal">4230</span>
-<span class="normal">4231</span>
-<span class="normal">4232</span>
-<span class="normal">4233</span>
-<span class="normal">4234</span>
-<span class="normal">4235</span>
-<span class="normal">4236</span>
-<span class="normal">4237</span>
-<span class="normal">4238</span>
-<span class="normal">4239</span>
-<span class="normal">4240</span>
-<span class="normal">4241</span>
-<span class="normal">4242</span>
-<span class="normal">4243</span>
-<span class="normal">4244</span>
-<span class="normal">4245</span>
-<span class="normal">4246</span>
-<span class="normal">4247</span>
-<span class="normal">4248</span>
-<span class="normal">4249</span>
-<span class="normal">4250</span>
-<span class="normal">4251</span>
-<span class="normal">4252</span>
-<span class="normal">4253</span>
-<span class="normal">4254</span>
-<span class="normal">4255</span>
-<span class="normal">4256</span>
-<span class="normal">4257</span>
-<span class="normal">4258</span>
-<span class="normal">4259</span>
-<span class="normal">4260</span>
-<span class="normal">4261</span>
-<span class="normal">4262</span>
-<span class="normal">4263</span>
-<span class="normal">4264</span>
-<span class="normal">4265</span>
-<span class="normal">4266</span>
-<span class="normal">4267</span>
-<span class="normal">4268</span>
-<span class="normal">4269</span>
-<span class="normal">4270</span>
-<span class="normal">4271</span>
-<span class="normal">4272</span>
-<span class="normal">4273</span>
-<span class="normal">4274</span>
-<span class="normal">4275</span>
-<span class="normal">4276</span>
-<span class="normal">4277</span>
-<span class="normal">4278</span>
-<span class="normal">4279</span>
-<span class="normal">4280</span>
-<span class="normal">4281</span>
-<span class="normal">4282</span>
-<span class="normal">4283</span>
-<span class="normal">4284</span>
-<span class="normal">4285</span>
-<span class="normal">4286</span>
-<span class="normal">4287</span>
-<span class="normal">4288</span>
-<span class="normal">4289</span>
-<span class="normal">4290</span>
-<span class="normal">4291</span>
-<span class="normal">4292</span>
-<span class="normal">4293</span>
-<span class="normal">4294</span>
-<span class="normal">4295</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_lightly_pretrained_model</span><span class="p">(</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4301</span>
+<span class="normal">4302</span>
+<span class="normal">4303</span>
+<span class="normal">4304</span>
+<span class="normal">4305</span>
+<span class="normal">4306</span>
+<span class="normal">4307</span>
+<span class="normal">4308</span>
+<span class="normal">4309</span>
+<span class="normal">4310</span>
+<span class="normal">4311</span>
+<span class="normal">4312</span>
+<span class="normal">4313</span>
+<span class="normal">4314</span>
+<span class="normal">4315</span>
+<span class="normal">4316</span>
+<span class="normal">4317</span>
+<span class="normal">4318</span>
+<span class="normal">4319</span>
+<span class="normal">4320</span>
+<span class="normal">4321</span>
+<span class="normal">4322</span>
+<span class="normal">4323</span>
+<span class="normal">4324</span>
+<span class="normal">4325</span>
+<span class="normal">4326</span>
+<span class="normal">4327</span>
+<span class="normal">4328</span>
+<span class="normal">4329</span>
+<span class="normal">4330</span>
+<span class="normal">4331</span>
+<span class="normal">4332</span>
+<span class="normal">4333</span>
+<span class="normal">4334</span>
+<span class="normal">4335</span>
+<span class="normal">4336</span>
+<span class="normal">4337</span>
+<span class="normal">4338</span>
+<span class="normal">4339</span>
+<span class="normal">4340</span>
+<span class="normal">4341</span>
+<span class="normal">4342</span>
+<span class="normal">4343</span>
+<span class="normal">4344</span>
+<span class="normal">4345</span>
+<span class="normal">4346</span>
+<span class="normal">4347</span>
+<span class="normal">4348</span>
+<span class="normal">4349</span>
+<span class="normal">4350</span>
+<span class="normal">4351</span>
+<span class="normal">4352</span>
+<span class="normal">4353</span>
+<span class="normal">4354</span>
+<span class="normal">4355</span>
+<span class="normal">4356</span>
+<span class="normal">4357</span>
+<span class="normal">4358</span>
+<span class="normal">4359</span>
+<span class="normal">4360</span>
+<span class="normal">4361</span>
+<span class="normal">4362</span>
+<span class="normal">4363</span>
+<span class="normal">4364</span>
+<span class="normal">4365</span>
+<span class="normal">4366</span>
+<span class="normal">4367</span>
+<span class="normal">4368</span>
+<span class="normal">4369</span>
+<span class="normal">4370</span>
+<span class="normal">4371</span>
+<span class="normal">4372</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_lightly_pretrained_model</span><span class="p">(</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_architecture</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;torchvision/resnet50&quot;</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -12279,7 +12279,7 @@ If provided, must match the number of input files.</p>
 
 
 <h2 id="geoai.train.semantic_inference_on_geotiff" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">semantic_inference_on_geotiff</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">geotiff_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">semantic_inference_on_geotiff</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">geotiff_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_class_probabilities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#geoai.train.semantic_inference_on_geotiff" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -12477,6 +12477,23 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>save_class_probabilities</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True and probability_path is provided, saves each
+class probability as a separate single-band file. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -12803,7 +12820,40 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 <span class="normal">3176</span>
 <span class="normal">3177</span>
 <span class="normal">3178</span>
-<span class="normal">3179</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_geotiff</span><span class="p">(</span>
+<span class="normal">3179</span>
+<span class="normal">3180</span>
+<span class="normal">3181</span>
+<span class="normal">3182</span>
+<span class="normal">3183</span>
+<span class="normal">3184</span>
+<span class="normal">3185</span>
+<span class="normal">3186</span>
+<span class="normal">3187</span>
+<span class="normal">3188</span>
+<span class="normal">3189</span>
+<span class="normal">3190</span>
+<span class="normal">3191</span>
+<span class="normal">3192</span>
+<span class="normal">3193</span>
+<span class="normal">3194</span>
+<span class="normal">3195</span>
+<span class="normal">3196</span>
+<span class="normal">3197</span>
+<span class="normal">3198</span>
+<span class="normal">3199</span>
+<span class="normal">3200</span>
+<span class="normal">3201</span>
+<span class="normal">3202</span>
+<span class="normal">3203</span>
+<span class="normal">3204</span>
+<span class="normal">3205</span>
+<span class="normal">3206</span>
+<span class="normal">3207</span>
+<span class="normal">3208</span>
+<span class="normal">3209</span>
+<span class="normal">3210</span>
+<span class="normal">3211</span>
+<span class="normal">3212</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_geotiff</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
     <span class="n">geotiff_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -12815,6 +12865,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
     <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">probability_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">probability_threshold</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_class_probabilities</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
@@ -12836,6 +12887,8 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 <span class="sd">        probability_threshold (float, optional): Probability threshold for binary classification.</span>
 <span class="sd">            Only used when num_classes=2. If provided, pixels with class 1 probability &gt;= threshold</span>
 <span class="sd">            are classified as class 1, otherwise class 0. If None (default), uses argmax.</span>
+<span class="sd">        save_class_probabilities (bool): If True and probability_path is provided, saves each</span>
+<span class="sd">            class probability as a separate single-band file. Defaults to False.</span>
 <span class="sd">        quiet (bool): If True, suppress progress bar. Defaults to False.</span>
 <span class="sd">        **kwargs: Additional arguments.</span>
 
@@ -13052,7 +13105,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
             <span class="n">prob_meta</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
             <span class="n">prob_meta</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="n">num_classes</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;float32&quot;</span><span class="p">})</span>
 
-            <span class="c1"># Save normalized probabilities</span>
+            <span class="c1"># Save normalized probabilities as multi-band raster</span>
             <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">probability_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">prob_meta</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">class_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_classes</span><span class="p">):</span>
                     <span class="c1"># Normalize probabilities</span>
@@ -13066,6 +13119,36 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
             <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved probability map to </span><span class="si">{</span><span class="n">probability_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+            <span class="c1"># Save individual class probabilities if requested</span>
+            <span class="k">if</span> <span class="n">save_class_probabilities</span><span class="p">:</span>
+                <span class="c1"># Prepare single-band metadata</span>
+                <span class="n">single_band_meta</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">single_band_meta</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;float32&quot;</span><span class="p">})</span>
+
+                <span class="c1"># Get base filename and extension</span>
+                <span class="n">prob_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">probability_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">prob_ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">probability_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="k">for</span> <span class="n">class_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_classes</span><span class="p">):</span>
+                    <span class="c1"># Create filename for this class</span>
+                    <span class="n">class_prob_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prob_base</span><span class="si">}</span><span class="s2">_class_</span><span class="si">{</span><span class="n">class_idx</span><span class="si">}{</span><span class="n">prob_ext</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                    <span class="c1"># Normalize probabilities</span>
+                    <span class="n">prob_band</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                    <span class="n">prob_band</span><span class="p">[</span><span class="n">valid_pixels</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">prob_accumulator</span><span class="p">[</span><span class="n">class_idx</span><span class="p">,</span> <span class="n">valid_pixels</span><span class="p">]</span>
+                        <span class="o">/</span> <span class="n">count_accumulator</span><span class="p">[</span><span class="n">valid_pixels</span><span class="p">]</span>
+                    <span class="p">)</span>
+
+                    <span class="c1"># Save single-band file</span>
+                    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">class_prob_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">single_band_meta</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+                        <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">prob_band</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Saved class </span><span class="si">{</span><span class="n">class_idx</span><span class="si">}</span><span class="s2"> probability to </span><span class="si">{</span><span class="n">class_prob_path</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+
         <span class="k">return</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">inference_time</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -13077,7 +13160,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 
 
 <h2 id="geoai.train.semantic_inference_on_image" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">semantic_inference_on_image</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">image_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">binary_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">probability_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">semantic_inference_on_image</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">image_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">binary_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">probability_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_class_probabilities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#geoai.train.semantic_inference_on_image" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -13295,6 +13378,23 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>save_class_probabilities</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True and probability_path is provided, saves each
+class probability as a separate single-band file. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>quiet</code>
             </td>
             <td>
@@ -13354,40 +13454,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3182</span>
-<span class="normal">3183</span>
-<span class="normal">3184</span>
-<span class="normal">3185</span>
-<span class="normal">3186</span>
-<span class="normal">3187</span>
-<span class="normal">3188</span>
-<span class="normal">3189</span>
-<span class="normal">3190</span>
-<span class="normal">3191</span>
-<span class="normal">3192</span>
-<span class="normal">3193</span>
-<span class="normal">3194</span>
-<span class="normal">3195</span>
-<span class="normal">3196</span>
-<span class="normal">3197</span>
-<span class="normal">3198</span>
-<span class="normal">3199</span>
-<span class="normal">3200</span>
-<span class="normal">3201</span>
-<span class="normal">3202</span>
-<span class="normal">3203</span>
-<span class="normal">3204</span>
-<span class="normal">3205</span>
-<span class="normal">3206</span>
-<span class="normal">3207</span>
-<span class="normal">3208</span>
-<span class="normal">3209</span>
-<span class="normal">3210</span>
-<span class="normal">3211</span>
-<span class="normal">3212</span>
-<span class="normal">3213</span>
-<span class="normal">3214</span>
-<span class="normal">3215</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3215</span>
 <span class="normal">3216</span>
 <span class="normal">3217</span>
 <span class="normal">3218</span>
@@ -13678,7 +13745,76 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 <span class="normal">3503</span>
 <span class="normal">3504</span>
 <span class="normal">3505</span>
-<span class="normal">3506</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_image</span><span class="p">(</span>
+<span class="normal">3506</span>
+<span class="normal">3507</span>
+<span class="normal">3508</span>
+<span class="normal">3509</span>
+<span class="normal">3510</span>
+<span class="normal">3511</span>
+<span class="normal">3512</span>
+<span class="normal">3513</span>
+<span class="normal">3514</span>
+<span class="normal">3515</span>
+<span class="normal">3516</span>
+<span class="normal">3517</span>
+<span class="normal">3518</span>
+<span class="normal">3519</span>
+<span class="normal">3520</span>
+<span class="normal">3521</span>
+<span class="normal">3522</span>
+<span class="normal">3523</span>
+<span class="normal">3524</span>
+<span class="normal">3525</span>
+<span class="normal">3526</span>
+<span class="normal">3527</span>
+<span class="normal">3528</span>
+<span class="normal">3529</span>
+<span class="normal">3530</span>
+<span class="normal">3531</span>
+<span class="normal">3532</span>
+<span class="normal">3533</span>
+<span class="normal">3534</span>
+<span class="normal">3535</span>
+<span class="normal">3536</span>
+<span class="normal">3537</span>
+<span class="normal">3538</span>
+<span class="normal">3539</span>
+<span class="normal">3540</span>
+<span class="normal">3541</span>
+<span class="normal">3542</span>
+<span class="normal">3543</span>
+<span class="normal">3544</span>
+<span class="normal">3545</span>
+<span class="normal">3546</span>
+<span class="normal">3547</span>
+<span class="normal">3548</span>
+<span class="normal">3549</span>
+<span class="normal">3550</span>
+<span class="normal">3551</span>
+<span class="normal">3552</span>
+<span class="normal">3553</span>
+<span class="normal">3554</span>
+<span class="normal">3555</span>
+<span class="normal">3556</span>
+<span class="normal">3557</span>
+<span class="normal">3558</span>
+<span class="normal">3559</span>
+<span class="normal">3560</span>
+<span class="normal">3561</span>
+<span class="normal">3562</span>
+<span class="normal">3563</span>
+<span class="normal">3564</span>
+<span class="normal">3565</span>
+<span class="normal">3566</span>
+<span class="normal">3567</span>
+<span class="normal">3568</span>
+<span class="normal">3569</span>
+<span class="normal">3570</span>
+<span class="normal">3571</span>
+<span class="normal">3572</span>
+<span class="normal">3573</span>
+<span class="normal">3574</span>
+<span class="normal">3575</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_inference_on_image</span><span class="p">(</span>
     <span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
     <span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -13691,6 +13827,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
     <span class="n">binary_output</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">probability_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">probability_threshold</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_class_probabilities</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
@@ -13713,6 +13850,8 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 <span class="sd">        probability_threshold (float, optional): Probability threshold for binary classification.</span>
 <span class="sd">            Only used when num_classes=2. If provided, pixels with class 1 probability &gt;= threshold</span>
 <span class="sd">            are classified as class 1, otherwise class 0. If None (default), uses argmax.</span>
+<span class="sd">        save_class_probabilities (bool): If True and probability_path is provided, saves each</span>
+<span class="sd">            class probability as a separate single-band file. Defaults to False.</span>
 <span class="sd">        quiet (bool): If True, suppress progress bar. Defaults to False.</span>
 <span class="sd">        **kwargs: Additional arguments.</span>
 
@@ -13991,7 +14130,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
                 <span class="s2">&quot;transform&quot;</span><span class="p">:</span> <span class="n">transform</span><span class="p">,</span>
             <span class="p">}</span>
 
-            <span class="c1"># Save normalized probabilities</span>
+            <span class="c1"># Save normalized probabilities as multi-band raster</span>
             <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">probability_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">prob_meta</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">class_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_classes</span><span class="p">):</span>
                     <span class="c1"># Normalize probabilities</span>
@@ -14001,6 +14140,39 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 
             <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved probability map to </span><span class="si">{</span><span class="n">probability_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Save individual class probabilities if requested</span>
+            <span class="k">if</span> <span class="n">save_class_probabilities</span><span class="p">:</span>
+                <span class="c1"># Prepare single-band metadata</span>
+                <span class="n">single_band_meta</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;GTiff&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="n">height</span><span class="p">,</span>
+                    <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span>
+                    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;float32&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;transform&quot;</span><span class="p">:</span> <span class="n">transform</span><span class="p">,</span>
+                <span class="p">}</span>
+
+                <span class="c1"># Get base filename and extension</span>
+                <span class="n">prob_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">probability_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">prob_ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">probability_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="k">for</span> <span class="n">class_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_classes</span><span class="p">):</span>
+                    <span class="c1"># Create filename for this class</span>
+                    <span class="n">class_prob_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prob_base</span><span class="si">}</span><span class="s2">_class_</span><span class="si">{</span><span class="n">class_idx</span><span class="si">}{</span><span class="n">prob_ext</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                    <span class="c1"># Normalize probabilities</span>
+                    <span class="n">prob_band</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                    <span class="n">prob_band</span><span class="p">[</span><span class="n">valid_pixels</span><span class="p">]</span> <span class="o">=</span> <span class="n">normalized_probs</span><span class="p">[</span><span class="n">class_idx</span><span class="p">,</span> <span class="n">valid_pixels</span><span class="p">]</span>
+
+                    <span class="c1"># Save single-band file</span>
+                    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">class_prob_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">single_band_meta</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+                        <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">prob_band</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Saved class </span><span class="si">{</span><span class="n">class_idx</span><span class="si">}</span><span class="s2"> probability to </span><span class="si">{</span><span class="n">class_prob_path</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">inference_time</span>
 </code></pre></div></td></tr></table></div>
@@ -14013,7 +14185,7 @@ are classified as class 1, otherwise class 0. If None (default), uses argmax.</p
 
 
 <h2 id="geoai.train.semantic_segmentation" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">semantic_segmentation</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">architecture</span><span class="o">=</span><span class="s1">&#39;unet&#39;</span><span class="p">,</span> <span class="n">encoder_name</span><span class="o">=</span><span class="s1">&#39;resnet34&#39;</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">semantic_segmentation</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">architecture</span><span class="o">=</span><span class="s1">&#39;unet&#39;</span><span class="p">,</span> <span class="n">encoder_name</span><span class="o">=</span><span class="s1">&#39;resnet34&#39;</span><span class="p">,</span> <span class="n">num_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">probability_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_class_probabilities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 <a href="#geoai.train.semantic_segmentation" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -14222,7 +14394,8 @@ inference method for either GeoTIFF files or regular image formats (JPG, PNG, et
             <td>
               <div class="doc-md-description">
                 <p>Path to save probability map. If provided,
-the normalized class probabilities will be saved as a multi-band raster.</p>
+the normalized class probabilities will be saved as a multi-band raster
+where each band contains probabilities for each class.</p>
               </div>
             </td>
             <td>
@@ -14246,6 +14419,25 @@ Must be between 0 and 1.</p>
             </td>
             <td>
                   <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>save_class_probabilities</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True and probability_path is provided, saves each
+class probability as a separate single-band file. Files will be named like
+"probability_class_0.tif", "probability_class_1.tif", etc. in the same directory
+as probability_path. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -14309,76 +14501,7 @@ Must be between 0 and 1.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3509</span>
-<span class="normal">3510</span>
-<span class="normal">3511</span>
-<span class="normal">3512</span>
-<span class="normal">3513</span>
-<span class="normal">3514</span>
-<span class="normal">3515</span>
-<span class="normal">3516</span>
-<span class="normal">3517</span>
-<span class="normal">3518</span>
-<span class="normal">3519</span>
-<span class="normal">3520</span>
-<span class="normal">3521</span>
-<span class="normal">3522</span>
-<span class="normal">3523</span>
-<span class="normal">3524</span>
-<span class="normal">3525</span>
-<span class="normal">3526</span>
-<span class="normal">3527</span>
-<span class="normal">3528</span>
-<span class="normal">3529</span>
-<span class="normal">3530</span>
-<span class="normal">3531</span>
-<span class="normal">3532</span>
-<span class="normal">3533</span>
-<span class="normal">3534</span>
-<span class="normal">3535</span>
-<span class="normal">3536</span>
-<span class="normal">3537</span>
-<span class="normal">3538</span>
-<span class="normal">3539</span>
-<span class="normal">3540</span>
-<span class="normal">3541</span>
-<span class="normal">3542</span>
-<span class="normal">3543</span>
-<span class="normal">3544</span>
-<span class="normal">3545</span>
-<span class="normal">3546</span>
-<span class="normal">3547</span>
-<span class="normal">3548</span>
-<span class="normal">3549</span>
-<span class="normal">3550</span>
-<span class="normal">3551</span>
-<span class="normal">3552</span>
-<span class="normal">3553</span>
-<span class="normal">3554</span>
-<span class="normal">3555</span>
-<span class="normal">3556</span>
-<span class="normal">3557</span>
-<span class="normal">3558</span>
-<span class="normal">3559</span>
-<span class="normal">3560</span>
-<span class="normal">3561</span>
-<span class="normal">3562</span>
-<span class="normal">3563</span>
-<span class="normal">3564</span>
-<span class="normal">3565</span>
-<span class="normal">3566</span>
-<span class="normal">3567</span>
-<span class="normal">3568</span>
-<span class="normal">3569</span>
-<span class="normal">3570</span>
-<span class="normal">3571</span>
-<span class="normal">3572</span>
-<span class="normal">3573</span>
-<span class="normal">3574</span>
-<span class="normal">3575</span>
-<span class="normal">3576</span>
-<span class="normal">3577</span>
-<span class="normal">3578</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3578</span>
 <span class="normal">3579</span>
 <span class="normal">3580</span>
 <span class="normal">3581</span>
@@ -14448,7 +14571,84 @@ Must be between 0 and 1.</p>
 <span class="normal">3645</span>
 <span class="normal">3646</span>
 <span class="normal">3647</span>
-<span class="normal">3648</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation</span><span class="p">(</span>
+<span class="normal">3648</span>
+<span class="normal">3649</span>
+<span class="normal">3650</span>
+<span class="normal">3651</span>
+<span class="normal">3652</span>
+<span class="normal">3653</span>
+<span class="normal">3654</span>
+<span class="normal">3655</span>
+<span class="normal">3656</span>
+<span class="normal">3657</span>
+<span class="normal">3658</span>
+<span class="normal">3659</span>
+<span class="normal">3660</span>
+<span class="normal">3661</span>
+<span class="normal">3662</span>
+<span class="normal">3663</span>
+<span class="normal">3664</span>
+<span class="normal">3665</span>
+<span class="normal">3666</span>
+<span class="normal">3667</span>
+<span class="normal">3668</span>
+<span class="normal">3669</span>
+<span class="normal">3670</span>
+<span class="normal">3671</span>
+<span class="normal">3672</span>
+<span class="normal">3673</span>
+<span class="normal">3674</span>
+<span class="normal">3675</span>
+<span class="normal">3676</span>
+<span class="normal">3677</span>
+<span class="normal">3678</span>
+<span class="normal">3679</span>
+<span class="normal">3680</span>
+<span class="normal">3681</span>
+<span class="normal">3682</span>
+<span class="normal">3683</span>
+<span class="normal">3684</span>
+<span class="normal">3685</span>
+<span class="normal">3686</span>
+<span class="normal">3687</span>
+<span class="normal">3688</span>
+<span class="normal">3689</span>
+<span class="normal">3690</span>
+<span class="normal">3691</span>
+<span class="normal">3692</span>
+<span class="normal">3693</span>
+<span class="normal">3694</span>
+<span class="normal">3695</span>
+<span class="normal">3696</span>
+<span class="normal">3697</span>
+<span class="normal">3698</span>
+<span class="normal">3699</span>
+<span class="normal">3700</span>
+<span class="normal">3701</span>
+<span class="normal">3702</span>
+<span class="normal">3703</span>
+<span class="normal">3704</span>
+<span class="normal">3705</span>
+<span class="normal">3706</span>
+<span class="normal">3707</span>
+<span class="normal">3708</span>
+<span class="normal">3709</span>
+<span class="normal">3710</span>
+<span class="normal">3711</span>
+<span class="normal">3712</span>
+<span class="normal">3713</span>
+<span class="normal">3714</span>
+<span class="normal">3715</span>
+<span class="normal">3716</span>
+<span class="normal">3717</span>
+<span class="normal">3718</span>
+<span class="normal">3719</span>
+<span class="normal">3720</span>
+<span class="normal">3721</span>
+<span class="normal">3722</span>
+<span class="normal">3723</span>
+<span class="normal">3724</span>
+<span class="normal">3725</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation</span><span class="p">(</span>
     <span class="n">input_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -14462,6 +14662,7 @@ Must be between 0 and 1.</p>
     <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">probability_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">probability_threshold</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_class_probabilities</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -14484,11 +14685,16 @@ Must be between 0 and 1.</p>
 <span class="sd">        batch_size (int): Batch size for inference.</span>
 <span class="sd">        device (torch.device, optional): Device to run inference on.</span>
 <span class="sd">        probability_path (str, optional): Path to save probability map. If provided,</span>
-<span class="sd">            the normalized class probabilities will be saved as a multi-band raster.</span>
+<span class="sd">            the normalized class probabilities will be saved as a multi-band raster</span>
+<span class="sd">            where each band contains probabilities for each class.</span>
 <span class="sd">        probability_threshold (float, optional): Probability threshold for binary classification.</span>
 <span class="sd">            Only used when num_classes=2. If provided, pixels with class 1 probability &gt;= threshold</span>
 <span class="sd">            are classified as class 1, otherwise class 0. If None (default), uses argmax.</span>
 <span class="sd">            Must be between 0 and 1.</span>
+<span class="sd">        save_class_probabilities (bool): If True and probability_path is provided, saves each</span>
+<span class="sd">            class probability as a separate single-band file. Files will be named like</span>
+<span class="sd">            &quot;probability_class_0.tif&quot;, &quot;probability_class_1.tif&quot;, etc. in the same directory</span>
+<span class="sd">            as probability_path. Defaults to False.</span>
 <span class="sd">        quiet (bool): If True, suppress progress bar. Defaults to False.</span>
 <span class="sd">        **kwargs: Additional arguments.</span>
 
@@ -14565,6 +14771,7 @@ Must be between 0 and 1.</p>
             <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
             <span class="n">probability_path</span><span class="o">=</span><span class="n">probability_path</span><span class="p">,</span>
             <span class="n">probability_threshold</span><span class="o">=</span><span class="n">probability_threshold</span><span class="p">,</span>
+            <span class="n">save_class_probabilities</span><span class="o">=</span><span class="n">save_class_probabilities</span><span class="p">,</span>
             <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">,</span>
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
@@ -14585,6 +14792,7 @@ Must be between 0 and 1.</p>
             <span class="n">binary_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Convert to binary output for better visualization</span>
             <span class="n">probability_path</span><span class="o">=</span><span class="n">probability_path</span><span class="p">,</span>
             <span class="n">probability_threshold</span><span class="o">=</span><span class="n">probability_threshold</span><span class="p">,</span>
+            <span class="n">save_class_probabilities</span><span class="o">=</span><span class="n">save_class_probabilities</span><span class="p">,</span>
             <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">,</span>
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
@@ -14911,84 +15119,7 @@ inputs and "png" for other formats. If provided, must match the number of input 
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3651</span>
-<span class="normal">3652</span>
-<span class="normal">3653</span>
-<span class="normal">3654</span>
-<span class="normal">3655</span>
-<span class="normal">3656</span>
-<span class="normal">3657</span>
-<span class="normal">3658</span>
-<span class="normal">3659</span>
-<span class="normal">3660</span>
-<span class="normal">3661</span>
-<span class="normal">3662</span>
-<span class="normal">3663</span>
-<span class="normal">3664</span>
-<span class="normal">3665</span>
-<span class="normal">3666</span>
-<span class="normal">3667</span>
-<span class="normal">3668</span>
-<span class="normal">3669</span>
-<span class="normal">3670</span>
-<span class="normal">3671</span>
-<span class="normal">3672</span>
-<span class="normal">3673</span>
-<span class="normal">3674</span>
-<span class="normal">3675</span>
-<span class="normal">3676</span>
-<span class="normal">3677</span>
-<span class="normal">3678</span>
-<span class="normal">3679</span>
-<span class="normal">3680</span>
-<span class="normal">3681</span>
-<span class="normal">3682</span>
-<span class="normal">3683</span>
-<span class="normal">3684</span>
-<span class="normal">3685</span>
-<span class="normal">3686</span>
-<span class="normal">3687</span>
-<span class="normal">3688</span>
-<span class="normal">3689</span>
-<span class="normal">3690</span>
-<span class="normal">3691</span>
-<span class="normal">3692</span>
-<span class="normal">3693</span>
-<span class="normal">3694</span>
-<span class="normal">3695</span>
-<span class="normal">3696</span>
-<span class="normal">3697</span>
-<span class="normal">3698</span>
-<span class="normal">3699</span>
-<span class="normal">3700</span>
-<span class="normal">3701</span>
-<span class="normal">3702</span>
-<span class="normal">3703</span>
-<span class="normal">3704</span>
-<span class="normal">3705</span>
-<span class="normal">3706</span>
-<span class="normal">3707</span>
-<span class="normal">3708</span>
-<span class="normal">3709</span>
-<span class="normal">3710</span>
-<span class="normal">3711</span>
-<span class="normal">3712</span>
-<span class="normal">3713</span>
-<span class="normal">3714</span>
-<span class="normal">3715</span>
-<span class="normal">3716</span>
-<span class="normal">3717</span>
-<span class="normal">3718</span>
-<span class="normal">3719</span>
-<span class="normal">3720</span>
-<span class="normal">3721</span>
-<span class="normal">3722</span>
-<span class="normal">3723</span>
-<span class="normal">3724</span>
-<span class="normal">3725</span>
-<span class="normal">3726</span>
-<span class="normal">3727</span>
-<span class="normal">3728</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3728</span>
 <span class="normal">3729</span>
 <span class="normal">3730</span>
 <span class="normal">3731</span>
@@ -15081,7 +15212,84 @@ inputs and "png" for other formats. If provided, must match the number of input 
 <span class="normal">3818</span>
 <span class="normal">3819</span>
 <span class="normal">3820</span>
-<span class="normal">3821</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation_batch</span><span class="p">(</span>
+<span class="normal">3821</span>
+<span class="normal">3822</span>
+<span class="normal">3823</span>
+<span class="normal">3824</span>
+<span class="normal">3825</span>
+<span class="normal">3826</span>
+<span class="normal">3827</span>
+<span class="normal">3828</span>
+<span class="normal">3829</span>
+<span class="normal">3830</span>
+<span class="normal">3831</span>
+<span class="normal">3832</span>
+<span class="normal">3833</span>
+<span class="normal">3834</span>
+<span class="normal">3835</span>
+<span class="normal">3836</span>
+<span class="normal">3837</span>
+<span class="normal">3838</span>
+<span class="normal">3839</span>
+<span class="normal">3840</span>
+<span class="normal">3841</span>
+<span class="normal">3842</span>
+<span class="normal">3843</span>
+<span class="normal">3844</span>
+<span class="normal">3845</span>
+<span class="normal">3846</span>
+<span class="normal">3847</span>
+<span class="normal">3848</span>
+<span class="normal">3849</span>
+<span class="normal">3850</span>
+<span class="normal">3851</span>
+<span class="normal">3852</span>
+<span class="normal">3853</span>
+<span class="normal">3854</span>
+<span class="normal">3855</span>
+<span class="normal">3856</span>
+<span class="normal">3857</span>
+<span class="normal">3858</span>
+<span class="normal">3859</span>
+<span class="normal">3860</span>
+<span class="normal">3861</span>
+<span class="normal">3862</span>
+<span class="normal">3863</span>
+<span class="normal">3864</span>
+<span class="normal">3865</span>
+<span class="normal">3866</span>
+<span class="normal">3867</span>
+<span class="normal">3868</span>
+<span class="normal">3869</span>
+<span class="normal">3870</span>
+<span class="normal">3871</span>
+<span class="normal">3872</span>
+<span class="normal">3873</span>
+<span class="normal">3874</span>
+<span class="normal">3875</span>
+<span class="normal">3876</span>
+<span class="normal">3877</span>
+<span class="normal">3878</span>
+<span class="normal">3879</span>
+<span class="normal">3880</span>
+<span class="normal">3881</span>
+<span class="normal">3882</span>
+<span class="normal">3883</span>
+<span class="normal">3884</span>
+<span class="normal">3885</span>
+<span class="normal">3886</span>
+<span class="normal">3887</span>
+<span class="normal">3888</span>
+<span class="normal">3889</span>
+<span class="normal">3890</span>
+<span class="normal">3891</span>
+<span class="normal">3892</span>
+<span class="normal">3893</span>
+<span class="normal">3894</span>
+<span class="normal">3895</span>
+<span class="normal">3896</span>
+<span class="normal">3897</span>
+<span class="normal">3898</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">semantic_segmentation_batch</span><span class="p">(</span>
     <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -16585,77 +16793,77 @@ or not used (for 'yolo' format - labels are in images_dir/labels/).</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/train.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3824</span>
-<span class="normal">3825</span>
-<span class="normal">3826</span>
-<span class="normal">3827</span>
-<span class="normal">3828</span>
-<span class="normal">3829</span>
-<span class="normal">3830</span>
-<span class="normal">3831</span>
-<span class="normal">3832</span>
-<span class="normal">3833</span>
-<span class="normal">3834</span>
-<span class="normal">3835</span>
-<span class="normal">3836</span>
-<span class="normal">3837</span>
-<span class="normal">3838</span>
-<span class="normal">3839</span>
-<span class="normal">3840</span>
-<span class="normal">3841</span>
-<span class="normal">3842</span>
-<span class="normal">3843</span>
-<span class="normal">3844</span>
-<span class="normal">3845</span>
-<span class="normal">3846</span>
-<span class="normal">3847</span>
-<span class="normal">3848</span>
-<span class="normal">3849</span>
-<span class="normal">3850</span>
-<span class="normal">3851</span>
-<span class="normal">3852</span>
-<span class="normal">3853</span>
-<span class="normal">3854</span>
-<span class="normal">3855</span>
-<span class="normal">3856</span>
-<span class="normal">3857</span>
-<span class="normal">3858</span>
-<span class="normal">3859</span>
-<span class="normal">3860</span>
-<span class="normal">3861</span>
-<span class="normal">3862</span>
-<span class="normal">3863</span>
-<span class="normal">3864</span>
-<span class="normal">3865</span>
-<span class="normal">3866</span>
-<span class="normal">3867</span>
-<span class="normal">3868</span>
-<span class="normal">3869</span>
-<span class="normal">3870</span>
-<span class="normal">3871</span>
-<span class="normal">3872</span>
-<span class="normal">3873</span>
-<span class="normal">3874</span>
-<span class="normal">3875</span>
-<span class="normal">3876</span>
-<span class="normal">3877</span>
-<span class="normal">3878</span>
-<span class="normal">3879</span>
-<span class="normal">3880</span>
-<span class="normal">3881</span>
-<span class="normal">3882</span>
-<span class="normal">3883</span>
-<span class="normal">3884</span>
-<span class="normal">3885</span>
-<span class="normal">3886</span>
-<span class="normal">3887</span>
-<span class="normal">3888</span>
-<span class="normal">3889</span>
-<span class="normal">3890</span>
-<span class="normal">3891</span>
-<span class="normal">3892</span>
-<span class="normal">3893</span>
-<span class="normal">3894</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_instance_segmentation_model</span><span class="p">(</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">3901</span>
+<span class="normal">3902</span>
+<span class="normal">3903</span>
+<span class="normal">3904</span>
+<span class="normal">3905</span>
+<span class="normal">3906</span>
+<span class="normal">3907</span>
+<span class="normal">3908</span>
+<span class="normal">3909</span>
+<span class="normal">3910</span>
+<span class="normal">3911</span>
+<span class="normal">3912</span>
+<span class="normal">3913</span>
+<span class="normal">3914</span>
+<span class="normal">3915</span>
+<span class="normal">3916</span>
+<span class="normal">3917</span>
+<span class="normal">3918</span>
+<span class="normal">3919</span>
+<span class="normal">3920</span>
+<span class="normal">3921</span>
+<span class="normal">3922</span>
+<span class="normal">3923</span>
+<span class="normal">3924</span>
+<span class="normal">3925</span>
+<span class="normal">3926</span>
+<span class="normal">3927</span>
+<span class="normal">3928</span>
+<span class="normal">3929</span>
+<span class="normal">3930</span>
+<span class="normal">3931</span>
+<span class="normal">3932</span>
+<span class="normal">3933</span>
+<span class="normal">3934</span>
+<span class="normal">3935</span>
+<span class="normal">3936</span>
+<span class="normal">3937</span>
+<span class="normal">3938</span>
+<span class="normal">3939</span>
+<span class="normal">3940</span>
+<span class="normal">3941</span>
+<span class="normal">3942</span>
+<span class="normal">3943</span>
+<span class="normal">3944</span>
+<span class="normal">3945</span>
+<span class="normal">3946</span>
+<span class="normal">3947</span>
+<span class="normal">3948</span>
+<span class="normal">3949</span>
+<span class="normal">3950</span>
+<span class="normal">3951</span>
+<span class="normal">3952</span>
+<span class="normal">3953</span>
+<span class="normal">3954</span>
+<span class="normal">3955</span>
+<span class="normal">3956</span>
+<span class="normal">3957</span>
+<span class="normal">3958</span>
+<span class="normal">3959</span>
+<span class="normal">3960</span>
+<span class="normal">3961</span>
+<span class="normal">3962</span>
+<span class="normal">3963</span>
+<span class="normal">3964</span>
+<span class="normal">3965</span>
+<span class="normal">3966</span>
+<span class="normal">3967</span>
+<span class="normal">3968</span>
+<span class="normal">3969</span>
+<span class="normal">3970</span>
+<span class="normal">3971</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_instance_segmentation_model</span><span class="p">(</span>
     <span class="n">images_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">labels_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
