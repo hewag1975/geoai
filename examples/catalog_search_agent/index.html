@@ -12,24 +12,28 @@
         <meta name="author" content="opengeos">
       
       
-        <link rel="canonical" href="https://opengeoai.org/examples/samgeo/satellite-predictor/">
+        <link rel="canonical" href="https://opengeoai.org/examples/catalog_search_agent/">
       
       
+        <link rel="prev" href="../STAC_agents/">
       
       
-      <link rel="icon" href="../../../assets/logo.ico">
+        <link rel="next" href="../train_timm_classifier/">
+      
+      
+      <link rel="icon" href="../../assets/logo.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Satellite predictor - GeoAI</title>
+        <title>Catalog search agent - GeoAI</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,11 +52,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#segment-anything-model-for-geospatial-data" class="md-skip">
+        <a href="#catalog-search-agent-find-datasets-with-natural-language" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +98,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="GeoAI" class="md-header__button md-logo" aria-label="GeoAI" data-md-component="logo">
+    <a href="../.." title="GeoAI" class="md-header__button md-logo" aria-label="GeoAI" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Satellite predictor
+              Catalog search agent
             
           </span>
         </div>
@@ -234,9 +238,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="GeoAI" class="md-nav__button md-logo" aria-label="GeoAI" data-md-component="logo">
+    <a href="../.." title="GeoAI" class="md-nav__button md-logo" aria-label="GeoAI" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     GeoAI
@@ -263,7 +267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -285,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -307,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../../contributing/" class="md-nav__link">
         
   
   
@@ -370,18 +374,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -397,7 +403,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -411,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_data/" class="md-nav__link">
+      <a href="../download_data/" class="md-nav__link">
         
   
   
@@ -434,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_sentinel2/" class="md-nav__link">
+      <a href="../download_sentinel2/" class="md-nav__link">
         
   
   
@@ -457,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download_naip/" class="md-nav__link">
+      <a href="../download_naip/" class="md-nav__link">
         
   
   
@@ -480,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planetary_computer/" class="md-nav__link">
+      <a href="../planetary_computer/" class="md-nav__link">
         
   
   
@@ -503,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../view_metadata/" class="md-nav__link">
+      <a href="../view_metadata/" class="md-nav__link">
         
   
   
@@ -526,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../create_vector/" class="md-nav__link">
+      <a href="../create_vector/" class="md-nav__link">
         
   
   
@@ -549,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../edit_vector/" class="md-nav__link">
+      <a href="../edit_vector/" class="md-nav__link">
         
   
   
@@ -572,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../image_chips/" class="md-nav__link">
+      <a href="../image_chips/" class="md-nav__link">
         
   
   
@@ -595,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../image_tiling/" class="md-nav__link">
+      <a href="../image_tiling/" class="md-nav__link">
         
   
   
@@ -618,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../create_training_data/" class="md-nav__link">
+      <a href="../create_training_data/" class="md-nav__link">
         
   
   
@@ -641,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../export_training_data_formats/" class="md-nav__link">
+      <a href="../export_training_data_formats/" class="md-nav__link">
         
   
   
@@ -664,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_usa/" class="md-nav__link">
+      <a href="../building_footprints_usa/" class="md-nav__link">
         
   
   
@@ -687,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_africa/" class="md-nav__link">
+      <a href="../building_footprints_africa/" class="md-nav__link">
         
   
   
@@ -710,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_footprints_china/" class="md-nav__link">
+      <a href="../building_footprints_china/" class="md-nav__link">
         
   
   
@@ -733,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_regularization/" class="md-nav__link">
+      <a href="../building_regularization/" class="md-nav__link">
         
   
   
@@ -756,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../geometric_properties/" class="md-nav__link">
+      <a href="../geometric_properties/" class="md-nav__link">
         
   
   
@@ -779,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../car_detection/" class="md-nav__link">
+      <a href="../car_detection/" class="md-nav__link">
         
   
   
@@ -802,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ship_detection/" class="md-nav__link">
+      <a href="../ship_detection/" class="md-nav__link">
         
   
   
@@ -825,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../solar_panel_detection/" class="md-nav__link">
+      <a href="../solar_panel_detection/" class="md-nav__link">
         
   
   
@@ -848,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../text_prompt_segmentation/" class="md-nav__link">
+      <a href="../text_prompt_segmentation/" class="md-nav__link">
         
   
   
@@ -871,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../parking_spot_detection/" class="md-nav__link">
+      <a href="../parking_spot_detection/" class="md-nav__link">
         
   
   
@@ -894,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data_visualization/" class="md-nav__link">
+      <a href="../data_visualization/" class="md-nav__link">
         
   
   
@@ -917,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_object_detection_model/" class="md-nav__link">
+      <a href="../train_object_detection_model/" class="md-nav__link">
         
   
   
@@ -940,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_segmentation_model/" class="md-nav__link">
+      <a href="../train_segmentation_model/" class="md-nav__link">
         
   
   
@@ -963,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_instance_segmentation_model/" class="md-nav__link">
+      <a href="../train_instance_segmentation_model/" class="md-nav__link">
         
   
   
@@ -986,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_landcover_classification/" class="md-nav__link">
+      <a href="../train_landcover_classification/" class="md-nav__link">
         
   
   
@@ -1009,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_building_footprints_usa/" class="md-nav__link">
+      <a href="../train_building_footprints_usa/" class="md-nav__link">
         
   
   
@@ -1032,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_solar_panel_detection/" class="md-nav__link">
+      <a href="../train_solar_panel_detection/" class="md-nav__link">
         
   
   
@@ -1055,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_car_detection/" class="md-nav__link">
+      <a href="../train_car_detection/" class="md-nav__link">
         
   
   
@@ -1078,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_ship_detection/" class="md-nav__link">
+      <a href="../train_ship_detection/" class="md-nav__link">
         
   
   
@@ -1101,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_water_detection/" class="md-nav__link">
+      <a href="../train_water_detection/" class="md-nav__link">
         
   
   
@@ -1124,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_dynamics/" class="md-nav__link">
+      <a href="../water_dynamics/" class="md-nav__link">
         
   
   
@@ -1147,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wetland_mapping/" class="md-nav__link">
+      <a href="../wetland_mapping/" class="md-nav__link">
         
   
   
@@ -1170,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wetland_dynamics/" class="md-nav__link">
+      <a href="../wetland_dynamics/" class="md-nav__link">
         
   
   
@@ -1193,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -1216,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../globe_projection/" class="md-nav__link">
+      <a href="../globe_projection/" class="md-nav__link">
         
   
   
@@ -1239,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../samgeo/" class="md-nav__link">
         
   
   
@@ -1262,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grounded_sam/" class="md-nav__link">
+      <a href="../grounded_sam/" class="md-nav__link">
         
   
   
@@ -1285,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../load_model_checkpoint/" class="md-nav__link">
+      <a href="../load_model_checkpoint/" class="md-nav__link">
         
   
   
@@ -1308,7 +1314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_detection/" class="md-nav__link">
+      <a href="../water_detection/" class="md-nav__link">
         
   
   
@@ -1331,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../water_detection_s2/" class="md-nav__link">
+      <a href="../water_detection_s2/" class="md-nav__link">
         
   
   
@@ -1354,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_segmentation/" class="md-nav__link">
+      <a href="../batch_segmentation/" class="md-nav__link">
         
   
   
@@ -1377,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building_detection_lidar/" class="md-nav__link">
+      <a href="../building_detection_lidar/" class="md-nav__link">
         
   
   
@@ -1400,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../instance_segmentation/" class="md-nav__link">
+      <a href="../instance_segmentation/" class="md-nav__link">
         
   
   
@@ -1423,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../change_detection/" class="md-nav__link">
+      <a href="../change_detection/" class="md-nav__link">
         
   
   
@@ -1446,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../JPEG2000/" class="md-nav__link">
+      <a href="../JPEG2000/" class="md-nav__link">
         
   
   
@@ -1469,7 +1475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DINOv3/" class="md-nav__link">
+      <a href="../DINOv3/" class="md-nav__link">
         
   
   
@@ -1492,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DINOv3_visualization/" class="md-nav__link">
+      <a href="../DINOv3_visualization/" class="md-nav__link">
         
   
   
@@ -1515,7 +1521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DINOv3_wetlands/" class="md-nav__link">
+      <a href="../DINOv3_wetlands/" class="md-nav__link">
         
   
   
@@ -1538,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AlphaEarth/" class="md-nav__link">
+      <a href="../AlphaEarth/" class="md-nav__link">
         
   
   
@@ -1561,7 +1567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI_agents/" class="md-nav__link">
+      <a href="../AI_agents/" class="md-nav__link">
         
   
   
@@ -1584,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../STAC_agents/" class="md-nav__link">
+      <a href="../STAC_agents/" class="md-nav__link">
         
   
   
@@ -1604,10 +1610,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../catalog_search_agent/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Catalog search agent
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1618,6 +1646,182 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-earth-engine-data-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Earth Engine Data Catalog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-catalogtools-directly-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use CatalogTools Directly (Fast)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use CatalogTools Directly (Fast)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-catalog-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get catalog statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-datasets-by-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search for datasets by keyword
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-by-geographic-region-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search by geographic region (NEW!)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geocode-location-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geocode location names
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-with-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search with filters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-available-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      List available providers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-dataset-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      List dataset types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-catalogagent-with-natural-language-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use CatalogAgent with Natural Language (LLM)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use CatalogAgent with Natural Language (LLM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ask-natural-language-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ask natural language questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spatial-search-with-natural-language-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial search with natural language (NEW!)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-structured-results-programmatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get structured results programmatically
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1630,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_timm_classifier/" class="md-nav__link">
+      <a href="../train_timm_classifier/" class="md-nav__link">
         
   
   
@@ -1653,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train_timm_segmentation/" class="md-nav__link">
+      <a href="../train_timm_segmentation/" class="md-nav__link">
         
   
   
@@ -1676,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lightly_train_self_supervised/" class="md-nav__link">
+      <a href="../lightly_train_self_supervised/" class="md-nav__link">
         
   
   
@@ -1744,7 +1948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshops/GeoAI_Workshop_2025/" class="md-nav__link">
+      <a href="../../workshops/GeoAI_Workshop_2025/" class="md-nav__link">
         
   
   
@@ -1767,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshops/AWS_2025/" class="md-nav__link">
+      <a href="../../workshops/AWS_2025/" class="md-nav__link">
         
   
   
@@ -1790,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workshops/TNView_2025/" class="md-nav__link">
+      <a href="../../workshops/TNView_2025/" class="md-nav__link">
         
   
   
@@ -1858,7 +2062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../change_detection/" class="md-nav__link">
+      <a href="../../change_detection/" class="md-nav__link">
         
   
   
@@ -1881,7 +2085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../classify/" class="md-nav__link">
+      <a href="../../classify/" class="md-nav__link">
         
   
   
@@ -1904,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../detectron2/" class="md-nav__link">
+      <a href="../../detectron2/" class="md-nav__link">
         
   
   
@@ -1927,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dinov3/" class="md-nav__link">
+      <a href="../../dinov3/" class="md-nav__link">
         
   
   
@@ -1950,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../geo_agents/" class="md-nav__link">
+      <a href="../../geo_agents/" class="md-nav__link">
         
   
   
@@ -1973,7 +2177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../geoai/" class="md-nav__link">
+      <a href="../../geoai/" class="md-nav__link">
         
   
   
@@ -1996,7 +2200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/" class="md-nav__link">
+      <a href="../../download/" class="md-nav__link">
         
   
   
@@ -2019,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../extract/" class="md-nav__link">
+      <a href="../../extract/" class="md-nav__link">
         
   
   
@@ -2042,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hf/" class="md-nav__link">
+      <a href="../../hf/" class="md-nav__link">
         
   
   
@@ -2065,7 +2269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../map_tools/" class="md-nav__link">
+      <a href="../../map_tools/" class="md-nav__link">
         
   
   
@@ -2088,7 +2292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../map_widgets/" class="md-nav__link">
+      <a href="../../map_widgets/" class="md-nav__link">
         
   
   
@@ -2111,7 +2315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sam/" class="md-nav__link">
+      <a href="../../sam/" class="md-nav__link">
         
   
   
@@ -2134,7 +2338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../segmentation/" class="md-nav__link">
+      <a href="../../segmentation/" class="md-nav__link">
         
   
   
@@ -2157,7 +2361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../timm_train/" class="md-nav__link">
+      <a href="../../timm_train/" class="md-nav__link">
         
   
   
@@ -2180,7 +2384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../timm_segment/" class="md-nav__link">
+      <a href="../../timm_segment/" class="md-nav__link">
         
   
   
@@ -2203,7 +2407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../train/" class="md-nav__link">
+      <a href="../../train/" class="md-nav__link">
         
   
   
@@ -2226,7 +2430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../utils/" class="md-nav__link">
+      <a href="../../utils/" class="md-nav__link">
         
   
   
@@ -2276,9 +2480,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-dependencies" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Install dependencies
+      Installation
     </span>
   </a>
   
@@ -2294,38 +2498,140 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-interactive-map" class="md-nav__link">
+  <a href="#load-earth-engine-data-catalog" class="md-nav__link">
     <span class="md-ellipsis">
-      Create an interactive map
+      Load Earth Engine Data Catalog
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-map-tiles" class="md-nav__link">
+  <a href="#create-a-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Download map tiles
+      Create a model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-samgeopredictor-class" class="md-nav__link">
+  <a href="#use-catalogtools-directly-fast" class="md-nav__link">
     <span class="md-ellipsis">
-      Initialize SamGeoPredictor class
+      Use CatalogTools Directly (Fast)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use CatalogTools Directly (Fast)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-catalog-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get catalog statistics
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-the-results" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#search-for-datasets-by-keyword" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualize the results
+      Search for datasets by keyword
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-by-geographic-region-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search by geographic region (NEW!)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geocode-location-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geocode location names
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-with-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search with filters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-available-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      List available providers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-dataset-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      List dataset types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-catalogagent-with-natural-language-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use CatalogAgent with Natural Language (LLM)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use CatalogAgent with Natural Language (LLM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ask-natural-language-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ask natural language questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spatial-search-with-natural-language-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial search with natural language (NEW!)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-structured-results-programmatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get structured results programmatically
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2342,7 +2648,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/examples/samgeo/satellite-predictor/satellite-predictor.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/examples/catalog_search_agent/catalog_search_agent.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -2797,11 +3103,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="segment-anything-model-for-geospatial-data">Segment Anything Model for Geospatial Data<a class="anchor-link" href="#segment-anything-model-for-geospatial-data">¶</a></h1><p><a href="https://studiolab.sagemaker.aws/import/github/opengeos/segment-geospatial/blob/main/docs/examples/satellite-predictor.ipynb"><img alt="image" src="https://studiolab.sagemaker.aws/studiolab.svg"/></a>
-<a href="https://pccompute.westeurope.cloudapp.azure.com/compute/hub/user-redirect/git-pull?repo=https://github.com/opengeos/segment-geospatial&amp;urlpath=lab/tree/segment-geospatial/docs/examples/satellite-predictor.ipynb&amp;branch=main"><img alt="image" src="https://img.shields.io/badge/Open-Planetary%20Computer-black?style=flat&amp;logo=microsoft"/></a>
-<a href="https://colab.research.google.com/github/opengeos/segment-geospatial/blob/main/docs/examples/satellite-predictor.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p>This notebook shows how to use segment satellite imagery using the Segment Anything Model (SAM) with a few lines of code.</p>
-<p>Make sure you use GPU runtime for this notebook. For Google Colab, go to <code>Runtime</code> -&gt; <code>Change runtime type</code> and select <code>GPU</code> as the hardware accelerator.</p>
+<h1 id="catalog-search-agent-find-datasets-with-natural-language">Catalog Search Agent - Find Datasets with Natural Language<a class="anchor-link" href="#catalog-search-agent-find-datasets-with-natural-language">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/catalog_search_agent.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>This notebook demonstrates how to use the Catalog Search Agent to find datasets in data catalogs using natural language queries.</p>
+<p>The Catalog Agent can:</p>
+<ul>
+<li>Search through data catalogs (TSV, CSV, JSON formats)</li>
+<li><strong>Search by geographic region</strong> (location names or bounding boxes)</li>
+<li>Understand natural language queries</li>
+<li>Filter by keywords, dataset type, and provider</li>
+<li>Return structured results with metadata</li>
+<li>Work with Earth Engine Data Catalog and custom catalogs</li>
+</ul>
+<p>Uncomment the following line to install <a href="https://opengeoai.org">geoai</a> if needed.</p>
 </div>
 </div>
 </div>
@@ -2812,7 +3125,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="install-dependencies">Install dependencies<a class="anchor-link" href="#install-dependencies">¶</a></h2><p>Uncomment and run the following cell to install the required dependencies.</p>
+<h2 id="installation">Installation<a class="anchor-link" href="#installation">¶</a></h2>
 </div>
 </div>
 </div>
@@ -2835,9 +3148,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install segment-geospatial</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install "geoai[agents]"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># %pip install segment-geospatial</div>
+<div class="clipboard-copy-txt" id="cell-1"># %pip install "geoai[agents]"</div>
 </div>
 </div>
 </div>
@@ -2873,15 +3186,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">leafmap</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">samgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">SamGeoPredictor</span><span class="p">,</span> <span class="n">tms_to_geotiff</span><span class="p">,</span> <span class="n">get_basemaps</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">segment_anything</span><span class="w"> </span><span class="kn">import</span> <span class="n">sam_model_registry</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoai.agents</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CatalogAgent</span><span class="p">,</span>
+    <span class="n">CatalogTools</span><span class="p">,</span>
+    <span class="n">create_ollama_model</span><span class="p">,</span>
+    <span class="n">create_openai_model</span><span class="p">,</span>
+    <span class="n">create_anthropic_model</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import os
-import leafmap
-from samgeo import SamGeoPredictor, tms_to_geotiff, get_basemaps
-from segment_anything import sam_model_registry</div>
+<div class="clipboard-copy-txt" id="cell-2">import json
+from geoai.agents import (
+    CatalogAgent,
+    CatalogTools,
+    create_ollama_model,
+    create_openai_model,
+    create_anthropic_model,
+)</div>
 </div>
 </div>
 </div>
@@ -2894,7 +3215,8 @@ from segment_anything import sam_model_registry</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="create-an-interactive-map">Create an interactive map<a class="anchor-link" href="#create-an-interactive-map">¶</a></h2>
+<h2 id="load-earth-engine-data-catalog">Load Earth Engine Data Catalog<a class="anchor-link" href="#load-earth-engine-data-catalog">¶</a></h2><p>The Earth Engine Data Catalog is available in <strong>JSON format</strong> from the <a href="https://github.com/opengeos/Earth-Engine-Catalog">opengeos/Earth-Engine-Catalog</a> repository.</p>
+<p><strong>Important:</strong> Use the JSON format (not TSV) to enable spatial search capabilities with bounding box information.</p>
 </div>
 </div>
 </div>
@@ -2917,15 +3239,9 @@ from segment_anything import sam_model_registry</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">zoom</span> <span class="o">=</span> <span class="mi">16</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">123</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="n">zoom</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="s2">"SATELLITE"</span><span class="p">)</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">catalog_url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/opengeos/Earth-Engine-Catalog/refs/heads/master/gee_catalog.json"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">zoom = 16
-m = leafmap.Map(center=[45, -123], zoom=zoom)
-m.add_basemap("SATELLITE")
-m</div>
+<div class="clipboard-copy-txt" id="cell-3">catalog_url = "https://raw.githubusercontent.com/opengeos/Earth-Engine-Catalog/refs/heads/master/gee_catalog.json"</div>
 </div>
 </div>
 </div>
@@ -2938,7 +3254,12 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Pan and zoom the map to select the area of interest. Use the draw tools to draw a polygon or rectangle on the map</p>
+<h2 id="create-a-model">Create a model<a class="anchor-link" href="#create-a-model">¶</a></h2><p>You can create a model with the following functions:</p>
+<ul>
+<li><code>create_ollama_model</code>: Create a model using Ollama. You will need to install <a href="https://ollama.com/download">Ollama</a> separately and pull the model you want to use, such as <code>llama3.1</code>.</li>
+<li><code>create_openai_model</code>: Create a model using OpenAI. You will need an OpenAI API key. Set it in the <code>OPENAI_API_KEY</code> environment variable.</li>
+<li><code>create_anthropic_model</code>: Create a model using Anthropic. You will need an Anthropic API key. Set it in the <code>ANTHROPIC_API_KEY</code> environment variable.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2961,15 +3282,9 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">user_roi_bounds</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">bbox</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">user_roi_bounds</span><span class="p">()</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.0127</span><span class="p">,</span> <span class="mf">44.9957</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.9874</span><span class="p">,</span> <span class="mf">45.0045</span><span class="p">]</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">create_ollama_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"llama3.1"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">if m.user_roi_bounds() is not None:
-    bbox = m.user_roi_bounds()
-else:
-    bbox = [-123.0127, 44.9957, -122.9874, 45.0045]</div>
+<div class="clipboard-copy-txt" id="cell-4">model = create_ollama_model(model="llama3.1")</div>
 </div>
 </div>
 </div>
@@ -2982,7 +3297,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-map-tiles">Download map tiles<a class="anchor-link" href="#download-map-tiles">¶</a></h2><p>Download maps tiles and mosaic them into a single GeoTIFF file</p>
+<h2 id="use-catalogtools-directly-fast">Use CatalogTools Directly (Fast)<a class="anchor-link" href="#use-catalogtools-directly-fast">¶</a></h2><p>For faster searches without LLM overhead, you can use <code>CatalogTools</code> directly:</p>
 </div>
 </div>
 </div>
@@ -3005,11 +3320,9 @@ else:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="s2">"satellite.tif"</span>
-<span class="c1"># image = '/path/to/your/own/image.tif'</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tools</span> <span class="o">=</span> <span class="n">CatalogTools</span><span class="p">(</span><span class="n">catalog_url</span><span class="o">=</span><span class="n">catalog_url</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">image = "satellite.tif"
-# image = '/path/to/your/own/image.tif'</div>
+<div class="clipboard-copy-txt" id="cell-5">tools = CatalogTools(catalog_url=catalog_url)</div>
 </div>
 </div>
 </div>
@@ -3022,7 +3335,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Besides the <code>satellite</code> basemap, you can use any of the following basemaps returned by the <code>get_basemaps()</code> function:</p>
+<h3 id="get-catalog-statistics">Get catalog statistics<a class="anchor-link" href="#get-catalog-statistics">¶</a></h3>
 </div>
 </div>
 </div>
@@ -3045,9 +3358,17 @@ else:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># get_basemaps().keys()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tools</span><span class="o">.</span><span class="n">get_catalog_stats</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total datasets: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'total_datasets'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Dataset types:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"dataset_types"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">dtype</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6"># get_basemaps().keys()</div>
+<div class="clipboard-copy-txt" id="cell-6">stats = json.loads(tools.get_catalog_stats())
+print(f"Total datasets: {stats['total_datasets']}")
+print(f"\nDataset types:")
+for dtype, count in stats.get("dataset_types", {}).items():
+    print(f"  {dtype}: {count}")</div>
 </div>
 </div>
 </div>
@@ -3060,7 +3381,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Specify the basemap as the source.</p>
+<h3 id="search-for-datasets-by-keyword">Search for datasets by keyword<a class="anchor-link" href="#search-for-datasets-by-keyword">¶</a></h3>
 </div>
 </div>
 </div>
@@ -3083,15 +3404,36 @@ else:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tms_to_geotiff</span><span class="p">(</span>
-    <span class="n">output</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="n">zoom</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">"Satellite"</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tools</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="s2">"landcover"</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'dataset_count'</span><span class="p">]</span><span class="si">}</span><span class="s2"> datasets</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s2">"datasets"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ID: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Title: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Provider: </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'provider'</span><span class="p">,</span><span class="w"> </span><span class="s1">'N/A'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">tms_to_geotiff(
-    output=image, bbox=bbox, zoom=zoom + 1, source="Satellite", overwrite=True
-)</div>
+<div class="clipboard-copy-txt" id="cell-7">result = json.loads(tools.search_datasets(keywords="landcover", max_results=5))
+print(f"Found {result['dataset_count']} datasets\n")
+
+for ds in result["datasets"]:
+    print(f"ID: {ds['id']}")
+    print(f"Title: {ds['title']}")
+    print(f"Provider: {ds.get('provider', 'N/A')}")
+    print("-" * 80)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="search-by-geographic-region-new">Search by geographic region (NEW!)<a class="anchor-link" href="#search-by-geographic-region-new">¶</a></h3><p>Find datasets covering a specific location or bounding box:</p>
 </div>
 </div>
 </div>
@@ -3114,24 +3456,33 @@ else:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Image"</span><span class="p">)</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Search by location name</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span>
+    <span class="n">tools</span><span class="o">.</span><span class="n">search_by_region</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"California"</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s2">"elevation"</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'dataset_count'</span><span class="p">]</span><span class="si">}</span><span class="s2"> datasets covering California</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s2">"datasets"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ID: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Title: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Bbox: </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'bbox'</span><span class="p">,</span><span class="w"> </span><span class="s1">'N/A'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">m.add_raster(image, layer_name="Image")
-m</div>
+<div class="clipboard-copy-txt" id="cell-8"># Search by location name
+result = json.loads(
+    tools.search_by_region(location="California", keywords="elevation", max_results=5)
+)
+
+print(f"Found {result['dataset_count']} datasets covering California\n")
+
+for ds in result["datasets"]:
+    print(f"ID: {ds['id']}")
+    print(f"Title: {ds['title']}")
+    print(f"Bbox: {ds.get('bbox', 'N/A')}")
+    print("-" * 80)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Use the draw tools to draw a rectangle from which to subset segmentations on the map</p>
 </div>
 </div>
 </div>
@@ -3154,17 +3505,48 @@ m</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">user_roi_bounds</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">clip_box</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">user_roi_bounds</span><span class="p">()</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">clip_box</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.0064</span><span class="p">,</span> <span class="mf">44.9988</span><span class="p">,</span> <span class="o">-</span><span class="mf">123.0005</span><span class="p">,</span> <span class="mf">45.0025</span><span class="p">]</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Search by bounding box coordinates</span>
+<span class="c1"># San Francisco Bay Area: [west, south, east, north]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span>
+    <span class="n">tools</span><span class="o">.</span><span class="n">search_by_region</span><span class="p">(</span>
+        <span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">122.5</span><span class="p">,</span> <span class="mf">37.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.0</span><span class="p">,</span> <span class="mf">38.0</span><span class="p">],</span> <span class="n">keywords</span><span class="o">=</span><span class="s2">"landcover"</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="mi">3</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'dataset_count'</span><span class="p">]</span><span class="si">}</span><span class="s2"> datasets</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s2">"datasets"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ID: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Title: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">if m.user_roi_bounds() is not None:
-    clip_box = m.user_roi_bounds()
-else:
-    clip_box = [-123.0064, 44.9988, -123.0005, 45.0025]</div>
+<div class="clipboard-copy-txt" id="cell-9"># Search by bounding box coordinates
+# San Francisco Bay Area: [west, south, east, north]
+result = json.loads(
+    tools.search_by_region(
+        bbox=[-122.5, 37.5, -122.0, 38.0], keywords="landcover", max_results=3
+    )
+)
+
+print(f"Found {result['dataset_count']} datasets\n")
+
+for ds in result["datasets"]:
+    print(f"ID: {ds['id']}")
+    print(f"Title: {ds['title']}")
+    print("-" * 80)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="geocode-location-names">Geocode location names<a class="anchor-link" href="#geocode-location-names">¶</a></h3>
 </div>
 </div>
 </div>
@@ -3187,9 +3569,17 @@ else:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">clip_box</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Convert location name to bounding box</span>
+<span class="n">location_info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tools</span><span class="o">.</span><span class="n">geocode_location</span><span class="p">(</span><span class="s2">"New York City"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Name: </span><span class="si">{</span><span class="n">location_info</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Bbox: </span><span class="si">{</span><span class="n">location_info</span><span class="p">[</span><span class="s1">'bbox'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Center: </span><span class="si">{</span><span class="n">location_info</span><span class="p">[</span><span class="s1">'center'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">clip_box</div>
+<div class="clipboard-copy-txt" id="cell-10"># Convert location name to bounding box
+location_info = json.loads(tools.geocode_location("New York City"))
+print(f"Name: {location_info['name']}")
+print(f"Bbox: {location_info['bbox']}")
+print(f"Center: {location_info['center']}")</div>
 </div>
 </div>
 </div>
@@ -3202,7 +3592,7 @@ else:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="initialize-samgeopredictor-class">Initialize SamGeoPredictor class<a class="anchor-link" href="#initialize-samgeopredictor-class">¶</a></h2>
+<h3 id="search-with-filters">Search with filters<a class="anchor-link" href="#search-with-filters">¶</a></h3>
 </div>
 </div>
 </div>
@@ -3225,13 +3615,46 @@ else:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">out_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">"~"</span><span class="p">),</span> <span class="s2">"Downloads"</span><span class="p">)</span>
-<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">"sam_vit_h_4b8939.pth"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span>
+    <span class="n">tools</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span>
+        <span class="n">keywords</span><span class="o">=</span><span class="s2">"elevation"</span><span class="p">,</span> <span class="n">dataset_type</span><span class="o">=</span><span class="s2">"image"</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="s2">"NASA"</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="mi">5</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'dataset_count'</span><span class="p">]</span><span class="si">}</span><span class="s2"> datasets</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s2">"datasets"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ID: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Title: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Type: </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span><span class="w"> </span><span class="s1">'N/A'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">out_dir = os.path.join(os.path.expanduser("~"), "Downloads")
-checkpoint = os.path.join(out_dir, "sam_vit_h_4b8939.pth")</div>
+<div class="clipboard-copy-txt" id="cell-11">result = json.loads(
+    tools.search_datasets(
+        keywords="elevation", dataset_type="image", provider="NASA", max_results=5
+    )
+)
+
+print(f"Found {result['dataset_count']} datasets\n")
+
+for ds in result["datasets"]:
+    print(f"ID: {ds['id']}")
+    print(f"Title: {ds['title']}")
+    print(f"Type: {ds.get('type', 'N/A')}")
+    print("-" * 80)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="list-available-providers">List available providers<a class="anchor-link" href="#list-available-providers">¶</a></h3>
 </div>
 </div>
 </div>
@@ -3254,35 +3677,30 @@ checkpoint = os.path.join(out_dir, "sam_vit_h_4b8939.pth")</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
-
-<span class="n">img_arr</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-
-<span class="n">model_type</span> <span class="o">=</span> <span class="s2">"vit_h"</span>
-
-<span class="n">sam</span> <span class="o">=</span> <span class="n">sam_model_registry</span><span class="p">[</span><span class="n">model_type</span><span class="p">](</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">checkpoint</span><span class="p">)</span>
-
-<span class="n">predictor</span> <span class="o">=</span> <span class="n">SamGeoPredictor</span><span class="p">(</span><span class="n">sam</span><span class="p">)</span>
-
-<span class="n">predictor</span><span class="o">.</span><span class="n">set_image</span><span class="p">(</span><span class="n">img_arr</span><span class="p">)</span>
-
-<span class="n">masks</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">src_fp</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">geo_box</span><span class="o">=</span><span class="n">clip_box</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">providers</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tools</span><span class="o">.</span><span class="n">list_providers</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total providers: </span><span class="si">{</span><span class="n">providers</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Sample providers:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">providers</span><span class="p">[</span><span class="s2">"providers"</span><span class="p">][:</span><span class="mi">10</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">import cv2
-
-img_arr = cv2.imread(image)
-
-model_type = "vit_h"
-
-sam = sam_model_registry[model_type](checkpoint=checkpoint)
-
-predictor = SamGeoPredictor(sam)
-
-predictor.set_image(img_arr)
-
-masks, _, _ = predictor.predict(src_fp=image, geo_box=clip_box)</div>
+<div class="clipboard-copy-txt" id="cell-12">providers = json.loads(tools.list_providers())
+print(f"Total providers: {providers['count']}\n")
+print("Sample providers:")
+for p in providers["providers"][:10]:
+    print(f"  - {p}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="list-dataset-types">List dataset types<a class="anchor-link" href="#list-dataset-types">¶</a></h3>
 </div>
 </div>
 </div>
@@ -3305,13 +3723,24 @@ masks, _, _ = predictor.predict(src_fp=image, geo_box=clip_box)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">masks_img</span> <span class="o">=</span> <span class="s2">"preds.tif"</span>
-<span class="n">predictor</span><span class="o">.</span><span class="n">masks_to_geotiff</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">masks_img</span><span class="p">,</span> <span class="n">masks</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"uint8"</span><span class="p">))</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">types</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tools</span><span class="o">.</span><span class="n">list_dataset_types</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Available dataset types: </span><span class="si">{</span><span class="n">types</span><span class="p">[</span><span class="s1">'types'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13">masks_img = "preds.tif"
-predictor.masks_to_geotiff(image, masks_img, masks.astype("uint8"))</div>
+<div class="clipboard-copy-txt" id="cell-13">types = json.loads(tools.list_dataset_types())
+print(f"Available dataset types: {types['types']}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="use-catalogagent-with-natural-language-llm">Use CatalogAgent with Natural Language (LLM)<a class="anchor-link" href="#use-catalogagent-with-natural-language-llm">¶</a></h2><p>For natural language queries, create a <code>CatalogAgent</code> that uses an LLM to understand and execute searches:</p>
 </div>
 </div>
 </div>
@@ -3334,13 +3763,9 @@ predictor.masks_to_geotiff(image, masks_img, masks.astype("uint8"))</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="s2">"feats.geojson"</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">geotiff_to_geojson</span><span class="p">(</span><span class="n">masks_img</span><span class="p">,</span> <span class="n">vector</span><span class="p">,</span> <span class="n">bidx</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">agent</span> <span class="o">=</span> <span class="n">CatalogAgent</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">catalog_url</span><span class="o">=</span><span class="n">catalog_url</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">vector = "feats.geojson"
-gdf = predictor.geotiff_to_geojson(masks_img, vector, bidx=1)
-gdf.plot()</div>
+<div class="clipboard-copy-txt" id="cell-14">agent = CatalogAgent(model=model, catalog_url=catalog_url)</div>
 </div>
 </div>
 </div>
@@ -3353,7 +3778,7 @@ gdf.plot()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-the-results">Visualize the results<a class="anchor-link" href="#visualize-the-results">¶</a></h2>
+<h3 id="ask-natural-language-questions">Ask natural language questions<a class="anchor-link" href="#ask-natural-language-questions">¶</a></h3>
 </div>
 </div>
 </div>
@@ -3376,23 +3801,279 @@ gdf.plot()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">style</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#3388ff"</span><span class="p">,</span>
-    <span class="s2">"weight"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">"fillColor"</span><span class="p">:</span> <span class="s2">"#7c4185"</span><span class="p">,</span>
-    <span class="s2">"fillOpacity"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_vector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">"Vector"</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">)</span>
-<span class="n">m</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Find datasets about landcover from NASA"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">style = {
-    "color": "#3388ff",
-    "weight": 2,
-    "fillColor": "#7c4185",
-    "fillOpacity": 0.5,
-}
-m.add_vector(vector, layer_name="Vector", style=style)
-m</div>
+<div class="clipboard-copy-txt" id="cell-15">response = agent.ask("Find datasets about landcover from NASA")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Show me elevation data"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-16">response = agent.ask("Show me elevation data")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="spatial-search-with-natural-language-new">Spatial search with natural language (NEW!)<a class="anchor-link" href="#spatial-search-with-natural-language-new">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Find landcover datasets covering California"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-17">response = agent.ask("Find landcover datasets covering California")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Show me elevation data for San Francisco"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-18">response = agent.ask("Show me elevation data for San Francisco")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Find land cover datasets from NASA that cover New York City"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-19">response = agent.ask("Find land cover datasets from NASA that cover New York City")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"What types of datasets are available?"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-20">response = agent.ask("What types of datasets are available?")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Find image collections about forests"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-21">response = agent.ask("Find image collections about forests")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Find landcover datasets from 2022 onwards"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-22">response = agent.ask("Find landcover datasets from 2022 onwards")
+print(response)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="get-structured-results-programmatically">Get structured results programmatically<a class="anchor-link" href="#get-structured-results-programmatically">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-23">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="s2">"sentinel"</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"ID: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Title: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Provider: </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'provider'</span><span class="p">,</span><span class="w"> </span><span class="s1">'N/A'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"snippet"</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Code: </span><span class="si">{</span><span class="n">ds</span><span class="p">[</span><span class="s1">'snippet'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-23">datasets = agent.search_datasets(keywords="sentinel", max_results=5)
+
+for ds in datasets:
+    print(f"ID: {ds['id']}")
+    print(f"Title: {ds['title']}")
+    print(f"Provider: {ds.get('provider', 'N/A')}")
+    if ds.get("snippet"):
+        print(f"Code: {ds['snippet']}")
+    print("-" * 80)</div>
 </div>
 </div>
 </div>
@@ -3428,7 +4109,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 11, 2023 23:10:59 UTC"><span class="timeago" datetime="2023-10-11T23:10:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 11, 2023 23:10:59 UTC">2023-10-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 18, 2025 15:21:58 UTC"><span class="timeago" datetime="2025-10-18T15:21:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 18, 2025 15:21:58 UTC">2025-10-18</span>
   </span>
 
     
@@ -3438,7 +4119,7 @@ m</div>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 11, 2023 23:10:59 UTC"><span class="timeago" datetime="2023-10-11T23:10:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 11, 2023 23:10:59 UTC">2023-10-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 18, 2025 15:21:58 UTC"><span class="timeago" datetime="2025-10-18T15:21:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 18, 2025 15:21:58 UTC">2025-10-18</span>
   </span>
 
     
@@ -3497,14 +4178,14 @@ m</div>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../../../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
     
   </body>

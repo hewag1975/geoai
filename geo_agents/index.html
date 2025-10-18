@@ -1611,6 +1611,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../examples/catalog_search_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Catalog search agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../examples/train_timm_classifier/" class="md-nav__link">
         
   
@@ -1988,6 +2011,48 @@
       geo_agents
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      CatalogAgent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CatalogAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent.ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      ask
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent.search_datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      search_datasets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2472,6 +2537,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent" class="md-nav__link">
+    <span class="md-ellipsis">
+      CatalogAgent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CatalogAgent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent.ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      ask
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoai.agents.geo_agents.CatalogAgent.search_datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      search_datasets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#geoai.agents.geo_agents.GeoAgent" class="md-nav__link">
     <span class="md-ellipsis">
       GeoAgent
@@ -2679,6 +2786,1324 @@
 
 
 
+<h2 id="geoai.agents.geo_agents.CatalogAgent" class="doc doc-heading">
+            <code>CatalogAgent</code>
+
+
+<a href="#geoai.agents.geo_agents.CatalogAgent" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="strands.Agent">Agent</span></code></p>
+
+
+        <p>AI agent for searching data catalogs with natural language queries.</p>
+
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1188</span>
+<span class="normal">1189</span>
+<span class="normal">1190</span>
+<span class="normal">1191</span>
+<span class="normal">1192</span>
+<span class="normal">1193</span>
+<span class="normal">1194</span>
+<span class="normal">1195</span>
+<span class="normal">1196</span>
+<span class="normal">1197</span>
+<span class="normal">1198</span>
+<span class="normal">1199</span>
+<span class="normal">1200</span>
+<span class="normal">1201</span>
+<span class="normal">1202</span>
+<span class="normal">1203</span>
+<span class="normal">1204</span>
+<span class="normal">1205</span>
+<span class="normal">1206</span>
+<span class="normal">1207</span>
+<span class="normal">1208</span>
+<span class="normal">1209</span>
+<span class="normal">1210</span>
+<span class="normal">1211</span>
+<span class="normal">1212</span>
+<span class="normal">1213</span>
+<span class="normal">1214</span>
+<span class="normal">1215</span>
+<span class="normal">1216</span>
+<span class="normal">1217</span>
+<span class="normal">1218</span>
+<span class="normal">1219</span>
+<span class="normal">1220</span>
+<span class="normal">1221</span>
+<span class="normal">1222</span>
+<span class="normal">1223</span>
+<span class="normal">1224</span>
+<span class="normal">1225</span>
+<span class="normal">1226</span>
+<span class="normal">1227</span>
+<span class="normal">1228</span>
+<span class="normal">1229</span>
+<span class="normal">1230</span>
+<span class="normal">1231</span>
+<span class="normal">1232</span>
+<span class="normal">1233</span>
+<span class="normal">1234</span>
+<span class="normal">1235</span>
+<span class="normal">1236</span>
+<span class="normal">1237</span>
+<span class="normal">1238</span>
+<span class="normal">1239</span>
+<span class="normal">1240</span>
+<span class="normal">1241</span>
+<span class="normal">1242</span>
+<span class="normal">1243</span>
+<span class="normal">1244</span>
+<span class="normal">1245</span>
+<span class="normal">1246</span>
+<span class="normal">1247</span>
+<span class="normal">1248</span>
+<span class="normal">1249</span>
+<span class="normal">1250</span>
+<span class="normal">1251</span>
+<span class="normal">1252</span>
+<span class="normal">1253</span>
+<span class="normal">1254</span>
+<span class="normal">1255</span>
+<span class="normal">1256</span>
+<span class="normal">1257</span>
+<span class="normal">1258</span>
+<span class="normal">1259</span>
+<span class="normal">1260</span>
+<span class="normal">1261</span>
+<span class="normal">1262</span>
+<span class="normal">1263</span>
+<span class="normal">1264</span>
+<span class="normal">1265</span>
+<span class="normal">1266</span>
+<span class="normal">1267</span>
+<span class="normal">1268</span>
+<span class="normal">1269</span>
+<span class="normal">1270</span>
+<span class="normal">1271</span>
+<span class="normal">1272</span>
+<span class="normal">1273</span>
+<span class="normal">1274</span>
+<span class="normal">1275</span>
+<span class="normal">1276</span>
+<span class="normal">1277</span>
+<span class="normal">1278</span>
+<span class="normal">1279</span>
+<span class="normal">1280</span>
+<span class="normal">1281</span>
+<span class="normal">1282</span>
+<span class="normal">1283</span>
+<span class="normal">1284</span>
+<span class="normal">1285</span>
+<span class="normal">1286</span>
+<span class="normal">1287</span>
+<span class="normal">1288</span>
+<span class="normal">1289</span>
+<span class="normal">1290</span>
+<span class="normal">1291</span>
+<span class="normal">1292</span>
+<span class="normal">1293</span>
+<span class="normal">1294</span>
+<span class="normal">1295</span>
+<span class="normal">1296</span>
+<span class="normal">1297</span>
+<span class="normal">1298</span>
+<span class="normal">1299</span>
+<span class="normal">1300</span>
+<span class="normal">1301</span>
+<span class="normal">1302</span>
+<span class="normal">1303</span>
+<span class="normal">1304</span>
+<span class="normal">1305</span>
+<span class="normal">1306</span>
+<span class="normal">1307</span>
+<span class="normal">1308</span>
+<span class="normal">1309</span>
+<span class="normal">1310</span>
+<span class="normal">1311</span>
+<span class="normal">1312</span>
+<span class="normal">1313</span>
+<span class="normal">1314</span>
+<span class="normal">1315</span>
+<span class="normal">1316</span>
+<span class="normal">1317</span>
+<span class="normal">1318</span>
+<span class="normal">1319</span>
+<span class="normal">1320</span>
+<span class="normal">1321</span>
+<span class="normal">1322</span>
+<span class="normal">1323</span>
+<span class="normal">1324</span>
+<span class="normal">1325</span>
+<span class="normal">1326</span>
+<span class="normal">1327</span>
+<span class="normal">1328</span>
+<span class="normal">1329</span>
+<span class="normal">1330</span>
+<span class="normal">1331</span>
+<span class="normal">1332</span>
+<span class="normal">1333</span>
+<span class="normal">1334</span>
+<span class="normal">1335</span>
+<span class="normal">1336</span>
+<span class="normal">1337</span>
+<span class="normal">1338</span>
+<span class="normal">1339</span>
+<span class="normal">1340</span>
+<span class="normal">1341</span>
+<span class="normal">1342</span>
+<span class="normal">1343</span>
+<span class="normal">1344</span>
+<span class="normal">1345</span>
+<span class="normal">1346</span>
+<span class="normal">1347</span>
+<span class="normal">1348</span>
+<span class="normal">1349</span>
+<span class="normal">1350</span>
+<span class="normal">1351</span>
+<span class="normal">1352</span>
+<span class="normal">1353</span>
+<span class="normal">1354</span>
+<span class="normal">1355</span>
+<span class="normal">1356</span>
+<span class="normal">1357</span>
+<span class="normal">1358</span>
+<span class="normal">1359</span>
+<span class="normal">1360</span>
+<span class="normal">1361</span>
+<span class="normal">1362</span>
+<span class="normal">1363</span>
+<span class="normal">1364</span>
+<span class="normal">1365</span>
+<span class="normal">1366</span>
+<span class="normal">1367</span>
+<span class="normal">1368</span>
+<span class="normal">1369</span>
+<span class="normal">1370</span>
+<span class="normal">1371</span>
+<span class="normal">1372</span>
+<span class="normal">1373</span>
+<span class="normal">1374</span>
+<span class="normal">1375</span>
+<span class="normal">1376</span>
+<span class="normal">1377</span>
+<span class="normal">1378</span>
+<span class="normal">1379</span>
+<span class="normal">1380</span>
+<span class="normal">1381</span>
+<span class="normal">1382</span>
+<span class="normal">1383</span>
+<span class="normal">1384</span>
+<span class="normal">1385</span>
+<span class="normal">1386</span>
+<span class="normal">1387</span>
+<span class="normal">1388</span>
+<span class="normal">1389</span>
+<span class="normal">1390</span>
+<span class="normal">1391</span>
+<span class="normal">1392</span>
+<span class="normal">1393</span>
+<span class="normal">1394</span>
+<span class="normal">1395</span>
+<span class="normal">1396</span>
+<span class="normal">1397</span>
+<span class="normal">1398</span>
+<span class="normal">1399</span>
+<span class="normal">1400</span>
+<span class="normal">1401</span>
+<span class="normal">1402</span>
+<span class="normal">1403</span>
+<span class="normal">1404</span>
+<span class="normal">1405</span>
+<span class="normal">1406</span>
+<span class="normal">1407</span>
+<span class="normal">1408</span>
+<span class="normal">1409</span>
+<span class="normal">1410</span>
+<span class="normal">1411</span>
+<span class="normal">1412</span>
+<span class="normal">1413</span>
+<span class="normal">1414</span>
+<span class="normal">1415</span>
+<span class="normal">1416</span>
+<span class="normal">1417</span>
+<span class="normal">1418</span>
+<span class="normal">1419</span>
+<span class="normal">1420</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">CatalogAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;AI agent for searching data catalogs with natural language queries.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;llama3.1&quot;</span><span class="p">,</span>
+        <span class="n">system_prompt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+        <span class="n">catalog_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">catalog_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">model_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the Catalog Agent.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: Model identifier (default: &quot;llama3.1&quot;).</span>
+<span class="sd">            system_prompt: System prompt for the agent (default: &quot;default&quot;).</span>
+<span class="sd">            catalog_url: URL to a catalog file (TSV, CSV, or JSON). Use JSON format for spatial search support.</span>
+<span class="sd">                Example: &quot;https://raw.githubusercontent.com/opengeos/Earth-Engine-Catalog/refs/heads/master/gee_catalog.json&quot;</span>
+<span class="sd">            catalog_df: Pre-loaded catalog as a pandas DataFrame.</span>
+<span class="sd">            model_args: Additional keyword arguments for the model.</span>
+<span class="sd">            **kwargs: Additional keyword arguments for the Agent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="p">:</span> <span class="n">CatalogTools</span> <span class="o">=</span> <span class="n">CatalogTools</span><span class="p">(</span>
+            <span class="n">catalog_url</span><span class="o">=</span><span class="n">catalog_url</span><span class="p">,</span> <span class="n">catalog_df</span><span class="o">=</span><span class="n">catalog_df</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">model_args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">model_args</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># --- save a model factory we can call each turn ---</span>
+        <span class="k">if</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;llama3.1&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">OllamaModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span><span class="p">:</span> <span class="n">create_ollama_model</span><span class="p">(</span>
+                    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;http://localhost:11434&quot;</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">BedrockModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span><span class="p">:</span> <span class="n">create_bedrock_model</span><span class="p">(</span><span class="n">model_id</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">OllamaModel</span><span class="p">):</span>
+            <span class="c1"># Extract configuration from existing OllamaModel and create new instances</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model_id&quot;</span><span class="p">]</span>
+            <span class="n">host</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">host</span>
+            <span class="n">client_args</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">client_args</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">OllamaModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span><span class="p">:</span> <span class="n">create_ollama_model</span><span class="p">(</span>
+                    <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">OpenAIModel</span><span class="p">):</span>
+            <span class="c1"># Extract configuration from existing OpenAIModel and create new instances</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model_id&quot;</span><span class="p">]</span>
+            <span class="n">client_args</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">client_args</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">OpenAIModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">mid</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">:</span> <span class="n">create_openai_model</span><span class="p">(</span>
+                    <span class="n">model_id</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">AnthropicModel</span><span class="p">):</span>
+            <span class="c1"># Extract configuration from existing AnthropicModel and create new instances</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model_id&quot;</span><span class="p">]</span>
+            <span class="n">client_args</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">client_args</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">AnthropicModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">mid</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">:</span> <span class="n">create_anthropic_model</span><span class="p">(</span>
+                    <span class="n">model_id</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid model: </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># build initial model (first turn)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">system_prompt</span> <span class="o">==</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span>
+            <span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;You are a data catalog search agent. Your job is to help users find datasets from a data catalog.</span>
+
+<span class="s2">IMPORTANT: Follow these steps EXACTLY:</span>
+
+<span class="s2">1. Understand the user&#39;s query:</span>
+<span class="s2">   - What type of data are they looking for? (e.g., landcover, elevation, imagery)</span>
+<span class="s2">   - Are they searching for a specific geographic region? (e.g., California, San Francisco, bounding box)</span>
+<span class="s2">   - Are they filtering by time period? (e.g., &quot;from 2020&quot;, &quot;between 2015-2020&quot;, &quot;recent data&quot;)</span>
+<span class="s2">   - Are they filtering by provider? (e.g., NASA, USGS)</span>
+<span class="s2">   - Are they filtering by dataset type? (e.g., image, image_collection, table)</span>
+
+<span class="s2">2. Use the appropriate tool:</span>
+<span class="s2">   - search_by_region: PREFERRED for spatial queries - search datasets covering a geographic region</span>
+<span class="s2">     * Use location parameter for place names (e.g., &quot;California&quot;, &quot;San Francisco&quot;)</span>
+<span class="s2">     * Use bbox parameter for coordinates [west, south, east, north]</span>
+<span class="s2">     * Can combine with keywords, dataset_type, provider, start_date, end_date filters</span>
+<span class="s2">   - search_datasets: For keyword-only searches without spatial filter</span>
+<span class="s2">     * Can filter by start_date and end_date for temporal queries</span>
+<span class="s2">   - geocode_location: Convert location names to coordinates (called automatically by search_by_region)</span>
+<span class="s2">   - get_dataset_info: Get details about a specific dataset by ID</span>
+<span class="s2">   - list_dataset_types: Show available dataset types</span>
+<span class="s2">   - list_providers: Show available data providers</span>
+<span class="s2">   - get_catalog_stats: Get overall catalog statistics</span>
+
+<span class="s2">3. Search strategy:</span>
+<span class="s2">   - SPATIAL QUERIES: If user mentions ANY location or region, IMMEDIATELY use search_by_region</span>
+<span class="s2">     * Pass location names directly to the location parameter - DO NOT ask user for bbox coordinates</span>
+<span class="s2">     * Examples of locations: California, San Francisco, New York, Paris, any city/state/country name</span>
+<span class="s2">     * search_by_region will automatically geocode location names - you don&#39;t need to call geocode_location separately</span>
+<span class="s2">   - TEMPORAL QUERIES: If user mentions ANY time period, ALWAYS add start_date/end_date parameters</span>
+<span class="s2">     * &quot;from 2022&quot; or &quot;since 2022&quot; or &quot;2022 onwards&quot; → start_date=&quot;2022-01-01&quot;</span>
+<span class="s2">     * &quot;until 2023&quot; or &quot;before 2023&quot; → end_date=&quot;2023-12-31&quot;</span>
+<span class="s2">     * &quot;between 2020 and 2023&quot; → start_date=&quot;2020-01-01&quot;, end_date=&quot;2023-12-31&quot;</span>
+<span class="s2">     * &quot;recent&quot; or &quot;latest&quot; → start_date=&quot;2020-01-01&quot;</span>
+<span class="s2">     * Time indicators: from, since, after, before, until, between, onwards, recent, latest</span>
+<span class="s2">   - KEYWORD QUERIES: If no location mentioned, use search_datasets</span>
+<span class="s2">   - Extract key search terms from the user&#39;s query</span>
+<span class="s2">   - Use keywords parameter for the main search terms</span>
+<span class="s2">   - Use dataset_type parameter if user specifies type (image, table, etc.)</span>
+<span class="s2">   - Use provider parameter if user specifies provider (NASA, USGS, etc.)</span>
+<span class="s2">   - Default max_results is 10, but can be adjusted</span>
+
+<span class="s2">CRITICAL RULES:</span>
+<span class="s2">1. NEVER ask the user to provide bbox coordinates. If they mention a location name, pass it directly to search_by_region(location=&quot;name&quot;)</span>
+<span class="s2">2. ALWAYS add start_date or end_date when user mentions ANY time period (from, since, onwards, recent, etc.)</span>
+<span class="s2">3. Convert years to YYYY-MM-DD format: 2022 → &quot;2022-01-01&quot;</span>
+
+<span class="s2">4. Examples:</span>
+<span class="s2">   - &quot;Find landcover datasets covering California&quot; → search_by_region(location=&quot;California&quot;, keywords=&quot;landcover&quot;)</span>
+<span class="s2">   - &quot;Show elevation data for San Francisco&quot; → search_by_region(location=&quot;San Francisco&quot;, keywords=&quot;elevation&quot;)</span>
+<span class="s2">   - &quot;Find datasets in bbox [-122, 37, -121, 38]&quot; → search_by_region(bbox=[-122, 37, -121, 38])</span>
+<span class="s2">   - &quot;Find landcover datasets from NASA&quot; → search_datasets(keywords=&quot;landcover&quot;, provider=&quot;NASA&quot;)</span>
+<span class="s2">   - &quot;Show me elevation data&quot; → search_datasets(keywords=&quot;elevation&quot;)</span>
+<span class="s2">   - &quot;What types of datasets are available?&quot; → list_dataset_types()</span>
+<span class="s2">   - &quot;Find image collections about forests&quot; → search_datasets(keywords=&quot;forest&quot;, dataset_type=&quot;image_collection&quot;)</span>
+<span class="s2">   - &quot;Find landcover data from 2020 onwards&quot; → search_datasets(keywords=&quot;landcover&quot;, start_date=&quot;2020-01-01&quot;)</span>
+<span class="s2">   - &quot;Show California datasets between 2015 and 2020&quot; → search_by_region(location=&quot;California&quot;, start_date=&quot;2015-01-01&quot;, end_date=&quot;2020-12-31&quot;)</span>
+<span class="s2">   - &quot;Find recent elevation data&quot; → search_datasets(keywords=&quot;elevation&quot;, start_date=&quot;2020-01-01&quot;)</span>
+
+<span class="s2">5. Return results clearly:</span>
+<span class="s2">   - Summarize the number of results found</span>
+<span class="s2">   - List the top results with their EXACT IDs and titles FROM THE TOOL RESPONSE</span>
+<span class="s2">   - Mention key information like provider, type, geographic coverage, and date range if available</span>
+<span class="s2">   - For spatial searches, mention the search region</span>
+
+<span class="s2">ERROR HANDLING:</span>
+<span class="s2">- If no results found: Suggest trying different keywords, broader region, or removing filters</span>
+<span class="s2">- If location not found: Suggest alternative spellings or try a broader region</span>
+<span class="s2">- If tool error: Explain the error and suggest alternatives</span>
+
+<span class="s2">CRITICAL RULES - MUST FOLLOW:</span>
+<span class="s2">1. NEVER make up or hallucinate dataset IDs, titles, or any other information</span>
+<span class="s2">2. ONLY report datasets that appear in the actual tool response</span>
+<span class="s2">3. Copy dataset IDs and titles EXACTLY as they appear in the tool response</span>
+<span class="s2">4. If a field is null/None in the tool response, say &quot;N/A&quot; or omit it - DO NOT guess</span>
+<span class="s2">5. DO NOT use your training data knowledge about Earth Engine datasets</span>
+<span class="s2">6. DO NOT fill in missing information from your knowledge</span>
+<span class="s2">7. If unsure, say &quot;Information not available in results&quot;</span>
+
+<span class="s2">Example of CORRECT behavior:</span>
+<span class="s2">Tool returns: {&quot;id&quot;: &quot;AAFC/ACI&quot;, &quot;title&quot;: &quot;Canada AAFC Annual Crop Inventory&quot;}</span>
+<span class="s2">Your response: &quot;Found dataset: AAFC/ACI - Canada AAFC Annual Crop Inventory&quot;</span>
+
+<span class="s2">Example of INCORRECT behavior (DO NOT DO THIS):</span>
+<span class="s2">Tool returns: {&quot;id&quot;: &quot;AAFC/ACI&quot;, &quot;title&quot;: &quot;Canada AAFC Annual Crop Inventory&quot;}</span>
+<span class="s2">Your response: &quot;Found dataset: USGS/NED - USGS Elevation Data&quot;  ← WRONG! This ID wasn&#39;t in the tool response!&quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Catalog Search Agent&quot;</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">search_by_region</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">get_dataset_info</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">geocode_location</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">list_dataset_types</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">list_providers</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">get_catalog_stats</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">system_prompt</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">,</span>
+            <span class="n">callback_handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Send a single-turn prompt to the agent.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            prompt: The text prompt to send to the agent.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The agent&#39;s response as a string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Use strands&#39; built-in __call__ method which now supports multiple calls</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;final_text&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">search_datasets</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">keywords</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dataset_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">provider</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_results</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Search for datasets and return structured results.</span>
+
+<span class="sd">        This method directly uses the CatalogTools without LLM inference for faster searches.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            keywords: Keywords to search for.</span>
+<span class="sd">            dataset_type: Filter by dataset type.</span>
+<span class="sd">            provider: Filter by provider.</span>
+<span class="sd">            max_results: Maximum number of results to return.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List of dataset dictionaries.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; agent = CatalogAgent(catalog_url=&quot;...&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; datasets = agent.search_datasets(keywords=&quot;landcover&quot;, provider=&quot;NASA&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; for ds in datasets:</span>
+<span class="sd">            ...     print(ds[&#39;id&#39;], ds[&#39;title&#39;])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span>
+            <span class="n">keywords</span><span class="o">=</span><span class="n">keywords</span><span class="p">,</span>
+            <span class="n">dataset_type</span><span class="o">=</span><span class="n">dataset_type</span><span class="p">,</span>
+            <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">,</span>
+            <span class="n">max_results</span><span class="o">=</span><span class="n">max_results</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result_json</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;error&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Search error: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;datasets&quot;</span><span class="p">,</span> <span class="p">[])</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="geoai.agents.geo_agents.CatalogAgent.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;llama3.1&#39;</span><span class="p">,</span> <span class="n">system_prompt</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">catalog_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">catalog_df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#geoai.agents.geo_agents.CatalogAgent.__init__" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Initialize the Catalog Agent.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>model</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Model identifier (default: "llama3.1").</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;llama3.1&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>system_prompt</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>System prompt for the agent (default: "default").</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;default&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>catalog_url</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>URL to a catalog file (TSV, CSV, or JSON). Use JSON format for spatial search support.
+Example: "https://raw.githubusercontent.com/opengeos/Earth-Engine-Catalog/refs/heads/master/gee_catalog.json"</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>catalog_df</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Any">Any</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Pre-loaded catalog as a pandas DataFrame.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>model_args</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional keyword arguments for the model.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional keyword arguments for the Agent.</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1191</span>
+<span class="normal">1192</span>
+<span class="normal">1193</span>
+<span class="normal">1194</span>
+<span class="normal">1195</span>
+<span class="normal">1196</span>
+<span class="normal">1197</span>
+<span class="normal">1198</span>
+<span class="normal">1199</span>
+<span class="normal">1200</span>
+<span class="normal">1201</span>
+<span class="normal">1202</span>
+<span class="normal">1203</span>
+<span class="normal">1204</span>
+<span class="normal">1205</span>
+<span class="normal">1206</span>
+<span class="normal">1207</span>
+<span class="normal">1208</span>
+<span class="normal">1209</span>
+<span class="normal">1210</span>
+<span class="normal">1211</span>
+<span class="normal">1212</span>
+<span class="normal">1213</span>
+<span class="normal">1214</span>
+<span class="normal">1215</span>
+<span class="normal">1216</span>
+<span class="normal">1217</span>
+<span class="normal">1218</span>
+<span class="normal">1219</span>
+<span class="normal">1220</span>
+<span class="normal">1221</span>
+<span class="normal">1222</span>
+<span class="normal">1223</span>
+<span class="normal">1224</span>
+<span class="normal">1225</span>
+<span class="normal">1226</span>
+<span class="normal">1227</span>
+<span class="normal">1228</span>
+<span class="normal">1229</span>
+<span class="normal">1230</span>
+<span class="normal">1231</span>
+<span class="normal">1232</span>
+<span class="normal">1233</span>
+<span class="normal">1234</span>
+<span class="normal">1235</span>
+<span class="normal">1236</span>
+<span class="normal">1237</span>
+<span class="normal">1238</span>
+<span class="normal">1239</span>
+<span class="normal">1240</span>
+<span class="normal">1241</span>
+<span class="normal">1242</span>
+<span class="normal">1243</span>
+<span class="normal">1244</span>
+<span class="normal">1245</span>
+<span class="normal">1246</span>
+<span class="normal">1247</span>
+<span class="normal">1248</span>
+<span class="normal">1249</span>
+<span class="normal">1250</span>
+<span class="normal">1251</span>
+<span class="normal">1252</span>
+<span class="normal">1253</span>
+<span class="normal">1254</span>
+<span class="normal">1255</span>
+<span class="normal">1256</span>
+<span class="normal">1257</span>
+<span class="normal">1258</span>
+<span class="normal">1259</span>
+<span class="normal">1260</span>
+<span class="normal">1261</span>
+<span class="normal">1262</span>
+<span class="normal">1263</span>
+<span class="normal">1264</span>
+<span class="normal">1265</span>
+<span class="normal">1266</span>
+<span class="normal">1267</span>
+<span class="normal">1268</span>
+<span class="normal">1269</span>
+<span class="normal">1270</span>
+<span class="normal">1271</span>
+<span class="normal">1272</span>
+<span class="normal">1273</span>
+<span class="normal">1274</span>
+<span class="normal">1275</span>
+<span class="normal">1276</span>
+<span class="normal">1277</span>
+<span class="normal">1278</span>
+<span class="normal">1279</span>
+<span class="normal">1280</span>
+<span class="normal">1281</span>
+<span class="normal">1282</span>
+<span class="normal">1283</span>
+<span class="normal">1284</span>
+<span class="normal">1285</span>
+<span class="normal">1286</span>
+<span class="normal">1287</span>
+<span class="normal">1288</span>
+<span class="normal">1289</span>
+<span class="normal">1290</span>
+<span class="normal">1291</span>
+<span class="normal">1292</span>
+<span class="normal">1293</span>
+<span class="normal">1294</span>
+<span class="normal">1295</span>
+<span class="normal">1296</span>
+<span class="normal">1297</span>
+<span class="normal">1298</span>
+<span class="normal">1299</span>
+<span class="normal">1300</span>
+<span class="normal">1301</span>
+<span class="normal">1302</span>
+<span class="normal">1303</span>
+<span class="normal">1304</span>
+<span class="normal">1305</span>
+<span class="normal">1306</span>
+<span class="normal">1307</span>
+<span class="normal">1308</span>
+<span class="normal">1309</span>
+<span class="normal">1310</span>
+<span class="normal">1311</span>
+<span class="normal">1312</span>
+<span class="normal">1313</span>
+<span class="normal">1314</span>
+<span class="normal">1315</span>
+<span class="normal">1316</span>
+<span class="normal">1317</span>
+<span class="normal">1318</span>
+<span class="normal">1319</span>
+<span class="normal">1320</span>
+<span class="normal">1321</span>
+<span class="normal">1322</span>
+<span class="normal">1323</span>
+<span class="normal">1324</span>
+<span class="normal">1325</span>
+<span class="normal">1326</span>
+<span class="normal">1327</span>
+<span class="normal">1328</span>
+<span class="normal">1329</span>
+<span class="normal">1330</span>
+<span class="normal">1331</span>
+<span class="normal">1332</span>
+<span class="normal">1333</span>
+<span class="normal">1334</span>
+<span class="normal">1335</span>
+<span class="normal">1336</span>
+<span class="normal">1337</span>
+<span class="normal">1338</span>
+<span class="normal">1339</span>
+<span class="normal">1340</span>
+<span class="normal">1341</span>
+<span class="normal">1342</span>
+<span class="normal">1343</span>
+<span class="normal">1344</span>
+<span class="normal">1345</span>
+<span class="normal">1346</span>
+<span class="normal">1347</span>
+<span class="normal">1348</span>
+<span class="normal">1349</span>
+<span class="normal">1350</span>
+<span class="normal">1351</span>
+<span class="normal">1352</span>
+<span class="normal">1353</span>
+<span class="normal">1354</span>
+<span class="normal">1355</span>
+<span class="normal">1356</span>
+<span class="normal">1357</span>
+<span class="normal">1358</span>
+<span class="normal">1359</span>
+<span class="normal">1360</span>
+<span class="normal">1361</span>
+<span class="normal">1362</span>
+<span class="normal">1363</span>
+<span class="normal">1364</span>
+<span class="normal">1365</span>
+<span class="normal">1366</span></pre></div></td><td class="code"><div><pre><span></span><code>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;llama3.1&quot;</span><span class="p">,</span>
+        <span class="n">system_prompt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+        <span class="n">catalog_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">catalog_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">model_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the Catalog Agent.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: Model identifier (default: &quot;llama3.1&quot;).</span>
+<span class="sd">            system_prompt: System prompt for the agent (default: &quot;default&quot;).</span>
+<span class="sd">            catalog_url: URL to a catalog file (TSV, CSV, or JSON). Use JSON format for spatial search support.</span>
+<span class="sd">                Example: &quot;https://raw.githubusercontent.com/opengeos/Earth-Engine-Catalog/refs/heads/master/gee_catalog.json&quot;</span>
+<span class="sd">            catalog_df: Pre-loaded catalog as a pandas DataFrame.</span>
+<span class="sd">            model_args: Additional keyword arguments for the model.</span>
+<span class="sd">            **kwargs: Additional keyword arguments for the Agent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="p">:</span> <span class="n">CatalogTools</span> <span class="o">=</span> <span class="n">CatalogTools</span><span class="p">(</span>
+            <span class="n">catalog_url</span><span class="o">=</span><span class="n">catalog_url</span><span class="p">,</span> <span class="n">catalog_df</span><span class="o">=</span><span class="n">catalog_df</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">model_args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">model_args</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># --- save a model factory we can call each turn ---</span>
+        <span class="k">if</span> <span class="n">model</span> <span class="o">==</span> <span class="s2">&quot;llama3.1&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">OllamaModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span><span class="p">:</span> <span class="n">create_ollama_model</span><span class="p">(</span>
+                    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;http://localhost:11434&quot;</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">BedrockModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span><span class="p">:</span> <span class="n">create_bedrock_model</span><span class="p">(</span><span class="n">model_id</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">OllamaModel</span><span class="p">):</span>
+            <span class="c1"># Extract configuration from existing OllamaModel and create new instances</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model_id&quot;</span><span class="p">]</span>
+            <span class="n">host</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">host</span>
+            <span class="n">client_args</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">client_args</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">OllamaModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span><span class="p">:</span> <span class="n">create_ollama_model</span><span class="p">(</span>
+                    <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">OpenAIModel</span><span class="p">):</span>
+            <span class="c1"># Extract configuration from existing OpenAIModel and create new instances</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model_id&quot;</span><span class="p">]</span>
+            <span class="n">client_args</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">client_args</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">OpenAIModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">mid</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">:</span> <span class="n">create_openai_model</span><span class="p">(</span>
+                    <span class="n">model_id</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">AnthropicModel</span><span class="p">):</span>
+            <span class="c1"># Extract configuration from existing AnthropicModel and create new instances</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model_id&quot;</span><span class="p">]</span>
+            <span class="n">client_args</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">client_args</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">AnthropicModel</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">mid</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">:</span> <span class="n">create_anthropic_model</span><span class="p">(</span>
+                    <span class="n">model_id</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">client_args</span><span class="o">=</span><span class="n">client_args</span><span class="p">,</span> <span class="o">**</span><span class="n">model_args</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid model: </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># build initial model (first turn)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_factory</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">system_prompt</span> <span class="o">==</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span>
+            <span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;You are a data catalog search agent. Your job is to help users find datasets from a data catalog.</span>
+
+<span class="s2">IMPORTANT: Follow these steps EXACTLY:</span>
+
+<span class="s2">1. Understand the user&#39;s query:</span>
+<span class="s2">   - What type of data are they looking for? (e.g., landcover, elevation, imagery)</span>
+<span class="s2">   - Are they searching for a specific geographic region? (e.g., California, San Francisco, bounding box)</span>
+<span class="s2">   - Are they filtering by time period? (e.g., &quot;from 2020&quot;, &quot;between 2015-2020&quot;, &quot;recent data&quot;)</span>
+<span class="s2">   - Are they filtering by provider? (e.g., NASA, USGS)</span>
+<span class="s2">   - Are they filtering by dataset type? (e.g., image, image_collection, table)</span>
+
+<span class="s2">2. Use the appropriate tool:</span>
+<span class="s2">   - search_by_region: PREFERRED for spatial queries - search datasets covering a geographic region</span>
+<span class="s2">     * Use location parameter for place names (e.g., &quot;California&quot;, &quot;San Francisco&quot;)</span>
+<span class="s2">     * Use bbox parameter for coordinates [west, south, east, north]</span>
+<span class="s2">     * Can combine with keywords, dataset_type, provider, start_date, end_date filters</span>
+<span class="s2">   - search_datasets: For keyword-only searches without spatial filter</span>
+<span class="s2">     * Can filter by start_date and end_date for temporal queries</span>
+<span class="s2">   - geocode_location: Convert location names to coordinates (called automatically by search_by_region)</span>
+<span class="s2">   - get_dataset_info: Get details about a specific dataset by ID</span>
+<span class="s2">   - list_dataset_types: Show available dataset types</span>
+<span class="s2">   - list_providers: Show available data providers</span>
+<span class="s2">   - get_catalog_stats: Get overall catalog statistics</span>
+
+<span class="s2">3. Search strategy:</span>
+<span class="s2">   - SPATIAL QUERIES: If user mentions ANY location or region, IMMEDIATELY use search_by_region</span>
+<span class="s2">     * Pass location names directly to the location parameter - DO NOT ask user for bbox coordinates</span>
+<span class="s2">     * Examples of locations: California, San Francisco, New York, Paris, any city/state/country name</span>
+<span class="s2">     * search_by_region will automatically geocode location names - you don&#39;t need to call geocode_location separately</span>
+<span class="s2">   - TEMPORAL QUERIES: If user mentions ANY time period, ALWAYS add start_date/end_date parameters</span>
+<span class="s2">     * &quot;from 2022&quot; or &quot;since 2022&quot; or &quot;2022 onwards&quot; → start_date=&quot;2022-01-01&quot;</span>
+<span class="s2">     * &quot;until 2023&quot; or &quot;before 2023&quot; → end_date=&quot;2023-12-31&quot;</span>
+<span class="s2">     * &quot;between 2020 and 2023&quot; → start_date=&quot;2020-01-01&quot;, end_date=&quot;2023-12-31&quot;</span>
+<span class="s2">     * &quot;recent&quot; or &quot;latest&quot; → start_date=&quot;2020-01-01&quot;</span>
+<span class="s2">     * Time indicators: from, since, after, before, until, between, onwards, recent, latest</span>
+<span class="s2">   - KEYWORD QUERIES: If no location mentioned, use search_datasets</span>
+<span class="s2">   - Extract key search terms from the user&#39;s query</span>
+<span class="s2">   - Use keywords parameter for the main search terms</span>
+<span class="s2">   - Use dataset_type parameter if user specifies type (image, table, etc.)</span>
+<span class="s2">   - Use provider parameter if user specifies provider (NASA, USGS, etc.)</span>
+<span class="s2">   - Default max_results is 10, but can be adjusted</span>
+
+<span class="s2">CRITICAL RULES:</span>
+<span class="s2">1. NEVER ask the user to provide bbox coordinates. If they mention a location name, pass it directly to search_by_region(location=&quot;name&quot;)</span>
+<span class="s2">2. ALWAYS add start_date or end_date when user mentions ANY time period (from, since, onwards, recent, etc.)</span>
+<span class="s2">3. Convert years to YYYY-MM-DD format: 2022 → &quot;2022-01-01&quot;</span>
+
+<span class="s2">4. Examples:</span>
+<span class="s2">   - &quot;Find landcover datasets covering California&quot; → search_by_region(location=&quot;California&quot;, keywords=&quot;landcover&quot;)</span>
+<span class="s2">   - &quot;Show elevation data for San Francisco&quot; → search_by_region(location=&quot;San Francisco&quot;, keywords=&quot;elevation&quot;)</span>
+<span class="s2">   - &quot;Find datasets in bbox [-122, 37, -121, 38]&quot; → search_by_region(bbox=[-122, 37, -121, 38])</span>
+<span class="s2">   - &quot;Find landcover datasets from NASA&quot; → search_datasets(keywords=&quot;landcover&quot;, provider=&quot;NASA&quot;)</span>
+<span class="s2">   - &quot;Show me elevation data&quot; → search_datasets(keywords=&quot;elevation&quot;)</span>
+<span class="s2">   - &quot;What types of datasets are available?&quot; → list_dataset_types()</span>
+<span class="s2">   - &quot;Find image collections about forests&quot; → search_datasets(keywords=&quot;forest&quot;, dataset_type=&quot;image_collection&quot;)</span>
+<span class="s2">   - &quot;Find landcover data from 2020 onwards&quot; → search_datasets(keywords=&quot;landcover&quot;, start_date=&quot;2020-01-01&quot;)</span>
+<span class="s2">   - &quot;Show California datasets between 2015 and 2020&quot; → search_by_region(location=&quot;California&quot;, start_date=&quot;2015-01-01&quot;, end_date=&quot;2020-12-31&quot;)</span>
+<span class="s2">   - &quot;Find recent elevation data&quot; → search_datasets(keywords=&quot;elevation&quot;, start_date=&quot;2020-01-01&quot;)</span>
+
+<span class="s2">5. Return results clearly:</span>
+<span class="s2">   - Summarize the number of results found</span>
+<span class="s2">   - List the top results with their EXACT IDs and titles FROM THE TOOL RESPONSE</span>
+<span class="s2">   - Mention key information like provider, type, geographic coverage, and date range if available</span>
+<span class="s2">   - For spatial searches, mention the search region</span>
+
+<span class="s2">ERROR HANDLING:</span>
+<span class="s2">- If no results found: Suggest trying different keywords, broader region, or removing filters</span>
+<span class="s2">- If location not found: Suggest alternative spellings or try a broader region</span>
+<span class="s2">- If tool error: Explain the error and suggest alternatives</span>
+
+<span class="s2">CRITICAL RULES - MUST FOLLOW:</span>
+<span class="s2">1. NEVER make up or hallucinate dataset IDs, titles, or any other information</span>
+<span class="s2">2. ONLY report datasets that appear in the actual tool response</span>
+<span class="s2">3. Copy dataset IDs and titles EXACTLY as they appear in the tool response</span>
+<span class="s2">4. If a field is null/None in the tool response, say &quot;N/A&quot; or omit it - DO NOT guess</span>
+<span class="s2">5. DO NOT use your training data knowledge about Earth Engine datasets</span>
+<span class="s2">6. DO NOT fill in missing information from your knowledge</span>
+<span class="s2">7. If unsure, say &quot;Information not available in results&quot;</span>
+
+<span class="s2">Example of CORRECT behavior:</span>
+<span class="s2">Tool returns: {&quot;id&quot;: &quot;AAFC/ACI&quot;, &quot;title&quot;: &quot;Canada AAFC Annual Crop Inventory&quot;}</span>
+<span class="s2">Your response: &quot;Found dataset: AAFC/ACI - Canada AAFC Annual Crop Inventory&quot;</span>
+
+<span class="s2">Example of INCORRECT behavior (DO NOT DO THIS):</span>
+<span class="s2">Tool returns: {&quot;id&quot;: &quot;AAFC/ACI&quot;, &quot;title&quot;: &quot;Canada AAFC Annual Crop Inventory&quot;}</span>
+<span class="s2">Your response: &quot;Found dataset: USGS/NED - USGS Elevation Data&quot;  ← WRONG! This ID wasn&#39;t in the tool response!&quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Catalog Search Agent&quot;</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">search_by_region</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">get_dataset_info</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">geocode_location</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">list_dataset_types</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">list_providers</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">get_catalog_stats</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">system_prompt</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">,</span>
+            <span class="n">callback_handler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="geoai.agents.geo_agents.CatalogAgent.ask" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">ask</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span></code>
+
+<a href="#geoai.agents.geo_agents.CatalogAgent.ask" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Send a single-turn prompt to the agent.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>prompt</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The text prompt to send to the agent.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The agent's response as a string.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1368</span>
+<span class="normal">1369</span>
+<span class="normal">1370</span>
+<span class="normal">1371</span>
+<span class="normal">1372</span>
+<span class="normal">1373</span>
+<span class="normal">1374</span>
+<span class="normal">1375</span>
+<span class="normal">1376</span>
+<span class="normal">1377</span>
+<span class="normal">1378</span>
+<span class="normal">1379</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Send a single-turn prompt to the agent.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        prompt: The text prompt to send to the agent.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The agent&#39;s response as a string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Use strands&#39; built-in __call__ method which now supports multiple calls</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;final_text&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="geoai.agents.geo_agents.CatalogAgent.search_datasets" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">search_datasets</span><span class="p">(</span><span class="n">keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dataset_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
+
+<a href="#geoai.agents.geo_agents.CatalogAgent.search_datasets" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Search for datasets and return structured results.</p>
+<p>This method directly uses the CatalogTools without LLM inference for faster searches.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>keywords</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Keywords to search for.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>dataset_type</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Filter by dataset type.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>provider</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Filter by provider.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>max_results</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum number of results to return.</p>
+              </div>
+            </td>
+            <td>
+                  <code>10</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="geoai.geoai.List">List</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of dataset dictionaries.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>agent = CatalogAgent(catalog_url="...")
+datasets = agent.search_datasets(keywords="landcover", provider="NASA")
+for ds in datasets:
+...     print(ds['id'], ds['title'])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1381</span>
+<span class="normal">1382</span>
+<span class="normal">1383</span>
+<span class="normal">1384</span>
+<span class="normal">1385</span>
+<span class="normal">1386</span>
+<span class="normal">1387</span>
+<span class="normal">1388</span>
+<span class="normal">1389</span>
+<span class="normal">1390</span>
+<span class="normal">1391</span>
+<span class="normal">1392</span>
+<span class="normal">1393</span>
+<span class="normal">1394</span>
+<span class="normal">1395</span>
+<span class="normal">1396</span>
+<span class="normal">1397</span>
+<span class="normal">1398</span>
+<span class="normal">1399</span>
+<span class="normal">1400</span>
+<span class="normal">1401</span>
+<span class="normal">1402</span>
+<span class="normal">1403</span>
+<span class="normal">1404</span>
+<span class="normal">1405</span>
+<span class="normal">1406</span>
+<span class="normal">1407</span>
+<span class="normal">1408</span>
+<span class="normal">1409</span>
+<span class="normal">1410</span>
+<span class="normal">1411</span>
+<span class="normal">1412</span>
+<span class="normal">1413</span>
+<span class="normal">1414</span>
+<span class="normal">1415</span>
+<span class="normal">1416</span>
+<span class="normal">1417</span>
+<span class="normal">1418</span>
+<span class="normal">1419</span>
+<span class="normal">1420</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">search_datasets</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">keywords</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dataset_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">provider</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_results</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for datasets and return structured results.</span>
+
+<span class="sd">    This method directly uses the CatalogTools without LLM inference for faster searches.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        keywords: Keywords to search for.</span>
+<span class="sd">        dataset_type: Filter by dataset type.</span>
+<span class="sd">        provider: Filter by provider.</span>
+<span class="sd">        max_results: Maximum number of results to return.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of dataset dictionaries.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; agent = CatalogAgent(catalog_url=&quot;...&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; datasets = agent.search_datasets(keywords=&quot;landcover&quot;, provider=&quot;NASA&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; for ds in datasets:</span>
+<span class="sd">        ...     print(ds[&#39;id&#39;], ds[&#39;title&#39;])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">catalog_tools</span><span class="o">.</span><span class="n">search_datasets</span><span class="p">(</span>
+        <span class="n">keywords</span><span class="o">=</span><span class="n">keywords</span><span class="p">,</span>
+        <span class="n">dataset_type</span><span class="o">=</span><span class="n">dataset_type</span><span class="p">,</span>
+        <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">,</span>
+        <span class="n">max_results</span><span class="o">=</span><span class="n">max_results</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result_json</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;error&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Search error: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;datasets&quot;</span><span class="p">,</span> <span class="p">[])</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
 <h2 id="geoai.agents.geo_agents.GeoAgent" class="doc doc-heading">
             <code>GeoAgent</code>
 
@@ -2702,8 +4127,7 @@
 
               <details class="quote">
                 <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">166</span>
-<span class="normal">167</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">167</span>
 <span class="normal">168</span>
 <span class="normal">169</span>
 <span class="normal">170</span>
@@ -3098,7 +4522,8 @@
 <span class="normal">559</span>
 <span class="normal">560</span>
 <span class="normal">561</span>
-<span class="normal">562</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">GeoAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+<span class="normal">562</span>
+<span class="normal">563</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">GeoAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Geospatial AI agent with interactive mapping capabilities.&quot;&quot;&quot;</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -3606,8 +5031,7 @@
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">169</span>
-<span class="normal">170</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
 <span class="normal">173</span>
@@ -3727,7 +5151,8 @@
 <span class="normal">287</span>
 <span class="normal">288</span>
 <span class="normal">289</span>
-<span class="normal">290</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">290</span>
+<span class="normal">291</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;llama3.1&quot;</span><span class="p">,</span>
@@ -3925,8 +5350,7 @@
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">292</span>
-<span class="normal">293</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">293</span>
 <span class="normal">294</span>
 <span class="normal">295</span>
 <span class="normal">296</span>
@@ -3936,7 +5360,8 @@
 <span class="normal">300</span>
 <span class="normal">301</span>
 <span class="normal">302</span>
-<span class="normal">303</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">303</span>
+<span class="normal">304</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Send a single-turn prompt to the agent.</span>
 
 <span class="sd">    Args:</span>
@@ -4001,8 +5426,7 @@
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">305</span>
-<span class="normal">306</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">306</span>
 <span class="normal">307</span>
 <span class="normal">308</span>
 <span class="normal">309</span>
@@ -4258,7 +5682,8 @@
 <span class="normal">559</span>
 <span class="normal">560</span>
 <span class="normal">561</span>
-<span class="normal">562</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">show_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">700</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">562</span>
+<span class="normal">563</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">show_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">700</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Display an interactive UI with map and chat interface.</span>
 
 <span class="sd">    Args:</span>
@@ -4557,8 +5982,7 @@
 
               <details class="quote">
                 <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
-<span class="normal">26</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
@@ -4579,7 +6003,8 @@
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">OllamaModel</span><span class="p">(</span><span class="n">_OllamaModel</span><span class="p">):</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">OllamaModel</span><span class="p">(</span><span class="n">_OllamaModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Fixed OllamaModel that ensures proper model_id handling.&quot;&quot;&quot;</span>
 
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -4638,8 +6063,7 @@
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
-<span class="normal">29</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
@@ -4657,7 +6081,8 @@
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Override stream to ensure model_id is passed as string.&quot;&quot;&quot;</span>
     <span class="c1"># Patch the ollama client to handle model object correctly</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
@@ -4718,8 +6143,7 @@
 
               <details class="quote">
                 <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 565</span>
-<span class="normal"> 566</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 566</span>
 <span class="normal"> 567</span>
 <span class="normal"> 568</span>
 <span class="normal"> 569</span>
@@ -5337,7 +6761,8 @@
 <span class="normal">1181</span>
 <span class="normal">1182</span>
 <span class="normal">1183</span>
-<span class="normal">1184</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">STACAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+<span class="normal">1184</span>
+<span class="normal">1185</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">STACAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;AI agent for searching and interacting with STAC catalogs.&quot;&quot;&quot;</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -6100,8 +7525,7 @@
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">568</span>
-<span class="normal">569</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">569</span>
 <span class="normal">570</span>
 <span class="normal">571</span>
 <span class="normal">572</span>
@@ -6232,7 +7656,8 @@
 <span class="normal">697</span>
 <span class="normal">698</span>
 <span class="normal">699</span>
-<span class="normal">700</span></pre></div></td><td class="code"><div><pre><span></span><code>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+<span class="normal">700</span>
+<span class="normal">701</span></pre></div></td><td class="code"><div><pre><span></span><code>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;llama3.1&quot;</span><span class="p">,</span>
@@ -6441,8 +7866,7 @@
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">758</span>
-<span class="normal">759</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">759</span>
 <span class="normal">760</span>
 <span class="normal">761</span>
 <span class="normal">762</span>
@@ -6464,7 +7888,8 @@
 <span class="normal">778</span>
 <span class="normal">779</span>
 <span class="normal">780</span>
-<span class="normal">781</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">781</span>
+<span class="normal">782</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Send a single-turn prompt to the agent.</span>
 
 <span class="sd">    Args:</span>
@@ -6603,8 +8028,7 @@ print(item['assets'][0]['key'])    # or 'title'</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">783</span>
-<span class="normal">784</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">784</span>
 <span class="normal">785</span>
 <span class="normal">786</span>
 <span class="normal">787</span>
@@ -6670,7 +8094,8 @@ print(item['assets'][0]['key'])    # or 'title'</p>
 <span class="normal">847</span>
 <span class="normal">848</span>
 <span class="normal">849</span>
-<span class="normal">850</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">search_and_get_first_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="normal">850</span>
+<span class="normal">851</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">search_and_get_first_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for imagery and return the first item as a structured dict.</span>
 
 <span class="sd">    This method sends a search query to the agent, extracts the search results</span>
@@ -6791,8 +8216,7 @@ print(item['assets'][0]['key'])    # or 'title'</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 918</span>
-<span class="normal"> 919</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 919</span>
 <span class="normal"> 920</span>
 <span class="normal"> 921</span>
 <span class="normal"> 922</span>
@@ -7057,7 +8481,8 @@ print(item['assets'][0]['key'])    # or 'title'</p>
 <span class="normal">1181</span>
 <span class="normal">1182</span>
 <span class="normal">1183</span>
-<span class="normal">1184</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">show_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">700</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">1184</span>
+<span class="normal">1185</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">show_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">700</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Display an interactive UI with map and chat interface for STAC searches.</span>
 
 <span class="sd">    Args:</span>
@@ -7436,8 +8861,7 @@ see https://docs.claude.com/en/docs/about-claude/models/overview.</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
-<span class="normal">107</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
 <span class="normal">110</span>
@@ -7466,7 +8890,8 @@ see https://docs.claude.com/en/docs/about-claude/models/overview.</p>
 <span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
-<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_anthropic_model</span><span class="p">(</span>
+<span class="normal">136</span>
+<span class="normal">137</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_anthropic_model</span><span class="p">(</span>
     <span class="n">model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;claude-sonnet-4-20250514&quot;</span><span class="p">,</span>
     <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">client_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -7615,8 +9040,7 @@ aws bedrock list-foundation-models | jq -r '.modelSummaries[].modelId'</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">139</span>
-<span class="normal">140</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
 <span class="normal">143</span>
@@ -7639,7 +9063,8 @@ aws bedrock list-foundation-models | jq -r '.modelSummaries[].modelId'</p>
 <span class="normal">160</span>
 <span class="normal">161</span>
 <span class="normal">162</span>
-<span class="normal">163</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_bedrock_model</span><span class="p">(</span>
+<span class="normal">163</span>
+<span class="normal">164</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_bedrock_model</span><span class="p">(</span>
     <span class="n">model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;anthropic.claude-sonnet-4-20250514-v1:0&quot;</span><span class="p">,</span>
     <span class="n">region_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">boto_session</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">boto3</span><span class="o">.</span><span class="n">Session</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -7788,8 +9213,7 @@ aws bedrock list-foundation-models | jq -r '.modelSummaries[].modelId'</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">50</span>
-<span class="normal">51</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
 <span class="normal">54</span>
@@ -7807,7 +9231,8 @@ aws bedrock list-foundation-models | jq -r '.modelSummaries[].modelId'</p>
 <span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
-<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_ollama_model</span><span class="p">(</span>
+<span class="normal">69</span>
+<span class="normal">70</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_ollama_model</span><span class="p">(</span>
     <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:11434&quot;</span><span class="p">,</span>
     <span class="n">model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;llama3.1&quot;</span><span class="p">,</span>
     <span class="n">client_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -7951,8 +9376,7 @@ aws bedrock list-foundation-models | jq -r '.modelSummaries[].modelId'</p>
 
             <details class="quote">
               <summary>Source code in <code>geoai/agents/geo_agents.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
-<span class="normal"> 73</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 73</span>
 <span class="normal"> 74</span>
 <span class="normal"> 75</span>
 <span class="normal"> 76</span>
@@ -7982,7 +9406,8 @@ aws bedrock list-foundation-models | jq -r '.modelSummaries[].modelId'</p>
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
-<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_openai_model</span><span class="p">(</span>
+<span class="normal">103</span>
+<span class="normal">104</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_openai_model</span><span class="p">(</span>
     <span class="n">model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span>
     <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">client_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
