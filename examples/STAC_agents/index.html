@@ -12,13 +12,13 @@
         <meta name="author" content="opengeos">
       
       
-        <link rel="canonical" href="https://opengeoai.org/examples/water_detection_s2/">
+        <link rel="canonical" href="https://opengeoai.org/examples/STAC_agents/">
       
       
-        <link rel="prev" href="../water_detection/">
+        <link rel="prev" href="../AI_agents/">
       
       
-        <link rel="next" href="../batch_segmentation/">
+        <link rel="next" href="../train_timm_classifier/">
       
       
       <link rel="icon" href="../../assets/logo.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Water detection s2 - GeoAI</title>
+        <title>STAC agents - GeoAI</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#water-detection-with-sentinel-2-imagery" class="md-skip">
+        <a href="#installation" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Water detection s2
+              STAC agents
             
           </span>
         </div>
@@ -1334,32 +1334,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Water detection s2
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../water_detection_s2/" class="md-nav__link">
         
   
   
@@ -1370,98 +1348,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install packages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Import libraries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-sample-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download sample data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create training data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#train-semantic-segmentation-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Train semantic segmentation model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluate-the-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluate the model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize results
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1701,10 +1587,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../STAC_agents/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    STAC agents
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1715,6 +1621,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#call-stac-tools-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call STAC tools directly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-the-agent-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show the agent UI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2363,8 +2332,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2373,9 +2340,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-packages" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Install packages
+      Installation
     </span>
   </a>
   
@@ -2391,54 +2358,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-sample-data" class="md-nav__link">
+  <a href="#create-a-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Download sample data
+      Create a model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-training-data" class="md-nav__link">
+  <a href="#call-stac-tools-directly" class="md-nav__link">
     <span class="md-ellipsis">
-      Create training data
+      Call STAC tools directly
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#train-semantic-segmentation-model" class="md-nav__link">
+  <a href="#show-the-agent-ui" class="md-nav__link">
     <span class="md-ellipsis">
-      Train semantic segmentation model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluate-the-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluate the model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize results
+      Show the agent UI
     </span>
   </a>
   
@@ -2457,7 +2397,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/examples/water_detection_s2/water_detection_s2.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/examples/STAC_agents/STAC_agents.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -2469,6 +2409,8 @@
   
   
 
+
+  <h1>STAC agents</h1>
 
 <script>
 (function (global, factory) {
@@ -2906,20 +2848,40 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="water-detection-with-sentinel-2-imagery">Water Detection with Sentinel-2 Imagery<a class="anchor-link" href="#water-detection-with-sentinel-2-imagery">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/water_detection_s2.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p>This notebook demonstrates how to train semantic segmentation models for water detection using Sentinel-2 imagery.</p>
-<h2 id="install-packages">Install packages<a class="anchor-link" href="#install-packages">¶</a></h2><p>To use the new functionality, ensure the required packages are installed.</p>
+<p><strong>STAC Agent - Natural Language Satellite Imagery Search</strong></p>
+<p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/STAC_agents.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>This notebook demonstrates how to use the STAC (SpatioTemporal Asset Catalog) Agent to search for satellite and aerial imagery using natural language queries.</p>
+<p>The STAC Agent can:</p>
+<ul>
+<li>Understand natural language queries about geospatial data</li>
+<li>Search the <a href="https://planetarycomputer.microsoft.com/catalog">Microsoft Planetary Computer STAC catalog</a></li>
+<li>Convert location names to coordinates</li>
+<li>Find appropriate collections and items</li>
+<li>Return structured results with item IDs, URLs, and metadata</li>
+</ul>
+<p>Uncomment the following line to install <a href="https://opengeoai.org">geoai</a> if needed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="installation">Installation<a class="anchor-link" href="#installation">¶</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2937,16 +2899,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install geoai-py</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install "geoai[agents]"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># %pip install geoai-py</div>
+<div class="clipboard-copy-txt" id="cell-1"># %pip install "geoai[agents]"</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2957,7 +2919,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2975,27 +2937,51 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoai</span><span class="w"> </span><span class="kn">import</span> <span class="n">Map</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoai.agents</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STACAgent</span><span class="p">,</span>
+    <span class="n">STACTools</span><span class="p">,</span>
+    <span class="n">create_ollama_model</span><span class="p">,</span>
+    <span class="n">create_openai_model</span><span class="p">,</span>
+    <span class="n">create_anthropic_model</span><span class="p">,</span>
+    <span class="n">create_bedrock_model</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import geoai</div>
+<div class="clipboard-copy-txt" id="cell-2">import json
+from geoai import Map
+from geoai.agents import (
+    STACAgent,
+    STACTools,
+    create_ollama_model,
+    create_openai_model,
+    create_anthropic_model,
+    create_bedrock_model,
+)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-sample-data">Download sample data<a class="anchor-link" href="#download-sample-data">¶</a></h2><p>We'll use the <a href="https://zenodo.org/records/5205674#.Y4iEFezP1hE">Earth Surface Water Dataset</a> from Zenodo. Credits to the author (Xin Luo) of the dataset</p>
+<h2 id="create-a-model">Create a model<a class="anchor-link" href="#create-a-model">¶</a></h2><p>You can create a model with the following functions:</p>
+<ul>
+<li><code>create_ollama_model</code>: Create a model using Ollama. You will need to install <a href="%5Btext%5D(https://ollama.com/download">Ollama</a>) separately and pull the model you want to use, such as <code>llama3.1</code>.</li>
+<li><code>create_openai_model</code>: Create a model using OpenAI. You will need an OpenAI API key. Set it in the <code>OPENAI_API_KEY</code> environment variable.</li>
+<li><code>create_anthropic_model</code>: Create a model using Anthropic. You will need an Anthropic API key. Set it in the <code>ANTHROPIC_API_KEY</code> environment variable.</li>
+<li><code>create_bedrock_model</code>: Create a model using Bedrock. You will need an AWS account and the <code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> environment variables set.</li>
+</ul>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3013,16 +2999,27 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/dset-s2.zip"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">create_ollama_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"llama3.1"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/dset-s2.zip"</div>
+<div class="clipboard-copy-txt" id="cell-3">model = create_ollama_model(model="llama3.1")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="call-stac-tools-directly">Call STAC tools directly<a class="anchor-link" href="#call-stac-tools-directly">¶</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3040,16 +3037,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tools</span> <span class="o">=</span> <span class="n">STACTools</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">data_dir = geoai.download_file(url)</div>
+<div class="clipboard-copy-txt" id="cell-4">tools = STACTools()</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3067,31 +3064,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">images_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/tra_scene"</span>
-<span class="n">masks_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/tra_truth"</span>
-<span class="n">tiles_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/tiles"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tools</span><span class="o">.</span><span class="n">list_collections</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">images_dir = f"{data_dir}/dset-s2/tra_scene"
-masks_dir = f"{data_dir}/dset-s2/tra_truth"
-tiles_dir = f"{data_dir}/dset-s2/tiles"</div>
+<div class="clipboard-copy-txt" id="cell-5">tools.list_collections()</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="create-training-data">Create training data<a class="anchor-link" href="#create-training-data">¶</a></h2><p>We'll create the same training tiles as before.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=10">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3109,47 +3091,16 @@ tiles_dir = f"{data_dir}/dset-s2/tiles"</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles_batch</span><span class="p">(</span>
-    <span class="n">images_folder</span><span class="o">=</span><span class="n">images_dir</span><span class="p">,</span>
-    <span class="n">masks_folder</span><span class="o">=</span><span class="n">masks_dir</span><span class="p">,</span>
-    <span class="n">output_folder</span><span class="o">=</span><span class="n">tiles_dir</span><span class="p">,</span>
-    <span class="n">tile_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
-    <span class="n">stride</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
-    <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tools</span><span class="o">.</span><span class="n">list_collections</span><span class="p">(</span><span class="n">filter_keyword</span><span class="o">=</span><span class="s2">"landsat"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">result = geoai.export_geotiff_tiles_batch(
-    images_folder=images_dir,
-    masks_folder=masks_dir,
-    output_folder=tiles_dir,
-    tile_size=512,
-    stride=128,
-    quiet=True,
-)</div>
+<div class="clipboard-copy-txt" id="cell-6">tools.list_collections(filter_keyword="landsat")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="train-semantic-segmentation-model">Train semantic segmentation model<a class="anchor-link" href="#train-semantic-segmentation-model">¶</a></h2><p>Now we'll train a semantic segmentation model using the new <code>train_segmentation_model</code> function. This function supports various architectures from <code>segmentation-models-pytorch</code>:</p>
-<ul>
-<li><strong>Architectures</strong>: <code>unet</code>, <code>unetplusplus</code> <code>deeplabv3</code>, <code>deeplabv3plus</code>, <code>fpn</code>, <code>pspnet</code>, <code>linknet</code>, <code>manet</code></li>
-<li><strong>Encoders</strong>: <code>resnet34</code>, <code>resnet50</code>, <code>efficientnet-b0</code>, <code>mobilenet_v2</code>, etc.</li>
-</ul>
-<p>For more details, please refer to the <a href="https://smp.readthedocs.io/en/latest/models.html">segmentation-models-pytorch documentation</a>.</p>
-<p>Let's train the module using U-Net with ResNet34 encoder:</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=11">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3167,57 +3118,16 @@ tiles_dir = f"{data_dir}/dset-s2/tiles"</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Test train_segmentation_model with automatic size detection</span>
-<span class="n">geoai</span><span class="o">.</span><span class="n">train_segmentation_model</span><span class="p">(</span>
-    <span class="n">images_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">tiles_dir</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
-    <span class="n">labels_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">tiles_dir</span><span class="si">}</span><span class="s2">/masks"</span><span class="p">,</span>
-    <span class="n">output_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">tiles_dir</span><span class="si">}</span><span class="s2">/unet_models"</span><span class="p">,</span>
-    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
-    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
-    <span class="n">encoder_weights</span><span class="o">=</span><span class="s2">"imagenet"</span><span class="p">,</span>
-    <span class="n">num_channels</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># background and water</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
-    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
-    <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">agent</span> <span class="o">=</span> <span class="n">STACAgent</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7"># Test train_segmentation_model with automatic size detection
-geoai.train_segmentation_model(
-    images_dir=f"{tiles_dir}/images",
-    labels_dir=f"{tiles_dir}/masks",
-    output_dir=f"{tiles_dir}/unet_models",
-    architecture="unet",
-    encoder_name="resnet34",
-    encoder_weights="imagenet",
-    num_channels=6,
-    num_classes=2,  # background and water
-    batch_size=8,
-    num_epochs=50,
-    learning_rate=0.001,
-    val_split=0.2,
-    verbose=True,
-)</div>
+<div class="clipboard-copy-txt" id="cell-7">agent = STACAgent(model=model)</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="evaluate-the-model">Evaluate the model<a class="anchor-link" href="#evaluate-the-model">¶</a></h2><p>Let's examine the training curves and model performance:</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=12">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3235,46 +3145,29 @@ geoai.train_segmentation_model(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">plot_performance_metrics</span><span class="p">(</span>
-    <span class="n">history_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">tiles_dir</span><span class="si">}</span><span class="s2">/unet_models/training_history.pth"</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="s2">"Find Sentinel-2 imagery over San Francisco in August 2025"</span><span class="p">)</span>
+<span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">geoai.plot_performance_metrics(
-    history_path=f"{tiles_dir}/unet_models/training_history.pth",
-    figsize=(15, 5),
-    verbose=True,
-)</div>
+<div class="clipboard-copy-txt" id="cell-8">result = agent.ask("Find Sentinel-2 imagery over San Francisco in August 2025")
+json.loads(result)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=13">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/61f675a7-ee67-4650-81c0-f754fe681f4d"/></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="run-inference">Run inference<a class="anchor-link" href="#run-inference">¶</a></h2>
+<h2 id="show-the-agent-ui">Show the agent UI<a class="anchor-link" href="#show-the-agent-ui">¶</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=14">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3292,159 +3185,15 @@ geoai.train_segmentation_model(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">images_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/val_scene"</span>
-<span class="n">masks_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/val_truth"</span>
-<span class="n">predictions_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/predictions"</span>
-<span class="n">model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">tiles_dir</span><span class="si">}</span><span class="s2">/unet_models/best_model.pth"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">"globe"</span><span class="p">)</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">STACAgent</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">map_instance</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">show_ui</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">images_dir = f"{data_dir}/dset-s2/val_scene"
-masks_dir = f"{data_dir}/dset-s2/val_truth"
-predictions_dir = f"{data_dir}/dset-s2/predictions"
-model_path = f"{tiles_dir}/unet_models/best_model.pth"</div>
+<div class="clipboard-copy-txt" id="cell-9">m = Map(center=[-100, 40], zoom=3, projection="globe")
+agent = STACAgent(model=model, map_instance=m)
+agent.show_ui()</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">semantic_segmentation_batch</span><span class="p">(</span>
-    <span class="n">input_dir</span><span class="o">=</span><span class="n">images_dir</span><span class="p">,</span>
-    <span class="n">output_dir</span><span class="o">=</span><span class="n">predictions_dir</span><span class="p">,</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
-    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
-    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
-    <span class="n">num_channels</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
-    <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
-    <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-10">geoai.semantic_segmentation_batch(
-    input_dir=images_dir,
-    output_dir=predictions_dir,
-    model_path=model_path,
-    architecture="unet",
-    encoder_name="resnet34",
-    num_channels=6,
-    num_classes=2,
-    window_size=512,
-    overlap=256,
-    batch_size=8,
-    quiet=True,
-)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-results">Visualize results<a class="anchor-link" href="#visualize-results">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">test_image_path</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/val_scene/S2A_L2A_20190318_N0211_R061_6Bands_S2.tif"</span>
-<span class="p">)</span>
-<span class="n">ground_truth_path</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/val_truth/S2A_L2A_20190318_N0211_R061_S2_Truth.tif"</span>
-<span class="p">)</span>
-<span class="n">prediction_path</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/predictions/S2A_L2A_20190318_N0211_R061_6Bands_S2_mask.tif"</span>
-<span class="p">)</span>
-<span class="n">save_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/dset-s2/S2A_L2A_20190318_N0211_R061_6Bands_S2_comparison.png"</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">plot_prediction_comparison</span><span class="p">(</span>
-    <span class="n">original_image</span><span class="o">=</span><span class="n">test_image_path</span><span class="p">,</span>
-    <span class="n">prediction_image</span><span class="o">=</span><span class="n">prediction_path</span><span class="p">,</span>
-    <span class="n">ground_truth_image</span><span class="o">=</span><span class="n">ground_truth_path</span><span class="p">,</span>
-    <span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s2">"Original"</span><span class="p">,</span> <span class="s2">"Prediction"</span><span class="p">,</span> <span class="s2">"Ground Truth"</span><span class="p">],</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-    <span class="n">save_path</span><span class="o">=</span><span class="n">save_path</span><span class="p">,</span>
-    <span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">indexes</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="n">divider</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-11">test_image_path = (
-    f"{data_dir}/dset-s2/val_scene/S2A_L2A_20190318_N0211_R061_6Bands_S2.tif"
-)
-ground_truth_path = (
-    f"{data_dir}/dset-s2/val_truth/S2A_L2A_20190318_N0211_R061_S2_Truth.tif"
-)
-prediction_path = (
-    f"{data_dir}/dset-s2/predictions/S2A_L2A_20190318_N0211_R061_6Bands_S2_mask.tif"
-)
-save_path = f"{data_dir}/dset-s2/S2A_L2A_20190318_N0211_R061_6Bands_S2_comparison.png"
-
-fig = geoai.plot_prediction_comparison(
-    original_image=test_image_path,
-    prediction_image=prediction_path,
-    ground_truth_image=ground_truth_path,
-    titles=["Original", "Prediction", "Ground Truth"],
-    figsize=(15, 5),
-    save_path=save_path,
-    show_plot=True,
-    indexes=[5, 4, 3],
-    divider=5000,
-)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="image" src="https://github.com/user-attachments/assets/53601ed7-2bd6-4e7e-b369-4d7bfc2ce120"/></p>
 </div>
 </div>
 </div>
@@ -3478,7 +3227,7 @@ fig = geoai.plot_prediction_comparison(
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 9, 2025 14:09:03 UTC"><span class="timeago" datetime="2025-10-09T14:09:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 9, 2025 14:09:03 UTC">2025-10-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 18, 2025 05:05:56 UTC"><span class="timeago" datetime="2025-10-18T05:05:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 18, 2025 05:05:56 UTC">2025-10-18</span>
   </span>
 
     
@@ -3488,7 +3237,7 @@ fig = geoai.plot_prediction_comparison(
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 28, 2025 04:38:24 UTC"><span class="timeago" datetime="2025-02-28T04:38:24+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 28, 2025 04:38:24 UTC">2025-02-28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 7, 2025 18:25:29 UTC"><span class="timeago" datetime="2025-03-07T18:25:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 7, 2025 18:25:29 UTC">2025-03-07</span>
   </span>
 
     
